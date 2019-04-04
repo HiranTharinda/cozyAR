@@ -1,0 +1,77 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Hiran\\Desktop\\figment-ar-master\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-fi\\values-fi.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\91e5b8ab8d1a0d0cd2d6a6b14bde96d4\\res\\values-fi\\values-fi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "46",
+                        "startColumns": "4",
+                        "startOffsets": "4439",
+                        "endColumns": "100",
+                        "endOffsets": "4535"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\1a6d14c989a5123ea2ff5483a4164a35\\res\\values-fi\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,238,286,390,499",
+                        "endColumns": "47,47,103,108,63",
+                        "endOffsets": "237,285,389,498,562"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,157,209,317,430",
+                        "endColumns": "51,51,107,112,67",
+                        "endOffsets": "152,204,312,425,493"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\af9b7cf0b6519e6e85c21cee9c1ec605\\res\\values-fi\\values-fi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,213,313,414,500,605,723,810,892,983,1076,1172,1266,1361,1454,1550,1649,1740,1834,1914,2021,2124,2221,2327,2426,2530,2693,2792",
+                        "endColumns": "107,99,100,85,104,117,86,81,90,92,95,93,94,92,95,98,90,93,79,106,102,96,105,98,103,162,98,79",
+                        "endOffsets": "208,308,409,495,600,718,805,887,978,1071,1167,1261,1356,1449,1545,1644,1735,1829,1909,2016,2119,2216,2322,2421,2525,2688,2787,2867"
+                    },
+                    "to": {
+                        "startLines": "7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,45",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "498,606,706,807,893,998,1116,1203,1285,1376,1469,1565,1659,1754,1847,1943,2042,2133,2227,2307,2414,2517,2614,2720,2819,2923,3086,4359",
+                        "endColumns": "107,99,100,85,104,117,86,81,90,92,95,93,94,92,95,98,90,93,79,106,102,96,105,98,103,162,98,79",
+                        "endOffsets": "601,701,802,888,993,1111,1198,1280,1371,1464,1560,1654,1749,1842,1938,2037,2128,2222,2302,2409,2512,2609,2715,2814,2918,3081,3180,4434"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\exoplayer-ui-2.7.1.aar\\72933152e75060575977ef92ab7d7ffb\\res\\values-fi\\values-fi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,166,271,369,464,574,692,806,921,1028,1135",
+                        "endColumns": "110,104,97,94,109,117,113,114,106,106,93",
+                        "endOffsets": "161,266,364,459,569,687,801,916,1023,1130,1224"
+                    },
+                    "to": {
+                        "startLines": "34,35,36,37,38,39,40,41,42,43,44",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3185,3296,3401,3499,3594,3704,3822,3936,4051,4158,4265",
+                        "endColumns": "110,104,97,94,109,117,113,114,106,106,93",
+                        "endOffsets": "3291,3396,3494,3589,3699,3817,3931,4046,4153,4260,4354"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+[{"outputType":{"type":"COMPATIBLE_SCREEN_MANIFEST"},"apkInfo":{"type":"FULL_SPLIT","splits":[{"filterType":"DENSITY","value":"xxhdpi"}],"versionCode":5,"versionName":"1.0","enabled":true,"filterName":"xxhdpi","outputFile":"app-gvr-xxhdpi-debug.apk","fullName":"gvrXxhdpiDebug","baseName":"gvr-xxhdpi-debug"},"path":"xxhdpi\\AndroidManifest.xml","properties":{}}]

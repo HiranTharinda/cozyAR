@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.yqritc:android-scalablevideoview:1.0.4@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-scalablevideoview-1.0.4.aar/5a0bde9250221c36ecdc53ea07625eda/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-scalablevideoview-1.0.4.aar/5a0bde9250221c36ecdc53ea07625eda/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yqritc/android-scalablevideoview/1.0.4/390efc496a6d61b5ca96f0cb2242729c390e846/android-scalablevideoview-1.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-viro/android/arcore_client/arcore_client.iml" filepath="$PROJECT_DIR$/../node_modules/react-viro/android/arcore_client/arcore_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/figment.iml" filepath="$PROJECT_DIR$/figment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/lottie-react-native/src/android/lottie-react-native.iml" filepath="$PROJECT_DIR$/../node_modules/lottie-react-native/src/android/lottie-react-native.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-share/android/react-native-share.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-share/android/react-native-share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-viro/android/react_viro/react_viro.iml" filepath="$PROJECT_DIR$/../node_modules/react-viro/android/react_viro/react_viro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-viro/android/viro_renderer/viro_renderer.iml" filepath="$PROJECT_DIR$/../node_modules/react-viro/android/viro_renderer/viro_renderer.iml" />
+    </modules>
+  </component>
+</project>
