@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Hiran\\Desktop\\figment-ar-master\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\1a6d14c989a5123ea2ff5483a4164a35\\res\\values-pt-rBR\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "194,243,295,398,502",
-                        "endColumns": "48,51,102,103,64",
-                        "endOffsets": "242,294,397,501,566"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,158,214,321,429",
-                        "endColumns": "52,55,106,107,68",
-                        "endOffsets": "153,209,316,424,493"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\exoplayer-ui-2.7.1.aar\\72933152e75060575977ef92ab7d7ffb\\res\\values-pt-rBR\\values-pt-rBR.xml",
                     "from": {
@@ -35,6 +18,23 @@
                         "startOffsets": "3237,3312,3386,3454,3525,3604,3683,3761,3838,3911,4000",
                         "endColumns": "74,73,67,70,78,78,77,76,72,88,65",
                         "endOffsets": "3307,3381,3449,3520,3599,3678,3756,3833,3906,3995,4061"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\567cb6d911ff36255862ae0aae2edece\\res\\values-pt-rBR\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "194,243,295,398,502",
+                        "endColumns": "48,51,102,103,64",
+                        "endOffsets": "242,294,397,501,566"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,158,214,321,429",
+                        "endColumns": "52,55,106,107,68",
+                        "endOffsets": "153,209,316,424,493"
                     }
                 },
                 {

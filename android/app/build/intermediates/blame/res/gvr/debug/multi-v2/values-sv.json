@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Hiran\\Desktop\\figment-ar-master\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-sv\\values-sv.xml",
+            "outputFile": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-sv\\values-sv.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\exoplayer-ui-2.7.1.aar\\72933152e75060575977ef92ab7d7ffb\\res\\values-sv\\values-sv.xml",
@@ -21,23 +21,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\1a6d14c989a5123ea2ff5483a4164a35\\res\\values-sv\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,237,288,390,501",
-                        "endColumns": "46,50,101,110,64",
-                        "endOffsets": "236,287,389,500,565"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,156,211,317,432",
-                        "endColumns": "50,54,105,114,68",
-                        "endOffsets": "151,206,312,427,496"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\91e5b8ab8d1a0d0cd2d6a6b14bde96d4\\res\\values-sv\\values-sv.xml",
                     "from": {
                         "startLines": "2",
@@ -52,6 +35,23 @@
                         "startOffsets": "4392",
                         "endColumns": "100",
                         "endOffsets": "4488"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\567cb6d911ff36255862ae0aae2edece\\res\\values-sv\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,237,288,390,501",
+                        "endColumns": "46,50,101,110,64",
+                        "endOffsets": "236,287,389,500,565"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,156,211,317,432",
+                        "endColumns": "50,54,105,114,68",
+                        "endOffsets": "151,206,312,427,496"
                     }
                 },
                 {

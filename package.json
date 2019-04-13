@@ -1,5 +1,5 @@
 {
-  "name": "Figment",
+  "name": "Cozy",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -8,11 +8,16 @@
     "test": "jest"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "lottie-react-native": "^2.3.2",
+    "native-base": "^2.12.1",
     "react": "16.3.1",
     "react-native": "^0.55.1",
+    "react-native-elements": "^1.1.0",
+    "react-native-gesture-handler": "^1.0.5",
     "react-native-share": "^1.0.25",
     "react-native-video": "^2.0.0",
+    "react-navigation": "^3.5.1",
     "react-redux": "^5.0.5",
     "react-timer-mixin": "^0.13.3",
     "react-viro": "2.8.1",
@@ -23,6 +28,7 @@
   },
   "devDependencies": {
     "babel-jest": "21.2.0",
+    "babel-plugin-transform-exponentiation-operator": "^6.24.1",
     "babel-preset-react-native": "4.0.0",
     "jest": "21.2.1",
     "react-test-renderer": "16.0.0-beta.5"

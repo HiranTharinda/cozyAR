@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.viro.figment"
+    package="com.cozy"
     android:versionCode="5"
     android:versionName="1.0">
 
@@ -20,14 +20,14 @@
     <application
       android:name=".MainApplication"
       android:allowBackup="true"
-      android:label="@string/app_name_figment"
-      android:icon="@drawable/figment_app_icon"
+      android:label="@string/app_name_cozy"
+      android:icon="@drawable/cozyicon"
       android:theme="@style/AppTheme"
       tools:replace="android:label">
       <meta-data android:name="com.google.ar.core" android:value="required" />
       <activity
         android:name=".MainActivity"
-        android:label="@string/app_name_figment"
+        android:label="@string/app_name_cozy"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
         android:windowSoftInputMode="adjustResize"
         android:screenOrientation="portrait">
@@ -41,7 +41,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.viro.figment.provider"
+            android:authorities="com.viro.cozy.provider"
             android:grantUriPermissions="true"
             android:exported="false">
             <meta-data

@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Hiran\\Desktop\\figment-ar-master\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-ja\\values-ja.xml",
+            "outputFile": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-ja\\values-ja.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\567cb6d911ff36255862ae0aae2edece\\res\\values-ja\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,236,281,361,444",
+                        "endColumns": "45,44,79,82,64",
+                        "endOffsets": "235,280,360,443,508"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,155,204,288,375",
+                        "endColumns": "49,48,83,86,68",
+                        "endOffsets": "150,199,283,370,439"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\af9b7cf0b6519e6e85c21cee9c1ec605\\res\\values-ja\\values-ja.xml",
                     "from": {
@@ -52,23 +69,6 @@
                         "startOffsets": "4175",
                         "endColumns": "100",
                         "endOffsets": "4271"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\1a6d14c989a5123ea2ff5483a4164a35\\res\\values-ja\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,236,281,361,444",
-                        "endColumns": "45,44,79,82,64",
-                        "endOffsets": "235,280,360,443,508"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,155,204,288,375",
-                        "endColumns": "49,48,83,86,68",
-                        "endOffsets": "150,199,283,370,439"
                     }
                 }
             ]

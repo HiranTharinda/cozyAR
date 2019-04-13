@@ -1,11 +1,3 @@
-/**
- * Copyright (c) 2017-present, Viro, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -72,8 +64,7 @@ export class App extends Component {
   constructor(props) {
     super(props);
 
-    this._renderShareScreen = this._renderShareScreen.bind(this);
-    this._renderButtonLeftMenu = this._renderButtonLeftMenu.bind(this);
+   
     this._renderRecord = this._renderRecord.bind(this);
     this._startRecording = this._startRecording.bind(this);
     this._stopRecording = this._stopRecording.bind(this);
@@ -142,16 +133,6 @@ export class App extends Component {
 
           {/* 2D UI buttons on top right of the app, that appear when a 3D object is tapped in the AR Scene */}
           {this._renderContextMenu()}
-
-          {/* This menu contains the buttons on bottom left corner - toggle listview contents between 
-          Portals, Effects and Models (objects) */}
-          {this._renderButtonLeftMenu()}
-
-          {/* 2D UI for sharing rendered after user finishes taking a video / screenshot */}
-          {this._renderShareScreen()}
-
-          {/* 2D UI rendered to enable the user changing background for Portals using stock images/videos or through their camera roll */}
-          {this._renderPhotosSelector()}
 
           {/* Buttons and their behavior for recording videos and screenshots at the bottom of the screen */}
           {this._renderRecord()}
@@ -351,117 +332,9 @@ _setARNavigatorRef(ARNavigator){
   this._arNavigator = ARNavigator;
 }
 
-// Render UI for Share Screen, shown after taking a video / image screenshot
-_renderShareScreen() {
-  if(this.props.currentScreen == UIConstants.SHOW_SHARE_SCREEN) {
-    return (
-      <View style={localStyles.shareScreenContainerTransparent} >
 
-        {/* If previewType == photo, show the image on share screen*/}
-        {renderIf(this.state.previewType == kPreviewTypePhoto,
-          <Image source={{uri:this.state.videoUrl}} style={localStyles.backgroundImage} resizeMethod={'resize'}/>)}
 
-        {/* If previewType == video, play the video on share screen*/}
-        {/* With react-native-video, if you turn repeat to true and then onEnd pause
-            the video, you'll end up with black screen. So we set repeat to false
-            and instead seek to 0 when we want to play the video again (seeking will auto start
-            the video player too*/}
-        {renderIf(this.state.previewType == kPreviewTypeVideo, 
-          <Video ref={(ref) => {this.player = ref}}
-            source={{uri : this.state.videoUrl}} paused={!this.state.playPreview}
-            repeat={false} style={localStyles.backgroundVideo}
-            onEnd={()=>{this.setState({playPreview : false})}} />
-        )}
 
-        {/* Overlay Play button on top of video, after playing it once. Clicking this button would seek video to 0 and play it again */}
-        {renderIf(!this.state.playPreview && (this.state.previewType == kPreviewTypeVideo),
-          <View style={{position:'absolute', flex:1, flexDirection:'column', 
-                width:90, top:0,bottom:0,
-                alignItems:'center', justifyContent:'center'}}>
-            <TouchableOpacity onPress={()=>{this.player.seek(0); this.setState({ playPreview : true })}} style={localStyles.previewPlayButtonContainer} underlayColor="#00000000">
-              <Image source={require("./res/btn_play.png")} style={localStyles.previewPlayButton} />
-            </TouchableOpacity>
-         </View>
-        )}
-
-        {/* Close button -> Takes user back to main screen */}
-        <View style={{position:'absolute', left:20, top:20, width:30, height:30}}>
-          <ShareScreenButton onPress={()=>{this.props.dispatchDisplayUIScreen(UIConstants.SHOW_MAIN_SCREEN)}}
-            buttonState={'off'}
-            stateImageArray={[require("./res/btn_close.png"), require("./res/btn_close.png")]} 
-            style={localStyles.previewScreenButtonClose} />
-        </View>
-
-        {/* Button to save media to camera roll */}
-        <View style={{position:'absolute', left:20, bottom:20, width:40, height:40}}>
-          <ShareScreenButton onPress={()=>{this._saveToCameraRoll()}}
-          buttonState={this.state.haveSavedMedia ? 'on': 'off'}
-          stateImageArray={[require("./res/btn_saved.png"), require("./res/btn_save.png")]} 
-          style={localStyles.previewScreenButtonShare} />
-        </View>
-
-        {/* Save to media operation success indicator */}
-        {renderIf(this.state.haveSavedMedia,
-            <SuccessAnimation onPress={()=>{}} 
-                    stateImageArray={[require("./res/icon_success.png")]}
-                    style={localStyles.previewSavedSuccess} />
-        )}
-
-        {/* Share button -> Opens Share Action Sheet to enable user to share media to their social media destination of choice */}
-        <View style={{position:'absolute', left:85, bottom:20, width:40, height:40}}>
-         <ShareScreenButton onPress={()=>{this._openShareActionSheet()}}
-          buttonState={'off'}
-          stateImageArray={[require("./res/btn_share.png"), require("./res/btn_share.png")]}
-          style={localStyles.previewScreenButtonShare} />
-        </View>
-      </View>
-    )
-  }
-}
-
-// This menu shows up over the AR view at bottom left side of the screen, centered vertically and consists of 3 buttons
-// to toggle listview contents between Portals, Effects and Objects.
-_renderButtonLeftMenu() {
-  var buttons = [];
-  // Portal mode button
-  buttons.push(
-      <ButtonComponent key="button_portals"
-        onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_PORTAL, UIConstants.LIST_TITLE_PORTALS)}}
-        buttonState={(this.props.listMode==UIConstants.LIST_MODE_PORTAL) ? 'on':'off'}
-        stateImageArray={[require("./res/btn_mode_portals_on.png"), require("./res/btn_mode_portals.png")]}
-        style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_PORTAL)}
-        />);
-
-  // Effect mode button
-  buttons.push(
-      <ButtonComponent key="button_effects"
-        onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_EFFECT, UIConstants.LIST_TITLE_EFFECTS)}}
-        buttonState={(this.props.listMode==UIConstants.LIST_MODE_EFFECT) ? 'on':'off'}
-        stateImageArray={[require("./res/btn_mode_effects_on.png"), require("./res/btn_mode_effects.png")]}
-        style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_EFFECT)}
-        />);
-
-  // Objects mode button
-  buttons.push(
-      <ButtonComponent key="button_models"
-          onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_MODEL, UIConstants.LIST_TITLE_MODELS)}}
-          buttonState={(this.props.listMode==UIConstants.LIST_MODE_MODEL) ? 'on':'off'}
-          stateImageArray={[require("./res/btn_mode_objects_on.png"), require("./res/btn_mode_objects.png")]}
-          style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_MODEL)}
-          />);
-
-  // Show these buttons only if we are in main screen or while recording -> Buttons not rendered when in share screen or when manipulating individual portals
-  if(this.props.currentScreen == UIConstants.SHOW_MAIN_SCREEN || this.props.currentScreen == UIConstants.SHOW_RECORDING_SCREEN) {
-    if (this.state.showPhotosSelector==false) {
-    return (
-         <View style={{position:'absolute', flexDirection:'column', justifyContent: 'space-around',left:10, bottom:70, width:70, height:160, flex:1}}>
-            {buttons}
-         </View>
-      );
-    }
-  }
-  return null;
-}
 
 // Render UI for Video Recording and taking Screenshots
 _renderRecord() {
@@ -624,31 +497,15 @@ _displayVideoRecordAlert(title, message) {
 
 // Dispatch correct event to redux for adding AR Objects, Portals and Effects in the scene 
 _onListPressed(index) {
-  if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
     this.props.dispatchAddModel(index);
-  }
-
-  if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
-      this.props.dispatchAddPortal(index);
-  }
-
-  if(this.props.listMode == UIConstants.LIST_MODE_EFFECT) {
-    this.props.dispatchToggleEffectSelection(index);
-  }
 }
 
 // Dispath correct event to redux for handling load states of Objects and Portals
 _onListItemLoaded(index, loadState) {
-  if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
     this.props.dispatchChangeModelLoadState(index, loadState);
-  }
-
-  if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
-    this.props.dispatchChangePortalLoadState(index, loadState);
-  }
 }
 
-// When an AR object (Object or Portal) in the scene is clicked; 
+// When an AR object in the scene is clicked; 
 // dispatch this event to redux -> which results in context menu appearing on top left
 _onItemClickedInScene(index, clickState, itemType) {
   this.props.dispatchChangeItemClickState(index, clickState, itemType);
@@ -656,13 +513,7 @@ _onItemClickedInScene(index, clickState, itemType) {
 
 // Load data source for listview based on listview modes
 _getListItems() {
-  if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
     return this._constructListArrayModel(ModelData.getModelArray(), this.props.modelItems);
-  }else if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
-    return this._constructListArrayModel(PortalData.getPortalArray(), this.props.portalItems);
-  } else if(this.props.listMode == UIConstants.LIST_MODE_EFFECT) {
-    return this.props.effectItems;
-  }
 }
 
 // Helper to construct listview items
@@ -671,7 +522,7 @@ _constructListArrayModel(sourceArray, items) {
     for(var i =0; i<sourceArray.length; i++) {
         listArrayModel.push({icon_img:sourceArray[i].icon_img, loading:this._getLoadingforModelIndex(i, items)})
     }
-   return listArrayModel;
+  return listArrayModel;
 }
 
 // Helper to determine which listview item to show the Loading spinner if an AR object or portal is being added to the scene
@@ -858,8 +709,6 @@ var localStyles = StyleSheet.create({
 function selectProps(store) {
   return {
     modelItems: store.arobjects.modelItems,
-    portalItems: store.arobjects.portalItems,
-    effectItems: store.arobjects.effectItems,
     currentScreen: store.ui.currentScreen,
     listMode: store.ui.listMode,
     listTitle: store.ui.listTitle,

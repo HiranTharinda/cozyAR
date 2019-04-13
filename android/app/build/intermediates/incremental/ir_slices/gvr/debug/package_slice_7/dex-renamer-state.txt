@@ -1,4 +1,0 @@
-#Thu Apr 04 14:43:19 IST 2019
-base.0=C\:\\Users\\Hiran\\Desktop\\figment-ar-master\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\7
-path.0=classes.dex
-renamed.0=classes.dex

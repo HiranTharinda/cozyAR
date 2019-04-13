@@ -11,8 +11,10 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import App from './js/app';
 var reducers = require('./js/redux/reducers');
+import { StyleSheet } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation'
+import MainScreen from './Components/MainScreen'
 
 import {
   AppRegistry
@@ -20,14 +22,32 @@ import {
 
 let store = createStore(reducers);
 
-export default class Root extends Component {
+export default class Root extends React.Component {
   render() {
     return (
-      <Provider store={store}>
-        <App />
-      </Provider>
-    )
+        <AppContainer/>
+    );
   }
 }
 
-AppRegistry.registerComponent('Figment', () => Root);
+const AppStackNavigator = createStackNavigator({
+
+  Main: {
+    screen: MainScreen
+  }
+})
+
+const AppContainer = createAppContainer(AppStackNavigator);
+
+AppRegistry.registerComponent('cozy', () => Root);
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  
+});

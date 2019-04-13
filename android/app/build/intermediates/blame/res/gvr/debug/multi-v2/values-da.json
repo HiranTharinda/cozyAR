@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Hiran\\Desktop\\figment-ar-master\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-da\\values-da.xml",
+            "outputFile": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-da\\values-da.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\1a6d14c989a5123ea2ff5483a4164a35\\res\\values-da\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,239,289,381,482",
-                        "endColumns": "48,49,91,100,63",
-                        "endOffsets": "238,288,380,481,545"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,158,212,308,413",
-                        "endColumns": "52,53,95,104,67",
-                        "endOffsets": "153,207,303,408,476"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\91e5b8ab8d1a0d0cd2d6a6b14bde96d4\\res\\values-da\\values-da.xml",
                     "from": {
@@ -69,6 +52,23 @@
                         "startOffsets": "3141,3246,3347,3449,3544,3651,3757,3864,3967,4070,4167",
                         "endColumns": "104,100,101,94,106,105,106,102,102,96,91",
                         "endOffsets": "3241,3342,3444,3539,3646,3752,3859,3962,4065,4162,4254"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\567cb6d911ff36255862ae0aae2edece\\res\\values-da\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,239,289,381,482",
+                        "endColumns": "48,49,91,100,63",
+                        "endOffsets": "238,288,380,481,545"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,158,212,308,413",
+                        "endColumns": "52,53,95,104,67",
+                        "endOffsets": "153,207,303,408,476"
                     }
                 }
             ]

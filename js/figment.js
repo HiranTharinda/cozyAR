@@ -48,8 +48,6 @@ export class figment extends Component {
     }
 
     this._renderModels = this._renderModels.bind(this);
-    this._renderPortals = this._renderPortals.bind(this);
-    this._renderEffects = this._renderEffects.bind(this);
     this._onTrackingUpdated = this._onTrackingUpdated.bind(this);
     this._performARHitTest = this._performARHitTest.bind(this);
     this._onLoadCallback = this._onLoadCallback.bind(this);
@@ -64,10 +62,9 @@ export class figment extends Component {
     let models = this._renderModels(this.props.modelItems, startingBitMask);
     // increment startingBitMask by the number of models
     startingBitMask += Object.keys(this.props.modelItems).length;
-    // fetch portals (portals don't have shadows, so not incrementing bitmask)
-    let portals = this._renderPortals(this.props.portalItems, startingBitMask);
-    // fetch effects
-    let effects = this._renderEffects(this.props.effectItems);
+
+
+
 
     return (
         <ViroARScene ref="arscene" physicsWorld={{gravity:[0, -9.81, 0]}} postProcessEffects={[this.props.postProcessEffects]}
@@ -86,8 +83,6 @@ export class figment extends Component {
             color="#ffffff"
             intensity={250}/>
           {models}
-          {portals}
-          {effects}
         </ViroARScene>
     );
   }
@@ -120,45 +115,6 @@ export class figment extends Component {
 
     }
     return renderedObjects;
-  }
-
-  // Render Portals added to the scene. 
-  // portalItems - list of portals added by user; comes from redux, see js/redux/reducers/arobjects.js
-  // startingBitMask - used for adding shadows for each of the 
-  _renderPortals(portalItems, startingBitMask) {
-    var renderedObjects = [];
-    if(portalItems) {
-      var root = this;
-      let portalBitMask = startingBitMask;
-      Object.keys(portalItems).forEach(function(currentKey) {
-        if(portalItems[currentKey] != null && portalItems[currentKey] != undefined) {
-          renderedObjects.push(
-            <PortalItemRender
-            key={portalItems[currentKey].uuid}
-            portalIDProps={portalItems[currentKey]}
-            hitTestMethod={root._performARHitTest}
-            onLoadCallback={root._onLoadCallback}
-            onClickStateCallback={root._onPortalsClickStateCallback}
-            bitMask={Math.pow(2,portalBitMask)}/>
-          );
-        }
-        portalBitMask++;
-      });
-    }
-    return renderedObjects;
-  }
-
-  // Render Effects added to the scene. Handled differently compared to Objects and Portals,
-  // since a user can enable only 1 effect to the scene at a time
-  // effectItems - list of effects; from the data model, see js/model/EffectItems.js
-  _renderEffects(effectItems) {
-    if(effectItems){
-      for(var i =0; i<effectItems.length; i++) {
-          if(effectItems[i].selected) {
-            return (<EffectItemRender index={i} effectItem={effectItems[i]} />);
-          }
-      }
-    }
   }
 
   // Callback fired when the app receives AR Tracking state changes from ViroARScene.

@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: artifacts:viro_renderer:unspecified@jar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/47f20943243f26f3a0b3cbfab9303e47/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/22f8cd59de00d56529eb4d7d75663283/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/47f20943243f26f3a0b3cbfab9303e47/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/47f20943243f26f3a0b3cbfab9303e47/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/22f8cd59de00d56529eb4d7d75663283/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/viro_renderer-release.aar/22f8cd59de00d56529eb4d7d75663283/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

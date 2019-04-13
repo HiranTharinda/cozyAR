@@ -1,4 +1,4 @@
-com.viro.figment
+com.cozy
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -652,6 +652,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable cozyicon
 drawable exo_controls_fastforward
 drawable exo_controls_fullscreen_enter
 drawable exo_controls_fullscreen_exit
@@ -665,7 +666,6 @@ drawable exo_controls_repeat_one
 drawable exo_controls_rewind
 drawable exo_controls_shuffle
 drawable exo_edit_mode_logo
-drawable figment_app_icon
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -987,7 +987,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
-string app_name_figment
+string app_name_cozy
 string catalyst_copy_button
 string catalyst_debugjs
 string catalyst_debugjs_nuclide

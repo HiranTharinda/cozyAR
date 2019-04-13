@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.viro.figment"
+    package="com.cozy"
     android:targetSandboxVersion="2"
     android:versionCode="5"
     android:versionName="1.0" >
@@ -45,12 +45,12 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="com.viro.figment.MainApplication"
+        android:name="com.cozy.MainApplication"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@drawable/figment_app_icon"
-        android:label="@string/app_name_figment"
+        android:icon="@drawable/cozyicon"
+        android:label="@string/app_name_cozy"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <meta-data
@@ -58,9 +58,9 @@
             android:value="required" />
 
         <activity
-            android:name="com.viro.figment.MainActivity"
+            android:name="com.cozy.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/app_name_figment"
+            android:label="@string/app_name_cozy"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" >
             <intent-filter>
@@ -74,7 +74,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.viro.figment.provider"
+            android:authorities="com.viro.cozy.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data

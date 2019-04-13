@@ -99,7 +99,7 @@ android {
 
     defaultConfig {
         flavorDimensions "platform"
-        applicationId "com.viro.figment"
+        applicationId "com.cozy"
         minSdkVersion 24
         targetSdkVersion 26
         multiDexEnabled true
@@ -168,6 +168,11 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-video')
+    implementation project(':react-native-share')
+    implementation project(':lottie-react-native')
+    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-gesture-handler')
     implementation project(':react-native-video')
     implementation project(':react-native-share')
     implementation project(':lottie-react-native')
