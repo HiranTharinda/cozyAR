@@ -1,8 +1,8 @@
 
 import React, { Component } from "react";
 import { ScrollView, View, Text, StyleSheet, Image, TextInput, ActivityIndicator } from "react-native";
-import { SearchBar } from 'react-native-elements'
-import {Icon, Content, Container, Header, Left, Body, Right, Button} from 'native-base'
+import { SearchBar, Button } from 'react-native-elements'
+import {Icon, Content, Container, Header, Left, Body, Right, Row} from 'native-base'
 import GooglePoly from '../../api/GooglePoly'
 import ApiKeys from '../../constants/ApiKeys';
 import { AssetThumb } from '../AssetThumb'
@@ -21,7 +21,7 @@ class SearchTab extends Component{
         super(props);
 
         this.googlePoly = new GooglePoly(ApiKeys.GooglePoly)
-        this.googlePoly.getSearchResults("duck","").then (function(assets){
+        this.googlePoly.getSearchResults("","").then (function(assets){
             
         })
 
@@ -80,6 +80,12 @@ class SearchTab extends Component{
         return (
             <View style = {{flex:1, alignItems: "center"}}>
                 {results}
+                <Button title="Load More"
+                            onPress={this.onLoadMorePress}
+                            containerStyle={{justifyContent:"center",alignItems:"center"}}
+                            buttonStyle={{width:100,backgroundColor:"#bcc6cf"}}
+                            >
+                    </Button>
             </View>
         )
         
@@ -88,15 +94,39 @@ class SearchTab extends Component{
     render(){
         return(
             <Container>
-                <SearchBar lightTheme round
-                    placeholder="Type Here..."
-                    onChangeText={this.onSearchChangeText}
-                    value={this.state.searchQuery}/>
-                <Button light onPress={this.onSearchPress}><Text>search</Text></Button>
-                <ScrollView>
-                    {this.renderCurrentResults()}
-                    <Button light onPress={this.onLoadMorePress}><Text>Load More...</Text></Button>
-                </ScrollView>
+            <View style={{flex:1,}}>
+                <View style={{flex:1, flexDirection:"row",height:60}}>
+                    <SearchBar lightTheme
+                                containerStyle={{width:350,height:50,backgroundColor:"#ffffff"}}
+                                inputContainerStyle={{height:30,backgroundColor:"#ffffff"}}
+                                placeholder="Type Here..."
+                                onChangeText={this.onSearchChangeText}
+                                value={this.state.searchQuery}/>
+                    <Button 
+                        icon={
+                            <Icon
+                                name="checkmark"
+                                size={15}
+                                color="white"
+                                />
+                            }
+                        onPress={this.onSearchPress}
+                        containerStyle={{justifyContent:"center",alignItems:"center",width:70,height:48,backgroundColor:"#ffffff"}}
+                        buttonStyle={{width:70,backgroundColor:"#ffffff"}}
+                        raised
+                        >
+                ></Button>
+                </View>
+                <View style={{flex:8}}>
+                    <ScrollView>
+                        {this.renderCurrentResults()}
+                  
+                    </ScrollView>
+                </View>
+            </View>
+                
+               
+                
             </Container>
         );
     }
