@@ -22,7 +22,7 @@ class ProfileTab extends Component{
 
     static navigationOptions = {
         tabBarIcon: ({tintColor}) => (
-            <Icon name = "ios-person" style={{color:
+            <Icon name = "md-person" style={{color:
             tintColor}}/>
         ) 
     }

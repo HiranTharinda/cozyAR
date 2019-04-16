@@ -1,8 +1,8 @@
 
 import React, { Component } from "react";
-import { ScrollView, View, Text, StyleSheet, Image, TextInput, ActivityIndicator } from "react-native";
+import { ScrollView, View, Text, StyleSheet, Image, TextInput, ActivityIndicator, TouchableOpacity} from "react-native";
 import { SearchBar, Button } from 'react-native-elements'
-import {Icon, Content, Container, Header, Left, Body, Right, Row} from 'native-base'
+import {Icon, Content, Container, Header, Left, Body, Right, Row, Thumbnail} from 'native-base'
 import GooglePoly from '../../api/GooglePoly'
 import ApiKeys from '../../constants/ApiKeys';
 import { AssetThumb } from '../AssetThumb'
@@ -12,7 +12,7 @@ class SearchTab extends Component{
 
     static navigationOptions = {
         tabBarIcon: ({tintColor}) => (
-            <Icon name = "ios-search" style={{color:
+            <Icon name = "md-search" style={{color:
             tintColor}}/>
         ) 
     }
@@ -95,6 +95,35 @@ class SearchTab extends Component{
         return(
             <Container>
             <View style={{flex:1,}}>
+                <View style={{flexDirection:"column"}}>
+                    <ScrollView horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                    style = {{paddingHorizontal: 5, paddingVertical:5}}
+                    >
+                        <TouchableOpacity>
+                            <Thumbnail style={styles.thumbnail} source={require("../../assets/searchCatogories/1.jpg")}></Thumbnail>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Thumbnail style={styles.thumbnail}  source={require("../../assets/searchCatogories/2.jpg")}></Thumbnail>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Thumbnail style={styles.thumbnail}  source={require("../../assets/searchCatogories/3.jpg")}></Thumbnail>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Thumbnail style={styles.thumbnail}  source={require("../../assets/searchCatogories/4.jpg")}></Thumbnail>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Thumbnail style={styles.thumbnail}  source={require("../../assets/searchCatogories/5.jpg")}></Thumbnail>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Thumbnail style={styles.thumbnail}  source={require("../../assets/searchCatogories/6.jpg")}></Thumbnail>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Thumbnail style={styles.thumbnail}  source={require("../../assets/searchCatogories/7.jpg")}></Thumbnail>
+                        </TouchableOpacity>
+                        
+                    </ScrollView>
+                </View>
                 <View style={{flex:1, flexDirection:"row",height:60}}>
                     <SearchBar lightTheme
                                 containerStyle={{width:350,height:50,backgroundColor:"#ffffff"}}
@@ -134,3 +163,13 @@ class SearchTab extends Component{
 
 export default SearchTab;
 
+const styles = StyleSheet.create({
+    thumbnail:{
+        marginHorizontal:5,
+        borderColor:"#2fd7e0",
+        borderWidth:3,
+        borderRadius:10,
+        width:80,
+        height:60
+    }
+});

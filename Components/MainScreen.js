@@ -12,6 +12,7 @@ class MainScreen extends Component{
     static navigationOptions = {
         title: 'C O Z Y',
         headerTitleStyle: {
+            fontFamily: 'INTRO',
             fontWeight: 'bold',
             textAlign:"center", 
         flex:1  
@@ -50,8 +51,8 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
         swipeEnabled: true,
         tabBarOptions: {
             showLabel: false,
-            activeTintColor: '#000000',
-            inactiveTintColor:'#c8d6e5',
+            activeTintColor: '#2fd7e0',
+            inactiveTintColor:'#000000',
             showIcon: true,
             style:{elevation:100, backgroundColor: 'white',},
             indicatorStyle:{backgroundColor:'black'}

@@ -12,7 +12,7 @@ class CamTab extends Component{
 
     static navigationOptions = {
         tabBarIcon: ({tintColor}) => (
-            <Icon name = "ios-aperture" style={{color:
+            <Icon name = "md-aperture" style={{color:
             tintColor}}/>
         ) 
     };

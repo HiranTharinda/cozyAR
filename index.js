@@ -15,7 +15,8 @@ var reducers = require('./js/redux/reducers');
 import { StyleSheet } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 import MainScreen from './Components/MainScreen'
-
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 import {
   AppRegistry
 } from 'react-native';
