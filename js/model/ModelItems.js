@@ -67,6 +67,24 @@ var ModelItems = [
     "spotlight_position_y": 9.2,
     "lighting_mode": "IBL",
   },
+  {
+    "name": "pumpkin_man",
+    "selected": false,
+    "loading": LoadingConstants.NONE,
+    "icon_img":require("../res/chairBlack/chairBlack.png"),
+    "obj": require("../res/chairBlack/chairBlack.vrx"),
+    "materials": null,
+    "animation":{name:"02", delay:0, loop:true, run:true},
+    "scale": [0.1, 0.1, 0.1],
+    "position" : [0, 0, -1.2],
+    "type" : "VRX",
+    "physics": undefined,
+    "ref_pointer": undefined,
+    "shadow_width": 4.5,
+    "shadow_height": 4.5,
+    "spotlight_position_y": 8.2,
+    "shadowfarz": 7.3,
+  },
 ]
 module.exports = {
   getModelArray: function() {
