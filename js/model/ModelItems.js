@@ -49,7 +49,24 @@ var ModelItems = [
     "spotlight_position_y": 19,
     "lighting_mode": "IBL",
   },
- 
+  {
+    "name": "icecream_man",
+    "selected": false,
+    "loading": LoadingConstants.NONE,
+    "icon_img":require("../res/sofaCream/sofaCream.png"),
+    "obj": require("../res/sofaCream/sofaCream.vrx"),
+    "materials": null,
+    "animation":{name:"02", delay:0, loop:true, run:true},
+    "scale": [0.1, 0.1, 0.1],
+    "position" : [0, 0, 0],
+    "type" : "VRX",
+    "physics": undefined,
+    "ref_pointer": undefined,
+    "shadow_width": 10.5,
+    "shadow_height": 10.5,
+    "spotlight_position_y": 9.2,
+    "lighting_mode": "IBL",
+  },
 ]
 module.exports = {
   getModelArray: function() {
