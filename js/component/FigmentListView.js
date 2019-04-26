@@ -138,11 +138,14 @@ function selectProps(store) {
 var styles = StyleSheet.create({
   listViewContainer: {
       height:72,
+      
   },
   photo: {
     height: 53,
     width: 56.8,
     borderRadius: 5,
+    borderColor:"#2fd7e0",
+    borderWidth:3,
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 5,
