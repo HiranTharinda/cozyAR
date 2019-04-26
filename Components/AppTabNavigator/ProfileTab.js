@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight } from "react-native";
 import {Icon, Content, Container, Button} from 'native-base'
 
 var images = [
@@ -68,24 +68,13 @@ class ProfileTab extends Component{
         return(
             <Container style={{ flex: 1, backgroundColor: 'white'}}>
                 <Content>
-                    <View style ={{paddingTop: 10, paddingBottom:10, paddingRight:20, paddingLeft:20}}>
-                        <View style={{ flexDirection: 'row'}}>
+                    <View style ={{paddingTop: 10, paddingBottom:10, paddingRight:20, paddingLeft:20,backgroundColor:'#ffffff' }}>
+                        <View style={{ flexDirection: 'row', backgroundColor:'#ffffff'}}>
                             <View style = {{flex: 1, alignItems: 'center'}}>
                                 <Image source = {require('../../assets/propic.jpg')}
-                                    style={{ width:110, height:110, borderRadius: 55,}}/>
+                                    style={{ width:110, height:110, borderRadius: 55, borderColor:"#2fd7e0", borderWidth:3}}/>
                             </View>
                             <View style = {{ flex: 2, flexDirection: "column", paddingBottom: 30, paddingTop: 15}}>
-                                <View style = {{flex:2, flexDirection: 'row'}}>
-                                    <Button bordered dark
-                                        style={{ flex: 3, marginLeft: 10,
-                                        justifyContent: 'center', height:30}}>
-                                        <Text> Edit Profile </Text>
-                                    </Button>
-                                    <Button bordered dark style = {{flex: 2, height: 30,
-                                        marginRight:5, marginLeft: 5, 'justifyContent': 'center'}}>
-                                        <Icon name = "settings"/>
-                                    </Button>
-                                </View>
                                 <View style ={{flex:2, paddingHorizontal:10}}>
                                     <Text style = {{ fontWeight: 'bold'}}> Hiran Tharinda </Text>
                                     <Text> Freelancer | Student </Text>
@@ -93,7 +82,7 @@ class ProfileTab extends Component{
                             </View> 
                         </View>
                     </View>
-                    <View>
+                    <View style = {{backgroundColor:'#3b3b3b'}}>
                         <View style={{flexDirection: 'row', justifyContent: 'space-around', borderTopWidth:1, borderTopColor:"#c8d6e5"}}>
                             <Button
                                 transparent
@@ -101,15 +90,18 @@ class ProfileTab extends Component{
                                 active={this.state.activeIndex == 0}
                                 >
                                     <Icon name="apps" style = {[this.state.activeIndex == 0? {}:
-                                    {color: 'grey'}]}/>
+                                    {color: '#ffffff'},this.state.activeIndex == 1? {}:
+                                    {color: '#2fd7e0'}]}/>
                                 </Button>
                                 <Button
                                 transparent
                                 onPress = {()=>this.segmentClicked(1)}
                                 active={this.state.activeIndex == 1}
                                 >
-                                    <Icon name="settings" style = {[this.state.activeIndex == 1? {}:
-                                    {color: 'grey'}]}/>
+                                    <Icon name="settings" style = {[this.state.activeIndex == 0? {}:
+                                    {color: '#2fd7e0'},
+                                    this.state.activeIndex == 1? {}:
+                                    {color: '#ffffff'}]}/>
                                 </Button>
                         </View>
                         {this.renderSection()}
