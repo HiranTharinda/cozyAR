@@ -5,7 +5,9 @@ export default class AssetThumb extends React.Component {
 
     static defaultProps = {
         asset: {},
-        onPress: function() {}
+        onPress: function(
+            
+        ) {}
     }
     render(){
         return(
@@ -17,6 +19,7 @@ export default class AssetThumb extends React.Component {
         ) 
     }
 }
+
 
 
 export { AssetThumb}

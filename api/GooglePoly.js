@@ -11,7 +11,7 @@ export default class GooglePoly {
     static getQueryURL(apiKey, keywords, nextPageToken) {
         var baseURL = "https://poly.googleapis.com/v1/assets?";
         var url = baseURL + "key=" + apiKey;
-        url += "&pageSize=10";
+        url += "&pageSize=12";
         url += "&maxComplexity=MEDIUM";
         url += "&format=OBJ";
         if (keywords) { url += "&keywords=" + encodeURIComponent(keywords); }

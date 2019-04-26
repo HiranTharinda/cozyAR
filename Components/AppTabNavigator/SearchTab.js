@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { ScrollView, View, Text, StyleSheet, Image, TextInput, ActivityIndicator, TouchableOpacity} from "react-native";
+import { ScrollView, View, Text, StyleSheet, Image, TextInput, ActivityIndicator, TouchableOpacity,} from "react-native";
 import { SearchBar, Button } from 'react-native-elements'
 import {Icon, Content, Container, Header, Left, Body, Right, Row, Thumbnail} from 'native-base'
 import GooglePoly from '../../api/GooglePoly'
