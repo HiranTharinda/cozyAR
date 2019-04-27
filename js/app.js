@@ -1,3 +1,11 @@
+/**
+ * Copyright (c) 2017-present, Viro, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -64,7 +72,7 @@ export class App extends Component {
   constructor(props) {
     super(props);
 
-   
+    this._renderShareScreen = this._renderShareScreen.bind(this);
     this._renderRecord = this._renderRecord.bind(this);
     this._startRecording = this._startRecording.bind(this);
     this._stopRecording = this._stopRecording.bind(this);
@@ -73,9 +81,9 @@ export class App extends Component {
     this._onListPressed = this._onListPressed.bind(this);
     this._getListItems = this._getListItems.bind(this);
     this._saveToCameraRoll = this._saveToCameraRoll.bind(this);
-    this._renderPhotosSelector = this._renderPhotosSelector.bind(this);
+
     this._takeScreenshot = this._takeScreenshot.bind(this);
-    this._onPhotoSelected = this._onPhotoSelected.bind(this);
+
     this._onItemClickedInScene = this._onItemClickedInScene.bind(this);
     this._onContextMenuRemoveButtonPressed = this._onContextMenuRemoveButtonPressed.bind(this);
     this._startStopWatch = this._startStopWatch.bind(this);
@@ -133,6 +141,11 @@ export class App extends Component {
 
           {/* 2D UI buttons on top right of the app, that appear when a 3D object is tapped in the AR Scene */}
           {this._renderContextMenu()}
+      
+
+          {/* 2D UI for sharing rendered after user finishes taking a video / screenshot */}
+          {this._renderShareScreen()}
+
 
           {/* Buttons and their behavior for recording videos and screenshots at the bottom of the screen */}
           {this._renderRecord()}
@@ -145,8 +158,8 @@ export class App extends Component {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
         {
-          'title': 'Figment AR Audio Permission',
-          'message': 'Figment AR App needs to access your audio ' +
+          'title': 'Cozy Audio Permission',
+          'message': 'Cozy needs to access your audio ' +
                      'so you can record videos with audio of ' + 
                      'your augmented scenes.'
         }
@@ -170,9 +183,9 @@ export class App extends Component {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
         {
-          'title': 'Figment AR Audio Permission',
-          'message': 'Figment AR App needs to access your photos / videos ' +
-                     'so you can record cool videos and photos of' + 
+          'title': 'Cozy Audio Permission',
+          'message': 'Cozy needs to access your photos / videos ' +
+                     'so you can record videos and photos of' + 
                      'your augmented scenes.'
         }
       )
@@ -195,8 +208,8 @@ export class App extends Component {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
         {
-          'title': 'Figment AR Audio Permission',
-          'message': 'Figment AR App needs to access your audio ' +
+          'title': 'Cozy Audio Permission',
+          'message': 'Cozy needs to access your audio ' +
                      'so you can view your own images in portals.'
         }
       )
@@ -299,41 +312,72 @@ _onContextClearAll() {
     );
 }
 
-// Photo Selector from ContextMenu was pressed
-_renderPhotosSelector() {
 
-  if (this.state.showPhotosSelector == true) {
-  // check for read permissions
-  if (!this.state.readAccessPermission) {
-    this.requestReadAccessPermission();
-  }
-  var photoSelectorViews = [];
-        photoSelectorViews.push(<StatusBar key="statusBarKey" hidden={true} />);
-        photoSelectorViews.push(<View key="topPhotoBar" style={localStyles.topPhotoBar}>
-          <View style={{flex:1, backgroundColor:"#00000000", justifyContent: 'center', alignItems: 'center'}}/>
-            <Text style={localStyles.photosText}>My Photos</Text>
-            <Text onPress={()=>{this.setState({showPhotosSelector:false})}}
-                  style={localStyles.doneText}>Done</Text>
-          </View>);
-          photoSelectorViews.push(<PhotosSelector key="photosSelector" style={localStyles.photosSelectorStyle} rows={2.3} columns={4}
-          onPhotoSelected={this._onPhotoSelected}/>);
-          return photoSelectorViews;
-  }
-  return null;
-}
-
-// Photo selected from Photo Selector
-_onPhotoSelected(index, source) {
-  this.props.dispatchChangePortalPhoto(this.state.lastSelectedPortalUUID, source);
-}
 
 // Helper function called while initializing <ViroARSceneNavigator>
 _setARNavigatorRef(ARNavigator){
   this._arNavigator = ARNavigator;
 }
 
+// Render UI for Share Screen, shown after taking a video / image screenshot
+_renderShareScreen() {
+  if(this.props.currentScreen == UIConstants.SHOW_SHARE_SCREEN) {
+    return (
+      <View style={localStyles.shareScreenContainerTransparent} >
 
+        {/* If previewType == photo, show the image on share screen*/}
+        {renderIf(this.state.previewType == kPreviewTypePhoto,
+          <Image source={{uri:this.state.videoUrl}} style={localStyles.backgroundImage} resizeMethod={'resize'}/>)}
 
+        {/* If previewType == video, play the video on share screen*/}
+        {/* With react-native-video, if you turn repeat to true and then onEnd pause
+            the video, you'll end up with black screen. So we set repeat to false
+            and instead seek to 0 when we want to play the video again (seeking will auto start
+            the video player too*/}
+        {renderIf(this.state.previewType == kPreviewTypeVideo, 
+          <Video ref={(ref) => {this.player = ref}}
+            source={{uri : this.state.videoUrl}} paused={!this.state.playPreview}
+            repeat={false} style={localStyles.backgroundVideo}
+            onEnd={()=>{this.setState({playPreview : false})}} />
+        )}
+
+        {/* Overlay Play button on top of video, after playing it once. Clicking this button would seek video to 0 and play it again */}
+        {renderIf(!this.state.playPreview && (this.state.previewType == kPreviewTypeVideo),
+          <View style={{position:'absolute', flex:1, flexDirection:'column', 
+                width:90, top:0,bottom:0,
+                alignItems:'center', justifyContent:'center'}}>
+            <TouchableOpacity onPress={()=>{this.player.seek(0); this.setState({ playPreview : true })}} style={localStyles.previewPlayButtonContainer} underlayColor="#00000000">
+              <Image source={require("./res/btn_play.png")} style={localStyles.previewPlayButton} />
+            </TouchableOpacity>
+         </View>
+        )}
+
+        {/* Close button -> Takes user back to main screen */}
+        <View style={{position:'absolute', left:20, top:20, width:30, height:30}}>
+          <ShareScreenButton onPress={()=>{this.props.dispatchDisplayUIScreen(UIConstants.SHOW_MAIN_SCREEN)}}
+            buttonState={'off'}
+            stateImageArray={[require("./res/btn_close.png"), require("./res/btn_close.png")]} 
+            style={localStyles.previewScreenButtonClose} />
+        </View>
+
+        {/* Button to save media to camera roll */}
+        <View style={{position:'absolute', left:20, bottom:20, width:40, height:40}}>
+          <ShareScreenButton onPress={()=>{this._saveToCameraRoll()}}
+          buttonState={this.state.haveSavedMedia ? 'on': 'off'}
+          stateImageArray={[require("./res/btn_saved.png"), require("./res/btn_save.png")]} 
+          style={localStyles.previewScreenButtonShare} />
+        </View>
+
+        {/* Save to media operation success indicator */}
+        {renderIf(this.state.haveSavedMedia,
+            <SuccessAnimation onPress={()=>{}} 
+                    stateImageArray={[require("./res/icon_success.png")]}
+                    style={localStyles.previewSavedSuccess} />
+        )}
+      </View>
+    )
+  }
+}
 
 
 // Render UI for Video Recording and taking Screenshots
@@ -497,15 +541,31 @@ _displayVideoRecordAlert(title, message) {
 
 // Dispatch correct event to redux for adding AR Objects, Portals and Effects in the scene 
 _onListPressed(index) {
+  if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
     this.props.dispatchAddModel(index);
+  }
+
+  if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
+      this.props.dispatchAddPortal(index);
+  }
+
+  if(this.props.listMode == UIConstants.LIST_MODE_EFFECT) {
+    this.props.dispatchToggleEffectSelection(index);
+  }
 }
 
 // Dispath correct event to redux for handling load states of Objects and Portals
 _onListItemLoaded(index, loadState) {
+  if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
     this.props.dispatchChangeModelLoadState(index, loadState);
+  }
+
+  if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
+    this.props.dispatchChangePortalLoadState(index, loadState);
+  }
 }
 
-// When an AR object in the scene is clicked; 
+// When an AR object (Object or Portal) in the scene is clicked; 
 // dispatch this event to redux -> which results in context menu appearing on top left
 _onItemClickedInScene(index, clickState, itemType) {
   this.props.dispatchChangeItemClickState(index, clickState, itemType);
@@ -513,7 +573,13 @@ _onItemClickedInScene(index, clickState, itemType) {
 
 // Load data source for listview based on listview modes
 _getListItems() {
+  if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
     return this._constructListArrayModel(ModelData.getModelArray(), this.props.modelItems);
+  }else if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
+    return this._constructListArrayModel(PortalData.getPortalArray(), this.props.portalItems);
+  } else if(this.props.listMode == UIConstants.LIST_MODE_EFFECT) {
+    return this.props.effectItems;
+  }
 }
 
 // Helper to construct listview items
@@ -522,7 +588,7 @@ _constructListArrayModel(sourceArray, items) {
     for(var i =0; i<sourceArray.length; i++) {
         listArrayModel.push({icon_img:sourceArray[i].icon_img, loading:this._getLoadingforModelIndex(i, items)})
     }
-  return listArrayModel;
+   return listArrayModel;
 }
 
 // Helper to determine which listview item to show the Loading spinner if an AR object or portal is being added to the scene
@@ -709,6 +775,8 @@ var localStyles = StyleSheet.create({
 function selectProps(store) {
   return {
     modelItems: store.arobjects.modelItems,
+    portalItems: store.arobjects.portalItems,
+    effectItems: store.arobjects.effectItems,
     currentScreen: store.ui.currentScreen,
     listMode: store.ui.listMode,
     listTitle: store.ui.listTitle,
