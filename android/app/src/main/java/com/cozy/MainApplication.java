@@ -5,8 +5,11 @@ import android.app.Application;
 import com.facebook.react.ReactApplication;
 import com.brentvatne.react.ReactVideoPackage;
 import cl.json.RNSharePackage;
-import com.airbnb.android.react.lottie.LottiePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
+import com.airbnb.android.react.lottie.LottiePackage;
+import com.airbnb.android.react.lottie.LottiePackage;
 import cl.json.ShareApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -31,11 +34,11 @@ public class MainApplication extends Application implements ShareApplication, Re
             new MainReactPackage(),
             new ReactVideoPackage(),
             new RNSharePackage(),
-            new LottiePackage(),
             new RNGestureHandlerPackage(),
+            new RNFirebasePackage(),
+            new RNFirebaseAuthPackage(),
             new LottiePackage(),
-            new ReactViroPackage(ReactViroPackage.ViroPlatform.valueOf(BuildConfig.VR_PLATFORM)),
-            new ReactVideoPackage()
+            new ReactViroPackage(ReactViroPackage.ViroPlatform.valueOf(BuildConfig.VR_PLATFORM))
       );
     }
 

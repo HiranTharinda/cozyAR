@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\incremental\\mergeGvrDebugResources\\merged.dir\\values-id\\values-id.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\567cb6d911ff36255862ae0aae2edece\\res\\values-id\\values.xml",
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.2.0.aar\\27519b5b085ef2e7def0a5f1d30d18c4\\res\\values-id\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
