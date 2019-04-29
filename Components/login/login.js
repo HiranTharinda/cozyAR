@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
 import firebase from 'react-native-firebase'
+import { SocialIcon } from 'react-native-elements'
 
 export default class Login extends React.Component {
   state = { email: '', password: '', errorMessage: null }
@@ -18,7 +19,7 @@ export default class Login extends React.Component {
       <View style={styles.container}>
       <View style = {{flex: 3, width: 300}}>
       </View>
-      <View style = {{flex: 4, width: 300}}> 
+      <View style = {{flex: 4, width: 200}}> 
         <Text style={{}}>Login</Text>
         {this.state.errorMessage &&
           <Text style={{ color: 'red' }}>
@@ -41,6 +42,13 @@ export default class Login extends React.Component {
         />
         
         <Button title="Login" onPress={this.handleLogin} />
+        <Text>or</Text>
+        <SocialIcon
+              title='Sign In With Facebook'
+              button
+              type='facebook'
+              raised
+        />
         </View>
 
         <View style = {{flex: 1}}> 
