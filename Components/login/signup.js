@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Button,Image } from 'react-native'
 import firebase from 'react-native-firebase'
-
+import { SocialIcon } from 'react-native-elements'
 
 export default class SignUp extends React.Component {
   state = { email: '', password: '', errorMessage: null }
@@ -17,9 +17,14 @@ handleSignUp = () => {
 render() {
     return (
       <View style={styles.container}>
-      <View style = {{flex: 3, width: 300}}></View>
-      <View style = {{flex: 4, width: 300}}> 
-        <Text>Sign Up</Text>
+      <View style = {{flex: 1, width: 300}}></View>
+      <View style = {{flex: 4, width: 190}}> 
+        <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>CREATE A NEW ACCOUNT.</Text>
+        <TextInput
+          placeholder="Name"
+          autoCapitalize="none"
+          style={styles.textInput}
+        />
         {this.state.errorMessage &&
           <Text style={{ color: 'red' }}>
             {this.state.errorMessage}
@@ -39,10 +44,19 @@ render() {
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
         />
-        <Button color="#ff6b6b" title="Sign Up" onPress={this.handleSignUp} /></View>
+        
+        <Button color="#ff6b6b" title="Sign Up" onPress={this.handleSignUp} />
+        <Text style={{fontWeight:"900",textAlign: 'center'}}></Text>
+        <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>
+        <SocialIcon
+              title='Sign Up With Facebook'
+              button
+              type='facebook'
+              raised
+        /></View>
         <View style = {{flex: 1}}>
         <Text>Already have an account?</Text>
-        <Button
+        <Button color = '#54a0ff'
           title="Login"
           onPress={() => this.props.navigation.navigate('login')}
         />
@@ -57,7 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#FFFFFF'
   },
   textInput: {
     height: 40,

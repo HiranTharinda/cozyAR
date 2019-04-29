@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Button, Image } from 'react-native'
 import firebase from 'react-native-firebase'
 import { SocialIcon } from 'react-native-elements'
 
@@ -17,10 +17,11 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <View style = {{flex: 3, width: 300}}>
+      
+      <View style = {{flex: 1, width: 300}}>
       </View>
-      <View style = {{flex: 4, width: 200}}> 
-        <Text style={{}}>Login</Text>
+      <View style = {{flex: 4, width: 190}}> 
+        <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>HEY! WELCOME BACK.</Text>
         {this.state.errorMessage &&
           <Text style={{ color: 'red' }}>
             {this.state.errorMessage}
@@ -41,8 +42,9 @@ export default class Login extends React.Component {
           value={this.state.password}
         />
         
-        <Button title="Login" onPress={this.handleLogin} />
-        <Text>or</Text>
+        <Button color = '#54a0ff' title="Login"  onPress={this.handleLogin} />
+        <Text style={{fontWeight:"900",textAlign: 'center'}}></Text>
+        <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>
         <SocialIcon
               title='Sign In With Facebook'
               button
@@ -54,10 +56,10 @@ export default class Login extends React.Component {
         <View style = {{flex: 1}}> 
         <Text>Don't have an account?</Text>
         <Button color="#ff6b6b"
-        style ={styles.login}
           title="Sign Up"
           onPress={() => this.props.navigation.navigate('signUp')}
         /></View>
+        
       </View>
     )
   }
@@ -76,5 +78,5 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     marginTop: 8
   },
-  login : {}
+
 })
