@@ -9,7 +9,7 @@ import MainScreen from './Components/MainScreen'
 import { YellowBox, StyleSheet, Platform, Image, Text, View } from 'react-native';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
 import { AppRegistry} from 'react-native';
-
+console.disableYellowBox = true;
 import loading from './Components/login/loading'
 import signUp from './Components/login/signup'
 import login from './Components/login/login'

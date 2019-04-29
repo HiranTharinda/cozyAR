@@ -10,13 +10,15 @@ handleSignUp = () => {
   firebase
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => this.props.navigation.navigate('Main'))
+      .then(() => this.props.navigation.navigate('MainScreen'))
       .catch(error => this.setState({ errorMessage: error.message }))
   console.log('handleSignUp')
 }
 render() {
     return (
       <View style={styles.container}>
+      <View style = {{flex: 3, width: 300}}></View>
+      <View style = {{flex: 4, width: 300}}> 
         <Text>Sign Up</Text>
         {this.state.errorMessage &&
           <Text style={{ color: 'red' }}>
@@ -37,11 +39,15 @@ render() {
           onChangeText={password => this.setState({ password })}
           value={this.state.password}
         />
-        <Button title="Sign Up" onPress={this.handleSignUp} />
+        <Button color="#ff6b6b" title="Sign Up" onPress={this.handleSignUp} /></View>
+        <View style = {{flex: 1}}>
+        <Text>Already have an account?</Text>
         <Button
-          title="Already have an account? Login"
-          onPress={() => this.props.navigation.navigate('Login')}
+          title="Login"
+          onPress={() => this.props.navigation.navigate('login')}
         />
+        </View>
+        
       </View>
     )
   }
@@ -50,13 +56,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: '#ffffff'
   },
   textInput: {
     height: 40,
-    width: '90%',
+    width: '100%',
     borderColor: 'gray',
-    borderWidth: 1,
+    borderWidth: 0,
     marginTop: 8
-  }
+  },
 })

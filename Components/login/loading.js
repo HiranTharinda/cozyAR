@@ -3,11 +3,14 @@ import { View, Text, ActivityIndicator, StyleSheet, Image, StatusBar } from 'rea
 import firebase from 'react-native-firebase'
 
 export default class Loading extends React.Component {
-    componentDidMount() {
-        firebase.auth().onAuthStateChanged(user => {
-            this.props.navigation.navigate(user ? 'Main' : 'SignUp')
-        })
-    }   
+    componentWillMount() {
+        setTimeout(() => {
+            firebase.auth().onAuthStateChanged(user => {
+                        this.props.navigation.navigate(user ? 'MainScreen' : 'signUp')
+                    })
+        }, 8000);
+    }
+  
 
     render() {
         return (
@@ -17,7 +20,7 @@ export default class Loading extends React.Component {
             barStyle = "dark-content"
             hidden = {false}
             backgroundColor = "#48dbfb"
-            translucent = {true}
+            translucent = {false}
             networkActivityIndicatorVisible = {false}
         />
             <View style={{flex:3}}></View> 

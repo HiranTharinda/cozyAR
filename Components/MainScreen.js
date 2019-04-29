@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import {Icon, Title} from 'native-base'
-import { createMaterialTopTabNavigator, createAppContainer} from 'react-navigation';
+import { createMaterialTopTabNavigator, createAppContainer, StackNavigator} from 'react-navigation';
 import CamTab from './AppTabNavigator/CamTab'
 import HomeTab from './AppTabNavigator/HomeTab'
 import PostTab from './AppTabNavigator/PostTab'
@@ -18,6 +18,7 @@ class MainScreen extends Component{
     }
 
     static navigationOptions = {
+        
         title: 'C O Z Y',
         headerTitleStyle: {
             fontFamily: 'INTRO',

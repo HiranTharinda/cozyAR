@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight } from "react-native";
 import {Icon, Content, Container, Button} from 'native-base'
-
+import firebase from 'react-native-firebase'
 var images = [
     require('../../assets/feed_images/1.jpg'),
     require('../../assets/feed_images/2.jpg'),
@@ -68,13 +68,24 @@ class ProfileTab extends Component{
         return(
             <Container style={{ flex: 1, backgroundColor: 'white'}}>
                 <Content>
-                    <View style ={{paddingTop: 10, paddingBottom:10, paddingRight:20, paddingLeft:20,backgroundColor:'#ffffff' }}>
-                        <View style={{ flexDirection: 'row', backgroundColor:'#ffffff'}}>
+                <View style ={{paddingTop: 10, paddingBottom:10, paddingRight:20, paddingLeft:20}}>
+                        <View style={{ flexDirection: 'row'}}>
                             <View style = {{flex: 1, alignItems: 'center'}}>
                                 <Image source = {require('../../assets/propic.jpg')}
-                                    style={{ width:110, height:110, borderRadius: 55, borderColor:"#2fd7e0", borderWidth:3}}/>
+                                    style={{ width:110, height:110, borderRadius: 55,}}/>
                             </View>
                             <View style = {{ flex: 2, flexDirection: "column", paddingBottom: 30, paddingTop: 15}}>
+                                <View style = {{flex:2, flexDirection: 'row'}}>
+                                    <Button bordered dark onPress={() => firebase.auth().signOut()}  
+                                        style={{ flex: 3, marginLeft: 10,
+                                        justifyContent: 'center', height:30}}>
+                                        <Text> Logout </Text>
+                                    </Button>
+                                    <Button bordered dark style = {{flex: 2, height: 30,
+                                        marginRight:5, marginLeft: 5, 'justifyContent': 'center'}}>
+                                        <Icon name = "settings"/>
+                                    </Button>
+                                </View>
                                 <View style ={{flex:2, paddingHorizontal:10}}>
                                     <Text style = {{ fontWeight: 'bold'}}> Hiran Tharinda </Text>
                                     <Text> Freelancer | Student </Text>
