@@ -15,6 +15,9 @@ export default class Login extends React.Component {
       .catch(error => this.setState({ errorMessage: error.message }))
     console.log('handleLogin')
   }
+
+  
+
   render() {
     return (
       <View style={styles.container}>
