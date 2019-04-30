@@ -17,55 +17,58 @@ handleSignUp = () => {
 render() {
     return (
       <View style={styles.container}>
-      <View style = {{flex: 1, width: 300}}></View>
-      <View style = {{flex: 4, width: 190}}> 
-        <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>CREATE A NEW ACCOUNT.</Text>
-        <TextInput
-          placeholder="Name"
-          autoCapitalize="none"
-          style={styles.textInput}
-        />
-        {this.state.errorMessage &&
+        <View style = {{flex: 1, width: 300}}></View>
+        <View style = {{flex: 4, width: 190}}> 
+          <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>CREATE A NEW ACCOUNT.</Text>
+          <TextInput
+            placeholder="Name"
+            autoCapitalize="none"
+            style={styles.textInput}/>
+            {this.state.errorMessage &&
           <Text style={{ color: 'red' }}>
             {this.state.errorMessage}
           </Text>}
-        <TextInput
-          placeholder="Email"
-          autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={email => this.setState({ email })}
-          value={this.state.email}
-        />
-        <TextInput
-          secureTextEntry
-          placeholder="Password"
-          autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={password => this.setState({ password })}
-          value={this.state.password}
-        />
-        
-        <Button color="#ff6b6b" title="Sign Up" onPress={this.handleSignUp} />
-        <Text style={{fontWeight:"900",textAlign: 'center'}}></Text>
-        <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>
-        <SocialIcon
-              title='Sign Up With Facebook'
+          <TextInput
+            placeholder="Email"
+            autoCapitalize="none"
+            style={styles.textInput}
+            onChangeText={email => this.setState({ email })}
+            value={this.state.email}/>
+          <TextInput
+            secureTextEntry
+            placeholder="Password"
+            autoCapitalize="none"
+            style={styles.textInput}
+            onChangeText={password => this.setState({ password })}
+            value={this.state.password}/>
+          <Button color="#ff6b6b" title="Sign Up" onPress={this.handleSignUp} />
+          <Text style={{fontWeight:"900",textAlign: 'center'}}></Text>
+          <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>
+          <View style={{flexDirection:"row", width:100, alignContent:"center",alignItems:"center"}}>
+            <SocialIcon
+              style = {{width:53}}
               button
               type='facebook'
-              raised
-        /></View>
-        <View style = {{flex: 1}}>
-        <Text>Already have an account?</Text>
-        <Button color = '#54a0ff'
-          title="Login"
-          onPress={() => this.props.navigation.navigate('login')}
-        />
+              raised = 'true'/>
+            <SocialIcon
+              button
+              raised = 'true'
+              style = {{width:53, backgroundColor:"#ff6b6b"}}
+              type='google'/>
+          </View>
         </View>
-        
+        <View style = {{flex: 1}}>
+          <Text>Already have an account?</Text>
+          <Button color = '#54a0ff'
+                  title="Login"
+                  onPress={() => this.props.navigation.navigate('login')}/>
+        </View>
       </View>
     )
   }
 }
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

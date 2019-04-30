@@ -3,6 +3,7 @@ package com.cozy;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.magus.fblogin.FacebookLoginPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import cl.json.RNSharePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ShareApplication, Re
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new FacebookLoginPackage(),
             new ReactVideoPackage(),
             new RNSharePackage(),
             new RNGestureHandlerPackage(),
