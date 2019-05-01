@@ -51,39 +51,6 @@ export default class Login extends React.Component {
       });
   }
 
-  // facebookLogin() {
-    
-  //   if(options) {
-  //     LoginManager.logInWithReadPermissions(['public_profile', 'email', 'user_about_me']).then(
-  //         function(result) {
-  //           if (result.isCancelled) {
-  
-  //           } else {
-  //             AccessToken.getCurrentAccessToken().then(function(data) {
-  //               var accessToken = Firebase.auth.FacebookAuthProvider.credential(data.accessToken);
-  //               handleFirebaseLogin(accessToken);
-  //             }.bind(this));
-  //           }
-  //         }.bind(this),
-  //         function(error) {
-  
-  //         }
-  //       );
-  //   }
-  // }
-
-  // googleLogin(){
-  //   GoogleSignin.getAccessToken()
-  //   .then((token) => {
-  //   var accessToken = Firebase.auth.GoogleAuthProvider.credential(token);
-  //   handleFirebaseLogin(accessToken);
-  //   })
-  //   .catch((err) => {
-  //   })
-  //   .done();
-  // }
-  
-
 
   render() {
     return (
