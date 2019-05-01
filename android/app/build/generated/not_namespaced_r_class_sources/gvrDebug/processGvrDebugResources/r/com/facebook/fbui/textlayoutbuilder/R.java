@@ -12,7 +12,7 @@ public final class R {
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] TextAppearance = { 0x1010095, 0x1010096, 0x1010097, 0x1010098, 0x101009a, 0x101009b, 0x1010161, 0x1010162, 0x1010163, 0x1010164, 0x10103ac, 0x7f020086, 0x7f020122 };
+        public static final int[] TextAppearance = { 0x1010095, 0x1010096, 0x1010097, 0x1010098, 0x101009a, 0x101009b, 0x1010161, 0x1010162, 0x1010163, 0x1010164, 0x10103ac, 0x7f02009d, 0x7f020139 };
         public static final int TextAppearance_android_textSize = 0;
         public static final int TextAppearance_android_typeface = 1;
         public static final int TextAppearance_android_textStyle = 2;

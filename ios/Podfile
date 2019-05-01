@@ -5,6 +5,10 @@ target 'figment' do
   pod 'ViroKit', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/'
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+  pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
+
+  pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
+
 end
 
 # Needed to fix linker error between GVRSDK and React

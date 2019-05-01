@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name_cozy">Cozy</string>
+    <string name="facebook_app_id">1484093631730528</string>
+    <string name="fb_login_protocol_scheme">fb1484093631730528</string>
+
 </resources>

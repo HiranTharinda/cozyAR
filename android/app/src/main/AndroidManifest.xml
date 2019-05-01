@@ -17,6 +17,8 @@
     <uses-feature android:name="android.hardware.camera.ar" android:required="true"/>
     <uses-feature android:name="android.hardware.screen.portrait" />
 
+    
+
     <application
       android:name=".MainApplication"
       android:allowBackup="true"
@@ -24,6 +26,15 @@
       android:icon="@drawable/cozyicon"
       android:theme="@style/AppTheme"
       tools:replace="android:label">
+
+      <meta-data android:name="com.facebook.sdk.ApplicationId" 
+        android:value="@string/facebook_app_id"/>
+    
+        <activity android:name="com.facebook.FacebookActivity"
+          android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+          android:label="@string/app_name" />
+
       <meta-data android:name="com.google.ar.core" android:value="required" />
       <activity
         android:name=".MainActivity"

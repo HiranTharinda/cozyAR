@@ -48,6 +48,7 @@ render() {
             <SocialIcon
               style = {{width:53}}
               button
+              onPress
               type='facebook'
               raised = 'true'/>
             <SocialIcon

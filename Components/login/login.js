@@ -2,9 +2,16 @@ import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button, Image } from 'react-native'
 import firebase from 'react-native-firebase'
 import { SocialIcon } from 'react-native-elements'
-import {Button} from 'native-base'
+import { GoogleSignin } from 'react-native-google-signin';
+import { AccessToken, LoginManager} from 'react-native-fbsdk'
+
+var options 
+
+
 
 export default class Login extends React.Component {
+
+
   state = { email: '', password: '', errorMessage: null }
   handleLogin = () => {
     const { email, password } = this.state
@@ -15,8 +22,68 @@ export default class Login extends React.Component {
       .catch(error => this.setState({ errorMessage: error.message }))
     console.log('handleLogin')
   }
-
   
+  onLoginOrRegister = () => {
+    LoginManager.logInWithReadPermissions(['public_profile', 'email'])
+      .then((result) => {
+        if (result.isCancelled) {
+          return Promise.reject(new Error('The user cancelled the request'));
+        }
+        // Retrieve the access token
+        return AccessToken.getCurrentAccessToken();
+      })
+      .then((data) => {
+        // Create a new Firebase credential with the token
+        const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
+        // Login with the credential
+        return firebase.auth().signInWithCredential(credential);
+      })
+      .then((user) => {
+        // If you need to do anything with the user, do it here
+        // The user will be logged in automatically by the
+        // `onAuthStateChanged` listener we set up in App.js earlier
+      })
+      .catch((error) => {
+        const { code, message } = error;
+        // For details of error codes, see the docs
+        // The message contains the default Firebase string
+        // representation of the error
+      });
+  }
+
+  // facebookLogin() {
+    
+  //   if(options) {
+  //     LoginManager.logInWithReadPermissions(['public_profile', 'email', 'user_about_me']).then(
+  //         function(result) {
+  //           if (result.isCancelled) {
+  
+  //           } else {
+  //             AccessToken.getCurrentAccessToken().then(function(data) {
+  //               var accessToken = Firebase.auth.FacebookAuthProvider.credential(data.accessToken);
+  //               handleFirebaseLogin(accessToken);
+  //             }.bind(this));
+  //           }
+  //         }.bind(this),
+  //         function(error) {
+  
+  //         }
+  //       );
+  //   }
+  // }
+
+  // googleLogin(){
+  //   GoogleSignin.getAccessToken()
+  //   .then((token) => {
+  //   var accessToken = Firebase.auth.GoogleAuthProvider.credential(token);
+  //   handleFirebaseLogin(accessToken);
+  //   })
+  //   .catch((err) => {
+  //   })
+  //   .done();
+  // }
+  
+
 
   render() {
     return (
@@ -41,13 +108,14 @@ export default class Login extends React.Component {
             placeholder="Password"
             onChangeText={password => this.setState({ password })}
             value={this.state.password}/>
-          <Button color = '#54a0ff' title="Login"  onPress={this.handleLogin} />
+          <Button color = '#54a0ff' title="Login" onPress={this.handleLogin} />
           <Text style={{fontWeight:"900",textAlign: 'center'}}></Text>
           <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>
           <View style={{flexDirection:"row", width:100, alignContent:"center",alignItems:"center", paddingHorizontal:27}}>
             <SocialIcon
               style = {{width:53}}
               button
+              onPress ={this.onLoginOrRegister}
               type='facebook'
               raised = 'true'/>
             <SocialIcon
