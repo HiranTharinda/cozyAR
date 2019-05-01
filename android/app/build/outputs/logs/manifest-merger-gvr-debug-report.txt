@@ -6,7 +6,7 @@ INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-63:12
 MERGED from [:react-native-google-signin] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-google-signin\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:1-30:12
-MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-video] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-video\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:lottie-react-native] C:\Users\Hiran\Desktop\cozyAR\node_modules\lottie-react-native\src\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -551,40 +551,6 @@ INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest
 		INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
-uses-permission#android.permission.WAKE_LOCK
-ADDED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-68
-MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\ad95b8de686388be9f66c8d42393c7f2\AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\ad95b8de686388be9f66c8d42393c7f2\AndroidManifest.xml:24:5-68
-MERGED from [com.google.android.gms:play-services-measurement:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.4.0.aar\8c72c23c83e0c2efdb7038ab3f119edb\AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.4.0.aar\8c72c23c83e0c2efdb7038ab3f119edb\AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-impl-16.4.0.aar\0bd72e746248514a83d68ec96d275590\AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-impl-16.4.0.aar\0bd72e746248514a83d68ec96d275590\AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-sdk-api-16.4.0.aar\0fe4b71197235b7a2baca4cf9938d3f4\AndroidManifest.xml:25:5-68
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-sdk-api-16.4.0.aar\0fe4b71197235b7a2baca4cf9938d3f4\AndroidManifest.xml:25:5-68
-	android:name
-		ADDED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-65
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-79
-MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\c59398bc591cca5665fbeb3462c6147c\AndroidManifest.xml:13:5-79
-MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\c59398bc591cca5665fbeb3462c6147c\AndroidManifest.xml:13:5-79
-MERGED from [com.google.firebase:firebase-storage:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.1.0.aar\b671e8e63e89cbcdca73d1d87f585628\AndroidManifest.xml:26:5-79
-MERGED from [com.google.firebase:firebase-storage:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.1.0.aar\b671e8e63e89cbcdca73d1d87f585628\AndroidManifest.xml:26:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\ad95b8de686388be9f66c8d42393c7f2\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\ad95b8de686388be9f66c8d42393c7f2\AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.gms:play-services-measurement:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.4.0.aar\8c72c23c83e0c2efdb7038ab3f119edb\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.4.0.aar\8c72c23c83e0c2efdb7038ab3f119edb\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-impl-16.4.0.aar\0bd72e746248514a83d68ec96d275590\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-impl-16.4.0.aar\0bd72e746248514a83d68ec96d275590\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-sdk-api-16.4.0.aar\0fe4b71197235b7a2baca4cf9938d3f4\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-sdk-api-16.4.0.aar\0fe4b71197235b7a2baca4cf9938d3f4\AndroidManifest.xml:24:5-79
-MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\6bfe82aa2457451204a0a6d30c607487\AndroidManifest.xml:11:5-79
-MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\6bfe82aa2457451204a0a6d30c607487\AndroidManifest.xml:11:5-79
-	android:name
-		ADDED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:22-76
 activity#com.facebook.CustomTabMainActivity
 ADDED from [com.facebook.android:facebook-common:4.34.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\74461e2857d1098730a09260f1f3dba2\AndroidManifest.xml:33:9-71
 	android:name
@@ -691,6 +657,24 @@ ADDED from [com.google.firebase:firebase-auth:16.2.1] C:\Users\Hiran\.gradle\cac
 		ADDED from [com.google.firebase:firebase-auth:16.2.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.2.1.aar\2b15008ff9e487b6fdd3d15ca0cbaf24\AndroidManifest.xml:38:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:16.2.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.2.1.aar\2b15008ff9e487b6fdd3d15ca0cbaf24\AndroidManifest.xml:37:17-109
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\c59398bc591cca5665fbeb3462c6147c\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-storage:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.1.0.aar\b671e8e63e89cbcdca73d1d87f585628\AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-storage:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.1.0.aar\b671e8e63e89cbcdca73d1d87f585628\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\ad95b8de686388be9f66c8d42393c7f2\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\ad95b8de686388be9f66c8d42393c7f2\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.4.0.aar\8c72c23c83e0c2efdb7038ab3f119edb\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.4.0.aar\8c72c23c83e0c2efdb7038ab3f119edb\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-impl-16.4.0.aar\0bd72e746248514a83d68ec96d275590\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-impl-16.4.0.aar\0bd72e746248514a83d68ec96d275590\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-sdk-api-16.4.0.aar\0fe4b71197235b7a2baca4cf9938d3f4\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-sdk-api-16.4.0.aar\0fe4b71197235b7a2baca4cf9938d3f4\AndroidManifest.xml:24:5-79
+MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\6bfe82aa2457451204a0a6d30c607487\AndroidManifest.xml:11:5-79
+MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\grpc-android-1.16.1.aar\6bfe82aa2457451204a0a6d30c607487\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\c59398bc591cca5665fbeb3462c6147c\AndroidManifest.xml:13:22-76
 meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
 ADDED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\c59398bc591cca5665fbeb3462c6147c\AndroidManifest.xml:18:13-20:85
 	android:value
@@ -721,6 +705,18 @@ ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gr
 		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:36:13-107
 	android:name
 		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:34:13-89
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\ad95b8de686388be9f66c8d42393c7f2\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\ad95b8de686388be9f66c8d42393c7f2\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.4.0.aar\8c72c23c83e0c2efdb7038ab3f119edb\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-16.4.0.aar\8c72c23c83e0c2efdb7038ab3f119edb\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-impl-16.4.0.aar\0bd72e746248514a83d68ec96d275590\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-impl-16.4.0.aar\0bd72e746248514a83d68ec96d275590\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-sdk-api-16.4.0.aar\0fe4b71197235b7a2baca4cf9938d3f4\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-sdk-api-16.4.0.aar\0fe4b71197235b7a2baca4cf9938d3f4\AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:24:22-65
 meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
 ADDED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:30:13-32:85
 	android:value
