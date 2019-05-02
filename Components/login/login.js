@@ -1,13 +1,18 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button, Image } from 'react-native'
-import firebase from 'firebase'
+import firebase from 'react-native-firebase'
 import { SocialIcon } from 'react-native-elements'
 import { GoogleSignin } from 'react-native-google-signin';
-import { AccessToken, LoginManager} from 'react-native-fbsdk'
-import config from '../../config/config'
+import FBSDK, { AccessToken, LoginManager}  from 'react-native-fbsdk'
 var options 
-import {Expo} from 'expo'
 
+
+var config = {
+  apiKey: 'AIzaSyDYmkq3R7SpWBYiUEKCU8N2SSG-6ojzuc0',
+  authDomain: ' cozy-67b69.firebaseio.com/',
+  databaseURL: 'https://cozy-67b69.firebaseio.com/'
+}
+const firebaseRef = firebase.initializeApp(config)
 
 export default class Login extends React.Component {
 
@@ -23,47 +28,29 @@ export default class Login extends React.Component {
     console.log('handleLogin')
   }
 
-  async loginWithFacebook () {
-    const {type, token} = await Expo.Facebook.logInWithReadPermissionsAsync(
-      '1484093631730528',
-      {permissions: ['public_profile']}
-    );console.log('handldseLogin');
-      if(type === 'success'){
-        const credentials = firebase.auth().FacebookAuthProvider.credential(token);
-        firebase.auth.signInWithCredential(credentials).catch((error) => {
-          console.log('error', error);
-        })
-      }
-  }
-  
   onLoginOrRegister = () => {
-    LoginManager.logInWithReadPermissions(['public_profile', 'email'])
-      .then((result) => {
-        if (result.isCancelled) {
-          return Promise.reject(new Error('The user cancelled the request'));
-        }
-        // Retrieve the access token
-        return AccessToken.getCurrentAccessToken();
-      })
-      .then((data) => {
-        // Create a new Firebase credential with the token
-        const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
-        // Login with the credential
-        return firebase.auth().signInWithCredential(credential);
-      })
-      .then((user) => {
-        // If you need to do anything with the user, do it here
-        // The user will be logged in automatically by the
-        // `onAuthStateChanged` listener we set up in App.js earlier
-      })
-      .catch((error) => {
-        const { code, message } = error;
-        // For details of error codes, see the docs
-        // The message contains the default Firebase string
-        // representation of the error
-      });
+    LoginManager.logInWithReadPermissions(['public_profile']).then(function(result){
+      if (result.isCancelled){
+        console.log('login was cancelled');
+      }else {
+        AccessToken.getCurrentAccessToken().then((AccessTokenData) => {
+          const credential = firebase.auth.FacebookAuthProvider.credential(AccessTokenData.accessToken)
+          firebase.auth().signInAndRetrieveDataWithCredential(credential).then((result) =>{
+              //promise success
+              console.log(AccessToken)
+          },(error) =>{
+            //promise rejected
+            console.log(error)
+          })
+        },(error => {
+          console.log('some error'+ error)
+        }))
+        
+      }
+    }, function(error){
+      console.log('An error occurred' + error);
+    })
   }
-
 
   render() {
     return (
@@ -95,7 +82,7 @@ export default class Login extends React.Component {
             <SocialIcon
               style = {{width:53}}
               button
-              onPress ={this.loginWithFacebook}
+              onPress ={this.onLoginOrRegister}
               type='facebook'
               raised = 'true'/>
             <SocialIcon

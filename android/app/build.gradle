@@ -168,6 +168,7 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-facebook-login')
     implementation project(':react-native-google-signin')
     implementation project(':react-native-fbsdk')
     implementation project(':react-native-firebase')

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight } from "react-native";
 import {Icon, Content, Container, Button} from 'native-base'
-import firebase from 'firebase'
+import firebase from 'react-native-firebase'
 var images = [
     require('../../assets/feed_images/1.jpg'),
     require('../../assets/feed_images/2.jpg'),

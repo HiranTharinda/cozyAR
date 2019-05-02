@@ -3,6 +3,7 @@ package com.cozy;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.magus.fblogin.FacebookLoginPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.brentvatne.react.ReactVideoPackage;
@@ -26,6 +27,12 @@ import java.util.List;
 
 public class MainApplication extends Application implements ShareApplication, ReactApplication {
 
+  private static CallbackManager mCallbackManager = CallbackManager.Factory.create();
+
+  protected static CallbackManager getCallbackManager() {
+    return mCallbackManager;
+  }
+
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
     public boolean getUseDeveloperSupport() {
@@ -36,6 +43,7 @@ public class MainApplication extends Application implements ShareApplication, Re
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+        new FacebookLoginPackage(),
         new RNGoogleSigninPackage(),
         new ReactVideoPackage(),
         new RNSharePackage(),
@@ -49,11 +57,7 @@ public class MainApplication extends Application implements ShareApplication, Re
       );
     }
 
-    private  CallbackManager mCallbackManager = CallbackManager.Factory.create();
 
-    protected  CallbackManager getCallbackManager() {
-    return mCallbackManager;
-  }
     
     @Override
     protected String getJSMainModuleName() {

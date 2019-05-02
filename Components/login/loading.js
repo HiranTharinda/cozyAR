@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, ActivityIndicator, StyleSheet, Image, StatusBar } from 'react-native'
-import firebase from 'firebase'
+import firebase from 'react-native-firebase'
 import config from '../../config/config'
 
 export default class Loading extends React.Component {

@@ -1,4 +1,12 @@
-#Thu May 02 00:35:27 IST 2019
+#Thu May 02 18:28:23 IST 2019
+base.63=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\62
+base.62=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\60
+base.61=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\63
+base.60=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\61
+path.63=classes.dex
+path.62=classes.dex
+path.61=classes.dex
+path.60=classes.dex
 base.59=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\1
 base.58=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\5
 base.57=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\18
@@ -26,9 +34,13 @@ path.56=classes.dex
 path.55=classes.dex
 path.54=classes.dex
 path.53=classes.dex
+renamed.63=classes64.dex
 path.52=classes.dex
+renamed.62=classes63.dex
 path.51=classes.dex
+renamed.61=classes62.dex
 path.50=classes.dex
+renamed.60=classes61.dex
 base.49=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\9
 base.48=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\14
 base.47=C\:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\transforms\\dexMerger\\gvr\\debug\\58
