@@ -1,7 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button,Image } from 'react-native'
-import firebase from 'react-native-firebase'
+import firebase from 'firebase'
+import config from '../../config/config'
 import { SocialIcon } from 'react-native-elements'
+
+
 
 export default class SignUp extends React.Component {
   state = { email: '', password: '', errorMessage: null }
@@ -13,6 +16,8 @@ handleSignUp = () => {
       .then(() => this.props.navigation.navigate('MainScreen'))
       .catch(error => this.setState({ errorMessage: error.message }))
   console.log('handleSignUp')
+ 
+
 }
 render() {
     return (
@@ -48,7 +53,7 @@ render() {
             <SocialIcon
               style = {{width:53}}
               button
-              onPress
+              onPress 
               type='facebook'
               raised = 'true'/>
             <SocialIcon

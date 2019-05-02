@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight } from "react-native";
 import {Icon, Content, Container, Button} from 'native-base'
-import firebase from 'react-native-firebase'
+import firebase from 'firebase'
 var images = [
     require('../../assets/feed_images/1.jpg'),
     require('../../assets/feed_images/2.jpg'),
@@ -56,6 +56,7 @@ class ProfileTab extends Component{
 
     renderSection = () => {
         if (this.state.activeIndex == 0){
+            
             return(
                 <View style = {{ flexDirection: 'row', flexWrap: 'wrap'}}>
                     {this.renderSectionOne()}
@@ -66,6 +67,7 @@ class ProfileTab extends Component{
 
     render(){
         return(
+            
             <Container style={{ flex: 1, backgroundColor: 'white'}}>
                 <Content>
                 <View style ={{paddingTop: 10, paddingBottom:10, paddingRight:20, paddingLeft:20}}>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button, Image } from 'react-native'
-import firebase from 'react-native-firebase'
+import firebase from 'firebase'
 import { SocialIcon } from 'react-native-elements'
 import { GoogleSignin } from 'react-native-google-signin';
 import { AccessToken, LoginManager} from 'react-native-fbsdk'
-
+import config from '../../config/config'
 var options 
-
+import {Expo} from 'expo'
 
 
 export default class Login extends React.Component {
@@ -21,6 +21,19 @@ export default class Login extends React.Component {
       .then(() => this.props.navigation.navigate('MainScreen'))
       .catch(error => this.setState({ errorMessage: error.message }))
     console.log('handleLogin')
+  }
+
+  async loginWithFacebook () {
+    const {type, token} = await Expo.Facebook.logInWithReadPermissionsAsync(
+      '1484093631730528',
+      {permissions: ['public_profile']}
+    );console.log('handldseLogin');
+      if(type === 'success'){
+        const credentials = firebase.auth().FacebookAuthProvider.credential(token);
+        firebase.auth.signInWithCredential(credentials).catch((error) => {
+          console.log('error', error);
+        })
+      }
   }
   
   onLoginOrRegister = () => {
@@ -82,7 +95,7 @@ export default class Login extends React.Component {
             <SocialIcon
               style = {{width:53}}
               button
-              onPress ={this.onLoginOrRegister}
+              onPress ={this.loginWithFacebook}
               type='facebook'
               raised = 'true'/>
             <SocialIcon

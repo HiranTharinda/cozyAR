@@ -1,12 +1,14 @@
 import React from 'react'
 import { View, Text, ActivityIndicator, StyleSheet, Image, StatusBar } from 'react-native'
-import firebase from 'react-native-firebase'
+import firebase from 'firebase'
+import config from '../../config/config'
 
 export default class Loading extends React.Component {
     
     componentWillMount() {
         setTimeout(() => {
             firebase.auth().onAuthStateChanged(user => {
+                        console.log(user)
                         this.props.navigation.navigate(user ? 'MainScreen' : 'signUp')
                     })
         }, 5000);
