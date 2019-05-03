@@ -29,7 +29,7 @@ export default class Login extends React.Component {
   }
 
   onLoginOrRegister = () => {
-    LoginManager.logInWithReadPermissions(['public_profile']).then(function(result){
+    LoginManager.logInWithReadPermissions(['public_profile','email']).then(function(result){
       if (result.isCancelled){
         console.log('login was cancelled');
       }else {
@@ -82,7 +82,7 @@ export default class Login extends React.Component {
             <SocialIcon
               style = {{width:53}}
               button
-              onPress ={this.onLoginOrRegister}
+              onPress ={this.onLoginOrRegister()}
               type='facebook'
               raised = 'true'/>
             <SocialIcon
