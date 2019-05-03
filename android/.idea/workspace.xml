@@ -2,15 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c33fba-f94c-4026-a888-99527f5362ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Components/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Components/login/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/login/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/AppTabNavigator/HomeTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/AppTabNavigator/HomeTab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/bundle_manifest/gvrDebug/processGvrDebugManifest/bundle-manifest/universal/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/bundle_manifest/gvrDebug/processGvrDebugManifest/bundle-manifest/universal/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/bundle_manifest/gvrDebug/processGvrDebugManifest/bundle-manifest/xxhdpi/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/bundle_manifest/gvrDebug/processGvrDebugManifest/bundle-manifest/xxhdpi/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/gvrDebug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/gvrDebug-mergeJavaRes/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/gvrDebug-mergeJniLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/gvrDebug-mergeJniLibs/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/file-input-save-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/file-input-save-data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/zip-cache/++X+8zIbq0vMW87Ip9ysX5gsZ7I=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/zip-cache/++X+8zIbq0vMW87Ip9ysX5gsZ7I=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/zip-cache/+9WfrwbmFi9CU_4pOxcfijobmeI=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/zip-cache/+9WfrwbmFi9CU_4pOxcfijobmeI=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/file-input-save-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/file-input-save-data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/zip-cache/++X+8zIbq0vMW87Ip9ysX5gsZ7I=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/zip-cache/++X+8zIbq0vMW87Ip9ysX5gsZ7I=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/zip-cache/tk7JJ_MB1A0Ga+h7GWVhQy4qJoc=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/zip-cache/tk7JJ_MB1A0Ga+h7GWVhQy4qJoc=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/instant_app_manifest/gvrDebug/processGvrDebugManifest/instant-app-manifest/universal/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/instant_app_manifest/gvrDebug/processGvrDebugManifest/instant-app-manifest/universal/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/instant_app_manifest/gvrDebug/processGvrDebugManifest/instant-app-manifest/xxhdpi/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/instant_app_manifest/gvrDebug/processGvrDebugManifest/instant-app-manifest/xxhdpi/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/gvrDebug/compileGvrDebugJavaWithJavac/classes/com/cozy/MainApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/gvrDebug/compileGvrDebugJavaWithJavac/classes/com/cozy/MainApplication$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/gvrDebug/compileGvrDebugJavaWithJavac/classes/com/cozy/MainApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/gvrDebug/compileGvrDebugJavaWithJavac/classes/com/cozy/MainApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/gvrDebug/universal/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/gvrDebug/universal/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/gvrDebug/xxhdpi/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/gvrDebug/xxhdpi/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/gvrDebug/processGvrDebugResources/out/resources-gvrUniversalDebug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/gvrDebug/processGvrDebugResources/out/resources-gvrUniversalDebug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/gvrDebug/processGvrDebugResources/out/resources-gvrXxhdpiDebug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/gvrDebug/processGvrDebugResources/out/resources-gvrXxhdpiDebug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/gvr/debug/206/com/cozy/MainApplication$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/gvr/debug/206/com/cozy/MainApplication$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/gvr/debug/206/com/cozy/MainApplication.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/gvr/debug/206/com/cozy/MainApplication.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/gvr/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/gvr/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/gvr/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/gvr/debug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/gvr/debug/1/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/gvr/debug/1/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/gvr/debug/1/classes2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/gvr/debug/1/classes2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/externalLibsDexMerger/gvr/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/externalLibsDexMerger/gvr/debug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/externalLibsDexMerger/gvr/debug/0/classes2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/externalLibsDexMerger/gvr/debug/0/classes2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/gvr/debug/0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/gvr/debug/0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/gvr/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/gvr/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/gvr/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/gvr/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/app-gvr-universal-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/app-gvr-universal-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/app-gvr-xxhdpi-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/app-gvr-xxhdpi-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-gvr-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-gvr-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cozy/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cozy/MainApplication.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -287,7 +323,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3296" />
@@ -306,7 +341,7 @@
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="9" visible="true" weight="0.3264642" />
+      <window_info active="true" anchor="bottom" id="Build" order="9" visible="true" weight="0.3264642" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.329718" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />

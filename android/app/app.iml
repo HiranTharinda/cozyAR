@@ -188,6 +188,7 @@
     <orderEntry type="library" name="Gradle: com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.22@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp-urlconnection:3.6.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:28.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.firebase:firebase-database:16.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement:16.4.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: io.grpc:grpc-android:1.16.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: io.opencensus:opencensus-api:0.12.3@jar" level="project" />
@@ -280,14 +281,6 @@
     <orderEntry type="library" name="Gradle: com.android.support:swiperefreshlayout:28.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: artifacts:react_viro:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks:16.0.1@aar" level="project" />
-    <orderEntry type="module" module-name="react-native-gesture-handler" />
-    <orderEntry type="module" module-name="react-native-fbsdk" />
-    <orderEntry type="module" module-name="react-native-google-signin" />
-    <orderEntry type="module" module-name="react-native-firebase" />
-    <orderEntry type="module" module-name="lottie-react-native" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="react-native-facebook-login" />
-    <orderEntry type="module" module-name="react-native-share" />
     <orderEntry type="module" module-name="react-native-gesture-handler" />
     <orderEntry type="module" module-name="react-native-fbsdk" />
     <orderEntry type="module" module-name="react-native-google-signin" />

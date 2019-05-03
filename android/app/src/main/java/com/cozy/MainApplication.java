@@ -11,6 +11,7 @@ import cl.json.RNSharePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
+import io.invertase.firebase.database.RNFirebaseDatabasePackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 import cl.json.ShareApplication;
 import com.facebook.react.ReactNativeHost;
@@ -43,6 +44,7 @@ public class MainApplication extends Application implements ShareApplication, Re
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+        new RNFirebaseDatabasePackage(),
         new FacebookLoginPackage(),
         new RNGoogleSigninPackage(),
         new ReactVideoPackage(),
