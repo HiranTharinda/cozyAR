@@ -19,6 +19,39 @@ class HomeTab extends Component{
         this.loadFeed();
     }
 
+    pluralCheck = (s) => {
+        if (s == 1){
+            return ' ago'
+        }else {
+            return 's ago'
+        }
+    }
+
+    timeConverter = (timestamp) => {
+        var a = new Date(timestamp * 1000)
+        var seconds = Math.floor((new Date() - a) / 1000)
+        var interval = Math.floor(seconds/31536000)
+        if(interval > 1){
+            return interval + ' year' +this.pluralCheck(interval)
+        }
+        interval = Math.floor(seconds / 2592000);
+        if(interval > 1){
+            return interval + ' month' +this.pluralCheck(interval)
+        }
+        interval = Math.floor(seconds / 86400);
+        if(interval > 1){
+            return interval + ' day' +this.pluralCheck(interval)
+        }
+        interval = Math.floor(seconds / 3600);
+        if(interval > 1){
+            return interval + ' hour' +this.pluralCheck(interval)
+        }
+        interval = Math.floor(seconds / 60);
+        if(interval > 1){
+            return interval + ' minute' +this.pluralCheck(interval)
+        } return Math.floor(seconds) + 'seconds' +this.pluralCheck(interval)
+    }
+
     loadFeed = () => {
         this.setState({
             refresh:true,
@@ -41,7 +74,7 @@ class HomeTab extends Component{
                             id: photos,
                             url: photoObj.url,
                             caption: photoObj.caption,
-                            posted: photoObj.posted,
+                            posted: that.timeConverter(photoObj.posted),
                             author: data.username,
                             likes: data.likes
                         });
