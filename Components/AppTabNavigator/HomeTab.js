@@ -3,13 +3,15 @@ import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 
+
 class HomeTab extends Component{
     constructor(props){
         super(props);
         this.state = {
             photo_feed: [],
             refresh: false,
-            loading: true
+            loading: true,
+            liked: false
         }
     }
     
@@ -23,20 +25,25 @@ class HomeTab extends Component{
             photo_feed: []
         })
         var that = this;
-
+    
         firebase.database().ref('photos').orderByChild('posted').once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
+            
             if(exists) data = snapshot.val();
                 var photo_feed = that.state.photo_feed;
-                for(var photo in data){
-                    var photoObj = data[photo];
-                    firebase.database().ref('photos').child(photoObj.author).once('value').then(function(snapshot){
+                console.log(data)
+                for(var photos in data){
+                    var photoObj = data[photos];
+                    firebase.database().ref('users').child(photoObj.author).once('value').then(function(snapshot){
+                        const exists = (snapshot.val() !== null)
+                        if(exists) data = snapshot.val();
                         photo_feed.push({
-                            id: photo,
+                            id: photos,
                             url: photoObj.url,
-                            caption: photoObj.posted,
+                            caption: photoObj.caption,
                             posted: photoObj.posted,
-                            author: data.username
+                            author: data.username,
+                            likes: data.likes
                         });
                         that.setState({
                             refresh: false,
@@ -58,15 +65,19 @@ class HomeTab extends Component{
         ) 
     }
 
+    
+
     render(){
         return(
-           <FlatList
-           refreshing ={this.state.refresh}
-           onRefresh = {this.loadNew}
-           data ={this.state.photo_feed}
-           keyExtractor={(item, index)=>index.toString}
-           style = {{flex:1}}
-           renderItem = {({item, index}) => (
+            
+            
+            <FlatList
+            refreshing ={this.state.refresh}
+            onRefresh = {this.loadNew}
+            data ={this.state.photo_feed}
+            keyExtractor={(item, index)=>index.toString}
+            style = {{flex:1}}
+            renderItem = {({item, index}) => (
             <View>
             <Card>
                 <CardItem>
@@ -74,14 +85,14 @@ class HomeTab extends Component{
                         <Thumbnail source={require('../../assets/propic.jpg')} style={{height:35,width:35}}/>
                         <Body>
                             <Text>
-                                Hiran
+                                {item.author}
                             </Text>
-                            <Text note>March 24, 2019</Text>
+                            <Text note>{item.posted}</Text>
                         </Body>
                     </Left>
                 </CardItem>
                 <CardItem cardBody>
-                    <Image source={{uri:'https://source.unsplash.com/random/1600x900'}} style={
+                    <Image source={{uri:item.url}} style={
                         {height:350, width:null, flex:1}
                     }/>
                 </CardItem>
@@ -103,16 +114,14 @@ class HomeTab extends Component{
                 </CardItem>
                 <CardItem style={{height:20}}>
                     <Text>
-                        {100} likes
+                        {item.likes} likes
                     </Text>
                 </CardItem>
                 <CardItem>
                     <Body>
                         <Text>
                             <Text style = {{fontWeight:"900"}}>Tharinda </Text>
-                                is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type 
+                                {item.caption}
                         </Text>
                     </Body>
                 </CardItem>
@@ -120,8 +129,9 @@ class HomeTab extends Component{
             </View> 
            )}
             >
-             
             </FlatList>
+        
+         
         )    
         
     }
