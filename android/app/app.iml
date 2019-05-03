@@ -288,6 +288,7 @@
     <orderEntry type="module" module-name="lottie-react-native" />
     <orderEntry type="module" module-name="react-native-video" />
     <orderEntry type="module" module-name="react-native-facebook-login" />
+    <orderEntry type="module" module-name="react-native-image-picker" />
     <orderEntry type="module" module-name="react-native-share" />
   </component>
 </module>

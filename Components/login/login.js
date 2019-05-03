@@ -82,7 +82,7 @@ export default class Login extends React.Component {
             <SocialIcon
               style = {{width:53}}
               button
-              onPress ={this.onLoginOrRegister()}
+              onPress ={() => this.onLoginOrRegister()}
               type='facebook'
               raised = 'true'/>
             <SocialIcon

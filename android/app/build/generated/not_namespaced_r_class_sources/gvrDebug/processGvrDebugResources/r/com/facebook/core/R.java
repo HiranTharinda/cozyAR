@@ -113,12 +113,12 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int notification_action = 0x7f09002f;
-        public static final int notification_action_tombstone = 0x7f090030;
-        public static final int notification_template_custom_big = 0x7f090037;
-        public static final int notification_template_icon_group = 0x7f090038;
-        public static final int notification_template_part_chronometer = 0x7f09003c;
-        public static final int notification_template_part_time = 0x7f09003d;
+        public static final int notification_action = 0x7f090030;
+        public static final int notification_action_tombstone = 0x7f090031;
+        public static final int notification_template_custom_big = 0x7f090038;
+        public static final int notification_template_icon_group = 0x7f090039;
+        public static final int notification_template_part_chronometer = 0x7f09003d;
+        public static final int notification_template_part_time = 0x7f09003e;
     }
     public static final class string {
         private string() {}
@@ -128,13 +128,13 @@ public final class R {
     public static final class style {
         private style() {}
 
-        public static final int TextAppearance_Compat_Notification = 0x7f0c0111;
-        public static final int TextAppearance_Compat_Notification_Info = 0x7f0c0112;
-        public static final int TextAppearance_Compat_Notification_Line2 = 0x7f0c0114;
-        public static final int TextAppearance_Compat_Notification_Time = 0x7f0c0117;
-        public static final int TextAppearance_Compat_Notification_Title = 0x7f0c0119;
-        public static final int Widget_Compat_NotificationActionContainer = 0x7f0c018a;
-        public static final int Widget_Compat_NotificationActionText = 0x7f0c018b;
+        public static final int TextAppearance_Compat_Notification = 0x7f0c0112;
+        public static final int TextAppearance_Compat_Notification_Info = 0x7f0c0113;
+        public static final int TextAppearance_Compat_Notification_Line2 = 0x7f0c0115;
+        public static final int TextAppearance_Compat_Notification_Time = 0x7f0c0118;
+        public static final int TextAppearance_Compat_Notification_Title = 0x7f0c011a;
+        public static final int Widget_Compat_NotificationActionContainer = 0x7f0c018b;
+        public static final int Widget_Compat_NotificationActionText = 0x7f0c018c;
     }
     public static final class styleable {
         private styleable() {}

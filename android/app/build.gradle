@@ -168,6 +168,8 @@ android {
 }
 
 dependencies {
+
+    implementation project(':react-native-image-picker')
     implementation project(':react-native-facebook-login')
     implementation project(':react-native-google-signin')
     implementation project(':react-native-fbsdk')

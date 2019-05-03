@@ -9,6 +9,8 @@ target 'figment' do
 
   pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
 end
 
 # Needed to fix linker error between GVRSDK and React
