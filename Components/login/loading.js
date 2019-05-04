@@ -39,8 +39,6 @@ export default class Loading extends React.Component {
         )
     }
 }
-
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,

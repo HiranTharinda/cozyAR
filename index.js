@@ -13,10 +13,7 @@ console.disableYellowBox = true;
 import loading from './Components/login/loading'
 import signUp from './Components/login/signup'
 import login from './Components/login/login'
-import posts from './Components/posts'
-import products from './Components/products'
-import userProfile from './Components/userProfile'
-import comments from './Components/comments'
+
 
 let store = createStore(reducers);
 
@@ -36,10 +33,6 @@ const AppStackNavigator = (createSwitchNavigator(
   signUp,
   login,
   MainScreen,
-  userProfile,
-  comments,
-  posts,
-  products
   },
   {
   initialRouteName: 'loading'

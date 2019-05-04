@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button,Image } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Button,Image, StatusBar } from 'react-native'
 import firebase from 'firebase'
 import config from '../../config/config'
 import { SocialIcon } from 'react-native-elements'
@@ -22,6 +22,10 @@ handleSignUp = () => {
 render() {
     return (
       <View style={styles.container}>
+      <StatusBar
+                backgroundColor="white"
+                barStyle="dark-content"
+                />
         <View style = {{flex: 1, width: 300}}></View>
         <View style = {{flex: 4, width: 190}}> 
           <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>CREATE A NEW ACCOUNT.</Text>

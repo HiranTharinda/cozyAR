@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, StatusBar} from "react-native";
 import {Icon, Title} from 'native-base'
 import { createMaterialTopTabNavigator, createAppContainer, StackNavigator, createStackNavigator} from 'react-navigation';
 import CamTab from './AppTabNavigator/CamTab'
@@ -8,6 +8,8 @@ import PostTab from './AppTabNavigator/PostTab'
 import ProfileTab from './AppTabNavigator/ProfileTab'
 import SearchTab from './AppTabNavigator/SearchTab'
 import firebase from 'react-native-firebase'
+import userProfile from './userProfile'
+import SendTab from './SendTab'
 class MainScreen extends Component{
 
     state = { currentUser: null }
@@ -15,21 +17,72 @@ class MainScreen extends Component{
     componentDidMount() {
         const { currentUser } = firebase.auth()
         this.setState({ currentUser })
+   
     }
 
     
 
     render(){
-        return(
-            <AppTabNavigator/>
+        return(<View style={{flex:1}}>
+                     <StatusBar
+                backgroundColor="white"
+                barStyle="dark-content"
+                />
+                <AppTabNavigator/>
+            </View>
+            
         )
     }
 }
 
+const home = createStackNavigator({
+    feed: {
+        screen:HomeTab,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'C O Z Y'
+              
+            }
+        }
+    },
+    userView: {
+        screen:userProfile,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Profile Overview'
+              
+            }
+        }
+    }
+
+})
+
+const post = createStackNavigator({
+    feed: {
+        screen:PostTab,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Select a photo'
+              
+            }
+        }
+    },
+    send: {
+        screen:SendTab,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Post'
+              
+            }
+        }
+    }
+
+})
+
 
 const BottomTabNavigator = createMaterialTopTabNavigator({
     HomeTab:{
-        screen: HomeTab
+        screen: home
     },
     SearchTab:{
         screen: SearchTab
@@ -38,7 +91,13 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
         screen: CamTab
     },
     PostTab:{
-        screen: PostTab
+        screen: post,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Products'
+            }
+        }
+      
     },
     ProfileTab:{
         screen: ProfileTab
@@ -46,12 +105,13 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
 
 
 },{     navigationOptions:{
+            header: null,
             title: 'C O Z Y',
             headerTitleStyle: {
             fontFamily: 'INTRO',
             fontWeight: 'bold',
             textAlign:"center", 
-        flex:1  
+       
         },
         },
         headerMode: 'screen',

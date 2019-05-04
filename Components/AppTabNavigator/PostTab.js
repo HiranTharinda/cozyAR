@@ -52,7 +52,8 @@ class PostTab extends Component{
     render(){
         return(
             <View style = {styles.container}>
-                <Button title='Pick' raised onPress={this.navi}></Button>
+            
+                <Button title='Pick' raised onPress={() => this.props.navigation.navigate('send')}></Button>
             </View>
         );
     }

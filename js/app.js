@@ -122,7 +122,7 @@ export class App extends Component {
   render() {
       return (
         <View style={localStyles.flex}>
-          <StatusBar hidden={true} />
+          
           <ViroARSceneNavigator style={localStyles.arView} 
                                 apiKey="E27B52CE-59E8-4CEA-A788-C212505E06F6"
                                 initialScene={{scene: InitialScene}}  

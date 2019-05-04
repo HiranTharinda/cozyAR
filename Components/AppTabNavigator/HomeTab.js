@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, FlatList } from "react-native";
+import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableHighlight } from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 
@@ -15,10 +15,10 @@ class HomeTab extends Component{
             liked: false
         }
     }
-
-    
     componentDidMount = () => {
+
         this.loadFeed();
+
     }
 
     pluralCheck = (s) => {
@@ -122,8 +122,7 @@ class HomeTab extends Component{
 
     render(){
         return(
-            
-            
+         
             <FlatList
             
             refreshing ={this.state.refresh}
@@ -137,10 +136,11 @@ class HomeTab extends Component{
                 <CardItem>
                     <Left>
                         <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35, borderColor:"#2fd7e0", borderWidth:1}}/>
-                        <Body>
-                            <Text style = {{fontWeight:"900"}}>
-                                {item.author}
-                            </Text>
+                        <Body><TouchableHighlight onPress = {() => this.props.navigation.navigate('userView')}>
+                                <Text style = {{fontWeight:"900"}}>
+                                    {item.author}
+                                </Text>
+                            </TouchableHighlight>
                             <Text note>{item.posted}</Text>
                         </Body>
                     </Left>
@@ -185,8 +185,7 @@ class HomeTab extends Component{
            )}
             >
             </FlatList>
-        
-         
+    
         )    
         
     }
