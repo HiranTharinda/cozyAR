@@ -79,6 +79,7 @@ export default class Login extends React.Component {
           <Text style={{fontWeight:"900",textAlign: 'center'}}></Text>
           <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>
           <View style={{flexDirection:"row", width:100, alignContent:"center",alignItems:"center", paddingHorizontal:27}}>
+
             <SocialIcon
               style = {{width:53}}
               button

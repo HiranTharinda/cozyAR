@@ -4,6 +4,7 @@ import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, 
 import firebase from 'react-native-firebase'
 
 
+
 class HomeTab extends Component{
     constructor(props){
         super(props);
@@ -14,6 +15,7 @@ class HomeTab extends Component{
             liked: false
         }
     }
+
     
     componentDidMount = () => {
         this.loadFeed();
@@ -104,6 +106,18 @@ class HomeTab extends Component{
         ) 
     }
 
+    likeButton = () => {
+        if (this.state.liked){
+            this.setState({
+                liked: false
+            })
+        }else{
+            this.setState({
+                liked: true
+            })
+        }
+        
+    }
     
 
     render(){
@@ -122,7 +136,7 @@ class HomeTab extends Component{
             <Card transparent>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
+                        <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35, borderColor:"#2fd7e0", borderWidth:1}}/>
                         <Body>
                             <Text style = {{fontWeight:"900"}}>
                                 {item.author}
@@ -138,18 +152,19 @@ class HomeTab extends Component{
                 </CardItem>
                 <CardItem style={{height: 45}}>
                     <Left>
-                        <Button transparent>
-                            <Icon name="ios-heart"
-                            style={{color: 'black'}}/>
+                        <Button transparent onPress={this.likeButton}>
+                            <Icon type = 'FontAwesome' name="heart-o"
+                            style={
+                                    this.state.liked
+                                        ? styles.likedTrue
+                                        : styles.likedFalse
+                                    }/>
                         </Button>
                         <Button transparent>
-                            <Icon name="ios-chatbubbles"
-                            style={{color: 'black'}}/>
+                            <Icon type = 'SimpleLineIcons' name="bubble"
+                            style={{color: 'black', fontSize: 32}}/>
                         </Button>
-                        <Button transparent>
-                            <Icon name="ios-send"
-                            style={{color: 'black'}}/>
-                        </Button>
+
                     </Left>
                 </CardItem>
                 <CardItem style={{height:20}}>
@@ -187,5 +202,14 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:'white'
+    },
+    likedTrue:{
+        color: 'red',
+          fontSize: 32
+    },
+    likedFalse: {
+        color: 'black',
+        fontSize: 32
+
     }
 });

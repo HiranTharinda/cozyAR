@@ -4,6 +4,7 @@ ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xm
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-64:12
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-64:12
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-64:12
+MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-23:12
 MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-google-signin] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-google-signin\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -358,6 +359,8 @@ uses-sdk
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41

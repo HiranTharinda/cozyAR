@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Button } from "react-native";
 import {Icon, Picker} from 'native-base'
-var ImgPicker = require("react-native-image-picker") 
-var {ImagePicker} = ImgPicker
+import {ImagePicker} from 'react-native-image-picker'
 class PostTab extends Component{
     
     constructor(props){
@@ -39,11 +38,21 @@ class PostTab extends Component{
             tintColor}}/>
         ) 
     }
+    navi = () => {
+        
+
+
+        this.props.navigation.navigate('userProfile')
+        
+            //promise rejected
+            console.log('ff')
+        
+    }
 
     render(){
         return(
             <View style = {styles.container}>
-                <Button title='Pick' raised onPress></Button>
+                <Button title='Pick' raised onPress={this.navi}></Button>
             </View>
         );
     }

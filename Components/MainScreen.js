@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import {Icon, Title} from 'native-base'
-import { createMaterialTopTabNavigator, createAppContainer, StackNavigator} from 'react-navigation';
+import { createMaterialTopTabNavigator, createAppContainer, StackNavigator, createStackNavigator} from 'react-navigation';
 import CamTab from './AppTabNavigator/CamTab'
 import HomeTab from './AppTabNavigator/HomeTab'
 import PostTab from './AppTabNavigator/PostTab'
@@ -17,16 +17,6 @@ class MainScreen extends Component{
         this.setState({ currentUser })
     }
 
-    static navigationOptions = {
-        
-        title: 'C O Z Y',
-        headerTitleStyle: {
-            fontFamily: 'INTRO',
-            fontWeight: 'bold',
-            textAlign:"center", 
-        flex:1  
-        },
-    };
     
 
     render(){
@@ -53,8 +43,18 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
     ProfileTab:{
         screen: ProfileTab
     }
-    
-},{     
+
+
+},{     navigationOptions:{
+            title: 'C O Z Y',
+            headerTitleStyle: {
+            fontFamily: 'INTRO',
+            fontWeight: 'bold',
+            textAlign:"center", 
+        flex:1  
+        },
+        },
+        headerMode: 'screen',
         tabBarPosition:'bottom',
         animationEnabled: true,
         swipeEnabled: false,
@@ -69,8 +69,11 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
     }
 
 });
+const wrapperStackNaviagtor = createStackNavigator({
+    BottomTabNavigator: BottomTabNavigator
+})
 
-const AppTabNavigator = createAppContainer(BottomTabNavigator)
+const AppTabNavigator = createAppContainer(wrapperStackNaviagtor)
 
 export default MainScreen
 

@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-google-signin/android/react-native-google-signin.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-google-signin/android/react-native-google-signin.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-image-picker/android/react-native-image-picker.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-image-picker/android/react-native-image-picker.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-share/android/react-native-share.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-share/android/react-native-share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-viro/android/react_viro/react_viro.iml" filepath="$PROJECT_DIR$/../node_modules/react-viro/android/react_viro/react_viro.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-viro/android/viro_renderer/viro_renderer.iml" filepath="$PROJECT_DIR$/../node_modules/react-viro/android/viro_renderer/viro_renderer.iml" />
