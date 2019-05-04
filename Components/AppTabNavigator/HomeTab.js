@@ -5,6 +5,7 @@ import firebase from 'react-native-firebase'
 
 
 
+
 class HomeTab extends Component{
     constructor(props){
         super(props);
@@ -66,7 +67,8 @@ class HomeTab extends Component{
                             posted: that.timeConverter(photoObj.posted),
                             author: data.username,
                             avatar: data.avatar,
-                            likes:photoObj.likes
+                            likes:photoObj.likes,
+                            authorId:photoObj.author
                             
                         });
                         that.setState({
@@ -136,7 +138,7 @@ class HomeTab extends Component{
                 <CardItem>
                     <Left>
                         <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35, borderColor:"#2fd7e0", borderWidth:1}}/>
-                        <Body><TouchableHighlight onPress = {() => this.props.navigation.navigate('userView')}>
+                        <Body><TouchableHighlight onPress = {() => this.props.navigation.navigate('userView', {userId: item.authorId})}>
                                 <Text style = {{fontWeight:"900"}}>
                                     {item.author}
                                 </Text>
