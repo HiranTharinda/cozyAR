@@ -6,21 +6,18 @@ export default class AssetThumb extends React.Component {
     static defaultProps = {
         asset: {},
         onPress: function(
-            
         ) {}
     }
+
     render(){
         return(
             <TouchableOpacity style = {styles.container} onPress={this.props.onPress}>
                 <Image source = {{uri:this.props.asset.thumbnail.url}} style ={styles.thumbnail}/>
                 <Text style={styles.displayName}>{this.props.asset.displayName}</Text>
-                
             </TouchableOpacity>    
         ) 
     }
 }
-
-
 
 export { AssetThumb}
 

@@ -3,18 +3,11 @@ import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight } from "r
 import {Icon, Content, Container, Button,Card, CardItem} from 'native-base'
 import firebase from 'react-native-firebase'
 
-
-
-
-
-
-
-class profileSettings extends Component{
-
+class ProfileSettings extends Component{
 
     render(){
         return(
-            
+ 
             <Container style={{ flex: 1, backgroundColor: 'white'}}>
                 <Content>
                 <View style ={{paddingTop: 100, paddingBottom:10, paddingRight:20, paddingLeft:20}}>
@@ -50,7 +43,7 @@ class profileSettings extends Component{
     }
 }
 
-export default profileSettings;
+export default ProfileSettings;
 
 
 const styles = StyleSheet.create({

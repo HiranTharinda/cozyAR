@@ -3,26 +3,12 @@ import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight } from "r
 import {Icon, Content, Container, Button,Card, CardItem} from 'native-base'
 import firebase from 'react-native-firebase'
 
-
-
-
-
-
-
-var { width } = Dimensions.get('window')
-class ProfileTab extends Component{
+class UserProfile extends Component{
     constructor(props){
         super(props);
         this.state = {
             loaded: false
         }
-    }
-
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-home" style={{color:
-            tintColor}}/>
-        ) 
     }
 
     checkParams = () => {
@@ -55,21 +41,12 @@ class ProfileTab extends Component{
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
                 that.setState({avatar:data,loaded:true});
-                
         }).catch(error => console.log(error));
     }
 
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-person" style={{color:
-            tintColor}}/>
-        ) 
-    }
-    
     componentDidMount =() => {
         this.checkParams()
     }
-
 
     render(){
         return(
@@ -114,7 +91,7 @@ class ProfileTab extends Component{
     }
 }
 
-export default ProfileTab;
+export default UserProfile;
 
 
 const styles = StyleSheet.create({

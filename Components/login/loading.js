@@ -13,19 +13,17 @@ export default class Loading extends React.Component {
                     })
         }, 5000);
     }
-  
 
     render() {
         return (
-        
         <View style={styles.container}>
-        <StatusBar
-            barStyle = "dark-content"
-            hidden = {false}
-            backgroundColor = "#48dbfb"
-            translucent = {false}
-            networkActivityIndicatorVisible = {false}
-        />
+            <StatusBar
+                barStyle = "dark-content"
+                hidden = {false}
+                backgroundColor = "#48dbfb"
+                translucent = {false}
+                networkActivityIndicatorVisible = {false}
+            />
             <View style={{flex:3}}></View> 
             <View style={{flex:2}}></View> 
             <View style={{flex:1}} >
@@ -39,6 +37,7 @@ export default class Loading extends React.Component {
         )
     }
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

@@ -3,10 +3,7 @@ import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableHighlight,
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 
-
-
-
-class comments extends Component{
+class Comments extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -18,8 +15,6 @@ class comments extends Component{
     }
     componentDidMount = () => {
         this.checkParams()
-    
-
     }
 
     checkParams = () => {
@@ -34,7 +29,6 @@ class comments extends Component{
         }
     }
 
-
     addCommentToList = (comment_list, data, comment) => {
         console.log(comment_list, data, comment)
         var that = this
@@ -42,7 +36,6 @@ class comments extends Component{
         firebase.database().ref('users').child(commentObj.author).once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
-
             comment_list.push({
                 id: comment,
                 comment:commentObj.comment,
@@ -50,32 +43,24 @@ class comments extends Component{
                 username: data.username,
                 avatar: data.avatar,
                 authorId: commentObj.author
-
             });
-
             that.setState({
                 refresh:false,
                 loading:false
             })
-
-            
         })
     }
 
-
     fetchComments = (photoId) => {
         var that = this
-
         firebase.database().ref('comments').child(photoId).orderByChild('posted').once('value').then(function(snapshot) {
             const exists = (snapshot.val() !== null)
             if (exists){
                 data = snapshot.val()
                 var comment_list = that.state.comment_list
-
                 for( var comment in data){
                     that.addCommentToList(comment_list,data,comment)
                 }
-
             }else{
                 that.setState({
                     comment_list:[]
@@ -84,8 +69,6 @@ class comments extends Component{
         }).catch(error => console.log(error))
     }
 
-
-
     pluralCheck = (s) => {
         if (s == 1){
             return ' ago'
@@ -93,7 +76,6 @@ class comments extends Component{
             return 's ago'
         }
     }
-
 
     timeConverter = (timestamp) => {
         var a = new Date(timestamp * 1000)
@@ -120,29 +102,15 @@ class comments extends Component{
         } return Math.floor(seconds) + 'seconds' +this.pluralCheck(interval)
     }
 
-
     s4 = () => {
         return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
         .substring(1)
     }
 
-
     uniqueId = () => {
         return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + 
         this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-'
-    }
-
-
-    
-
-
-
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-home" style={{color:
-            tintColor}}/>
-        ) 
     }
 
     likeButton = () => {
@@ -158,7 +126,6 @@ class comments extends Component{
         
     }
     
-
     render(){
         return(
             <View style={{flex:1}}>
@@ -166,48 +133,37 @@ class comments extends Component{
                     <View style={{alignContent:'center', alignItems:'center'}}><Text>No Comments Yet!</Text></View>
                 ):(
                     <FlatList
-            
-            refreshing ={this.state.refresh}
-            onRefresh = {this.loadNew}
-            data ={this.state.comment_list}
-            keyExtractor={(item, index)=>index.toString}
-            style = {{flex:1,backgroundColor:'#ffffff'}}
-            renderItem = {({item, index}) => (
-            <View key ={index}>
-            <Card>
-                <CardItem>
-                <Left>
-                        <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35, borderColor:"#2fd7e0", borderWidth:1}}/>
-                        <Body>
-                        
-                            <TouchableHighlight onPress = {() => this.props.navigation.navigate('userView', {userId: item.authorId})}>
-                                <Text style = {{fontWeight:"bold"}}>{item.username}<Text style={{fontWeight:'normal'}}> {item.comment}</Text></Text>
-                            </TouchableHighlight>
-                            
-                            <Text style={{fontSize:11}}>{item.posted}</Text>
-                        </Body>
-                    </Left>
-                </CardItem>
-            </Card>  
-            </View> 
-           )}
-            >
-            </FlatList>
+                        refreshing ={this.state.refresh}
+                        onRefresh = {this.loadNew}
+                        data ={this.state.comment_list}
+                        keyExtractor={(item, index)=>index.toString}
+                        style = {{flex:1,backgroundColor:'#ffffff'}}
+                        renderItem = {({item, index}) => (
+                        <View key ={index}>
+                            <Card>
+                                <CardItem>
+                                    <Left>
+                                        <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
+                                        <Body>
+                                        <TouchableHighlight onPress = {() => this.props.navigation.navigate('userView', {userId: item.authorId})}>
+                                            <Text style = {{fontWeight:"bold"}}>{item.username}<Text style={{fontWeight:'normal'}}> {item.comment}</Text></Text>
+                                        </TouchableHighlight>
+                                        <Text style={{fontSize:11}}>{item.posted}</Text>
+                                        </Body>
+                                    </Left>
+                                </CardItem>
+                            </Card>  
+                        </View> 
+                        )}
+                    >
+                    </FlatList>
                 )}
-            </View>
-         
-           
-    
+            </View>               
         )    
-        
     }
 }
-        
-   
 
-
-
-export default comments;
+export default Comments;
 
 const styles = StyleSheet.create({
     container:{
@@ -216,7 +172,7 @@ const styles = StyleSheet.create({
     },
     likedTrue:{
         color: 'red',
-          fontSize: 32
+        fontSize: 32
     },
     likedFalse: {
         color: 'black',

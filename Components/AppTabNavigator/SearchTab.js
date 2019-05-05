@@ -3,40 +3,33 @@ import React, { Component } from "react";
 import { ScrollView, View, Text, StyleSheet, Image, TextInput, ActivityIndicator, TouchableOpacity, StatusBar} from "react-native";
 import { SearchBar, Button } from 'react-native-elements'
 import {Icon, Content, Container, Header, Left, Body, Right, Row, Thumbnail} from 'native-base'
+
 import GooglePoly from '../../api/GooglePoly'
 import ApiKeys from '../../constants/ApiKeys';
 import { AssetThumb } from '../AssetThumb'
+
 import _ from 'lodash'
 
 class SearchTab extends Component{
 
-  
-
     constructor(props) {
-        super(props);
-
+        super(props)
         this.googlePoly = new GooglePoly(ApiKeys.GooglePoly)
-        this.googlePoly.getSearchResults("","").then (function(assets){
-            
+        this.googlePoly.getSearchResults("","").then (function(assets){ 
         })
-
         this.state = {
             searchQuery:"",
             currentResults: []
         }
     }
 
-
     onSearchChangeText = (text) => {
         this.setState({searchQuery: text});
-
-        
     }
 
     onSearchPress = () => {
         var keywords = this.state.searchQuery
         this.googlePoly.setSearchParams(keywords)
-
         this.googlePoly.getSearchResults().then(function(assets){
             this.setState({currentResults: this.googlePoly.currentResults})
         }.bind(this))
@@ -62,7 +55,6 @@ class SearchTab extends Component{
                 results.push(<AssetThumb asset={this.state.currentResults[i]} key={i}/>)
             break
             }
-
             results.push(
                 <View style = {{flexDirection:"row"}} key={"row"+i}>
                     <AssetThumb asset={this.state.currentResults[i]} key={i}/>
@@ -70,7 +62,6 @@ class SearchTab extends Component{
                     <AssetThumb asset={this.state.currentResults[i+2]} key={i+2}/>
                 </View>
             )
-            
         }
         return (
             <View style = {{flex:1, alignItems: "center"}}>
@@ -83,19 +74,16 @@ class SearchTab extends Component{
                     </Button>
             </View>
         )
-        
     }
 
     render(){
         return(
-            
             <Container>
-            <View style={{flex:1,}}>
-                <View style={{flexDirection:"column"}}>
-                    <ScrollView horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    style = {{paddingHorizontal: 5, paddingVertical:5}}
-                    >
+                <View style={{flex:1,}}>
+                    <View style={{flexDirection:"column"}}>
+                        <ScrollView horizontal={true}
+                                    showsHorizontalScrollIndicator={false}
+                                    style = {{paddingHorizontal: 5, paddingVertical:5}}>
                         <TouchableOpacity>
                             <Thumbnail style={styles.thumbnail} source={require("../../assets/searchCatogories/1.jpg")}></Thumbnail>
                         </TouchableOpacity>
@@ -117,7 +105,6 @@ class SearchTab extends Component{
                         <TouchableOpacity>
                             <Thumbnail style={styles.thumbnail}  source={require("../../assets/searchCatogories/7.jpg")}></Thumbnail>
                         </TouchableOpacity>
-                        
                     </ScrollView>
                 </View>
                 <View style={{flex:1, flexDirection:"row",height:60}}>
@@ -139,19 +126,15 @@ class SearchTab extends Component{
                         containerStyle={{justifyContent:"center",alignItems:"center",width:70,height:48,backgroundColor:"#ffffff"}}
                         buttonStyle={{width:70,backgroundColor:"#ffffff"}}
                         raised
-                        >
-                ></Button>
+                    > 
+                    </Button>
                 </View>
-                <View style={{flex:8}}>
-                    <ScrollView>
-                        {this.renderCurrentResults()}
-                  
-                    </ScrollView>
+                    <View style={{flex:8}}>
+                        <ScrollView>
+                            {this.renderCurrentResults()}
+                        </ScrollView>
+                    </View>
                 </View>
-            </View>
-                
-               
-                
             </Container>
         );
     }

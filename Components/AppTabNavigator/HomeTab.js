@@ -3,10 +3,8 @@ import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableHighlight 
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 
-
-
-
 class HomeTab extends Component{
+
     constructor(props){
         super(props);
         this.state = {
@@ -16,10 +14,9 @@ class HomeTab extends Component{
             liked: false
         }
     }
+
     componentDidMount = () => {
-
         this.loadFeed();
-
     }
 
     pluralCheck = (s) => {
@@ -54,6 +51,7 @@ class HomeTab extends Component{
             return interval + ' minute' +this.pluralCheck(interval)
         } return Math.floor(seconds) + 'seconds' +this.pluralCheck(interval)
     }
+
     addToFlatlist = (photo_feed, data, photo) => {
         var that = this
         var photoObj = data[photo];
@@ -76,8 +74,8 @@ class HomeTab extends Component{
                             loading: false
                         })
                     }).catch(error => console.log(error));
-
     }
+
     loadFeed = () => {
         this.setState({
             refresh:true,
@@ -97,15 +95,6 @@ class HomeTab extends Component{
         }).catch(error => console.log(error));
     }
 
- 
-
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-home" style={{color:
-            tintColor}}/>
-        ) 
-    }
-
     likeButton = () => {
         if (this.state.liked){
             this.setState({
@@ -116,88 +105,76 @@ class HomeTab extends Component{
                 liked: true
             })
         }
-        
     }
     
-
     render(){
         return(
-         
             <FlatList
-            
-            refreshing ={this.state.refresh}
-            onRefresh = {this.loadNew}
-            data ={this.state.photo_feed}
-            keyExtractor={(item, index)=>index.toString}
-            style = {{flex:1,backgroundColor:'#ffffff'}}
-            renderItem = {({item, index}) => (
-            <View key ={index}>
-            <Card transparent>
-                <CardItem>
-                    <Left>
-                        <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35, borderColor:"#2fd7e0", borderWidth:1}}/>
-                        <Body><TouchableHighlight onPress = {() => this.props.navigation.navigate('userView', {userId: item.authorId})}>
-                                <Text style = {{fontWeight:"900"}}>
-                                    {item.author}
+                refreshing ={this.state.refresh}
+                onRefresh = {this.loadNew}
+                data ={this.state.photo_feed}
+                keyExtractor={(item, index)=>index.toString}
+                style = {{flex:1,backgroundColor:'#ffffff'}}
+                renderItem = {({item, index}) => (
+                    <View key ={index}>
+                        <Card transparent>
+                            <CardItem>
+                                <Left>
+                                    <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
+                                    <Body>
+                                        <TouchableHighlight onPress = {() => this.props.navigation.navigate('UserView', {userId: item.authorId})}>
+                                            <Text style = {{fontWeight:"normal"}}>
+                                                {item.author}
+                                            </Text>
+                                        </TouchableHighlight>
+                                        <Text style={{fontSize:11}}>{item.posted}</Text>
+                                    </Body>
+                                </Left>
+                            </CardItem>
+                            <CardItem cardBody>
+                                <Image source={{uri:item.url}} style={
+                                    {height:350, width:null, flex:1}}/>
+                            </CardItem>
+                            <CardItem style={{height: 45}}>
+                                <Left>
+                                    <Button transparent onPress={this.likeButton}>
+                                        <Icon type = 'FontAwesome' name="heart-o"
+                                            style={
+                                                this.state.liked
+                                                ? styles.likedTrue
+                                                : styles.likedFalse
+                                                }/>
+                                    </Button>
+                                    <Button transparent>
+                                        <Icon type = 'SimpleLineIcons' name="bubble"
+                                            style={{color: 'black', fontSize: 32}}/>
+                                        </Button>
+                                </Left>
+                            </CardItem>
+                            <CardItem style={{height:20}}>
+                                <Text>
+                                    {item.likes} likes
                                 </Text>
-                            </TouchableHighlight>
-                            <Text style={{fontSize:11}}>{item.posted}</Text>
-                        </Body>
-                    </Left>
-                </CardItem>
-                <CardItem cardBody>
-                    <Image source={{uri:item.url}} style={
-                        {height:350, width:null, flex:1}
-                    }/>
-                </CardItem>
-                <CardItem style={{height: 45}}>
-                    <Left>
-                        <Button transparent onPress={this.likeButton}>
-                            <Icon type = 'FontAwesome' name="heart-o"
-                            style={
-                                    this.state.liked
-                                        ? styles.likedTrue
-                                        : styles.likedFalse
-                                    }/>
-                        </Button>
-                        <Button transparent>
-                            <Icon type = 'SimpleLineIcons' name="bubble"
-                            style={{color: 'black', fontSize: 32}}/>
-                        </Button>
-
-                    </Left>
-                </CardItem>
-                <CardItem style={{height:20}}>
-                    <Text>
-                        {item.likes} likes
-                    </Text>
-                </CardItem>
-                <CardItem>
-                    <Body>
-                        <Text>
-                            <Text style = {{fontWeight:"900"}}>Tharinda </Text>
-                                {item.caption}
-                        </Text>
-                        <TouchableHighlight onPress = {()=> this.props.navigation.navigate('comments',{photoId:item.id})}>
-                        <Text style = {{color:'#979797'}}>View Comments</Text>
-                        </TouchableHighlight>
-                        
-                    </Body>
-                </CardItem>
-            </Card>
-            </View> 
-           )}
+                            </CardItem>
+                            <CardItem>
+                                <Body>
+                                    <Text>
+                                        <Text style = {{fontWeight:"900"}}>Tharinda </Text>
+                                        {item.caption}
+                                    </Text>
+                                    <TouchableHighlight onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
+                                        <Text style = {{color:'#979797'}}>View Comments</Text>
+                                    </TouchableHighlight>
+                                </Body>
+                            </CardItem>
+                        </Card>
+                    </View> 
+                )}
             >
             </FlatList>
-    
         )    
-        
     }
 }
-        
-   
-
-
 
 export default HomeTab;
 
@@ -213,6 +190,5 @@ const styles = StyleSheet.create({
     likedFalse: {
         color: 'black',
         fontSize: 32
-
     }
 });

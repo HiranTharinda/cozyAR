@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import { View, Text, StyleSheet } from "react-native";
 import {Icon} from 'native-base'
+
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
 import App from '../../js/app';
+
 var reducers = require('../../js/redux/reducers');
 
 let store = createStore(reducers);

@@ -4,9 +4,8 @@ import firebase from 'firebase'
 import config from '../../config/config'
 import { SocialIcon } from 'react-native-elements'
 
-
-
 export default class SignUp extends React.Component {
+
   state = { email: '', password: '', errorMessage: null }
 
 handleSignUp = () => {
@@ -16,9 +15,8 @@ handleSignUp = () => {
       .then(() => this.props.navigation.navigate('MainScreen'))
       .catch(error => this.setState({ errorMessage: error.message }))
   console.log('handleSignUp')
- 
-
 }
+
 render() {
     return (
       <View style={styles.container}>

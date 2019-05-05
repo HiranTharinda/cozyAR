@@ -2,16 +2,18 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, StatusBar, Button} from "react-native";
 import {Icon, Title} from 'native-base'
 import { createMaterialTopTabNavigator, createAppContainer, StackNavigator, createStackNavigator} from 'react-navigation';
+import firebase from 'react-native-firebase'
+
 import CamTab from './AppTabNavigator/CamTab'
 import HomeTab from './AppTabNavigator/HomeTab'
 import PostTab from './AppTabNavigator/PostTab'
 import ProfileTab from './AppTabNavigator/ProfileTab'
 import SearchTab from './AppTabNavigator/SearchTab'
-import firebase from 'react-native-firebase'
-import userProfile from './userProfile'
-import SendTab from './SendTab'
-import comments from './comments'
-import profileSettings from './profileSettings'
+import UserProfile from './Home/UserProfile'
+import SendTab from './Posts/SendTab'
+import Comments from './Posts/Comments'
+import ProfileSettings from './Profile/ProfileSettings'
+
 class MainScreen extends Component{
 
     state = { currentUser: null }
@@ -73,8 +75,8 @@ ProfileTab.navigationOptions = {
     ) 
 }
 
-const home = createStackNavigator({
-    feed: {
+const Home = createStackNavigator({
+    Feed: {
         screen:HomeTab,
         navigationOptions:({navigation}) => {
             return{
@@ -83,8 +85,8 @@ const home = createStackNavigator({
             }
         }
     },
-    userView: {
-        screen:userProfile,
+    UserView: {
+        screen:UserProfile,
         navigationOptions:({navigation}) => {
             return{
                 headerTitle:'Profile Overview'
@@ -92,8 +94,8 @@ const home = createStackNavigator({
             }
         }
     },
-    comments: {
-        screen:comments,
+    Comments: {
+        screen:Comments,
         navigationOptions:({navigation}) => {
             return{
                 headerTitle:'Comments'
@@ -104,8 +106,8 @@ const home = createStackNavigator({
 
 })
 
-const post = createStackNavigator({
-    pickImage: {
+const Post = createStackNavigator({
+    PickImage: {
         screen:PostTab,
         navigationOptions:({navigation}) => {
             return{
@@ -114,7 +116,7 @@ const post = createStackNavigator({
             }
         }
     },
-    send: {
+    Send: {
         screen:SendTab,
         navigationOptions:({navigation}) => {
             return{
@@ -127,7 +129,7 @@ const post = createStackNavigator({
 
 })
 
-const profile = createStackNavigator({
+const Profile = createStackNavigator({
     pickImage: {
         screen:ProfileTab,
         navigationOptions:({navigation}) => {
@@ -141,7 +143,7 @@ const profile = createStackNavigator({
         }
     },
     settings: {
-        screen:profileSettings,
+        screen:ProfileSettings,
         navigationOptions:({navigation}) => {
             return{
                 headerTitle:'Profile Settings'
@@ -155,7 +157,7 @@ const profile = createStackNavigator({
 
 const BottomTabNavigator = createMaterialTopTabNavigator({
     HomeTab:{
-        screen: home,
+        screen: Home
         
     },
     SearchTab:{
@@ -165,10 +167,10 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
         screen: CamTab
     },
     PostTab:{
-        screen: post
+        screen: Post
     },
     ProfileTab:{
-        screen: profile
+        screen: Profile
     }
 
 

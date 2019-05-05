@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Button } from "react-native";
 import {Icon, Picker} from 'native-base'
 import {ImagePicker} from 'react-native-image-picker'
+
 class PostTab extends Component{
     
     constructor(props){
@@ -9,11 +10,8 @@ class PostTab extends Component{
         this.state={
             imageId: this.uniqueId()
         }
-
     }
 
-   
-    
     s4 = () => {
         return Math.floor((1 + Math.random()) * 0x10000)
         .toString(16)
@@ -32,30 +30,22 @@ class PostTab extends Component{
         })
     }
 
-   
     navi = () => {
-        
-
-
         this.props.navigation.navigate('userProfile')
-        
-            //promise rejected
-            console.log('ff')
-        
+        //promise rejected
+        console.log('ff')
     }
 
     render(){
         return(
             <View style = {styles.container}>
-            
-                <Button title='Pick' raised onPress={() => this.props.navigation.navigate('send')}></Button>
+                <Button title='Pick' raised onPress={() => this.props.navigation.navigate('Send')}></Button>
             </View>
-        );
+            );
+        }
     }
-}
 
 export default PostTab;
-
 
 const styles = StyleSheet.create({
     container:{

@@ -2,11 +2,9 @@ import React from 'react'
 import { StyleSheet, Text, TextInput, View, Button, Image } from 'react-native'
 import firebase from 'react-native-firebase'
 import { SocialIcon } from 'react-native-elements'
-import { GoogleSignin } from 'react-native-google-signin';
 import FBSDK, { AccessToken, LoginManager}  from 'react-native-fbsdk'
+
 var options 
-
-
 var config = {
   apiKey: 'AIzaSyDYmkq3R7SpWBYiUEKCU8N2SSG-6ojzuc0',
   authDomain: ' cozy-67b69.firebaseio.com/',
@@ -16,8 +14,8 @@ const firebaseRef = firebase.initializeApp(config)
 
 export default class Login extends React.Component {
 
-
   state = { email: '', password: '', errorMessage: null }
+
   handleLogin = () => {
     const { email, password } = this.state
     firebase
@@ -79,7 +77,6 @@ export default class Login extends React.Component {
           <Text style={{fontWeight:"900",textAlign: 'center'}}></Text>
           <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>
           <View style={{flexDirection:"row", width:100, alignContent:"center",alignItems:"center", paddingHorizontal:27}}>
-
             <SocialIcon
               style = {{width:53}}
               button
