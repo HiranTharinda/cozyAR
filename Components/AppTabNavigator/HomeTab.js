@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableHighlight } from "react-native";
+import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 
@@ -49,7 +49,7 @@ class HomeTab extends Component{
         interval = Math.floor(seconds / 60);
         if(interval > 1){
             return interval + ' minute' +this.pluralCheck(interval)
-        } return Math.floor(seconds) + 'seconds' +this.pluralCheck(interval)
+        } return Math.floor(seconds) + 'second' +this.pluralCheck(interval)
     }
 
     addToFlatlist = (photo_feed, data, photo) => {
@@ -63,7 +63,7 @@ class HomeTab extends Component{
                             url: photoObj.url,
                             caption: photoObj.caption,
                             posted: that.timeConverter(photoObj.posted),
-                            author: data.username,
+                            author: data.name,
                             avatar: data.avatar,
                             likes:photoObj.likes,
                             authorId:photoObj.author
@@ -122,11 +122,11 @@ class HomeTab extends Component{
                                 <Left>
                                     <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
                                     <Body>
-                                        <TouchableHighlight onPress = {() => this.props.navigation.navigate('UserView', {userId: item.authorId})}>
+                                        <TouchableOpacity onPress = {() => this.props.navigation.navigate('UserView', {userId: item.authorId})}>
                                             <Text style = {{fontWeight:"normal"}}>
                                                 {item.author}
                                             </Text>
-                                        </TouchableHighlight>
+                                        </TouchableOpacity>
                                         <Text style={{fontSize:11}}>{item.posted}</Text>
                                     </Body>
                                 </Left>
@@ -159,12 +159,12 @@ class HomeTab extends Component{
                             <CardItem>
                                 <Body>
                                     <Text>
-                                        <Text style = {{fontWeight:"900"}}>Tharinda </Text>
+                                        <Text style = {{fontWeight:"900"}}>{item.author} </Text>
                                         {item.caption}
                                     </Text>
-                                    <TouchableHighlight onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
+                                    <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
                                         <Text style = {{color:'#979797'}}>View Comments</Text>
-                                    </TouchableHighlight>
+                                    </TouchableOpacity>
                                 </Body>
                             </CardItem>
                         </Card>

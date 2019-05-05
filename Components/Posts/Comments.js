@@ -40,7 +40,7 @@ class Comments extends Component{
                 id: comment,
                 comment:commentObj.comment,
                 posted: that.timeConverter(commentObj.posted),
-                username: data.username,
+                author: data.name,
                 avatar: data.avatar,
                 authorId: commentObj.author
             });
@@ -77,6 +77,40 @@ class Comments extends Component{
         }
     }
 
+    postComment = () => {
+        var comment = this.state.comment
+        if(comment != ''){
+            var imageId = this.state.photoId
+            var userId = firebase.auth().currentUser.uid;
+            var commentId = this.uniqueId()
+            var dateTime = Date.now()
+            var timestamp = Math.floor(dateTime /  1000)
+
+            this.setState({
+                comment: ''
+            })
+
+            var commentObj = {
+                posted: timestamp,
+                author: userId,
+                comment: comment
+            }
+
+            firebase.database().ref('/comments/'+imageId+'/'+commentId).set(commentObj)
+            //reload the comment
+            this.reloadCommentList();
+        }else{
+            
+        }
+    }
+
+    reloadCommentList = () => {
+        this.setState({
+            comment_list: []
+        })
+        this.fetchComments(this.state.photoId)
+    }
+
     timeConverter = (timestamp) => {
         var a = new Date(timestamp * 1000)
         var seconds = Math.floor((new Date() - a) / 1000)
@@ -99,7 +133,7 @@ class Comments extends Component{
         interval = Math.floor(seconds / 60);
         if(interval > 1){
             return interval + ' minute' +this.pluralCheck(interval)
-        } return Math.floor(seconds) + 'seconds' +this.pluralCheck(interval)
+        } return Math.floor(seconds) + 'second' +this.pluralCheck(interval)
     }
 
     s4 = () => {
@@ -140,24 +174,36 @@ class Comments extends Component{
                         style = {{flex:1,backgroundColor:'#ffffff'}}
                         renderItem = {({item, index}) => (
                         <View key ={index}>
-                            <Card>
+                            <Card transparent>
                                 <CardItem>
                                     <Left>
                                         <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
                                         <Body>
-                                        <TouchableHighlight onPress = {() => this.props.navigation.navigate('userView', {userId: item.authorId})}>
-                                            <Text style = {{fontWeight:"bold"}}>{item.username}<Text style={{fontWeight:'normal'}}> {item.comment}</Text></Text>
-                                        </TouchableHighlight>
+                                        <TouchableOpacity onPress = {() => this.props.navigation.navigate('UserView', {userId: item.authorId})}>
+                                            <Text style = {{fontWeight:"bold"}}>{item.author}<Text style={{fontWeight:'normal'}}> {item.comment}</Text></Text>
+                                        </TouchableOpacity>
                                         <Text style={{fontSize:11}}>{item.posted}</Text>
                                         </Body>
                                     </Left>
                                 </CardItem>
-                            </Card>  
-                        </View> 
+                            </Card>
+                        </View>
                         )}
                     >
                     </FlatList>
                 )}
+                <KeyboardAvoidingView behavior="padding" enabled stlye={{borderTopWidth:'1', borderTopColor:'grey', padding:10, marginBottom:15}}>
+                        <TextInput
+                            editable={true}
+                            placeholder={'Enter a comment here...'}
+                            onChangeText={(text) => this.setState({comment: text})}
+                            style = {{marginVertical:10, height: 50, padding: 50}}> 
+                        </TextInput>
+                        <TouchableOpacity>
+                        <Icon name="ios-send" onPress={() => this.postComment()}
+                                    style={{color: 'black'}}/>
+                        </TouchableOpacity>
+                </KeyboardAvoidingView>   
             </View>               
         )    
     }

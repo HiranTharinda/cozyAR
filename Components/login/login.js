@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button, Image } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Button, Image, StatusBar } from 'react-native'
 import firebase from 'react-native-firebase'
 import { SocialIcon } from 'react-native-elements'
 import FBSDK, { AccessToken, LoginManager}  from 'react-native-fbsdk'
@@ -35,7 +35,7 @@ export default class Login extends React.Component {
           const credential = firebase.auth.FacebookAuthProvider.credential(AccessTokenData.accessToken)
           firebase.auth().signInAndRetrieveDataWithCredential(credential).then((result) =>{
               //promise success
-              console.log(AccessToken)
+              
           },(error) =>{
             //promise rejected
             console.log(error)
@@ -53,6 +53,10 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar
+                backgroundColor="white"
+                barStyle="dark-content"
+                />
         <View style = {{flex: 1, width: 300}}></View>
         <View style = {{flex: 4, width: 190}}> 
           <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>HEY! WELCOME BACK.</Text>

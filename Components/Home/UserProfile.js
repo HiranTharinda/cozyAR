@@ -25,12 +25,6 @@ class UserProfile extends Component{
 
     fetchUserInfo = (userId) => {
         var that = this;
-        firebase.database().ref('users').child(userId).child('username').once('value').then(function(snapshot){
-            const exists = (snapshot.val() !== null)
-            if(exists) data = snapshot.val()
-                that.setState({username:data});
-        }).catch(error => console.log(error));
-
         firebase.database().ref('users').child(userId).child('name').once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
@@ -65,7 +59,6 @@ class UserProfile extends Component{
                             <View style = {{ flex: 2, flexDirection: "column", paddingBottom: 30, paddingTop: 15}}>
                                 <View style ={{flex:2, paddingHorizontal:10,alignItems: 'center'}}>
                                     <Text style = {{ fontWeight: 'bold', fontSize:30}}> {this.state.name} </Text>
-                                    <Text> {this.state.username}</Text>
                                     <Button transparent onPress={() => firebase.auth().signOut()} >
                                     <Icon name="ios-send"
                                     style={{color: 'black'}}/>

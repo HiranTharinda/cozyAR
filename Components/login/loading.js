@@ -8,7 +8,6 @@ export default class Loading extends React.Component {
     componentWillMount() {
         setTimeout(() => {
             firebase.auth().onAuthStateChanged(user => {
-                        console.log(user)
                         this.props.navigation.navigate(user ? 'MainScreen' : 'signUp')
                     })
         }, 5000);
