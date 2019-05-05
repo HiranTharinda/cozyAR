@@ -10,6 +10,7 @@ import SearchTab from './AppTabNavigator/SearchTab'
 import firebase from 'react-native-firebase'
 import userProfile from './userProfile'
 import SendTab from './SendTab'
+import comments from './comments'
 class MainScreen extends Component{
 
     state = { currentUser: null }
@@ -53,12 +54,21 @@ const home = createStackNavigator({
               
             }
         }
+    },
+    comments: {
+        screen:comments,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Comments'
+              
+            }
+        }
     }
 
 })
 
 const post = createStackNavigator({
-    feed: {
+    pickImage: {
         screen:PostTab,
         navigationOptions:({navigation}) => {
             return{
@@ -71,7 +81,7 @@ const post = createStackNavigator({
         screen:SendTab,
         navigationOptions:({navigation}) => {
             return{
-                headerTitle:'Post'
+                headerTitle:'Share'
               
             }
         }

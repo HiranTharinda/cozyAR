@@ -97,9 +97,7 @@ class HomeTab extends Component{
         }).catch(error => console.log(error));
     }
 
-    loadNew = () => {  
-        this.loadFeed()
-    }
+ 
 
     static navigationOptions = {
         tabBarIcon: ({tintColor}) => (
@@ -143,7 +141,7 @@ class HomeTab extends Component{
                                     {item.author}
                                 </Text>
                             </TouchableHighlight>
-                            <Text note>{item.posted}</Text>
+                            <Text style={{fontSize:11}}>{item.posted}</Text>
                         </Body>
                     </Left>
                 </CardItem>
@@ -180,6 +178,10 @@ class HomeTab extends Component{
                             <Text style = {{fontWeight:"900"}}>Tharinda </Text>
                                 {item.caption}
                         </Text>
+                        <TouchableHighlight onPress = {()=> this.props.navigation.navigate('comments',{photoId:item.id})}>
+                        <Text style = {{color:'#979797'}}>View Comments</Text>
+                        </TouchableHighlight>
+                        
                     </Body>
                 </CardItem>
             </Card>
