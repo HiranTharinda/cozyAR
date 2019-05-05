@@ -31,7 +31,6 @@ class ProfileTab extends Component{
                 that.fetchProfileData(user.uid)
             }
         })
-    
     }
 
     render(){

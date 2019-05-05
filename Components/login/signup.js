@@ -24,12 +24,10 @@ createUserNormal = () => {
       var name = this.state.name
       var email = this.state.email
       var userId = firebase.auth().currentUser.uid;
-
       var userObj = {
           email: email,
           name: name,
       }
-
       firebase.database().ref('/users/'+userId).set(userObj)
 }
 
@@ -56,12 +54,9 @@ onLoginOrRegister = () => {
           //promise rejected
           console.log(error)
         })
-        
-        
       },(error => {
         console.log('some error'+ error)
       }))
-      
     }
   }, function(error){
     console.log('An error occurred' + error);
