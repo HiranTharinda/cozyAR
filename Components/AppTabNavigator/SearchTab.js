@@ -10,12 +10,7 @@ import _ from 'lodash'
 
 class SearchTab extends Component{
 
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-search" style={{color:
-            tintColor}}/>
-        ) 
-    }
+  
 
     constructor(props) {
         super(props);

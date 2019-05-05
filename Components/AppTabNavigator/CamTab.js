@@ -10,18 +10,13 @@ let store = createStore(reducers);
 
 class CamTab extends Component{
 
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-aperture" style={{color:
-            tintColor}}/>
-        ) 
-    };
-
     render(){
-        return(
-            <Provider store={store}>
-                <App />
-            </Provider>
+        return(<View>
+                <Text>Doi</Text>
+                </View>
+            // <Provider store={store}>
+            //     <App />
+            // </Provider>
         );
     }
 }

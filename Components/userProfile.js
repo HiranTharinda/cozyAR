@@ -18,6 +18,13 @@ class ProfileTab extends Component{
         }
     }
 
+    static navigationOptions = {
+        tabBarIcon: ({tintColor}) => (
+            <Icon name = "md-home" style={{color:
+            tintColor}}/>
+        ) 
+    }
+
     checkParams = () => {
         var params = this.props.navigation.state.params;
         if(params){

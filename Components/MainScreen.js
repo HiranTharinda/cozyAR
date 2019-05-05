@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, StatusBar} from "react-native";
+import { View, Text, StyleSheet, Image, StatusBar, Button} from "react-native";
 import {Icon, Title} from 'native-base'
 import { createMaterialTopTabNavigator, createAppContainer, StackNavigator, createStackNavigator} from 'react-navigation';
 import CamTab from './AppTabNavigator/CamTab'
@@ -11,6 +11,7 @@ import firebase from 'react-native-firebase'
 import userProfile from './userProfile'
 import SendTab from './SendTab'
 import comments from './comments'
+import profileSettings from './profileSettings'
 class MainScreen extends Component{
 
     state = { currentUser: null }
@@ -34,6 +35,42 @@ class MainScreen extends Component{
             
         )
     }
+}
+
+
+HomeTab.navigationOptions = {
+    tabBarIcon: ({tintColor}) => (
+        <Icon name = "md-home" style={{color:
+        tintColor}}/>
+    ) 
+}
+
+SearchTab.navigationOptions = {
+    tabBarIcon: ({tintColor}) => (
+        <Icon name = "md-search" style={{color:
+        tintColor}}/>
+    ) 
+}
+
+CamTab.navigationOptions = {
+    tabBarIcon: ({tintColor}) => (
+        <Icon name = "md-aperture"  style={{color:
+        tintColor}}/>
+    ) 
+}
+
+PostTab.navigationOptions = {
+    tabBarIcon: ({tintColor}) => (
+        <Icon name = "md-add" style={{color:
+        tintColor}}/>
+    ) 
+}
+
+ProfileTab.navigationOptions = {
+    tabBarIcon: ({tintColor}) => (
+        <Icon name = "md-person" style={{color:
+        tintColor}}/>
+    ) 
 }
 
 const home = createStackNavigator({
@@ -82,7 +119,33 @@ const post = createStackNavigator({
         navigationOptions:({navigation}) => {
             return{
                 headerTitle:'Share'
+                
               
+            }
+        }
+    }
+
+})
+
+const profile = createStackNavigator({
+    pickImage: {
+        screen:ProfileTab,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Your Profile',
+                headerRight: (<View style ={{paddingRight:20}}>
+                    <Icon name="ios-settings" onPress={() => navigation.navigate('settings')}
+                    style={{color: 'black'}}/></View>)
+              
+            }
+        }
+    },
+    settings: {
+        screen:profileSettings,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Profile Settings'
+                
             }
         }
     }
@@ -92,7 +155,8 @@ const post = createStackNavigator({
 
 const BottomTabNavigator = createMaterialTopTabNavigator({
     HomeTab:{
-        screen: home
+        screen: home,
+        
     },
     SearchTab:{
         screen: SearchTab
@@ -101,16 +165,10 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
         screen: CamTab
     },
     PostTab:{
-        screen: post,
-        navigationOptions:({navigation}) => {
-            return{
-                headerTitle:'Products'
-            }
-        }
-      
+        screen: post
     },
     ProfileTab:{
-        screen: ProfileTab
+        screen: profile
     }
 
 
@@ -129,7 +187,7 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
         animationEnabled: true,
         swipeEnabled: false,
         tabBarOptions: {
-            showLabel: false,
+            showLabel: true,
             activeTintColor: '#2fd7e0',
             inactiveTintColor:'#000000',
             showIcon: true,

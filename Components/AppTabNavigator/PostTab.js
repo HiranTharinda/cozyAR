@@ -32,12 +32,7 @@ class PostTab extends Component{
         })
     }
 
-    static navigationOptions = {
-        tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-add" style={{color:
-            tintColor}}/>
-        ) 
-    }
+   
     navi = () => {
         
 
