@@ -1,5 +1,5 @@
 ![COZY](./assets/header.png)
-## Online System for Personal Advertisements
+## Place it Like you Mean It - Augemented Reality Furniture!
 
 ### Introduction
 “Cozy” is an Augmented Reality and Artificial Intelligence based android app designed to make selecting furniture much more easy and fun task. “Cozy” gives the customers the ability to easily place any product in any space using Augmented Reality and decide if it truly fit in to their place.
@@ -52,13 +52,17 @@ react-native run-android --variant=gvrDebug
 <table>
 <tr>
 <td align="center"><img src="https://avatars0.githubusercontent.com/u/25032998?s=460&v=4" width=200></td>
-<td align="center"><img src="https://avatars3.githubusercontent.com/u/36721132?s=460&v=4" width=200></td>
-<td align="center"><img src="https://avatars3.githubusercontent.com/u/40149373?s=460&v=4" width=200></td>
-<td align="center"><img src="https://scontent.fcmb1-1.fna.fbcdn.net/v/t1.0-1/p160x160/34344310_559649131098004_615801102251589632_n.jpg?_nc_cat=106&_nc_ht=scontent.fcmb1-1.fna&oh=c6f24c1c789716df004cce87ad330e12&oe=5C6935D1" width=200></td>
+<td align="center"><img src="https://avatars2.githubusercontent.com/u/25360196?s=400&v=4" width=200></td>
+<td align="center"><img src="https://avatars3.githubusercontent.com/u/39773857?s=400&v=4" width=200></td>
+<td align="center"><img src="https://www.facebook.com/photo.php?fbid=1273549419451705&set=pob.100008093432910&type=3" width=200></td>
 </tr>
 <tr>
 
 <td align="center"><a href="https://github.com/HiranTharinda">Hiran Tharinda</a></td>
+<td align="center"><a href="https://github.com/rmihiranga">Ravindu Mihiranga</a></td>
+<td align="center"><a href="https://github.com/tharindukumarasiri">Tharindu Kumarasiri</a></td>
+<td align="center"><a href="https://github.com/HiranTharinda">Amasa Jayasinghe</a></td>
+
 
 </tr>
 </table>
