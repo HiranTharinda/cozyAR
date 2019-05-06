@@ -54,14 +54,14 @@ react-native run-android --variant=gvrDebug
 <td align="center"><img src="https://avatars3.githubusercontent.com/u/40149373?s=460&v=4" width=200></td>
 <td align="center"><img src="https://avatars2.githubusercontent.com/u/25360196?s=400&v=4" width=200></td>
 <td align="center"><img src="https://avatars3.githubusercontent.com/u/39773857?s=400&v=4" width=200></td>
-<td align="center"><img src="https://www.facebook.com/photo.php?fbid=1273549419451705&set=pob.100008093432910&type=3" width=200></td>
+<td align="center"><img src="https://avatars3.githubusercontent.com/u/42765683?s=400&v=4" width=200></td>
 </tr>
 <tr>
 
 <td align="center"><a href="https://github.com/HiranTharinda">Hiran Tharinda</a></td>
 <td align="center"><a href="https://github.com/rmihiranga">Ravindu Mihiranga</a></td>
 <td align="center"><a href="https://github.com/tharindukumarasiri">Tharindu Kumarasiri</a></td>
-<td align="center"><a href="https://github.com/HiranTharinda">Amasa Jayasinghe</a></td>
+<td align="center"><a href="https://github.com/amasamanjari">Amasa Manjari</a></td>
 
 
 </tr>
