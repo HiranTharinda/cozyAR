@@ -1,9 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button,Image, StatusBar } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Image, StatusBar } from 'react-native'
 import firebase from 'react-native-firebase'
 import FBSDK, { AccessToken, LoginManager}  from 'react-native-fbsdk'
-import config from '../../config/config'
-import { SocialIcon } from 'react-native-elements'
+import { SocialIcon, Button } from 'react-native-elements'
 
 export default class SignUp extends React.Component {
 
@@ -71,8 +70,16 @@ render() {
                 barStyle="dark-content"
                 />
         <View style = {{flex: 1, width: 300}}></View>
-        <View style = {{flex: 4, width: 190}}> 
+        <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}> 
           <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>CREATE A NEW ACCOUNT.</Text>
+          <SocialIcon
+              style = {{width:180, height:40}}
+              button
+              onPress ={() => this.onLoginOrRegister()}
+              type='facebook'
+              raised = 'true'/>
+          <Text></Text>
+          <Text style={{fontWeight:"normal",textAlign: 'center'}}>or</Text>
           <TextInput
             placeholder="Name"
             autoCapitalize="none"
@@ -96,29 +103,20 @@ render() {
             style={styles.textInput}
             onChangeText={password => this.setState({ password })}
             value={this.state.password}/>
-          <Button color="#ff6b6b" title="Sign Up" onPress={this.handleSignUp} />
-          <Text style={{fontWeight:"900",textAlign: 'center'}}></Text>
-          <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>
-          <View style={{flexDirection:"row", width:100, alignContent:"center",alignItems:"center"}}>
-            <SocialIcon
-              style = {{width:53}}
-              button
-              onPress ={() => this.onLoginOrRegister()}
-              type='facebook'
-              raised = 'true'/>
-            <SocialIcon
-              button
-              raised = 'true'
-              style = {{width:53, backgroundColor:"#ff6b6b"}}
-              type='google'/>
-          </View>
-        </View>
-        <View style = {{flex: 1}}>
-          <Text>Already have an account?</Text>
-          <Button color = '#54a0ff'
+          <Text> </Text>
+          <Button title="Sign Up" onPress={this.handleSignUp} buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}} />
+          <Text></Text>
+          <Text style={{fontWeight:"normal",textAlign: 'center'}}>Already have an account?</Text>
+          <Text></Text>
+          <Button 
                   title="Login"
-                  onPress={() => this.props.navigation.navigate('login')}/>
+                  onPress={() => this.props.navigation.navigate('login')}
+                  buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#54a0ff'}}  
+                  />
+
         </View>
+ 
+         
       </View>
     )
   }

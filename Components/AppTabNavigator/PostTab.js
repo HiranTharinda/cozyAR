@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Button } from "react-native";
 import {Icon, Picker} from 'native-base'
-import {ImagePicker} from 'react-native-image-picker'
+import ImagePicker from 'react-native-image-crop-picker';
 
 class PostTab extends Component{
     
@@ -10,6 +10,10 @@ class PostTab extends Component{
         this.state={
             imageId: this.uniqueId()
         }
+    }
+
+    componentDidMount = () => {
+        this.handleChoosePhoto()
     }
 
     s4 = () => {
@@ -24,10 +28,13 @@ class PostTab extends Component{
     }
 
     handleChoosePhoto = () => {
-        const options = {};
-        ImagePicker.launchImageLibrary(options, response => {
-            console.log("response", response)
-        })
+        ImagePicker.openPicker({
+            width: 300,
+            height: 400,
+            cropping: true
+          }).then(image => {
+            console.log(image);
+          });
     }
 
     navi = () => {

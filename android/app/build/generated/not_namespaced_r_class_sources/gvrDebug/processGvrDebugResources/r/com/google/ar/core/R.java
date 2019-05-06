@@ -24,10 +24,10 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int __arcore_cancel = 0x7f0b0000;
-        public static final int __arcore_continue = 0x7f0b0001;
-        public static final int __arcore_install_app = 0x7f0b0002;
-        public static final int __arcore_install_feature = 0x7f0b0003;
-        public static final int __arcore_installing = 0x7f0b0004;
+        public static final int __arcore_cancel = 0x7f0c0000;
+        public static final int __arcore_continue = 0x7f0c0001;
+        public static final int __arcore_install_app = 0x7f0c0002;
+        public static final int __arcore_install_feature = 0x7f0c0003;
+        public static final int __arcore_installing = 0x7f0c0004;
     }
 }

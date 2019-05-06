@@ -121,6 +121,23 @@
                         "endColumns": "223",
                         "endOffsets": "7343"
                     }
+                },
+                {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\ucrop-2.2.2-native.aar\\93afce6ad4ffa741272ec87f00f024ab\\res\\values-fr\\values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,124,182",
+                        "endColumns": "68,57,52",
+                        "endOffsets": "119,177,230"
+                    },
+                    "to": {
+                        "startLines": "88,89,90",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "10140,10209,10267",
+                        "endColumns": "68,57,52",
+                        "endOffsets": "10204,10262,10315"
+                    }
                 }
             ]
         }

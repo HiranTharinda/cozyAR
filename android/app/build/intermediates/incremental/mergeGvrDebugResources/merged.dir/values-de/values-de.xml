@@ -86,4 +86,7 @@
     <string msgid="121453720915069922" name="exo_controls_stop_description">"Beenden"</string>
     <string msgid="146198913615257606" name="search_menu_title">"Suchen"</string>
     <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="ucrop_label_edit_photo">Foto editieren</string>
+    <string name="ucrop_label_original">Original</string>
+    <string name="ucrop_menu_crop">Zuschneiden</string>
 </resources>

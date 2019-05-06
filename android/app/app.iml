@@ -220,6 +220,7 @@
     <orderEntry type="library" name="Gradle: com.facebook.fresco:fresco:1.3.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-fragment:28.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: io.grpc:grpc-core:1.16.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.8.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-media-compat:27.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable:28.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.android:facebook-places:4.34.0@aar" level="project" />
@@ -274,7 +275,6 @@
     <orderEntry type="library" name="Gradle: com.google.android.exoplayer:exoplayer-smoothstreaming:2.7.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:versionedparcelable:28.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.android:facebook-core:4.34.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.6.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:customtabs:27.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: org.codehaus.mojo:animal-sniffer-annotations:1.17@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:coordinatorlayout:28.0.0@aar" level="project" />
@@ -285,66 +285,7 @@
     <orderEntry type="module" module-name="react-native-fbsdk" />
     <orderEntry type="module" module-name="react-native-google-signin" />
     <orderEntry type="module" module-name="react-native-firebase" />
-    <orderEntry type="module" module-name="lottie-react-native" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="react-native-vector-icons" />
-    <orderEntry type="module" module-name="react-native-facebook-login" />
-    <orderEntry type="module" module-name="react-native-image-picker" />
-    <orderEntry type="module" module-name="react-native-share" />
-    <orderEntry type="module" module-name="react-native-gesture-handler" />
-    <orderEntry type="module" module-name="react-native-fbsdk" />
-    <orderEntry type="module" module-name="react-native-google-signin" />
-    <orderEntry type="module" module-name="react-native-firebase" />
-    <orderEntry type="module" module-name="lottie-react-native" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="react-native-vector-icons" />
-    <orderEntry type="module" module-name="react-native-facebook-login" />
-    <orderEntry type="module" module-name="react-native-image-picker" />
-    <orderEntry type="module" module-name="react-native-share" />
-    <orderEntry type="module" module-name="react-native-gesture-handler" />
-    <orderEntry type="module" module-name="react-native-fbsdk" />
-    <orderEntry type="module" module-name="react-native-google-signin" />
-    <orderEntry type="module" module-name="react-native-firebase" />
-    <orderEntry type="module" module-name="lottie-react-native" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="react-native-vector-icons" />
-    <orderEntry type="module" module-name="react-native-facebook-login" />
-    <orderEntry type="module" module-name="react-native-image-picker" />
-    <orderEntry type="module" module-name="react-native-share" />
-    <orderEntry type="module" module-name="react-native-gesture-handler" />
-    <orderEntry type="module" module-name="react-native-fbsdk" />
-    <orderEntry type="module" module-name="react-native-google-signin" />
-    <orderEntry type="module" module-name="react-native-firebase" />
-    <orderEntry type="module" module-name="lottie-react-native" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="react-native-vector-icons" />
-    <orderEntry type="module" module-name="react-native-facebook-login" />
-    <orderEntry type="module" module-name="react-native-image-picker" />
-    <orderEntry type="module" module-name="react-native-share" />
-    <orderEntry type="module" module-name="react-native-gesture-handler" />
-    <orderEntry type="module" module-name="react-native-fbsdk" />
-    <orderEntry type="module" module-name="react-native-google-signin" />
-    <orderEntry type="module" module-name="react-native-firebase" />
-    <orderEntry type="module" module-name="lottie-react-native" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="react-native-vector-icons" />
-    <orderEntry type="module" module-name="react-native-facebook-login" />
-    <orderEntry type="module" module-name="react-native-image-picker" />
-    <orderEntry type="module" module-name="react-native-share" />
-    <orderEntry type="module" module-name="react-native-gesture-handler" />
-    <orderEntry type="module" module-name="react-native-fbsdk" />
-    <orderEntry type="module" module-name="react-native-google-signin" />
-    <orderEntry type="module" module-name="react-native-firebase" />
-    <orderEntry type="module" module-name="lottie-react-native" />
-    <orderEntry type="module" module-name="react-native-video" />
-    <orderEntry type="module" module-name="react-native-vector-icons" />
-    <orderEntry type="module" module-name="react-native-facebook-login" />
-    <orderEntry type="module" module-name="react-native-image-picker" />
-    <orderEntry type="module" module-name="react-native-share" />
-    <orderEntry type="module" module-name="react-native-gesture-handler" />
-    <orderEntry type="module" module-name="react-native-fbsdk" />
-    <orderEntry type="module" module-name="react-native-google-signin" />
-    <orderEntry type="module" module-name="react-native-firebase" />
+    <orderEntry type="module" module-name="react-native-image-crop-picker" />
     <orderEntry type="module" module-name="lottie-react-native" />
     <orderEntry type="module" module-name="react-native-video" />
     <orderEntry type="module" module-name="react-native-vector-icons" />

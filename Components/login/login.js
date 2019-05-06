@@ -1,16 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button, Image, StatusBar } from 'react-native'
+import { StyleSheet, Text, TextInput, View, Image, StatusBar,  KeyboardAvoidingView } from 'react-native'
 import firebase from 'react-native-firebase'
-import { SocialIcon } from 'react-native-elements'
+import { SocialIcon, Button } from 'react-native-elements'
 import FBSDK, { AccessToken, LoginManager}  from 'react-native-fbsdk'
 
 var options 
-var config = {
-  apiKey: 'AIzaSyDYmkq3R7SpWBYiUEKCU8N2SSG-6ojzuc0',
-  authDomain: ' cozy-67b69.firebaseio.com/',
-  databaseURL: 'https://cozy-67b69.firebaseio.com/'
-}
-const firebaseRef = firebase.initializeApp(config)
+
 
 export default class Login extends React.Component {
 
@@ -57,8 +52,16 @@ export default class Login extends React.Component {
                 barStyle="dark-content"
                 />
         <View style = {{flex: 1, width: 300}}></View>
-        <View style = {{flex: 4, width: 190}}> 
+        <View style = {{flex: 4, width: 190, alignContent:'center', alignItems:'center'}}> 
           <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>HEY! WELCOME BACK.</Text>
+          <SocialIcon
+              style = {{width:180, height:40}}
+              button
+              onPress ={() => this.onLoginOrRegister()}
+              type='facebook'
+              raised = 'true'/>
+          <Text></Text>
+          <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>   
           {this.state.errorMessage &&
           <Text style={{ color: 'red' }}>
             {this.state.errorMessage}
@@ -70,34 +73,22 @@ export default class Login extends React.Component {
             onChangeText={email => this.setState({ email })}
             value={this.state.email}/>
           <TextInput
-            ecureTextEntry
+            secureTextEntry
             style={styles.textInput}
             autoCapitalize="none"
             placeholder="Password"
             onChangeText={password => this.setState({ password })}
             value={this.state.password}/>
-          <Button color = '#54a0ff' title="Login" onPress={this.handleLogin} />
-          <Text style={{fontWeight:"900",textAlign: 'center'}}></Text>
-          <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>
-          <View style={{flexDirection:"row", width:100, alignContent:"center",alignItems:"center", paddingHorizontal:27}}>
-            <SocialIcon
-              style = {{width:53}}
-              button
-              onPress ={() => this.onLoginOrRegister()}
-              type='facebook'
-              raised = 'true'/>
-            <SocialIcon
-              button
-              raised = 'true'
-              style = {{width:53, backgroundColor:"#ff6b6b"}}
-              type='google'/>
-          </View>
-        </View>
-        <View style = {{flex: 1}}> 
-          <Text>Don't have an account?</Text>
-          <Button color="#ff6b6b"
+          <Text> </Text>
+          <Button  title="Login" onPress={this.handleLogin} buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#54a0ff'}} />
+          <Text></Text>
+          <Text style={{fontWeight:"normal",textAlign: 'center'}}>Don't have an account?</Text>   
+          <Text></Text>
+          <Button 
                   title="Sign Up"
-                  onPress={() => this.props.navigation.navigate('signUp')}/>
+                  onPress={() => this.props.navigation.navigate('signUp')}
+                  buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}  
+                  />
         </View>
       </View>
     )

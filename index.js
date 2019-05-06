@@ -28,8 +28,8 @@ export default class Root extends React.Component {
 const AppStackNavigator = (createSwitchNavigator(
   {
     loading,
-    signUp,
     login,
+    signUp,
     MainScreen,
   },
   {

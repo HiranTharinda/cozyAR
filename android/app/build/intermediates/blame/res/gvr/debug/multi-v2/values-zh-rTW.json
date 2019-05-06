@@ -89,6 +89,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\ucrop-2.2.2-native.aar\\93afce6ad4ffa741272ec87f00f024ab\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,132,186,240,287",
+                        "endColumns": "76,53,53,46,116",
+                        "endOffsets": "127,181,235,282,399"
+                    },
+                    "to": {
+                        "startLines": "88,89,90,91,92",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "8740,8817,8871,8925,8972",
+                        "endColumns": "76,53,53,46,116",
+                        "endOffsets": "8812,8866,8920,8967,9084"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.1.0.aar\\028c6fc4c17df300449c378e78dbb1c4\\res\\values-zh-rTW\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",

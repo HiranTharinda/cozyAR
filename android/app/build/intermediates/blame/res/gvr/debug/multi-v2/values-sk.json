@@ -89,6 +89,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\ucrop-2.2.2-native.aar\\93afce6ad4ffa741272ec87f00f024ab\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,182",
+                        "endColumns": "69,56,50",
+                        "endOffsets": "120,177,228"
+                    },
+                    "to": {
+                        "startLines": "88,89,90",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "9946,10016,10073",
+                        "endColumns": "69,56,50",
+                        "endOffsets": "10011,10068,10119"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\60058afd47ac5e6e3554d207dc0b509e\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2",

@@ -13,6 +13,8 @@ target 'figment' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
+
 end
 
 # Needed to fix linker error between GVRSDK and React
