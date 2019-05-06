@@ -14,12 +14,13 @@ let store = createStore(reducers);
 class CamTab extends Component{
 
     render(){
-        return(<View>
-                <Text>Doi</Text>
-                </View>
-            // <Provider store={store}>
-            //     <App />
-            // </Provider>
+        return(
+                // <View>
+                // <Text></Text>Doi</Text>
+                // </View>
+            <Provider store={store}>
+                <App />
+            </Provider>
         );
     }
 }
