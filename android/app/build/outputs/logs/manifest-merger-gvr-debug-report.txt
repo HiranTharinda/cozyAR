@@ -6,9 +6,7 @@ INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-66:12
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-28:12
 MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-23:12
 MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-google-signin] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-google-signin\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:1-30:12
 MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:react-native-video] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-video\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -32,11 +30,8 @@ MERGED from [com.google.firebase:firebase-auth:16.2.1] C:\Users\Hiran\.gradle\ca
 MERGED from [com.google.firebase:firebase-firestore:18.2.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-firestore-18.2.0.aar\c59398bc591cca5665fbeb3462c6147c\AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.firebase:firebase-storage:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.1.0.aar\b671e8e63e89cbcdca73d1d87f585628\AndroidManifest.xml:15:1-37:12
 MERGED from [com.google.firebase:firebase-database:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-database-16.1.0.aar\574726712103a2301f7a5d6a4ba5f5eb\AndroidManifest.xml:15:1-36:12
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:17:1-39:12
 MERGED from [com.google.android.gms:play-services-flags:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-flags-16.0.1.aar\3e75b1cd22d0ed82440433ae65031fa6\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\cafdda0c51d9abfb9a77db820c1d5d2a\AndroidManifest.xml:2:1-10:12
-MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-16.0.0.aar\c3f17d9208b2c62a2c6baea609023ef9\AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-16.0.0.aar\ac13c35299c3cd4afb84f6963b47220d\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-core:16.0.8] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.8.aar\a4ab6874b8b3ad42eac66c2729024c4c\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-analytics:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.4.0.aar\71bebda37b5a7227f82c179e6abeeba2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:17:1-36:12
@@ -190,8 +185,6 @@ application
 ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:22:5-65:19
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-26:19
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-26:19
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-21:19
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-21:19
 MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-20
 MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-20
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\ff6cd5d1178cef05df07007f8ae81d7c\AndroidManifest.xml:13:5-20
@@ -218,8 +211,6 @@ MERGED from [com.google.firebase:firebase-storage:16.1.0] C:\Users\Hiran\.gradle
 MERGED from [com.google.firebase:firebase-storage:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.1.0.aar\b671e8e63e89cbcdca73d1d87f585628\AndroidManifest.xml:29:5-35:19
 MERGED from [com.google.firebase:firebase-database:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-database-16.1.0.aar\574726712103a2301f7a5d6a4ba5f5eb\AndroidManifest.xml:28:5-34:19
 MERGED from [com.google.firebase:firebase-database:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-database-16.1.0.aar\574726712103a2301f7a5d6a4ba5f5eb\AndroidManifest.xml:28:5-34:19
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:22:5-37:19
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:22:5-37:19
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\cafdda0c51d9abfb9a77db820c1d5d2a\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\cafdda0c51d9abfb9a77db820c1d5d2a\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-core:16.0.8] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.8.aar\a4ab6874b8b3ad42eac66c2729024c4c\AndroidManifest.xml:7:5-20
@@ -379,12 +370,8 @@ MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-8:41
 MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-google-signin] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-google-signin\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-google-signin] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-google-signin\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-26:41
 MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-26:41
 MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
@@ -431,16 +418,10 @@ MERGED from [com.google.firebase:firebase-storage:16.1.0] C:\Users\Hiran\.gradle
 MERGED from [com.google.firebase:firebase-storage:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.1.0.aar\b671e8e63e89cbcdca73d1d87f585628\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-database:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-database-16.1.0.aar\574726712103a2301f7a5d6a4ba5f5eb\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-database:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-database-16.1.0.aar\574726712103a2301f7a5d6a4ba5f5eb\AndroidManifest.xml:19:5-21:41
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-flags:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-flags-16.0.1.aar\3e75b1cd22d0ed82440433ae65031fa6\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-flags:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-flags-16.0.1.aar\3e75b1cd22d0ed82440433ae65031fa6\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\cafdda0c51d9abfb9a77db820c1d5d2a\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-auth-interop-16.0.1.aar\cafdda0c51d9abfb9a77db820c1d5d2a\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-16.0.0.aar\c3f17d9208b2c62a2c6baea609023ef9\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-16.0.0.aar\c3f17d9208b2c62a2c6baea609023ef9\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-16.0.0.aar\ac13c35299c3cd4afb84f6963b47220d\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-16.0.0.aar\ac13c35299c3cd4afb84f6963b47220d\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:16.0.8] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.8.aar\a4ab6874b8b3ad42eac66c2729024c4c\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:16.0.8] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.8.aar\a4ab6874b8b3ad42eac66c2729024c4c\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.4.0.aar\71bebda37b5a7227f82c179e6abeeba2\AndroidManifest.xml:5:5-44
@@ -595,16 +576,6 @@ ADDED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_
 		ADDED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:13-69
 	android:name
 		ADDED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:13-60
-provider#com.imagepicker.FileProvider
-ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-20:20
-	android:grantUriPermissions
-		ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-47
-	android:authorities
-		ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-60
-	android:exported
-		ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-37
-	android:name
-		ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-56
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:24:5-68
@@ -767,24 +738,6 @@ ADDED from [com.google.firebase:firebase-database:16.1.0] C:\Users\Hiran\.gradle
 		ADDED from [com.google.firebase:firebase-database:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-database-16.1.0.aar\574726712103a2301f7a5d6a4ba5f5eb\AndroidManifest.xml:32:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-database:16.1.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-database-16.1.0.aar\574726712103a2301f7a5d6a4ba5f5eb\AndroidManifest.xml:31:17-109
-activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:23:9-27:75
-	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:25:13-46
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:26:13-37
-	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:27:13-72
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:24:13-93
-service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:33:9-36:110
-	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:35:13-36
-	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:36:13-107
-	android:name
-		ADDED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-auth-16.0.1.aar\06c4d2c4c8276ee9e05acc413666643d\AndroidManifest.xml:34:13-89
 meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
 ADDED from [com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-measurement-api-16.4.0.aar\8482c127a020394c19502f9542426f5f\AndroidManifest.xml:30:13-32:85
 	android:value

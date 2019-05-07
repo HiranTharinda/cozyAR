@@ -46,7 +46,7 @@ class HomeTab extends Component{
         if(interval > 1){
             return interval + ' hour' +this.pluralCheck(interval)
         }
-        interval = Math.floor(seconds / 60);
+        interval = Math.ceil(seconds / 60);
         if(interval > 1){
             return interval + ' minute' +this.pluralCheck(interval)
         } return Math.floor(seconds) + 'second' +this.pluralCheck(interval)
@@ -75,7 +75,7 @@ class HomeTab extends Component{
                         })
                     }).catch(error => console.log(error));
     }
-
+  
     loadFeed = () => {
         this.setState({
             refresh:true,
@@ -93,6 +93,10 @@ class HomeTab extends Component{
                     that.addToFlatlist(photo_feed, data, photo)
                 }
         }).catch(error => console.log(error));
+    }
+
+    loadNew = () => {
+        this. loadFeed()
     }
 
     likeButton = () => {

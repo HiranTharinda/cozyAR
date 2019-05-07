@@ -155,20 +155,20 @@ const Profile = createStackNavigator({
 
 
 const BottomTabNavigator = createMaterialTopTabNavigator({
-    HomeTab:{
+    Home:{
         screen: Home
         
     },
-    SearchTab:{
+    Search:{
         screen: SearchTab
     },
-    CamTab:{
+    AR:{
         screen: CamTab
     },
-    PostTab:{
+    Post:{
         screen: Post
     },
-    ProfileTab:{
+    Profile:{
         screen: Profile
     }
 

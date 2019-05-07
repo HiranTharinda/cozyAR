@@ -1,13 +1,11 @@
 package com.cozy;
 
 import android.app.Application;
-
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
-import com.imagepicker.ImagePickerPackage;
 import com.magus.fblogin.FacebookLoginPackage;
-import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import cl.json.RNSharePackage;
@@ -15,6 +13,7 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.database.RNFirebaseDatabasePackage;
+import io.invertase.firebase.storage.RNFirebaseStoragePackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 import cl.json.ShareApplication;
 import com.facebook.react.ReactNativeHost;
@@ -49,10 +48,9 @@ public class MainApplication extends Application implements ShareApplication, Re
         new MainReactPackage(),
         new PickerPackage(),
         new VectorIconsPackage(),
-        new ImagePickerPackage(),
         new RNFirebaseDatabasePackage(),
+        new RNFirebaseStoragePackage(),
         new FacebookLoginPackage(),
-        new RNGoogleSigninPackage(),
         new ReactVideoPackage(),
         new RNSharePackage(),
         new RNGestureHandlerPackage(),

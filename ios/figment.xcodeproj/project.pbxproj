@@ -77,6 +77,14 @@
 		BD22D9DD95854629966F199F /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D2511F94B0C4205810C770C /* Octicons.ttf */; };
 		1B603D95035743C2BDC4A1B6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58D694288DE34306B4A160D7 /* SimpleLineIcons.ttf */; };
 		888043965411484B9983EFFB /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88FF8E7014444D40BB7B01B5 /* Zocial.ttf */; };
+		D377B40325B74E559CD4CE86 /* fontawesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F83C19CF11465BB276A7FC /* fontawesome.ttf */; };
+		75F75A5813A84ABB885EA10F /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 453F763E3FEE4F268A18AA29 /* icomoon.ttf */; };
+		0D6FBB0508CB4C5299E2E833 /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F6038E5B7BF492AA0247319 /* Righteous-Regular.ttf */; };
+		FD9F3CD90E744BF59CE397EA /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 324D666D05804CC4A0110B18 /* Roboto-Bold.ttf */; };
+		F0302EDD5CED43D7A07C78D8 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42DE0D34DE5B4D8FB8F19F59 /* Roboto-Light.ttf */; };
+		4D7316CBC17D4A90B0082822 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD93770E9729466D95F9BD23 /* Roboto-Medium.ttf */; };
+		20F160C1134A41A5BFACB6E7 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F232734A10AE494B9F2D809F /* Roboto-Regular.ttf */; };
+		D9DBEDE995894D52B3461A26 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54C0A50B3EB844EDBAAA4279 /* Pacifico.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -489,6 +497,14 @@
 		9D2511F94B0C4205810C770C /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		58D694288DE34306B4A160D7 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		88FF8E7014444D40BB7B01B5 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		59F83C19CF11465BB276A7FC /* fontawesome.ttf */ = {isa = PBXFileReference; name = "fontawesome.ttf"; path = "../assets/fonts/fontawesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		453F763E3FEE4F268A18AA29 /* icomoon.ttf */ = {isa = PBXFileReference; name = "icomoon.ttf"; path = "../assets/fonts/icomoon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9F6038E5B7BF492AA0247319 /* Righteous-Regular.ttf */ = {isa = PBXFileReference; name = "Righteous-Regular.ttf"; path = "../assets/fonts/Righteous-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		324D666D05804CC4A0110B18 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; name = "Roboto-Bold.ttf"; path = "../assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		42DE0D34DE5B4D8FB8F19F59 /* Roboto-Light.ttf */ = {isa = PBXFileReference; name = "Roboto-Light.ttf"; path = "../assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FD93770E9729466D95F9BD23 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F232734A10AE494B9F2D809F /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		54C0A50B3EB844EDBAAA4279 /* Pacifico.ttf */ = {isa = PBXFileReference; name = "Pacifico.ttf"; path = "../assets/fonts/Pacifico.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -858,6 +874,14 @@
 				9D2511F94B0C4205810C770C /* Octicons.ttf */,
 				58D694288DE34306B4A160D7 /* SimpleLineIcons.ttf */,
 				88FF8E7014444D40BB7B01B5 /* Zocial.ttf */,
+				59F83C19CF11465BB276A7FC /* fontawesome.ttf */,
+				453F763E3FEE4F268A18AA29 /* icomoon.ttf */,
+				9F6038E5B7BF492AA0247319 /* Righteous-Regular.ttf */,
+				324D666D05804CC4A0110B18 /* Roboto-Bold.ttf */,
+				42DE0D34DE5B4D8FB8F19F59 /* Roboto-Light.ttf */,
+				FD93770E9729466D95F9BD23 /* Roboto-Medium.ttf */,
+				F232734A10AE494B9F2D809F /* Roboto-Regular.ttf */,
+				54C0A50B3EB844EDBAAA4279 /* Pacifico.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1417,6 +1441,14 @@
 				BD22D9DD95854629966F199F /* Octicons.ttf in Resources */,
 				1B603D95035743C2BDC4A1B6 /* SimpleLineIcons.ttf in Resources */,
 				888043965411484B9983EFFB /* Zocial.ttf in Resources */,
+				D377B40325B74E559CD4CE86 /* fontawesome.ttf in Resources */,
+				75F75A5813A84ABB885EA10F /* icomoon.ttf in Resources */,
+				0D6FBB0508CB4C5299E2E833 /* Righteous-Regular.ttf in Resources */,
+				FD9F3CD90E744BF59CE397EA /* Roboto-Bold.ttf in Resources */,
+				F0302EDD5CED43D7A07C78D8 /* Roboto-Light.ttf in Resources */,
+				4D7316CBC17D4A90B0082822 /* Roboto-Medium.ttf in Resources */,
+				20F160C1134A41A5BFACB6E7 /* Roboto-Regular.ttf in Resources */,
+				D9DBEDE995894D52B3461A26 /* Pacifico.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
