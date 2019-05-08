@@ -5,15 +5,11 @@ import { createMaterialTopTabNavigator, createAppContainer, StackNavigator, crea
 import firebase from 'react-native-firebase'
 
 import CamTab from './AppTabNavigator/CamTab'
-import HomeTab from './AppTabNavigator/HomeTab'
-import PostTab from './AppTabNavigator/PostTab'
-import ProfileTab from './AppTabNavigator/ProfileTab'
-import SearchTab from './AppTabNavigator/SearchTab'
-import UserProfile from './Home/UserProfile'
-import SendTab from './Posts/SendTab'
-import Comments from './Posts/Comments'
-import ProfileSettings from './Profile/ProfileSettings'
 
+import HomeStack from './AppTabNavigator/HomeStack'
+import StoreStack from './AppTabNavigator/StoreStack'
+import ProfileStack from './AppTabNavigator/ProfileStack'
+import PostStack from './AppTabNavigator/PostStack'
 class MainScreen extends Component{
 
     state = { currentUser: null }
@@ -25,7 +21,7 @@ class MainScreen extends Component{
 
     render(){
         return(<View style={{flex:1}}>
-                     <StatusBar
+                <StatusBar
                 backgroundColor="white"
                 barStyle="dark-content"
                 />
@@ -36,21 +32,6 @@ class MainScreen extends Component{
     }
 }
 
-
-HomeTab.navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-        <Icon name = "md-home" style={{color:
-        tintColor}}/>
-    ) 
-}
-
-SearchTab.navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-        <Icon name = "md-search" style={{color:
-        tintColor}}/>
-    ) 
-}
-
 CamTab.navigationOptions = {
     tabBarIcon: ({tintColor}) => (
         <Icon name = "md-aperture"  style={{color:
@@ -58,118 +39,22 @@ CamTab.navigationOptions = {
     ) 
 }
 
-PostTab.navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-        <Icon name = "md-add" style={{color:
-        tintColor}}/>
-    ) 
-}
-
-ProfileTab.navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-        <Icon name = "md-person" style={{color:
-        tintColor}}/>
-    ) 
-}
-
-const Home = createStackNavigator({
-    Feed: {
-        screen:HomeTab,
-        navigationOptions:({navigation}) => {
-            return{
-                headerTitle:'C O Z Y'
-              
-            }
-        }
-    },
-    UserView: {
-        screen:UserProfile,
-        navigationOptions:({navigation}) => {
-            return{
-                headerTitle:'Profile Overview'
-              
-            }
-        }
-    },
-    Comments: {
-        screen:Comments,
-        navigationOptions:({navigation}) => {
-            return{
-                headerTitle:'Comments'
-              
-            }
-        }
-    }
-
-})
-
-const Post = createStackNavigator({
-    PickImage: {
-        screen:PostTab,
-        navigationOptions:({navigation}) => {
-            return{
-                headerTitle:'Select a photo'
-              
-            }
-        }
-    },
-    Send: {
-        screen:SendTab,
-        navigationOptions:({navigation}) => {
-            return{
-                headerTitle:'Share'
-                
-              
-            }
-        }
-    }
-
-})
-
-const Profile = createStackNavigator({
-    pickImage: {
-        screen:ProfileTab,
-        navigationOptions:({navigation}) => {
-            return{
-                headerTitle:'Your Profile',
-                headerRight: (<View style ={{paddingRight:20}}>
-                                <TouchableOpacity onPress={() => navigation.navigate('settings')}>
-                                    <Icon  name="ios-settings" 
-                                            style={{color: 'black'}}/>
-                                </TouchableOpacity>
-                            </View>)
-            }
-        }
-    },
-    settings: {
-        screen:ProfileSettings,
-        navigationOptions:({navigation}) => {
-            return{
-                headerTitle:'Profile Settings'
-                
-            }
-        }
-    }
-
-})
-
-
 const BottomTabNavigator = createMaterialTopTabNavigator({
     Home:{
-        screen: Home
+        screen: HomeStack
         
     },
     Search:{
-        screen: SearchTab
+        screen: StoreStack
     },
     AR:{
         screen: CamTab
     },
     Post:{
-        screen: Post
+        screen: PostStack
     },
     Profile:{
-        screen: Profile
+        screen: ProfileStack
     }
 
 
@@ -180,7 +65,6 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
             fontFamily: 'INTRO',
             fontWeight: 'bold',
             textAlign:"center", 
-       
         },
         },
         headerMode: 'screen',
@@ -188,21 +72,17 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
         animationEnabled: true,
         swipeEnabled: false,
         tabBarOptions: {
-            showLabel: true,
+            showLabel: false,
             activeTintColor: '#2fd7e0',
             inactiveTintColor:'#000000',
             showIcon: true,
             style:{elevation:100, backgroundColor: 'white',},
             indicatorStyle:{backgroundColor:'black'}
-
     }
 
 });
-const wrapperStackNaviagtor = createStackNavigator({
-    BottomTabNavigator: BottomTabNavigator
-})
 
-const AppTabNavigator = createAppContainer(wrapperStackNaviagtor)
+const AppTabNavigator = createAppContainer(BottomTabNavigator)
 
 export default MainScreen
 

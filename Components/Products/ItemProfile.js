@@ -8,7 +8,7 @@ class ItemProfile extends Component{
             <Card>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={require('../assets/propic.jpg')} style={{height:35,width:35}}/>
+                       
                         <Body>
                             <Text>
                                 Hiran
@@ -18,9 +18,7 @@ class ItemProfile extends Component{
                     </Left>
                 </CardItem>
                 <CardItem cardBody>
-                    <Image source={images[this.props.imageSource]} style={
-                        {height:200, width:null, flex:1}
-                    }/>
+                  
                 </CardItem>
                 <CardItem style={{height: 45}}>
                     <Left>
@@ -40,7 +38,7 @@ class ItemProfile extends Component{
                 </CardItem>
                 <CardItem style={{height:20}}>
                     <Text>
-                        {this.props.likes} likes
+                        
                     </Text>
                 </CardItem>
                 <CardItem>
