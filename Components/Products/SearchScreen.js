@@ -5,18 +5,35 @@ import { Button } from 'react-native-elements'
 import {Icon, Content, Container, Header, Left, Body, Right, Row, Thumbnail} from 'native-base'
 import SearchBar from 'react-native-searchbar';
 
-class SearchTab extends Component{
+class SearchScreen extends Component{
+
+    constructor(props) {
+        super(props);
+            this.state = {
+                results: []
+            };
+            this._handleResults = this._handleResults.bind(this)
+    }
+    
+    _handleResults(results) {
+        this.setState({ results });
+    }
 
     render() {
         return (
             <View>
-               
+                <SearchBar
+                ref={(ref) => this.searchBar = ref}
+                handleResults={this._handleResults}
+                showOnLoad
+                onBack = {() => this.props.navigation.navigate('SearchTab')}
+            />
             </View>
         );
     }
 }
 
-export default SearchTab;
+export default SearchScreen;
 
 const styles = StyleSheet.create({
     thumbnail:{

@@ -4,6 +4,8 @@ import {Icon, Title} from 'native-base'
 import {createAppContainer,createStackNavigator} from 'react-navigation';
 import ItemProfile from '../Products/Products'
 import SearchTab from '../Products/SearchTab'
+import SearchScreen from '../Products/SearchScreen'
+
 
 class StoreStack extends Component{
 
@@ -28,7 +30,7 @@ const Store = createStackNavigator({
             return{
                 headerTitle:'Store',
                 headerRight: (<View style ={{paddingRight:20}}>
-                                <TouchableOpacity onPress={() => this.SearchBar.show()}>
+                                <TouchableOpacity onPress={() => navigation.navigate('SearchScreen')}>
                                     <Icon  name="ios-search" 
                                             style={{color: 'black'}}/>
                                 </TouchableOpacity>
@@ -42,6 +44,14 @@ const Store = createStackNavigator({
             return{
                 headerTitle:'Product Details'
                 
+            }
+        }
+    },
+    SearchScreen: {
+        screen:SearchScreen,
+        navigationOptions:({navigation}) => {
+            return{
+                header: null
             }
         }
     }
