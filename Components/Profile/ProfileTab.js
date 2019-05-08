@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, TouchableHighlight } from "react-native";
 import {Icon, Content, Container, Button,Card, CardItem} from 'native-base'
 import firebase from 'react-native-firebase'
-
+import PhotoGrid from './PhotoGrid/PhotoGrid'
 class ProfileTab extends Component{
     state = {name:''}
     
     constructor(props){
         super(props)
+      
     }
 
     fetchProfileData = (userId) => {
@@ -28,6 +29,9 @@ class ProfileTab extends Component{
         firebase.auth().onAuthStateChanged(function(user){
             if(user){
                 that.fetchProfileData(user.uid)
+                that.setState({
+                    userId:user.id
+                })
             }
         })
     }
@@ -53,6 +57,8 @@ class ProfileTab extends Component{
                     <View style = {{backgroundColor:'#ffffff'}}>
                         <Card>
                             <CardItem>
+                            
+                            <PhotoGrid isUser={true} userId={this.state.userId} navigation={this.props.navigation}/>
                             </CardItem>
                         </Card>
                     </View>
