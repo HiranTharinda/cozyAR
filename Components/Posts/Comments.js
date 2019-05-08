@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableHighlight, TouchableOpacity, TextInput, KeyboardAvoidingView } from "react-native";
+import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity, TextInput, KeyboardAvoidingView } from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 
@@ -164,7 +164,8 @@ class Comments extends Component{
         return(
             <View style={{flex:1}}>
                 {this.state.comment_list.length == 0 ? (
-                    <View style={{alignContent:'center', alignItems:'center'}}><Text>No Comments Yet!</Text></View>
+                    <View style={{alignContent:'center', alignItems:'center'}}> 
+        </View>
                 ):(
                     <FlatList
                         refreshing ={this.state.refresh}
@@ -174,8 +175,8 @@ class Comments extends Component{
                         style = {{flex:1,backgroundColor:'#ffffff'}}
                         renderItem = {({item, index}) => (
                         <View key ={index}>
-                            <Card transparent>
-                                <CardItem>
+                            <Card  style = {{borderRadius: 30}}>
+                                <CardItem bordered style={{ borderRadius: 30 }}yarn>
                                     <Left>
                                         <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
                                         <Body>
@@ -193,16 +194,31 @@ class Comments extends Component{
                     </FlatList>
                 )}
                 <KeyboardAvoidingView behavior="padding" enabled stlye={{borderTopWidth:'1', borderTopColor:'grey', padding:10, marginBottom:15}}>
-                        <TextInput
+                            <Card>
+                            <CardItem>
+                            
+                            
+                            <TextInput
                             editable={true}
                             placeholder={'Enter a comment here...'}
                             onChangeText={(text) => this.setState({comment: text})}
-                            style = {{marginVertical:10, height: 50, padding: 50}}> 
-                        </TextInput>
-                        <TouchableOpacity>
+                            style = {{}}> 
+                            </TextInput>
+                            
+                        <Right>
+
+                        
+                            <TouchableOpacity>
                         <Icon name="ios-send" onPress={() => this.postComment()}
                                     style={{color: 'black'}}/>
                         </TouchableOpacity>
+                        </Right>
+                        
+                            </CardItem>
+
+                            </Card>
+                          
+    
                 </KeyboardAvoidingView>   
             </View>               
         )    
@@ -223,7 +239,10 @@ const styles = StyleSheet.create({
     likedFalse: {
         color: 'black',
         fontSize: 32
-
-    }
+    },
+    lottie: {
+        width: 100,
+        height: 100,
+      },
 });
 

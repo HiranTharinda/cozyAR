@@ -1,19 +1,34 @@
 
 import React, { Component } from "react";
 import { ScrollView, View, Text, StyleSheet, Image, TextInput, ActivityIndicator, TouchableOpacity, StatusBar} from "react-native";
-import { SearchBar, Button } from 'react-native-elements'
+import { Button } from 'react-native-elements'
 import {Icon, Content, Container, Header, Left, Body, Right, Row, Thumbnail} from 'native-base'
-
+import SearchBar from 'react-native-searchbar';
 
 class SearchTab extends Component{
 
-    render(){
-        return(
-            <Container>
-                <View style={{flex:1,}}>
-      
-                </View>
-            </Container>
+
+    constructor(props) {
+        super(props);
+            this.state = {
+                results: []
+            };
+            this._handleResults = this._handleResults.bind(this)
+    }
+
+    _handleResults(results) {
+        this.setState({ results });
+    }
+
+    render() {
+        return (
+            <View>
+                <SearchBar
+                ref={(ref) => this.searchBar = ref}
+                handleResults={this._handleResults}
+                showOnLoad
+            />
+            </View>
         );
     }
 }

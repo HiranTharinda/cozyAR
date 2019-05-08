@@ -15,6 +15,9 @@
     "native-base": "^2.12.1",
     "react": "16.3.1",
     "react-native": "^0.55.1",
+    "react-native-animated-loader": "^0.0.7",
+    "react-native-awesome-alert": "^0.4.2",
+    "react-native-circular-progress": "^1.1.0",
     "react-native-elements": "^1.1.0",
     "react-native-facebook-login": "^1.6.1",
     "react-native-fbsdk": "^0.8.0",
@@ -23,9 +26,13 @@
     "react-native-gesture-handler": "1.0.5",
     "react-native-image-crop-picker": "^0.24.0",
     "react-native-image-picker": "^0.28.1",
+    "react-native-progress-bar": "^0.1.2",
+    "react-native-searchbar": "^1.15.0",
     "react-native-share": "^1.0.25",
+    "react-native-svg": "^9.4.0",
+    "react-native-textinput-effects": "0.4.2",
     "react-native-vector-icons": "^6.4.2",
-    "react-native-video": "^2.0.0",
+    "react-native-video": "^4.4.1",
     "react-navigation": "^3.5.1",
     "react-redux": "^5.0.5",
     "react-timer-mixin": "^0.13.3",
@@ -42,8 +49,8 @@
     "jest": "21.2.1",
     "react-test-renderer": "16.0.0-beta.5"
   },
-  "rnpm":{
-    "assets" :[
+  "rnpm": {
+    "assets": [
       "./assets/fonts"
     ]
   }
