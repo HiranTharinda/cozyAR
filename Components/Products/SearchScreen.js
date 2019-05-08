@@ -5,6 +5,7 @@ import { Button } from 'react-native-elements'
 import {Icon, Content, Container, Header, Left, Body, Right, Row, Thumbnail} from 'native-base'
 import SearchBar from 'react-native-searchbar';
 
+
 class SearchScreen extends Component{
 
     constructor(props) {
@@ -26,7 +27,7 @@ class SearchScreen extends Component{
                 ref={(ref) => this.searchBar = ref}
                 handleResults={this._handleResults}
                 showOnLoad
-                onBack = {() => this.props.navigation.navigate('SearchTab')}
+                onBack = {() =>this.props.navigation.navigate('Store')}
             />
             </View>
         );
