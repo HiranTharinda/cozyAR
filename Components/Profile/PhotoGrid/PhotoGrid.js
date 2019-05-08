@@ -17,8 +17,11 @@ class PhotoGrid extends Component{
 
     componentDidMount = () => {
         const {isUser, userId} = this.props
+        console.log(isUser)
+        console.log(userId)
         if(isUser == true){
             this.loadFeed(userId)
+            console.log(isUser)
         }else{
             this.loadFeed('')
         }
@@ -52,7 +55,7 @@ class PhotoGrid extends Component{
         if(userId != ''){
             loadRef = firebase.database().ref('users').child(userId).child('photos')
         }    
-        firebase.database().ref('photos').orderByChild('posted').once('value').then(function(snapshot){
+        loadRef.orderByChild('posted').once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
             
             if(exists) data = snapshot.val();

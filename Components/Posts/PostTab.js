@@ -127,7 +127,7 @@ class PostTab extends Component{
         }
         //Update database
         firebase.database().ref('/photos/'+imageId).set(photoObj)
-        // database.ref('/users/'+userId+'/photos/'+imageId).set(photoObj)
+        firebase.database().ref('/users/'+userId+'/photos/'+imageId).set(photoObj)
         this.setState({
             uploading: false,
             photoSelected:false,

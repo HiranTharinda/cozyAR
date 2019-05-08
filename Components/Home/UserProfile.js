@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight } from "react-native";
 import {Icon, Content, Container, Button,Card, CardItem} from 'native-base'
 import firebase from 'react-native-firebase'
-
+import PhotoGrid from '../Profile/PhotoGrid/PhotoGrid'
 class UserProfile extends Component{
     constructor(props){
         super(props);
@@ -70,7 +70,7 @@ class UserProfile extends Component{
                     <View style = {{backgroundColor:'#ffffff'}}>
                         <Card>
                             <CardItem>
-                                
+                                <PhotoGrid isUser={true} userId={this.state.userId} navigation={this.props.navigation}/>
                             </CardItem>
                         </Card>
                        

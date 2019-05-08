@@ -11,8 +11,9 @@ class ProfileTab extends Component{
       
     }
 
-    fetchProfileData = (userId) => {
+    fetchProfileData = () => {
         var that = this;
+        userId = firebase.auth().currentUser.uid
         firebase.database().ref('users').child(userId).once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null);
             if(exists) data = snapshot.val();
@@ -25,15 +26,7 @@ class ProfileTab extends Component{
     }
 
     componentDidMount = () => {
-        var that = this
-        firebase.auth().onAuthStateChanged(function(user){
-            if(user){
-                that.fetchProfileData(user.uid)
-                that.setState({
-                    userId:user.id
-                })
-            }
-        })
+        this.fetchProfileData()
     }
 
     render(){
@@ -57,8 +50,7 @@ class ProfileTab extends Component{
                     <View style = {{backgroundColor:'#ffffff'}}>
                         <Card>
                             <CardItem>
-                            
-                            <PhotoGrid isUser={true} userId={this.state.userId} navigation={this.props.navigation}/>
+                            <PhotoGrid isUser={true} userId={firebase.auth().currentUser.uid} navigation={this.props.navigation}/>
                             </CardItem>
                         </Card>
                     </View>
