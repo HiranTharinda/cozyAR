@@ -1,12 +1,4 @@
-/**
- * Copyright (c) 2017-present, Viro Media, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
+
 
  import *  as UIConstants from '../UIConstants';
 
@@ -16,7 +8,6 @@
   listTitle: UIConstants.LIST_TITLE_MODELS,
   currentItemSelectionIndex: -1,
   currentItemClickState: '',
-  currentEffectSelectionIndex: 0,
   arTrackingInitialized: false,
  }
 
@@ -40,16 +31,6 @@ function ui(state = initialState, action) {
         currentItemClickState: action.clickState,
         currentSelectedItemType: action.itemType,
       };
-    case 'TOGGLE_EFFECT_SELECTED':
-      return {
-        ...state,
-        currentEffectSelectionIndex: action.index,
-      };
-    case 'REMOVE_ALL':
-      return {
-        ...state,
-        currentEffectSelectionIndex: 0,
-      }
     case 'AR_TRACKING_INITIALIZED':
       return {
         ...state,

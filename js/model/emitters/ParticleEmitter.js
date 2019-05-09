@@ -12,8 +12,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import EmojiAngryEmitter from './EmojiAngryEmitter';
-import BirthdayCakeEmitter from './BirthdayCakeEmitter';
+
 
 /**
  * Helpful wrapper to return the correct Particle Emitter for Angry Emoji or Birthday Cake.

@@ -11,7 +11,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import {addPortalWithIndex, removePortalWithUUID, addModelWithIndex, removeAll, removeModelWithUUID,toggleEffectSelection, changePortalLoadState, changePortalPhoto, changeModelLoadState, changeItemClickState, switchListMode, removeARObject, displayUIScreen} from './redux/actions';
+import { addModelWithIndex, removeAll, removeModelWithUUID, changeModelLoadState, changeItemClickState, switchListMode, removeARObject, displayUIScreen} from './redux/actions';
 import TimerMixin from 'react-timer-mixin';
 
 import * as LoadingConstants from './redux/LoadingStateConstants';
@@ -23,14 +23,12 @@ import ContextMenuButton from './component/ContextMenuButton';
 import SuccessAnimation from './component/SuccessAnimation';
 import ShareScreenButton from './component/ShareScreenButtonComponent';
 import FigmentListView from './component/FigmentListView';
-import PhotosSelector from './component/PhotosSelector';
 import ARInitializationUI from './component/ARInitializationUI.js';
 import * as ModelData from  './model/ModelItems';
-import * as PortalData from  './model/PortalItems';
+
 
 const kObjSelectMode = 1;
-const kPortalSelectMode = 2;
-const kEffectSelectMode = 3;
+
 
 const kPreviewTypePhoto = 1;
 const kPreviewTypeVideo = 2;
@@ -282,22 +280,13 @@ _onContextMenuRemoveButtonPressed() {
       this.props.dispatchRemoveModelWithUUID(index);
     }
 
-    // if it was a portal, then remove the portal
-    if(this.props.currentSelectedItemType == UIConstants.LIST_MODE_PORTAL) {
-      if(this.props.portalItems[index].selected == true) {
-          this.props.dispatchChangePortalLoadState(index, LoadingConstants.NONE);
-          this.setState({
-            lastSelectedPortalUUID:-1,
-          });
-      }
 
-      this.props.dispatchRemovePortalWithUUID(index);
     }
 
     // Reset click states of objects
     this.props.dispatchChangeItemClickState(-1, '', '');
 
-  }
+  
 }
 
 // Clear All button was pressed
@@ -544,24 +533,12 @@ _onListPressed(index) {
   if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
     this.props.dispatchAddModel(index);
   }
-
-  if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
-      this.props.dispatchAddPortal(index);
-  }
-
-  if(this.props.listMode == UIConstants.LIST_MODE_EFFECT) {
-    this.props.dispatchToggleEffectSelection(index);
-  }
 }
 
 // Dispath correct event to redux for handling load states of Objects and Portals
 _onListItemLoaded(index, loadState) {
   if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
     this.props.dispatchChangeModelLoadState(index, loadState);
-  }
-
-  if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
-    this.props.dispatchChangePortalLoadState(index, loadState);
   }
 }
 
@@ -575,12 +552,13 @@ _onItemClickedInScene(index, clickState, itemType) {
 _getListItems() {
   if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
     return this._constructListArrayModel(ModelData.getModelArray(), this.props.modelItems);
-  }else if(this.props.listMode == UIConstants.LIST_MODE_PORTAL) {
-    return this._constructListArrayModel(PortalData.getPortalArray(), this.props.portalItems);
-  } else if(this.props.listMode == UIConstants.LIST_MODE_EFFECT) {
-    return this.props.effectItems;
+  }else{
+
   }
-}
+    return null
+  } 
+    
+
 
 // Helper to construct listview items
 _constructListArrayModel(sourceArray, items) {
@@ -588,37 +566,64 @@ _constructListArrayModel(sourceArray, items) {
     for(var i =0; i<sourceArray.length; i++) {
         listArrayModel.push({icon_img:sourceArray[i].icon_img, loading:this._getLoadingforModelIndex(i, items)})
     }
-   return listArrayModel;
+  return listArrayModel;
 }
 
 // Helper to determine which listview item to show the Loading spinner if an AR object or portal is being added to the scene
+
 _getLoadingforModelIndex(index, items) {
+
   if(items == null || items == undefined) {
+
     return LoadingConstants.NONE;
+
   }
+
   var loadingConstant = LoadingConstants.NONE;
 
+
+
   Object.keys(items).forEach(function(currentKey) {
+
     if(items[currentKey] != null && items[currentKey] != undefined) {
+
       if(items[currentKey].loading != LoadingConstants.NONE && items[currentKey].index == index){
+
         loadingConstant = items[currentKey].loading;
+
       }
+
     }
+
   });
 
+
+
   return loadingConstant;
+
 }
 
 async _openShareActionSheet() {
-    let contentType = this.state.previewType == kPreviewTypeVideo ? 'video/mp4' : 'image/png';
-    await Share.open({
-       subject: "#FigmentAR",
-       message: "#FigmentAR",
-       url: this.state.videoUrl,
-       type: contentType,
-    });
+
+  let contentType = this.state.previewType == kPreviewTypeVideo ? 'video/mp4' : 'image/png';
+
+  await Share.open({
+
+     subject: "#FigmentAR",
+
+     message: "#FigmentAR",
+
+     url: this.state.videoUrl,
+
+     type: contentType,
+
+  });
+
 }
+
 }
+
+
 
 
 App.propTypes =  {
@@ -775,8 +780,6 @@ var localStyles = StyleSheet.create({
 function selectProps(store) {
   return {
     modelItems: store.arobjects.modelItems,
-    portalItems: store.arobjects.portalItems,
-    effectItems: store.arobjects.effectItems,
     currentScreen: store.ui.currentScreen,
     listMode: store.ui.listMode,
     listTitle: store.ui.listTitle,
@@ -789,17 +792,13 @@ function selectProps(store) {
 // -- dispatch REDUX ACTIONS map
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatchAddPortal: (index) => dispatch(addPortalWithIndex(index)),
-    dispatchRemovePortalWithUUID: (uuid) => dispatch(removePortalWithUUID(uuid)),
+
     dispatchAddModel: (index) => dispatch(addModelWithIndex(index)),
     dispatchRemoveModelWithUUID: (uuid) => dispatch(removeModelWithUUID(uuid)),
     dispatchRemoveAll:() => dispatch(removeAll()),
-    dispatchToggleEffectSelection: (index) => dispatch(toggleEffectSelection(index)),
     dispatchChangeModelLoadState:(index, loadState) =>dispatch(changeModelLoadState(index, loadState)),
-    dispatchChangePortalLoadState:(index, loadState) =>dispatch(changePortalLoadState(index, loadState)),
     dispatchDisplayUIScreen: (uiScreenState) => dispatch(displayUIScreen(uiScreenState)),
     dispatchSwitchListMode: (listMode, listTitle) =>dispatch(switchListMode(listMode, listTitle)),
-    dispatchChangePortalPhoto:(index, source)=>dispatch(changePortalPhoto(index, source)),
     dispatchChangeItemClickState:(index, clickState, itemType) =>dispatch(changeItemClickState(index, clickState, itemType)),
   }
 }

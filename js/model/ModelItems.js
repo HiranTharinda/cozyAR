@@ -1,12 +1,4 @@
-/**
- * Copyright (c) 2017-present, Viro, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- */
- 
+
 import * as LoadingConstants from '../redux/LoadingStateConstants';
 
 var POSITION_OFFSET = .05 // 5 cm
@@ -40,7 +32,7 @@ var ModelItems = [
     "materials": null,
     "animation":{name:"02", delay:0, loop:true, run:true},
     "scale": [0.1, 0.1, 0.1],
-    "position" : [0, 10*POSITION_OFFSET, 0],
+    "position" : [0, 10*POSITION_OFFSET, -10],
     "type" : "VRX",
     "physics": undefined,
     "ref_pointer": undefined,
@@ -58,7 +50,7 @@ var ModelItems = [
     "materials": null,
     "animation":{name:"02", delay:0, loop:true, run:true},
     "scale": [0.1, 0.1, 0.1],
-    "position" : [0, 0, 0],
+    "position" : [0, 0, -1],
     "type" : "VRX",
     "physics": undefined,
     "ref_pointer": undefined,
@@ -85,6 +77,25 @@ var ModelItems = [
     "spotlight_position_y": 8.2,
     "shadowfarz": 7.3,
   },
+  // {
+  //   "name": "turkeyman_anim",
+  //   "selected": false,
+  //   "loading": LoadingConstants.NONE,
+  //   "icon_img":require("../res/chairBlack/chairBlack.png"),
+  //   "obj": require("../res/chairBlack/scene.gltf"),
+  //   "materials": null,
+  //   "animation":{name:"02", delay:0, loop:true, run:true},
+  //   "scale": [0.1, 0.1, 0.1],
+  //   "position" : [0, 0, -1.2],
+  //   "type" : "GLTF",
+  //   "physics": undefined,
+  //   "ref_pointer": undefined,
+  //   "shadow_width": 4.5,
+  //   "shadow_height": 4.5,
+  //   "spotlight_position_y": 8.2,
+  //   "shadowfarz": 7.3,
+  //   "resources": [require('../res/furniture/furniture.mtl'), require('../res/furniture/dirt_2.jpg'), require('../res/furniture/gold_glossy.png'), require('../res/furniture/texturesinternal_ground_ao_texture.jpeg'), require('../res/furniture/textures/main_color_b.png'), require('../res/furniture/textures/normals.png')],
+  // },
 ]
 module.exports = {
   getModelArray: function() {

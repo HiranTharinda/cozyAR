@@ -13,8 +13,8 @@ module.exports = {
   },
 
   getAssetExts() {
-    return ["hdr","obj", "mtl", "JPG", "vrx", "mp4","png","gltf"];
-  },
+    return ["obj", "mtl", "JPG", "vrx", "hdr", "gltf", "glb", "bin", "arobject", "gif"];
+    },
 
   _getRoots() {
     // match on either path separator

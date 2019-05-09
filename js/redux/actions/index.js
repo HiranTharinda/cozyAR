@@ -1,17 +1,6 @@
-/**
- * Copyright (c) 2017-present, Viro Media, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 var nextImageId = 0;
-/**
- * Redux actions used to change app state based on events in the app
- */
+
+//Redux actions used to change app state based on events in the app
 
  // action to change the visible UI screen
  // uiScreenToShow - toggles between SHOW_RECORDING_SCREEN, SHOW_SHARE_SCREEN and SHOW_MAIN_SCREEN
@@ -34,22 +23,6 @@ export function addModelWithIndex(index) {
 export function removeModelWithUUID(uuid) {
   return {
       type:'REMOVE_MODEL',
-      uuid: uuid,
-  }
-}
-
-// action to add, to the AR Scene, the portal at the given index from data model at path: js/model/PortalItems.js
-export function addPortalWithIndex(index) {
-  return {
-      type:'ADD_PORTAL',
-      index: index,
-  }
-}
-
-// action to remove Portal with given UUID from AR Scene
-export function removePortalWithUUID(uuid) {
-  return {
-      type:'REMOVE_PORTAL',
       uuid: uuid,
   }
 }
@@ -77,7 +50,7 @@ export function toggleEffectSelection(index) {
   };
 }
 
-// action to switch ListView to show Objects, Effects or Portals
+// action to switch ListView to show Objects
 export function switchListMode(listMode, listTitle) {
   return {
     type: 'SWITCH_LIST_MODE',
@@ -90,24 +63,6 @@ export function switchListMode(listMode, listTitle) {
 export function changeModelLoadState(uuid, loadState) {
   return {
     type: 'CHANGE_MODEL_LOAD_STATE',
-    uuid: uuid,
-    loadState: loadState,
-  };
-}
-
-// action to change the background of a given portal (identified by uuid) in the scene.
-export function changePortalPhoto(uuid, photo) {
-  return {
-    type: 'CHANGE_PORTAL_PHOTO',
-    uuid: uuid,
-    photoSource: photo,
-  }
-}
-
-// action to change state of individual ListView items between NONE, LOADING, ERROR, LOADED (path: js/redux/LoadingStateConstants.js)
-export function changePortalLoadState(uuid, loadState) {
-  return {
-    type: 'CHANGE_PORTAL_LOAD_STATE',
     uuid: uuid,
     loadState: loadState,
   };

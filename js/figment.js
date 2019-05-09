@@ -12,8 +12,6 @@ import { connect } from 'react-redux';
 import * as LoadingConstants from './redux/LoadingStateConstants';
 import * as UIConstants from './redux/UIConstants';
 import ModelItemRender from './component/ModelItemRender';
-import PortalItemRender from './component/PortalItemRender';
-import EffectItemRender from './component/EffectItemRender';
 import { ARTrackingInitialized } from './redux/actions';
 
 import {
@@ -27,13 +25,9 @@ import {
 
 import renderIf from './helpers/renderIf';
 
-
 /**
  * AR Scene shown in the App. All 3D Viro Components handled and rendered here.
- * ViroComponents (Objects, Portals, Effects) added, removed, manipulated using 2D RN UI components via redux.
- * Objects - 3D animating objects (OBJ, VRX)
- * Portals - Represent an entry way into virtual world where the virtual world can be a 360 image / video or a 2D image / video
- * Effects - Add interesting effects in the AR Scene such as Particle Emitters (fireworks, smoke, bubble, etc) or Post Processing effects (black & white, sepia, etc.)
+ * ViroComponents added, removed, manipulated using 2D RN UI components via redux.
  */
 export class figment extends Component {
 
@@ -163,9 +157,6 @@ ViroMaterials.createMaterials({
     cullMode: "None",
     shininess: 2.0,
     diffuseColor: "#ff999900"
-  },
-  theatre: {
-    diffuseTexture: require('./res/360_dark_theatre.jpg'),
   },
 });
 
