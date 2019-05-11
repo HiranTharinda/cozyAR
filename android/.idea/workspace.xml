@@ -2,14 +2,355 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c33fba-f94c-4026-a888-99527f5362ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Components/AppTabNavigator/CamTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/AppTabNavigator/CamTab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../js/model/ModelItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/../js/model/ModelItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../constants/ApiKeys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../constants/Colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../constants/Layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/360_dark_theatre.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/360_diving.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/360_guadalupe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/360_space.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/360_waikiki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/360_westlake.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/app_icon_figment_1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/app_icon_figment_120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/app_icon_figment_152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/app_icon_figment_167.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/app_icon_figment_76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/art_gallery_projector_beams_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/art_gallery_projector_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/art_gallery_projector_picture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/art_gallery_projector_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/art_gallery_walls_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/art_gallery_walls_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/artgallery3.fbm/art_gallery_projector_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/artgallery3.fbm/art_gallery_projector_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/artgallery3.fbm/art_gallery_walls_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/artgallery3.fbm/art_gallery_walls_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/artgallery3.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/artgallery_picture_frame.fbm/art_gallery_projector_picture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/artgallery_picture_frame.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/artgallery_projector.fbm/art_gallery_projector_beams_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/art_gallery/artgallery_projector.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/bball/bball.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/bball/bball.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/bball/bball.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/bball/bball_NRM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/bball/bball_SPEC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_effects.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_effects@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_effects@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_effects_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_effects_on@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_effects_on@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_objects.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_objects@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_objects@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_objects_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_objects_on@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_objects_on@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_portals.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_portals@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_portals@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_portals_on.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_portals_on@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/btn_mode_portals_on@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/dark_circle_shadow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/dragon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_angry_anim/emoji_angry_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_angry_anim/emoji_angry_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_angry_anim/emoji_angry_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_angry_anim/emoji_angry_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_heart_anim/emoji_heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_heart_anim/emoji_heart_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_heart_anim/emoji_heart_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_kiss_anim/emoji_kiss_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_kiss_anim/emoji_kiss_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_kiss_anim/emoji_kiss_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_kiss_anim/emoji_kiss_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_poop_anim/emoji_poop_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_poop_anim/emoji_poop_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_poop_anim/emoji_poop_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_poop_anim/emoji_poop_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_sad_anim/emoji_sad_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_sad_anim/emoji_sad_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_sad_anim/emoji_sad_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_sad_anim/emoji_sad_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_smile_anim_a/emoji_smile_anim_a.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_smile_anim_a/emoji_smile_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_smile_anim_a/emoji_smile_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_smile_anim_a/emoji_smile_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_thumbsup_anim/emoji_thumbsup_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_thumbsup_anim/emoji_thumbsup_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_thumbsup_anim/emoji_thumbsup_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_wow_anim/emoji_wow_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_wow_anim/emoji_wow_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_wow_anim/emoji_wow_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/emoji_wow_anim/emoji_wow_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icecreamman_anim/icecream_man_pbr_Base_Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icecreamman_anim/icecream_man_pbr_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icecreamman_anim/icecream_man_pbr_Mixed_AO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icecreamman_anim/icecream_man_pbr_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icecreamman_anim/icecream_man_pbr_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icecreamman_anim/icecreamman_anim_pbr.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_360_photo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_360_photo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_360_photo@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_360_video.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_360_video@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_360_video@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_barreldistort.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_barreldistort@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_barreldistort@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_bubbles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_bubbles@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_bubbles@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_bw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_bw@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_bw@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_fireworks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_fireworks@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_fireworks@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_black@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_black@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_darkgrey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_darkgrey@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_darkgrey@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_grey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_grey@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_grey@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_white@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_none_white@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_pincushion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_pincushion@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_pincushion@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_rain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_rain@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_rain@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_selected@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_selected@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_selected_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_sepia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_sepia@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_sepia@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_smoke.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_smoke@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_smoke@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_snow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_snow@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_snow@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_spotcolor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_spotcolor@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_spotcolor@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_thermal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_thermal@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_effects_thermal@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_angry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_angry@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_angry@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_cloud@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_cloud@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_darkcloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_darkcloud@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_darkcloud@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_happy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_happy@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_happy@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_heart@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_heart@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_kiss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_kiss@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_kiss@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_poop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_poop@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_poop@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_rainbow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_rainbow@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_rainbow@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_sad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_sad@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_sad@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_star@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_star@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_thumbsup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_thumbsup@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_thumbsup@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_wow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_wow@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_emoji_wow@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_icecreamman.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_icecreamman@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_icecreamman@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_baseball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_baseball@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_baseball@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_basketball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_basketball@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_basketball@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_cake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_cake@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_cake@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_cube.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_cube@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_cube@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_flowers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_flowers@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_flowers@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_football.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_football@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_football@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_golfball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_golfball@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_golfball@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_soccerball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_soccerball@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_soccerball@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_sphere.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_sphere@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_sphere@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_volleyball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_volleyball@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_object_volleyball@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_archway.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_archway@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_archway@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_picture_frame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_picture_frame@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_picture_frame@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_pyramid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_pyramid@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_pyramid@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_shipdoor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_shipdoor@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_shipdoor@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_windowframe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_windowframe@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_windowframe@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_wood_doorframe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_wood_doorframe@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_portal_wood_doorframe@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_pug.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_pug@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_pug@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_pumpkin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_pumpkin@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_pumpkin@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_pumpkinman.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_pumpkinman@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_pumpkinman@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_turkeyman.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_turkeyman@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/icon_turkeyman@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/mediademo_pikeplace_360.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/mediademo_pikeplace_360_thumbnail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_bday_cake/blinn1_Base_Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_bday_cake/blinn1_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_bday_cake/blinn1_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_bday_cake/blinn1_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_bday_cake/object_bday_cake_pbr.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_cloud_anim/object_cloud_anim_object_cloud_BaseColor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_cloud_anim/object_cloud_anim_object_cloud_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_cloud_anim/object_cloud_anim_object_cloud_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_cloud_anim/object_cloud_anim_pbr.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_darkcloud/object_cloud.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_darkcloud/object_cloud_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_darkcloud/object_cloud_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_dragon_anim/object_dragon_pbr_Base_Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_dragon_anim/object_dragon_pbr_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_dragon_anim/object_dragon_pbr_Mixed_AO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_dragon_anim/object_dragon_pbr_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_dragon_anim/object_dragon_pbr_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_dragon_anim/object_dragon_pbr_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_flowers_anim/blinn1_Base_Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_flowers_anim/blinn1_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_flowers_anim/blinn1_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_flowers_anim/blinn1_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_flowers_anim/object_flowers_anim_pbr.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/blinn1_Base_Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/blinn1_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/blinn1_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/blinn1_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_animated.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_animated_v3.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_animated_v4.fbm/pug_body_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_animated_v4.fbm/pug_body_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_animated_v4.fbm/pug_body_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_animated_v4.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_animated_v4_2018.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_animated_v5_pbr.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_body_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_body_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_pug_animated/pug_body_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_rainbow_anim/object_rainbow_Base_Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_rainbow_anim/object_rainbow_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_rainbow_anim/object_rainbow_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_rainbow_anim/object_rainbow_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_star_anim/blinn1_Base_Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_star_anim/blinn1_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_star_anim/blinn1_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/object_star_anim/object_star_anim_pbr.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/outline_selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/outline_selected@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/outline_selected@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/particle_bubble.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/particle_fire.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/particle_firework.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/particle_smoke.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/particle_snow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_archway/portal_archway.fbm/portal_archway_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_archway/portal_archway.fbm/portal_archway_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_archway/portal_archway.fbm/portal_archway_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_archway/portal_archway.fbm/portal_entry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_archway/portal_archway.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_archway/portal_archway_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_archway/portal_archway_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_archway/portal_archway_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_archway/portal_entry.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_picture_frame/portal_picture_frame.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_picture_frame/portal_picture_frame_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_picture_frame/portal_picture_frame_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_picture_frame/portal_picture_frame_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_ring/portal_ring.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_ring/portal_ring.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_ship/portal_ship.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_ship/portal_ship_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_ship/portal_ship_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_ship/portal_ship_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_window_frame/portal_window_frame.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_window_frame/portal_window_frame_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_window_frame/portal_window_frame_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_window_frame/portal_window_frame_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_wood_frame/portal_wood_frame.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_wood_frame/portal_wood_frame_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_wood_frame/portal_wood_frame_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/portal_wood_frame/portal_wood_frame_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/pumpkinman_anim/pumpkinman_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/pumpkinman_anim/pumpkinman_body_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/pumpkinman_anim/pumpkinman_body_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/pumpkinman_anim/pumpkinman_body_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/pumpkinman_anim/pumpkinman_head_diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/pumpkinman_anim/pumpkinman_head_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/pumpkinman_anim/pumpkinman_head_specular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/turkeyman_anim/turkeyman_anim.vrx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/turkeyman_anim/turkeyman_diffuse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/turkeyman_anim/turkeyman_normal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/res/turkeyman_anim/turkeyman_specular.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,15 +398,16 @@
     <session id="-994377719">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="36" />
+          <entry key="project.closed" value="38" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="12" />
           <entry key="project.open.time.7" value="7" />
           <entry key="project.open.time.8" value="12" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="39" />
+          <entry key="project.opened" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -184,6 +526,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,8 +539,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -352,12 +694,12 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-153">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNViewConfigurationHelper.java">
       <provider selected="true" editor-type-id="text-editor">

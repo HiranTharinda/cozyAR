@@ -15,12 +15,10 @@ class CamTab extends Component{
 
     render(){
         return(
-                // <View>
-                // <Text>Doi</Text>
-                // </View>
-            <Provider store={store}>
-                <App />
-            </Provider>
+                <View>
+                <Text>Doi</Text>
+                </View>
+
         );
     }
 }

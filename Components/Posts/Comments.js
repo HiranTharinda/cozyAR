@@ -176,7 +176,7 @@ class Comments extends Component{
                         renderItem = {({item, index}) => (
                         <View key ={index}>
                             <Card  style = {{borderRadius: 30}}>
-                                <CardItem bordered style={{ borderRadius: 30 }}yarn>
+                                <CardItem bordered style={{ borderRadius: 30 }}>
                                     <Left>
                                         <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
                                         <Body>
