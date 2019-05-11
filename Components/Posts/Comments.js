@@ -194,31 +194,23 @@ class Comments extends Component{
                     </FlatList>
                 )}
                 <KeyboardAvoidingView behavior="padding" enabled stlye={{borderTopWidth:'1', borderTopColor:'grey', padding:10, marginBottom:15}}>
-                            <Card>
+                        <Card>
                             <CardItem>
-                            
-                            
                             <TextInput
+                            underlineColorAndroid="transparent"
                             editable={true}
                             placeholder={'Enter a comment here...'}
                             onChangeText={(text) => this.setState({comment: text})}
-                            style = {{}}> 
-                            </TextInput>
-                            
+                            style = {{width:'90%'}}> 
+                            </TextInput>    
                         <Right>
-
-                        
                             <TouchableOpacity>
-                        <Icon name="ios-send" onPress={() => this.postComment()}
+                                <Icon type="MaterialCommunityIcons" name="comment" onPress={() => this.postComment()}
                                     style={{color: 'black'}}/>
-                        </TouchableOpacity>
+                            </TouchableOpacity>
                         </Right>
-                        
-                            </CardItem>
-
-                            </Card>
-                          
-    
+                        </CardItem>
+                    </Card>
                 </KeyboardAvoidingView>   
             </View>               
         )    

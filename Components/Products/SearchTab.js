@@ -1,6 +1,6 @@
 
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
+import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity } from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 
@@ -112,9 +112,65 @@ class SearchTab extends Component{
             })
         }
     }
+
+    renderproduct = () => {
+     
+            return(
+                <Card>
+                    <CardItem>
+                        <Left>
+                           
+                            <Body>
+                                <Text>
+                                    Hiran
+                                </Text>
+                                <Text note>March 24, 2019</Text>
+                            </Body>
+                        </Left>
+                    </CardItem>
+                    <CardItem cardBody>
+                      
+                    </CardItem>
+                    <CardItem style={{height: 45}}>
+                        <Left>
+                            <Button transparent>
+                                <Icon name="ios-heart"
+                                style={{color: 'black'}}/>
+                            </Button>
+                            <Button transparent>
+                                <Icon name="ios-chatbubbles"
+                                style={{color: 'black'}}/>
+                            </Button>
+                            <Button transparent>
+                                <Icon name="ios-send"
+                                style={{color: 'black'}}/>
+                            </Button>
+                        </Left>
+                    </CardItem>
+                    <CardItem style={{height:20}}>
+                        <Text>
+                            
+                        </Text>
+                    </CardItem>
+                    <CardItem>
+                        <Body>
+                            <Text>
+                                <Text style = {{fontWeight:"900"}}>Tharinda </Text>
+                                    is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type 
+                            </Text>
+                        </Body>
+                    </CardItem>
+                </Card>  
+                   
+            );
+        }
+   
     
     render(){
         return(
+
             <FlatList
                 horizontal = {true}
                 refreshing ={this.state.refresh}
@@ -127,9 +183,9 @@ class SearchTab extends Component{
                         <Card transparent>
                             <CardItem cardBody bordered style={{ borderRadius: 30 }}>
                                 <Image source={{uri:item.url}} style={
-                                    {height:350, width:null, flex:1}}/>
+                                    {height:160, width:200, flex:1}}/>
                             </CardItem>
-                            <CardItem style={{height: 45}}>
+                            <CardItem style={{height: 45, position:'relative'}}>
                                 <Left>
                                     <Button transparent onPress={this.likeButton}>
                                         <Icon type = 'FontAwesome' name="heart-o"
@@ -166,6 +222,8 @@ class SearchTab extends Component{
                 )}
             >
             </FlatList>
+            
+            
         )    
     }
 }

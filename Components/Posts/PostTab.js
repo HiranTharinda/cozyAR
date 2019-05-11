@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { ActivityIndicator ,View, Text, StyleSheet, Image, Button, TextInput} from "react-native";
-import {Icon, Picker} from 'native-base'
+import { ActivityIndicator ,View, Text, StyleSheet, Image, Button, TextInput, TouchableOpacity} from "react-native";
+import {Icon, Picker, Card, CardItem, Thumbnail, Body, Left, Right,} from 'native-base'
 import ImagePicker from 'react-native-image-crop-picker';
 import firebase from 'react-native-firebase'
 
@@ -134,41 +134,54 @@ class PostTab extends Component{
             caption:false
         })
     }
+    
+    cancelButton = () => {
+        this.setState({
+            uploading: false,
+            photoSelected:false,
+            caption:false
+        })
+    }
 
     render(){
         return(
             <View style = {styles.container}>
-                <Image resizeMode = 'contain' source = {require('../../assets/postBack.jpg')} style ={{ width:'100%', height:'110%'}}/>
                 {this.state.photoSelected == true ? (
-                    <View style = {{flex: 5, width: 120, alignContent:'center', alignItems:'center', position:'absolute', paddingBottom:60}}> 
-                    <Image source ={{uri:this.state.uri}} style = {{width:200,height:200}}></Image>
-                    <TextInput
-                            editable={true}
-                            placeholder={'Enter a comment here...'}
-                            onChangeText={(text) => this.setState({caption: text})}
-                            style = {{marginVertical:10, height: 50, padding: 50}}> 
-                    </TextInput>
-                    <Button 
-                            title="Share"
-                            onPress={() => this.uploadPublish()}
-                            buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}  
-                    />
-                      {this.state.uploading == true ? (
-                        <View>
-                            <Text>
-                                {this.state.progress}%
-                            </Text>
-                            {this.state.progress != 100 ?(
-                                <ActivityIndicator size='small' color = 'black'></ActivityIndicator>
-                            ):(
-                                <Text>Processing</Text>
-                            )}
+                    <View style = {{flex: 5, width: '100%',height:'100%', alignContent:'center', alignItems:'center', position:'absolute', paddingBottom:300}}> 
+                        <View style = {{width:'100%',height:'100%'}}>
+                        <Image resizeMode = 'contain' source ={{uri:this.state.uri}} style = {{width:'100%',height:'100%',position:'absolute'}}></Image>
                         </View>
+                        <Card style = {{width:'100%'}}>
+                            <CardItem>
+                            <TextInput
+                            underlineColorAndroid="transparent"
+                            editable={true}
+                            placeholder={'Write a caption...'}
+                            onChangeText={(text) => this.setState({caption: text})}
+                            style = {{width:'90%'}}> 
+                            </TextInput>    
+                            <Right>
+                            {this.state.uploading == true ? (
+                                <ActivityIndicator size='small' color = 'black'></ActivityIndicator>
                       ):(
-                        <View></View>
+                        <View>
+                        <TouchableOpacity>
+                                <Icon type="MaterialCommunityIcons" name="comment" onPress={() => this.uploadPublish()}
+                                    style={{color: 'black'}}/>
+                                </TouchableOpacity>
+                        </View>
                       )}  
+                            </Right>
+                        </CardItem>
+                    </Card>
+                    <TouchableOpacity style = {{position:'absolute', alignSelf:'flex-end',padding:10}}>
+                                <Icon type='MaterialIcons' name="cancel" onPress={() => this.cancelButton()}
+                                    style={{color: 'white'}}/>
+                    </TouchableOpacity>
                 </View>
+        
                 ) : (
+         
                     <View style = {{flex: 5, width: 120, alignContent:'center', alignItems:'center', position:'absolute', paddingBottom:60}}> 
                     <Text style={{fontWeight:"900", fontSize:35,textAlign: 'center', fontFamily:'Pacifico'}}>SHARE WHAT YOU LOVE</Text>
                     <Text style={{fontWeight:"900", fontSize:11,textAlign: 'center', fontFamily:'Pacifico'}}></Text>
@@ -177,6 +190,7 @@ class PostTab extends Component{
                             onPress={() => this.handleChoosePhoto()}
                             buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}/>
                 </View>
+
                 )}
             </View>
         )

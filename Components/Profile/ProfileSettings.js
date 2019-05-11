@@ -1,9 +1,35 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight, TextInput } from "react-native";
 import {Icon, Content, Container, Button,Card, CardItem} from 'native-base'
 import firebase from 'react-native-firebase'
 
 class ProfileSettings extends Component{
+
+    state = {name:''}
+    
+    constructor(props){
+        super(props)
+      
+    }
+
+    fetchProfileData = () => {
+        var that = this;
+        userId = firebase.auth().currentUser.uid
+        firebase.database().ref('users').child(userId).once('value').then(function(snapshot){
+            const exists = (snapshot.val() !== null);
+            if(exists) data = snapshot.val();
+                that.setState({
+                    name: data.name,
+                    avatar: data.avatar,
+                    email:data.email
+            })
+            console.log(data)
+        })
+    }
+
+    componentDidMount = () => {
+        this.fetchProfileData()
+    }
 
     render(){
         return(
@@ -13,14 +39,14 @@ class ProfileSettings extends Component{
                 <View style ={{paddingTop: 100, paddingBottom:10, paddingRight:20, paddingLeft:20}}>
                         <View style={{ flexDirection: 'column'}}>
                             <View style = {{flex: 1, alignItems: 'center'}}>
-                             
+                            <Image source = {{uri:this.state.avatar}}
+                                    style={{ width:110, height:110, borderRadius: 55,}}/>
                                    
                             </View>
                             <View style = {{ flex: 2, flexDirection: "column", paddingBottom: 30, paddingTop: 15}}>
                            
                                 <View style ={{flex:2, paddingHorizontal:10,alignItems: 'center'}}>
-                                    <Text style = {{ fontWeight: 'bold', fontSize:30}}> Hiran Tharinda </Text>
-                                    <Text> Freelancer | Student </Text>
+                                  
                                     <Button transparent >
                                     <Icon name="ios-send" onPress={() => firebase.auth().signOut()}
                                     style={{color: 'black'}}/>
@@ -30,10 +56,38 @@ class ProfileSettings extends Component{
                         </View>
                     </View>
                     <View style = {{backgroundColor:'#ffffff'}}>
-                        <Card>
-                            <CardItem>
-                                
+                        <Card transparent>
+                            <CardItem >
+                            <Text>Name</Text>
+                            <TextInput
+                            underlineColorAndroid="transparent"
+                            editable={true}
+                            placeholder={this.state.name}
+                            onChangeText={(text) => this.setState({caption: text})}
+                            style = {{width:'90%'}}> 
+                            </TextInput>    
                             </CardItem>
+                            <CardItem >
+                            <Text>Email</Text>
+                            <TextInput
+                            underlineColorAndroid="transparent"
+                            editable={false}
+                            placeholder={this.state.email}
+                            onChangeText={(text) => this.setState({caption: text})}
+                            style = {{width:'90%'}}> 
+                            </TextInput>    
+                                </CardItem>
+                                <CardItem >
+                                <Text style=>Password</Text>
+                            <TextInput
+                            secureTextEntry
+                            underlineColorAndroid="transparent"
+                            editable={false}
+                            placeholder={'dsdsd'}
+                            onChangeText={(text) => this.setState({caption: text})}
+                            style = {{width:'90%'}}> 
+                            </TextInput>    
+                                </CardItem>
                         </Card>
                        
                     </View>
