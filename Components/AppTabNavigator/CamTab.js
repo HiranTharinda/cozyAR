@@ -18,7 +18,9 @@ class CamTab extends Component{
                 <View>
                 <Text>Doi</Text>
                 </View>
-
+                //<Provider store={store}>
+                   //<App />
+               //</Provider>
         );
     }
 }

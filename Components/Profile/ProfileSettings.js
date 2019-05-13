@@ -58,34 +58,32 @@ class ProfileSettings extends Component{
                     <View style = {{backgroundColor:'#ffffff'}}>
                         <Card transparent>
                             <CardItem >
-                            <Text>Name</Text>
+                            <Text style={{fontSize:20, fontWeight:'bold'}}>Name</Text>
                             <TextInput
                             underlineColorAndroid="transparent"
                             editable={true}
                             placeholder={this.state.name}
-                            onChangeText={(text) => this.setState({caption: text})}
-                            style = {{width:'90%'}}> 
+                            onChangeText={(text) => this.setState({name: text})}
+                            style = {{width:'90%',fontSize:20,textAlign:'right'}}> 
                             </TextInput>    
                             </CardItem>
                             <CardItem >
-                            <Text>Email</Text>
+                            <Text style={{fontSize:20, fontWeight:'bold'}}>Email</Text>
                             <TextInput
                             underlineColorAndroid="transparent"
                             editable={false}
                             placeholder={this.state.email}
-                            onChangeText={(text) => this.setState({caption: text})}
-                            style = {{width:'90%'}}> 
+                            style = {{width:'90%',fontSize:20,textAlign:'right', paddingRight:45}}> 
                             </TextInput>    
                                 </CardItem>
                                 <CardItem >
-                                <Text style=>Password</Text>
+                                <Text style={{fontSize:20, fontWeight:'bold'}}>Password</Text>
                             <TextInput
                             secureTextEntry
                             underlineColorAndroid="transparent"
                             editable={false}
                             placeholder={'dsdsd'}
-                            onChangeText={(text) => this.setState({caption: text})}
-                            style = {{width:'90%'}}> 
+                            style = {{width:'90%',fontSize:20, textAlign:'right', paddingRight:45}}> 
                             </TextInput>    
                                 </CardItem>
                         </Card>

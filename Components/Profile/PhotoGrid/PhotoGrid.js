@@ -71,6 +71,11 @@ class PhotoGrid extends Component{
         this. loadFeed()
     }
 
+    deletePhoto = (photoId) => {
+        console.log(photoId)
+        firebase.database().ref().remove()
+    }
+
     render(){
         return(
             <FlatList
@@ -82,8 +87,10 @@ class PhotoGrid extends Component{
                 style = {{flex:1,backgroundColor:'#ffffff'}}
                 renderItem = {({item, index}) => (
                     <View key ={index} itemWidth={itemWidth/3}>
+                        <TouchableOpacity onLongPress={() => this.deletePhoto(item.id)}>
                                 <Image source={{uri:item.url}} style={
                                     {height:itemWidth/3-10, width:itemWidth/3-10, flex:1}}/>
+                        </TouchableOpacity>            
                     </View> 
                 )}
             >

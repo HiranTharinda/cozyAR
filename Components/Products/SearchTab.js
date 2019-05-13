@@ -1,16 +1,17 @@
 
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity } from "react-native";
+import { Dimensions,View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity } from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
-
+const itemWidth = Dimensions.get('window').width
 
 class SearchTab extends Component{
 
     constructor(props){
         super(props);
         this.state = {
-            photo_feed: [],
+            item_list: [],
+            ar_que: [],
             refresh: false,
             loading: true,
             liked: false
@@ -54,22 +55,21 @@ class SearchTab extends Component{
         } return Math.floor(seconds) + 'second' +this.pluralCheck(interval)
     }
 
-    addToFlatlist = (photo_feed, data, photo) => {
+    addToFlatlist = (item_list, data, item) => {
         var that = this
-        var photoObj = data[photo];
-                    firebase.database().ref('users').child(photoObj.author).once('value').then(function(snapshot){
+        var itemObj = data[item];
+                    firebase.database().ref('catalogs').child(itemObj.catalog).once('value').then(function(snapshot){
                         const exists = (snapshot.val() !== null)
                         if(exists) data = snapshot.val();
-                        photo_feed.push({
-                            id: photo,
-                            url: photoObj.url,
-                            caption: photoObj.caption,
-                            posted: that.timeConverter(photoObj.posted),
-                            author: data.name,
-                            avatar: data.avatar,
-                            likes:photoObj.likes,
-                            authorId:photoObj.author
-                            
+                        console.log(data)
+                        item_list.push({
+                            id:item,
+                            catalogId: itemObj.catalog,
+                            catalogName: data.name,
+                            itemName:itemObj.name,
+                            itemPrice: itemObj.price,
+                            itemImage:itemObj.image,
+                            itemModel:itemObj.model
                         });
                         that.setState({
                             refresh: false,
@@ -81,18 +81,18 @@ class SearchTab extends Component{
     loadFeed = () => {
         this.setState({
             refresh:true,
-            photo_feed: []
+            item_list: []
         })
         var that = this;
     
-        firebase.database().ref('photos').orderByChild('posted').once('value').then(function(snapshot){
+        firebase.database().ref('items').once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
-            
             if(exists) data = snapshot.val();
-                var photo_feed = that.state.photo_feed;
+            console.log(data)
+                var item_list= that.state.item_list;
                 console.log(data)
-                for(var photo in data){
-                    that.addToFlatlist(photo_feed, data, photo)
+                for(var item in data){
+                    that.addToFlatlist(item_list, data, item)
                 }
         }).catch(error => console.log(error));
     }
@@ -172,52 +172,29 @@ class SearchTab extends Component{
         return(
 
             <FlatList
-                horizontal = {true}
                 refreshing ={this.state.refresh}
                 onRefresh = {this.loadNew}
-                data ={this.state.photo_feed}
+                data ={this.state.item_list}
                 keyExtractor={(item, index)=>index.toString}
+                numColumns = {2}
                 style = {{flex:1,backgroundColor:'#ffffff'}}
                 renderItem = {({item, index}) => (
-                    <View key ={index}>
-                        <Card transparent>
-                            <CardItem cardBody bordered style={{ borderRadius: 30 }}>
-                                <Image source={{uri:item.url}} style={
-                                    {height:160, width:200, flex:1}}/>
-                            </CardItem>
-                            <CardItem style={{height: 45, position:'relative'}}>
-                                <Left>
-                                    <Button transparent onPress={this.likeButton}>
-                                        <Icon type = 'FontAwesome' name="heart-o"
-                                            style={
-                                                this.state.liked
-                                                ? styles.likedTrue
-                                                : styles.likedFalse
-                                                }/>
-                                    </Button>
-                                    <Button transparent>
-                                        <Icon type = 'SimpleLineIcons' name="bubble"
-                                            style={{color: 'black', fontSize: 32}}/>
-                                        </Button>
-                                </Left>
-                            </CardItem>
-                            <CardItem style={{height:20}}>
-                                <Text>
-                                    {item.likes} likes
+                    <View key ={index} style={{paddingHorizontal:5,paddingTop:10}}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemProfile',{itemId:item.id})}>
+                        <Card  style={{width:itemWidth/2-15,borderRadius:30}}>
+                            <CardItem cardBody>
+                                <Image source={{uri:item.itemImage}} style={ 
+                                    {resizeMode:'cover',height:160, width:200, flex:1,borderRadius:30}}/>
+                                
+                                <Text style = {{fontWeight:"bold",fontSize:20,position:'absolute', paddingBottom:20,paddingLeft:20, paddingTop:110}}>
+                                    {item.itemName} 
+                                </Text>
+                                <Text style = {{fontWeight:"normal",position:'absolute',paddingLeft:20, paddingTop:115}}>
+                                    {item.itemPrice}
                                 </Text>
                             </CardItem>
-                            <CardItem>
-                                <Body>
-                                    <Text>
-                                        <Text style = {{fontWeight:"900"}}>{item.author} </Text>
-                                        {item.caption}
-                                    </Text>
-                                    <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
-                                        <Text style = {{color:'#979797'}}>View Comments</Text>
-                                    </TouchableOpacity>
-                                </Body>
-                            </CardItem>
                         </Card>
+                        </TouchableOpacity>
                     </View> 
                 )}
             >

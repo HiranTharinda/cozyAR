@@ -20,7 +20,7 @@ import {
   ViroMaterials,
   ViroAmbientLight,
   ViroDirectionalLight,
-  ViroSpotLight
+  ViroSpotLight,
 } from 'react-viro';
 
 import renderIf from './helpers/renderIf';
