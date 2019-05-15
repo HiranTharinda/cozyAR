@@ -54,7 +54,7 @@ class PhotoGrid extends Component{
         if(userId != ''){
             loadRef = firebase.database().ref('users').child(userId).child('photos')
         }    
-        loadRef.orderByChild('posted').once('value').then(function(snapshot){
+        loadRef.orderByChild('posted').once('value', function(snapshot){
             const exists = (snapshot.val() !== null)
             
             if(exists) data = snapshot.val();
@@ -63,7 +63,7 @@ class PhotoGrid extends Component{
                 for(var photo in data){
                     that.addToFlatlist(photo_feed, data, photo)
                 }
-        }).catch(error => console.log(error));
+        })
     }
 
     loadNew = () => {
@@ -71,7 +71,11 @@ class PhotoGrid extends Component{
     }
 
     deletePhoto = (photoId) => {
-
+        console.log(photoId)
+        console.log(userId)
+        firebase.database().ref('/photos/'+photoId).remove()
+        firebase.database().ref('/users/'+userId+'/photos/'+photoId).remove()
+        firebase.database().ref('/comments/'+photoId).remove()
     }
 
     render(){
@@ -85,7 +89,7 @@ class PhotoGrid extends Component{
                 style = {{flex:1,backgroundColor:'#ffffff'}}
                 renderItem = {({item, index}) => (
                     <View key ={index} itemWidth={itemWidth/3} style={{borderWidth:1, borderColor:'#ffffff'}}>
-                        <TouchableOpacity onLongPress={() => this.deletePhoto(item.id)}>
+                        <TouchableOpacity onPress={() => this.deletePhoto(item.id)}>
                                 <Image source={{uri:item.url}} style={
                                     {height:itemWidth/3-13, width:itemWidth/3-13, flex:1}}/>
                         </TouchableOpacity>            

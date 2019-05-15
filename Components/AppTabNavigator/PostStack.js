@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, Image, StatusBar, TouchableOpacity} from "react
 import {Icon, Title} from 'native-base'
 import {createAppContainer, createStackNavigator} from 'react-navigation';
 
-import SendTab from '../Posts/SendTab'
 import PostTab from '../Posts/PostTab'
 
 class PostStack extends Component{
@@ -31,14 +30,6 @@ const Post = createStackNavigator({
             }
         }
     },
-    Send: {
-        screen:SendTab,
-        navigationOptions:({navigation}) => {
-            return{
-                headerTitle:'Share'
-            }
-        }
-    }
 })
 
 const AppContainer = createAppContainer(Post);
