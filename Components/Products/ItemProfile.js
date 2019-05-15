@@ -1,64 +1,115 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
-import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon} from 'native-base'
+import { View, Text, StyleSheet, Image, KeyboardAvoidingView,TouchableOpacity, TextInput, ScrollView} from "react-native";
+import {Card, CardItem, Body, Right} from 'native-base'
+import {Button,Rating} from 'react-native-elements'
+import ShowReviews from './showReviews'
+import firebase from 'react-native-firebase'
+
 class ItemProfile extends Component{
+    constructor(props){
+        super(props)
+        this.state ={
+            loading:false,
+            rating:3
+        }
+    }
+    checkParams = () => {
+        var params = this.props.navigation.state.params;
+        if(params){
+            if(params.itemId){
+                this.setState({
+                    itemId: params.itemId
+                   
+                })
+                this.fetchItemInfo(params.itemId)
+            }
+        }
+    }
+
+    fetchItemInfo = (itemId) => {
+        var that = this;
+        firebase.database().ref('products').child(itemId).child('name').once('value').then(function(snapshot){
+            const exists = (snapshot.val() !== null)
+            if(exists) data = snapshot.val()
+                that.setState({itemName:data});
+        }).catch(error => console.log(error));
+
+        firebase.database().ref('products').child(itemId).child('price').once('value').then(function(snapshot){
+            const exists = (snapshot.val() !== null)
+            if(exists) data = snapshot.val()
+                that.setState({itemPrice:data});
+        }).catch(error => console.log(error));
+        
+        firebase.database().ref('products').child(itemId).child('image').once('value').then(function(snapshot){
+            const exists = (snapshot.val() !== null)
+            if(exists) data = snapshot.val()
+                that.setState({itemImage:data});
+        }).catch(error => console.log(error));
+        
+        firebase.database().ref('products').child(itemId).child('description').once('value').then(function(snapshot){
+            const exists = (snapshot.val() !== null)
+            if(exists) data = snapshot.val()
+                that.setState({itemDescription:data});
+        }).catch(error => console.log(error));
+    }
+
+    componentDidMount =() => {
+        this.checkParams()
+    }
 
     render(){
         return(
-            <Card>
-                <CardItem>
-                    <Left>
-                       
-                        <Body>
-                            <Text>
-                                Hiran
-                            </Text>
-                            <Text note>March 24, 2019</Text>
-                        </Body>
-                    </Left>
-                </CardItem>
-                <CardItem cardBody>
-                  
-                </CardItem>
-                <CardItem style={{height: 45}}>
-                    <Left>
-                        <Button transparent>
-                            <Icon name="ios-heart"
-                            style={{color: 'black'}}/>
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-chatbubbles"
-                            style={{color: 'black'}}/>
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-send"
-                            style={{color: 'black'}}/>
-                        </Button>
-                    </Left>
-                </CardItem>
-                <CardItem style={{height:20}}>
-                    <Text>
-                        
-                    </Text>
-                </CardItem>
-                <CardItem>
-                    <Body>
-                        <Text>
-                            <Text style = {{fontWeight:"900"}}>Tharinda </Text>
-                                is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type 
-                        </Text>
-                    </Body>
-                </CardItem>
-            </Card>  
-               
+            <View style = {{flex: 1}}>
+                {this.state.loaded == false ? (
+                    <View><Text>Loading</Text></View>
+                ):( 
+                    <Card style = {{height:'100%'}}>
+                        <CardItem cardBody style={{height:'30%'}}>
+                            <Image source={{uri:this.state.itemImage}} style={
+                                {height:650, width:null, flex:1}}/>
+                            <Rating imageSize={20}
+                                    startingValue={3}
+                                    style={{position:'absolute'}}/>
+                        </CardItem>
+                        <CardItem style={{height:20,paddingTop:20}}>
+                                <Text style = {{fontWeight:"bold",fontSize:30}}>
+                                    {this.state.itemName}
+                                </Text>
+                            <Right>
+                                <Text style = {{fontWeight:"normal",fontSize:30, color:'#2fd7e0',textAlign:'right'}}>
+                                    {this.state.itemPrice}
+                                </Text>
+                            </Right>
+                        </CardItem>
+                        <CardItem>
+                            <Body>
+                                <Text style = {{fontWeight:"normal",fontSize:15, color:'Blue'}}>
+                                    {this.state.itemDescription}
+                                </Text>
+                            </Body>
+                        </CardItem>
+                        <CardItem style={{height:'35%',paddingTop:20}}>
+                            <ShowReviews itemId={this.state.itemId} navigation={this.props.navigation}/>
+                        </CardItem>
+                        <CardItem>
+                            <Button onPress={() => this.props.navigation.navigate('ReviewScreen',{noInput:false})}
+                                    title = "Make a Review"
+                                    buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#54a0ff'}}  
+                                    />
+                            <Text> </Text>
+                            <Button onPress={() => this.props.navigation.navigate('signUp')}
+                                    title="Place it!"
+                                    buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#ff6b6b'}}  
+                                    />
+                        </CardItem>
+                    </Card>
+                )}
+            </View>
         );
     }
 }
 
 export default ItemProfile;
-
 
 const styles = StyleSheet.create({
     container:{

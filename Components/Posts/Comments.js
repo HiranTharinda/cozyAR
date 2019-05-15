@@ -193,9 +193,9 @@ class Comments extends Component{
                     >
                     </FlatList>
                 )}
-                <KeyboardAvoidingView behavior="padding" enabled stlye={{borderTopWidth:'1', borderTopColor:'grey', padding:10, marginBottom:15}}>
-                        <Card>
-                            <CardItem>
+                <KeyboardAvoidingView>
+                        <Card style = {{borderRadius: 30}}>
+                            <CardItem  bordered style={{ borderRadius: 30, }}>
                             <TextInput
                             underlineColorAndroid="transparent"
                             editable={true}
@@ -235,6 +235,6 @@ const styles = StyleSheet.create({
     lottie: {
         width: 100,
         height: 100,
-      },
+    },
 });
 

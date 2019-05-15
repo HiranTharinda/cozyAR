@@ -19,17 +19,6 @@ handleSignUp = () => {
   console.log('handleSignUp')
 }
 
-createUserNormal = () => {
-      var name = this.state.name
-      var email = this.state.email
-      var userId = firebase.auth().currentUser.uid;
-      var userObj = {
-          email: email,
-          name: name,
-      }
-      firebase.database().ref('/users/'+userId).set(userObj)
-}
-
 onLoginOrRegister = () => {
   LoginManager.logInWithReadPermissions(['public_profile','email']).then(function(result){
     if (result.isCancelled){

@@ -59,10 +59,6 @@ class UserProfile extends Component{
                             <View style = {{ flex: 2, flexDirection: "column", paddingBottom: 30, paddingTop: 15}}>
                                 <View style ={{flex:2, paddingHorizontal:10,alignItems: 'center'}}>
                                     <Text style = {{ fontWeight: 'bold', fontSize:30}}> {this.state.name} </Text>
-                                    <Button transparent onPress={() => firebase.auth().signOut()} >
-                                    <Icon name="ios-send"
-                                    style={{color: 'black'}}/>
-                                    </Button>
                                 </View>
                             </View> 
                         </View>

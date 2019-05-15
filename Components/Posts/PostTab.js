@@ -33,7 +33,6 @@ class PostTab extends Component{
     }
 
     handleChoosePhoto = () => {
-      
         //Open up the Image Picker
         ImagePicker.openPicker({
             width:1000,
@@ -45,8 +44,8 @@ class PostTab extends Component{
                     imageId: this.uniqueId(),
                     uri: image.path
                 })
+                
                 //Creating reference to the this
-               
         }); if(this.state.photoSelected){
 
         }else{
@@ -66,7 +65,6 @@ class PostTab extends Component{
         }else{
             console.log('Ignore its uploading')
         }
-       
     }
 
     uploadTheImage = () =>{
@@ -101,15 +99,11 @@ class PostTab extends Component{
             that.setState({
                 progress:100
             });
-
             const ref = firebase.storage().ref('user/'+userId+'/img').child(FilePath)
             const url = ref.getDownloadURL().then((url) => {
                 that.processUpload(url)
             });
-            
-     
         })
-              
     }
 
     processUpload = (imageUrl) => {
@@ -149,29 +143,29 @@ class PostTab extends Component{
                 {this.state.photoSelected == true ? (
                     <View style = {{flex: 5, width: '100%',height:'100%', alignContent:'center', alignItems:'center', position:'absolute', paddingBottom:300}}> 
                         <View style = {{width:'100%',height:'100%'}}>
-                        <Image resizeMode = 'contain' source ={{uri:this.state.uri}} style = {{width:'100%',height:'100%',position:'absolute'}}></Image>
+                            <Image resizeMode = 'contain' source ={{uri:this.state.uri}} style = {{width:'100%',height:'100%'}}></Image>
                         </View>
-                        <Card style = {{width:'100%'}}>
+                        <Card style = {{width:'100%',height:70}}>
                             <CardItem>
-                            <TextInput
-                            underlineColorAndroid="transparent"
-                            editable={true}
-                            placeholder={'Write a caption...'}
-                            onChangeText={(text) => this.setState({caption: text})}
-                            style = {{width:'90%'}}> 
-                            </TextInput>    
-                            <Right>
-                            {this.state.uploading == true ? (
-                                <ActivityIndicator size='small' color = 'black'></ActivityIndicator>
-                      ):(
-                        <View>
-                        <TouchableOpacity>
-                                <Icon type="MaterialCommunityIcons" name="comment" onPress={() => this.uploadPublish()}
-                                    style={{color: 'black'}}/>
-                                </TouchableOpacity>
-                        </View>
-                      )}  
-                            </Right>
+                                <TextInput
+                                    underlineColorAndroid="transparent"
+                                    editable={true}
+                                    placeholder={'Write a caption...'}
+                                    onChangeText={(text) => this.setState({caption: text})}
+                                    style = {{width:'90%'}}> 
+                                </TextInput>    
+                                <Right>
+                                    {this.state.uploading == true ? (
+                                        <ActivityIndicator size='small' color = 'black'></ActivityIndicator>
+                                        ):(
+                                        <View>
+                                            <TouchableOpacity>
+                                                <Icon type="MaterialCommunityIcons" name="comment" onPress={() => this.uploadPublish()}
+                                                    style={{color: 'black'}}/>
+                                            </TouchableOpacity>
+                                        </View>
+                                        )}  
+                                </Right>
                         </CardItem>
                     </Card>
                     <TouchableOpacity style = {{position:'absolute', alignSelf:'flex-end',padding:10}}>
@@ -179,9 +173,7 @@ class PostTab extends Component{
                                     style={{color: 'white'}}/>
                     </TouchableOpacity>
                 </View>
-        
                 ) : (
-         
                     <View style = {{flex: 5, width: 120, alignContent:'center', alignItems:'center', position:'absolute', paddingBottom:60}}> 
                     <Text style={{fontWeight:"900", fontSize:35,textAlign: 'center', fontFamily:'Pacifico'}}>SHARE WHAT YOU LOVE</Text>
                     <Text style={{fontWeight:"900", fontSize:11,textAlign: 'center', fontFamily:'Pacifico'}}></Text>
@@ -190,7 +182,6 @@ class PostTab extends Component{
                             onPress={() => this.handleChoosePhoto()}
                             buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}/>
                 </View>
-
                 )}
             </View>
         )

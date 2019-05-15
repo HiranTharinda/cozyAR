@@ -5,7 +5,6 @@ import { createMaterialTopTabNavigator, createAppContainer, StackNavigator, crea
 import firebase from 'react-native-firebase'
 
 import CamTab from './AppTabNavigator/CamTab'
-
 import HomeStack from './AppTabNavigator/HomeStack'
 import StoreStack from './AppTabNavigator/StoreStack'
 import ProfileStack from './AppTabNavigator/ProfileStack'

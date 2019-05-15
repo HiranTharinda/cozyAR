@@ -1,20 +1,19 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, TouchableHighlight } from "react-native";
 import {Icon, Content, Container, Button,Card, CardItem} from 'native-base'
-import firebase from 'react-native-firebase'
 import PhotoGrid from './PhotoGrid/PhotoGrid'
+import firebase from 'react-native-firebase'
 class ProfileTab extends Component{
     state = {name:''}
     
     constructor(props){
         super(props)
-      
     }
 
     fetchProfileData = () => {
         var that = this;
         userId = firebase.auth().currentUser.uid
-        firebase.database().ref('users').child(userId).once('value').then(function(snapshot){
+        firebase.database().ref('users').child(userId).on('value', function(snapshot){
             const exists = (snapshot.val() !== null);
             if(exists) data = snapshot.val();
                 that.setState({
@@ -48,7 +47,7 @@ class ProfileTab extends Component{
                         </View>
                     </View>
                     <View style = {{backgroundColor:'#ffffff'}}>
-                        <Card>
+                        <Card transparent>
                             <CardItem>
                             <PhotoGrid isUser={true} userId={firebase.auth().currentUser.uid} navigation={this.props.navigation}/>
                             </CardItem>

@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { View,TouchableOpacity} from "react-native";
 import {Icon, Title} from 'native-base'
 import {createAppContainer,createStackNavigator} from 'react-navigation';
-import ItemProfile from '../Products/Products'
+import ItemProfile from '../Products/ItemProfile'
 import SearchTab from '../Products/SearchTab'
 import SearchScreen from '../Products/SearchScreen'
-
+import Reviews from '../Products/Reviews'
 
 class StoreStack extends Component{
 
@@ -52,6 +52,14 @@ const Store = createStackNavigator({
         navigationOptions:({navigation}) => {
             return{
                 header: null
+            }
+        }
+    },
+    ReviewScreen: {
+        screen:Reviews,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Reviews'
             }
         }
     }

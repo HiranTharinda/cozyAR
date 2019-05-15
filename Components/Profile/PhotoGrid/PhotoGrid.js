@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Dimensions,View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
-import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 const itemWidth = Dimensions.get('window').width
-const numColumns = 3
+
 class PhotoGrid extends Component{
     constructor(props){
         super(props)
@@ -44,7 +43,7 @@ class PhotoGrid extends Component{
                         })
                     }).catch(error => console.log(error));
     }
-  
+
     loadFeed = (userId) => {
         this.setState({
             refresh:true,
@@ -72,8 +71,7 @@ class PhotoGrid extends Component{
     }
 
     deletePhoto = (photoId) => {
-        console.log(photoId)
-        firebase.database().ref().remove()
+
     }
 
     render(){
@@ -86,10 +84,10 @@ class PhotoGrid extends Component{
                 keyExtractor={(item, index)=>index.toString}
                 style = {{flex:1,backgroundColor:'#ffffff'}}
                 renderItem = {({item, index}) => (
-                    <View key ={index} itemWidth={itemWidth/3}>
+                    <View key ={index} itemWidth={itemWidth/3} style={{borderWidth:1, borderColor:'#ffffff'}}>
                         <TouchableOpacity onLongPress={() => this.deletePhoto(item.id)}>
                                 <Image source={{uri:item.url}} style={
-                                    {height:itemWidth/3-10, width:itemWidth/3-10, flex:1}}/>
+                                    {height:itemWidth/3-13, width:itemWidth/3-13, flex:1}}/>
                         </TouchableOpacity>            
                     </View> 
                 )}

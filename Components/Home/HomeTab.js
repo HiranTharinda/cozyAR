@@ -142,14 +142,14 @@ class HomeTab extends Component{
                             <CardItem style={{height: 45}}>
                                 <Left>
                                     <Button transparent onPress={this.likeButton}>
-                                        <Icon type = 'FontAwesome' name="heart-o"
+                                        <Icon type = 'SimpleLineIcons' name="heart"
                                             style={
                                                 this.state.liked
                                                 ? styles.likedTrue
                                                 : styles.likedFalse
                                                 }/>
                                     </Button>
-                                    <Button transparent>
+                                    <Button transparent onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
                                         <Icon type = 'SimpleLineIcons' name="bubble"
                                             style={{color: 'black', fontSize: 32}}/>
                                         </Button>
@@ -166,9 +166,6 @@ class HomeTab extends Component{
                                         <Text style = {{fontWeight:"900"}}>{item.author} </Text>
                                         {item.caption}
                                     </Text>
-                                    <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
-                                        <Text style = {{color:'#979797'}}>View Comments</Text>
-                                    </TouchableOpacity>
                                 </Body>
                             </CardItem>
                         </Card>
