@@ -1,8 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View, Image, StatusBar } from 'react-native'
-import firebase from 'react-native-firebase'
+import {Icon, Card, CardItem, } from 'native-base'
 import FBSDK, { AccessToken, LoginManager}  from 'react-native-fbsdk'
-import { SocialIcon, Button } from 'react-native-elements'
+import { Button } from 'react-native-elements'
+import firebase from 'react-native-firebase'
 
 export default class SignUp extends React.Component {
 
@@ -59,17 +60,29 @@ render() {
                 barStyle="dark-content"
                 />
         <View style = {{flex: 1, width: 300}}></View>
+        <View style = {{flex: 5, width: 230, alignContent:'center', alignItems:'center'}}> 
+        <Card style ={{borderRadius: 40}}>
+          <CardItem style ={{width:240}}>
         <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}> 
+        <Text></Text>
           <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>CREATE A NEW ACCOUNT.</Text>
-          <SocialIcon
-              style = {{width:180, height:40}}
-              button
-              onPress ={() => this.onLoginOrRegister()}
-              type='facebook'
-              raised = 'true'/>
+          <Text></Text>
+          <Button icon={
+                      <Icon
+                          name="facebook"
+                          size={15}
+                          style ={{color:"#ffffff"}}
+                          type ='Entypo'
+                      />}
+                  title="Signup"
+                  onPress ={() => this.onLoginOrRegister()}
+                  raised = 'true'
+                  buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#4267b2'}}  
+                  />
           <Text></Text>
           <Text style={{fontWeight:"normal",textAlign: 'center'}}>or</Text>
           <TextInput
+            underlineColorAndroid="transparent"
             placeholder="Name"
             autoCapitalize="none"
             onChangeText={name => this.setState({ name })}
@@ -80,12 +93,14 @@ render() {
             {this.state.errorMessage}
           </Text>}
           <TextInput
+            underlineColorAndroid="transparent"
             placeholder="Email"
             autoCapitalize="none"
             style={styles.textInput}
             onChangeText={email => this.setState({ email })}
             value={this.state.email}/>
           <TextInput
+            underlineColorAndroid="transparent"
             secureTextEntry
             placeholder="Password"
             autoCapitalize="none"
@@ -102,10 +117,11 @@ render() {
                   onPress={() => this.props.navigation.navigate('login')}
                   buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#54a0ff'}}  
                   />
-
+                  <Text></Text>
+              </View>
+              </CardItem>
+          </Card>
         </View>
- 
-         
       </View>
     )
   }

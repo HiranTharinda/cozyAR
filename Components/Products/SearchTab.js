@@ -129,7 +129,7 @@ class SearchTab extends Component{
                 data ={this.state.item_list}
                 keyExtractor={(item, index)=>index.toString}
                 numColumns = {2}
-                style = {{flex:1,backgroundColor:'#ffffff'}}
+                style = {{flex:1,backgroundColor:'#ffffff',paddingHorizontal:20}}
                 renderItem = {({item, index}) => (
                     <View key ={index} style={{paddingHorizontal:5,paddingTop:10}}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemProfile',{itemId:item.id})}>

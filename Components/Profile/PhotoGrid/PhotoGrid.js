@@ -29,7 +29,7 @@ class PhotoGrid extends Component{
     addToFlatlist = (photo_feed, data, photo) => {
         var that = this
         var photoObj = data[photo];
-                    firebase.database().ref('users').child(photoObj.author).once('value').then(function(snapshot){
+                    firebase.database().ref('users').child(photoObj.author).on('value',function(snapshot){
                         const exists = (snapshot.val() !== null)
                         if(exists) data = snapshot.val();
                         photo_feed.push({
@@ -41,7 +41,7 @@ class PhotoGrid extends Component{
                             refresh: false,
                             loading: false
                         })
-                    }).catch(error => console.log(error));
+                    })
     }
 
     loadFeed = (userId) => {
@@ -54,7 +54,7 @@ class PhotoGrid extends Component{
         if(userId != ''){
             loadRef = firebase.database().ref('users').child(userId).child('photos')
         }    
-        loadRef.orderByChild('posted').once('value', function(snapshot){
+        loadRef.orderByChild('posted').on('value', function(snapshot){
             const exists = (snapshot.val() !== null)
             
             if(exists) data = snapshot.val();
@@ -76,6 +76,11 @@ class PhotoGrid extends Component{
         firebase.database().ref('/photos/'+photoId).remove()
         firebase.database().ref('/users/'+userId+'/photos/'+photoId).remove()
         firebase.database().ref('/comments/'+photoId).remove()
+        this.setState({
+            refresh:true,
+            photo_feed: []
+        })
+        
     }
 
     render(){

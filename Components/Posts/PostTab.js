@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { ActivityIndicator ,View, Text, StyleSheet, Image, Button, TextInput, TouchableOpacity} from "react-native";
+import { ActivityIndicator ,View, Text, StyleSheet, Image, TextInput, TouchableOpacity} from "react-native";
+import {Button} from 'react-native-elements'
 import {Icon, Picker, Card, CardItem, Thumbnail, Body, Left, Right,} from 'native-base'
 import ImagePicker from 'react-native-image-crop-picker';
+import Video from 'react-native-video';
 import firebase from 'react-native-firebase'
 
 
@@ -41,6 +43,7 @@ class PostTab extends Component{
             }).then(image => {
                 this.setState({
                     photoSelected: true,
+                    video:false,
                     imageId: this.uniqueId(),
                     uri: image.path
                 })
@@ -55,6 +58,7 @@ class PostTab extends Component{
         }
     }
 
+    //Photo
     uploadPublish = () => {
         if(this.state.uploading == false){
             if(this.state.caption != ''){
@@ -116,7 +120,8 @@ class PostTab extends Component{
             author:userId,
             caption:caption,
             posted:timestamp,
-            url:imageUrl
+            url:imageUrl,
+            flag: false
             
         }
         //Update database
@@ -129,6 +134,105 @@ class PostTab extends Component{
         })
     }
     
+    //Video
+    handleChooseVideo = () => {
+        //Open up the Image Picker
+        ImagePicker.openPicker({
+            mediaType: "video",
+            }).then(video => {
+                this.setState({
+                    photoSelected: true,
+                    video:true,
+                    imageId: this.uniqueId(),
+                    uri: video.path
+                })
+                
+                //Creating reference to the this
+        }); if(this.state.photoSelected){
+
+        }else{
+            this.setState({
+                photoSelected:false
+            })
+        }
+    }
+
+
+    uploadPublish = () => {
+        if(this.state.uploading == false){
+            if(this.state.caption != ''){
+                this.uploadTheImage()
+            }else{
+                alert('Please enter a Caption..')
+            }
+        }else{
+            console.log('Ignore its uploading')
+        }
+    }
+
+    uploadTheImage = () =>{
+        var that = this
+        //Getting userId, imageId and path of the image we are going to upload
+        var userId = firebase.auth().currentUser.uid
+        var imageId = this.state.imageId
+        var imagePath = this.state.uri
+        // Getting the format of the image
+        var re = /(?:\.([^.]+))?$/
+        var ext = 'mp4'
+        //Setting the format of the image
+        this.setState({
+                currentFileType: ext,
+                uploading:true,
+            })
+        //Building the file path
+        var FilePath = imageId+'.'+that.state.currentFileType
+        let mime = 'video/mp4'
+        //Creating a reference to the firebase storage
+        const uploadTask = firebase.storage().ref('user/'+userId+'/vid').child(FilePath).put(imagePath, {contentType: mime})     
+        
+        uploadTask.on('state_changed', function(snapshot){
+            var progress = ((snapshot.bytesTransferred / snapshot.totalBytes) * 100).toFixed(0);
+            console.log('Upload is '+progress+'% complete')
+            that.setState({
+                progress:progress
+            })
+        },function(error){
+            console.log('error with upload'+error)
+        },function(){
+            that.setState({
+                progress:100
+            });
+            const ref = firebase.storage().ref('user/'+userId+'/vid').child(FilePath)
+            const url = ref.getDownloadURL().then((url) => {
+                that.processUpload(url)
+            });
+        })
+    }
+
+    processUpload = (imageUrl) => {
+        var imageId = this.state.imageId
+        var userId = firebase.auth().currentUser.uid
+        var caption = this.state.caption
+        var dateTime = Date.now()
+        var timestamp = Math.floor(dateTime/1000)
+        var photoObj ={
+            author:userId,
+            caption:caption,
+            posted:timestamp,
+            url:imageUrl,
+            flag: true
+            
+        }
+        //Update database
+        firebase.database().ref('/photos/'+imageId).set(photoObj)
+        firebase.database().ref('/users/'+userId+'/photos/'+imageId).set(photoObj)
+        this.setState({
+            uploading: false,
+            photoSelected:false,
+            caption:false
+        })
+    }
+
     cancelButton = () => {
         this.setState({
             uploading: false,
@@ -143,6 +247,15 @@ class PostTab extends Component{
                 {this.state.photoSelected == true ? (
                     <View style = {{flex: 5, width: '100%',height:'100%', alignContent:'center', alignItems:'center', position:'absolute', paddingBottom:300}}> 
                         <View style = {{width:'100%',height:'100%'}}>
+                        {this.state.video == false? (
+                            <Image resizeMode = 'contain' source ={{uri:this.state.uri}} style = {{width:'100%',height:'100%'}}></Image>
+                        ):(
+                            <Video
+                                            source={{uri:this.state.uri}}
+                                            resizeMode="cover"
+                                            repeat={true}
+                                        />
+                        )}
                             <Image resizeMode = 'contain' source ={{uri:this.state.uri}} style = {{width:'100%',height:'100%'}}></Image>
                         </View>
                         <Card style = {{width:'100%',height:70}}>
@@ -178,8 +291,12 @@ class PostTab extends Component{
                     <Text style={{fontWeight:"900", fontSize:35,textAlign: 'center', fontFamily:'Pacifico'}}>SHARE WHAT YOU LOVE</Text>
                     <Text style={{fontWeight:"900", fontSize:11,textAlign: 'center', fontFamily:'Pacifico'}}></Text>
                     <Button 
-                            title="NOW!"
+                            title="Photo"
                             onPress={() => this.handleChoosePhoto()}
+                            buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}/>
+                     <Button 
+                            title="Video"
+                            onPress={() => this.handleChooseVideo()}
                             buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}/>
                 </View>
                 )}

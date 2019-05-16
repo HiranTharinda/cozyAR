@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
+import Video from 'react-native-video';
 import firebase from 'react-native-firebase'
+import blu from '../../assets/VID-20190303-WA0029.mp4'
 
 class HomeTab extends Component{
 
@@ -66,7 +68,8 @@ class HomeTab extends Component{
                             author: data.name,
                             avatar: data.avatar,
                             likes:photoObj.likes,
-                            authorId:photoObj.author
+                            authorId:photoObj.author,
+                            flag:photoObj.flag
                             
                         });
                         that.setState({
@@ -110,7 +113,7 @@ class HomeTab extends Component{
             })
         }
     }
-    
+    // need to  add a condition to check whether a video or image. When upload a flag object when uploading a video so we can check that here
     render(){
         return(
             <FlatList
@@ -135,10 +138,25 @@ class HomeTab extends Component{
                                     </Body>
                                 </Left>
                             </CardItem>
-                            <CardItem cardBody>
-                                <Image source={{uri:item.url}} style={
+                            
+                            {item.flag == false ? (
+                            
+                                
+                                    <Image source={{uri:item.url}} style={
                                     {height:350, width:null, flex:1}}/>
-                            </CardItem>
+                       
+                                ) : (
+                              
+                                    <View style={{flex:1}}>
+                                        <Video
+                                            source={blu}
+                                            resizeMode="cover"
+                                            repeat={true}
+                                        />
+                                    </View>
+                                    
+                                )}
+                                
                             <CardItem style={{height: 45}}>
                                 <Left>
                                     <Button transparent onPress={this.likeButton}>

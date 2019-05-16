@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight } from "react-native";
 import {Icon, Content, Container, Button,Card, CardItem} from 'native-base'
 import firebase from 'react-native-firebase'
-import PhotoGrid from '../Profile/PhotoGrid/PhotoGrid'
+import PhotoGridForPreview from '../Profile/PhotoGrid/PhotoGridForPreview'
 class UserProfile extends Component{
     constructor(props){
         super(props);
@@ -25,17 +25,17 @@ class UserProfile extends Component{
 
     fetchUserInfo = (userId) => {
         var that = this;
-        firebase.database().ref('users').child(userId).child('name').once('value').then(function(snapshot){
+        firebase.database().ref('users').child(userId).child('name').on('value',function(snapshot){
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
                 that.setState({name:data});
-        }).catch(error => console.log(error));
+        })
 
-        firebase.database().ref('users').child(userId).child('avatar').once('value').then(function(snapshot){
+        firebase.database().ref('users').child(userId).child('avatar').on('value',function(snapshot){
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
                 that.setState({avatar:data,loaded:true});
-        }).catch(error => console.log(error));
+        })
     }
 
     componentDidMount =() => {
@@ -66,7 +66,7 @@ class UserProfile extends Component{
                     <View style = {{backgroundColor:'#ffffff'}}>
                         <Card>
                             <CardItem>
-                                <PhotoGrid isUser={true} userId={this.state.userId} navigation={this.props.navigation}/>
+                                <PhotoGridForPreview isUser={true} userId={this.state.userId} navigation={this.props.navigation}/>
                             </CardItem>
                         </Card>
                        
