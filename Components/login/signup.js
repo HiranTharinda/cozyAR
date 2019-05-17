@@ -83,7 +83,7 @@ render() {
           <Text style={{fontWeight:"normal",textAlign: 'center'}}>or</Text>
           <TextInput
             underlineColorAndroid="transparent"
-            placeholder="Name"
+            placeholder="   Name"
             autoCapitalize="none"
             onChangeText={name => this.setState({ name })}
             value={this.state.name}
@@ -94,7 +94,7 @@ render() {
           </Text>}
           <TextInput
             underlineColorAndroid="transparent"
-            placeholder="Email"
+            placeholder="   Email"
             autoCapitalize="none"
             style={styles.textInput}
             onChangeText={email => this.setState({ email })}
@@ -102,7 +102,7 @@ render() {
           <TextInput
             underlineColorAndroid="transparent"
             secureTextEntry
-            placeholder="Password"
+            placeholder="   Password"
             autoCapitalize="none"
             style={styles.textInput}
             onChangeText={password => this.setState({ password })}
@@ -114,8 +114,9 @@ render() {
           <Text></Text>
           <Button 
                   title="Login"
+                  titleStyle={{ color: 'grey' }}
                   onPress={() => this.props.navigation.navigate('login')}
-                  buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#54a0ff'}}  
+                  buttonStyle={{height: 40, width: 80,color:'grey', borderRadius: 30, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
                   />
                   <Text></Text>
               </View>
@@ -137,9 +138,10 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40,
-    width: '100%',
+    width: 180,
     borderColor: 'gray',
-    borderWidth: 0,
+    borderWidth: 1,
+    borderRadius: 30,
     marginTop: 8
   },
 })

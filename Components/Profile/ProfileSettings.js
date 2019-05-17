@@ -205,7 +205,8 @@ class ProfileSettings extends Component{
                             <CardItem>
                                 <Button onPress={() => firebase.auth().signOut()}
                                     title = "Logout"
-                                    buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#54a0ff'}}  
+                                    titleStyle={{ color: 'grey' }}
+                                    buttonStyle={{height: 60, width: 180,color:'grey', borderRadius: 35, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
                                     />
                                     <Text> </Text>
                                 <Button 

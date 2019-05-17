@@ -94,7 +94,8 @@ class ItemProfile extends Component{
                         <CardItem>
                             <Button onPress={() => this.props.navigation.navigate('ReviewScreen',{noInput:false})}
                                     title = "Make a Review"
-                                    buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#54a0ff'}}  
+                                    titleStyle={{ color: 'grey' }}
+                                    buttonStyle={{height: 60, width: 180,color:'grey', borderRadius: 35,color:'grey', backgroundColor:'white', borderColor:'grey',borderWidth:1}} 
                                     />
                             <Text> </Text>
                             <Button onPress={() => this.props.navigation.navigate('signUp')}

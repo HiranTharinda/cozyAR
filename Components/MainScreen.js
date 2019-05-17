@@ -4,7 +4,7 @@ import {Icon, Title} from 'native-base'
 import { createMaterialTopTabNavigator, createAppContainer, StackNavigator, createStackNavigator} from 'react-navigation';
 import firebase from 'react-native-firebase'
 
-import CamTab from './AppTabNavigator/CamTab'
+import ArStack from './AppTabNavigator/ArStack'
 import HomeStack from './AppTabNavigator/HomeStack'
 import StoreStack from './AppTabNavigator/StoreStack'
 import ProfileStack from './AppTabNavigator/ProfileStack'
@@ -31,12 +31,6 @@ class MainScreen extends Component{
     }
 }
 
-CamTab.navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-        <Icon name = "md-aperture"  style={{color:
-        tintColor}}/>
-    ) 
-}
 
 const BottomTabNavigator = createMaterialTopTabNavigator({
     Home:{
@@ -47,7 +41,7 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
         screen: StoreStack
     },
     AR:{
-        screen: CamTab
+        screen: ArStack
     },
     Post:{
         screen: PostStack

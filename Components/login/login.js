@@ -83,7 +83,7 @@ export default class Login extends React.Component {
             underlineColorAndroid="transparent"
             style={styles.textInput}
             autoCapitalize="none"
-            placeholder="Email"
+            placeholder="   Email"
             onChangeText={email => this.setState({ email })}
             value={this.state.email}/>
           <TextInput
@@ -91,7 +91,7 @@ export default class Login extends React.Component {
             secureTextEntry
             style={styles.textInput}
             autoCapitalize="none"
-            placeholder="Password"
+            placeholder="   Password"
             onChangeText={password => this.setState({ password })}
             value={this.state.password}/>
           <Text> </Text>
@@ -101,8 +101,9 @@ export default class Login extends React.Component {
           <Text></Text>
           <Button 
                   title="Sign Up"
+                  titleStyle={{ color: 'grey' }}
                   onPress={() => this.props.navigation.navigate('signUp')}
-                  buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}  
+                  buttonStyle={{height: 40, width: 80,color:'grey', borderRadius: 30, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
                   />
                   <Text></Text>
                  </View>
@@ -123,9 +124,10 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40,
-    width: '100%',
+    width: 180,
     borderColor: 'gray',
-    borderWidth: 0,
+    borderWidth: 1,
+    borderRadius: 30,
     marginTop: 8
   },
 
