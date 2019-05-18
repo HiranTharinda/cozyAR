@@ -17,16 +17,16 @@ export default class Loading extends React.Component {
         return (
         <View style={styles.container}>
             <StatusBar
-                barStyle = "dark-content"
+                barStyle = "lite-content"
                 hidden = {false}
-                backgroundColor = "#48dbfb"
+                backgroundColor = "#181f31"
                 translucent = {false}
                 networkActivityIndicatorVisible = {false}
             />
-            <View style={{flex:3}}></View> 
+            <View style={{flex:1}}></View> 
             <View style={{flex:2}}></View> 
-            <View style={{flex:1}} >
-                <Image source = {require('../../assets/splashCozy.png')} style = {{resizeMode: 'contain'}}/>
+            <View style={{width:'100%',flex:1}} >
+                <Image source = {require('../../assets/splashCozy.png')} style = {{resizeMode: 'contain', width:'50%', alignSelf:'center'}}/>
             </View>
             <View style={{flex:4}}></View> 
             <View style={{flex:1}}>
@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#48dbfb'
+        backgroundColor: '#181f31'
   }
 })

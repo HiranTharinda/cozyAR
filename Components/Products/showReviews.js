@@ -19,14 +19,14 @@ class ShowReviews extends Component{
         
     }
 
+    
     checkParams = () => {
-        const {noInput,itemId} = this.props
-        console.log(itemId)
-        this.fetchReview(itemId)
+        var params = this.props.navigation.state.params;
         this.setState({
-            noInput:noInput
+            categoryId: params.itemId
         })
-    }
+        this.fetchReview(params.itemId)
+        }
 
     addReviewToList = (review_list, data, review) => {
         console.log(review_list, data, review)

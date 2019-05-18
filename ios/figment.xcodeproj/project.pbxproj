@@ -85,6 +85,7 @@
 		4D7316CBC17D4A90B0082822 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD93770E9729466D95F9BD23 /* Roboto-Medium.ttf */; };
 		20F160C1134A41A5BFACB6E7 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F232734A10AE494B9F2D809F /* Roboto-Regular.ttf */; };
 		D9DBEDE995894D52B3461A26 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54C0A50B3EB844EDBAAA4279 /* Pacifico.ttf */; };
+		59ABBDC18E22422196A69E4A /* Baloo Bhai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5993C8769BD4675A0D71DFD /* Baloo Bhai.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -505,6 +506,7 @@
 		FD93770E9729466D95F9BD23 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		F232734A10AE494B9F2D809F /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		54C0A50B3EB844EDBAAA4279 /* Pacifico.ttf */ = {isa = PBXFileReference; name = "Pacifico.ttf"; path = "../assets/fonts/Pacifico.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C5993C8769BD4675A0D71DFD /* Baloo Bhai.ttf */ = {isa = PBXFileReference; name = "Baloo Bhai.ttf"; path = "../assets/fonts/Baloo Bhai.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -882,6 +884,7 @@
 				FD93770E9729466D95F9BD23 /* Roboto-Medium.ttf */,
 				F232734A10AE494B9F2D809F /* Roboto-Regular.ttf */,
 				54C0A50B3EB844EDBAAA4279 /* Pacifico.ttf */,
+				C5993C8769BD4675A0D71DFD /* Baloo Bhai.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1449,6 +1452,7 @@
 				4D7316CBC17D4A90B0082822 /* Roboto-Medium.ttf in Resources */,
 				20F160C1134A41A5BFACB6E7 /* Roboto-Regular.ttf in Resources */,
 				D9DBEDE995894D52B3461A26 /* Pacifico.ttf in Resources */,
+				59ABBDC18E22422196A69E4A /* Baloo Bhai.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

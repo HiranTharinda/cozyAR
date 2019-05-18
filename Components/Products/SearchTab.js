@@ -4,8 +4,10 @@ import { Dimensions,View, Text, StyleSheet, Image, FlatList, StatusBar, Touchabl
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right} from 'native-base'
 import {Button,Rating} from 'react-native-elements'
 import firebase from 'react-native-firebase'
+import Category from "./Categories";
 
 const itemWidth = Dimensions.get('window').width
+const itemHeight = Dimensions.get('window').height
 
 class SearchTab extends Component{
 
@@ -61,14 +63,8 @@ class SearchTab extends Component{
     addToFlatlist = (item_list, data, item) => {
         var that = this
         var itemObj = data[item];
-            firebase.database().ref('category').child(itemObj.category).once('value').then(function(snapshot){
-                const exists = (snapshot.val() !== null)
-                    if(exists) data = snapshot.val();
-                        console.log(data)
                         item_list.push({
                             id:item,
-                            catalogId: itemObj.category,
-                            catalogName: data.name,
                             itemName:itemObj.name,
                             itemPrice: itemObj.price,
                             itemImage:itemObj.image,
@@ -82,7 +78,6 @@ class SearchTab extends Component{
                             refresh: false,
                             loading: false
                         })
-                    }).catch(error => console.log(error));
     }
 
     loadFeed = () => {
@@ -96,7 +91,6 @@ class SearchTab extends Component{
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val();
                 var item_list= that.state.item_list;
-                console.log(item_list)
                 for(var item in data){
                     that.addToFlatlist(item_list, data, item)
                 }
@@ -119,35 +113,39 @@ class SearchTab extends Component{
         }
     }
 
-    
     render(){
         return(
-
+        <View style={styles.container}>
+                <Card transparent style={{width:itemWidth, height:itemHeight/4+50}}>
+                    <CardItem style={{width:itemWidth}}>
+                        <Category/>
+                    </CardItem>
+                </Card>
             <FlatList
                 refreshing ={this.state.refresh}
                 onRefresh = {this.loadNew}
                 data ={this.state.item_list}
                 keyExtractor={(item, index)=>index.toString}
                 numColumns = {2}
-                style = {{flex:1,backgroundColor:'#ffffff',paddingHorizontal:20}}
+                style = {{flex:2,backgroundColor:'#ffffff', height:'75%'}}
                 renderItem = {({item, index}) => (
                     <View key ={index} style={{paddingHorizontal:5,paddingTop:10}}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemProfile',{itemId:item.id})}>
-                            <Card  style={{width:itemWidth/2-15,borderRadius:30}}>
+                            <Card  style={{width:itemWidth/2-15, borderRadius:30}}>
                                 <CardItem style={{height:160}} cardBody>
                                     <Image source={{uri:item.itemImage}} style={ 
                                         {resizeMode:'cover',height:100, width:200,paddingBottom:40, flex:1}}/>
-                                    <Text style = {{fontWeight:"bold",fontSize:15,position:'absolute',paddingLeft:10, paddingTop:125}}>
+                                    <Text style = {{fontWeight:"bold",fontSize:13,position:'absolute',paddingLeft:10, paddingTop:125}}>
                                         {item.itemName} 
                                     </Text>
-                                    <Text style = {{fontWeight:"normal",fontSize:15,position:'absolute',paddingLeft:110, paddingTop:125}}>
+                                    <Text style = {{fontWeight:"normal",fontSize:13,position:'absolute',paddingLeft:80, paddingTop:125, textAlign:'right'}}>
                                         {item.itemPrice}
                                     </Text>
                                     <Rating
                                         imageSize={20}
                                         readonly                          
                                         startingValue={item.itemRating}
-                                        style={{position:'absolute',paddingLeft:80, paddingBottom:125}}
+                                        style={{position:'absolute',paddingLeft:60,paddingRight:10, paddingBottom:125}}
                                     />
                                 </CardItem>
                             </Card>
@@ -156,12 +154,18 @@ class SearchTab extends Component{
                 )}
             >
             </FlatList>
+            
+        </View>
         )    
     }
 }
 export default SearchTab;
 
 const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:'white'
+    },
     thumbnail:{
         marginHorizontal:5,
         borderColor:"#2fd7e0",
@@ -169,5 +173,18 @@ const styles = StyleSheet.create({
         borderRadius:10,
         width:80,
         height:60
-    }
+    },
+    fab: {
+        position: 'absolute',
+        width: 60,
+        height: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        right: 20,
+        bottom: 20,
+        backgroundColor: '#181f31',
+        borderRadius: 30,
+        elevation: 8
+      }
 });
+

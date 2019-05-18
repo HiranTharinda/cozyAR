@@ -8,7 +8,7 @@ import ArStack from './AppTabNavigator/ArStack'
 import HomeStack from './AppTabNavigator/HomeStack'
 import StoreStack from './AppTabNavigator/StoreStack'
 import ProfileStack from './AppTabNavigator/ProfileStack'
-import PostStack from './AppTabNavigator/PostStack'
+import Notification from './AppTabNavigator/Notifications'
 class MainScreen extends Component{
 
     state = { currentUser: null }
@@ -21,8 +21,8 @@ class MainScreen extends Component{
     render(){
         return(<View style={{flex:1}}>
                 <StatusBar
-                backgroundColor="white"
-                barStyle="dark-content"
+                backgroundColor="#181f31"
+                barStyle="lite-content"
                 />
                 <AppTabNavigator/>
             </View>
@@ -43,8 +43,8 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
     AR:{
         screen: ArStack
     },
-    Post:{
-        screen: PostStack
+    Notification:{
+        screen: Notification
     },
     Profile:{
         screen: ProfileStack
@@ -53,24 +53,19 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
 
 },{     navigationOptions:{
             header: null,
-            title: 'C O Z Y',
-            headerTitleStyle: {
-            fontFamily: 'INTRO',
-            fontWeight: 'bold',
-            textAlign:"center", 
-        },
+         
         },
         headerMode: 'screen',
         tabBarPosition:'bottom',
         animationEnabled: true,
-        swipeEnabled: false,
+        swipeEnabled: true,
         tabBarOptions: {
             showLabel: false,
-            activeTintColor: '#2fd7e0',
-            inactiveTintColor:'#000000',
+            activeTintColor: '#f8f8f8',
+            inactiveTintColor:'#5a6586',
             showIcon: true,
-            style:{elevation:100, backgroundColor: 'white',},
-            indicatorStyle:{backgroundColor:'black'}
+            style:{ backgroundColor: '#181f31',},
+            indicatorStyle:{backgroundColor:'#f8f8f8'}
     }
 
 });

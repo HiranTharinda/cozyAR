@@ -161,18 +161,19 @@ class ProfileSettings extends Component{
         return(
             <Container style={{ flex: 1, backgroundColor: 'white'}}>
                 <Content>
-                    <View style ={{paddingTop: 100, paddingBottom:10, paddingRight:20, paddingLeft:20}}>
+                    <View style ={{paddingTop: 100, paddingBottom:100, paddingRight:20, paddingLeft:20}}>
                         <View style={{ flexDirection: 'column'}}>
                             <View style = {{flex: 1, alignItems: 'center'}}>
                                 <TouchableOpacity onPress={() => this.handleChoosePhoto()}>
                                     <Image source = {{uri:this.state.avatar}}
-                                                style={{ width:110, height:110, borderRadius: 55,}}/>
+                                                style={{ width:160, height:160, borderRadius: 80}}/>
                                 </TouchableOpacity>
+                                <View style = {{flex:1}}></View>
                             </View>
                         </View>
                     </View>
                     <View style = {{backgroundColor:'#ffffff'}}>
-                        <Card transparent>
+                        <Card style={{height:'100%'}}>
                             <CardItem >
                                 <Text style={{fontSize:20, fontWeight:'bold'}}>Name</Text>
                                 <TextInput
@@ -198,7 +199,7 @@ class ProfileSettings extends Component{
                                     secureTextEntry
                                     underlineColorAndroid="transparent"
                                     editable={false}
-                                    placeholder={'dsdsd'}
+                                    placeholder={'*******'}
                                     style = {{width:'90%',fontSize:20, textAlign:'right', paddingRight:45}}> 
                                 </TextInput>    
                             </CardItem>

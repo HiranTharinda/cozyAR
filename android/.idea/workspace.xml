@@ -2,20 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c33fba-f94c-4026-a888-99527f5362ee" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Components/AppTabNavigator/ArStack.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/AppTabNavigator/ArStack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/AppTabNavigator/HomeStack.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/AppTabNavigator/HomeStack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/AppTabNavigator/PostStack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/AppTabNavigator/StoreStack.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/AppTabNavigator/StoreStack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/Home/HomeTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/Home/HomeTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/MainScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/Posts/Comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/Posts/Comments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/Posts/PostTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/Posts/PostTab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Components/Products/ItemProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/Products/ItemProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Components/Profile/ProfileSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/Profile/ProfileSettings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Components/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Components/login/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/login/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/Products/Reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/Products/Reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/Products/SearchTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/Products/SearchTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Components/login/loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Components/login/loading.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeGvrDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeGvrDebugAssets/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/file-input-save-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrUniversalDebug/file-input-save-data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/file-input-save-data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageGvrDebug/tmp/gvrXxhdpiDebug/file-input-save-data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/app-gvr-universal-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/app-gvr-universal-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/app-gvr-xxhdpi-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/gvr/debug/app-gvr-xxhdpi-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/splashCozy.png" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/splashCozy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/figment.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/figment.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/figment/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/figment/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +82,7 @@
           <entry key="project.closed" value="52" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="1" />
@@ -73,7 +90,7 @@
           <entry key="project.open.time.7" value="11" />
           <entry key="project.open.time.8" value="15" />
           <entry key="project.open.time.9" value="8" />
-          <entry key="project.opened" value="54" />
+          <entry key="project.opened" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -201,17 +218,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="figment" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,7 +230,17 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="figment" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -333,6 +350,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15946667" />
@@ -368,12 +386,12 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-153">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNViewConfigurationHelper.java">
       <provider selected="true" editor-type-id="text-editor">

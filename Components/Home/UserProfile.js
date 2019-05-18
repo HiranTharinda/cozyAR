@@ -69,7 +69,6 @@ class UserProfile extends Component{
                                 <PhotoGridForPreview isUser={true} userId={this.state.userId} navigation={this.props.navigation}/>
                             </CardItem>
                         </Card>
-                       
                     </View>
                 </Content>
             </Container>

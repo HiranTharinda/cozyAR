@@ -10,17 +10,20 @@ class ItemProfile extends Component{
         super(props)
         this.state ={
             loading:false,
-            rating:3
+            rating:3,
+            itemId:''
         }
     }
     checkParams = () => {
         var params = this.props.navigation.state.params;
+        console.log(params)
         if(params){
             if(params.itemId){
                 this.setState({
                     itemId: params.itemId
-                   
+                
                 })
+                console.log(params.itemId)
                 this.fetchItemInfo(params.itemId)
             }
         }
@@ -64,19 +67,21 @@ class ItemProfile extends Component{
                     <View><Text>Loading</Text></View>
                 ):( 
                     <Card style = {{height:'100%'}}>
+                    <CardItem cardBody style={{height:'5%'}}>
+                    <Rating imageSize={20}
+                                    startingValue={3}
+                                    style={{position:'absolute', alignItems:'center',paddingLeft:10}}/>
+                    </CardItem>
                         <CardItem cardBody style={{height:'30%'}}>
                             <Image source={{uri:this.state.itemImage}} style={
                                 {height:650, width:null, flex:1}}/>
-                            <Rating imageSize={20}
-                                    startingValue={3}
-                                    style={{position:'absolute'}}/>
                         </CardItem>
                         <CardItem style={{height:20,paddingTop:20}}>
                                 <Text style = {{fontWeight:"bold",fontSize:30}}>
                                     {this.state.itemName}
                                 </Text>
                             <Right>
-                                <Text style = {{fontWeight:"normal",fontSize:30, color:'#2fd7e0',textAlign:'right'}}>
+                                <Text style = {{fontWeight:"normal",fontSize:30, color:'#ff6b6b',textAlign:'right'}}>
                                     {this.state.itemPrice}
                                 </Text>
                             </Right>
@@ -92,7 +97,7 @@ class ItemProfile extends Component{
                             <ShowReviews itemId={this.state.itemId} navigation={this.props.navigation}/>
                         </CardItem>
                         <CardItem>
-                            <Button onPress={() => this.props.navigation.navigate('ReviewScreen',{noInput:false})}
+                            <Button onPress={() => this.props.navigation.navigate('ReviewScreen',{itemId:this.state.itemId})}
                                     title = "Make a Review"
                                     titleStyle={{ color: 'grey' }}
                                     buttonStyle={{height: 60, width: 180,color:'grey', borderRadius: 35,color:'grey', backgroundColor:'white', borderColor:'grey',borderWidth:1}} 

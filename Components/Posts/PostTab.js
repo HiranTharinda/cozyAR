@@ -19,7 +19,8 @@ class PostTab extends Component{
             uploading: false,
             uri:'',
             caption: '',
-            progress: 0
+            progress: 0,
+            video:null
         }
     }
 
@@ -130,8 +131,10 @@ class PostTab extends Component{
         this.setState({
             uploading: false,
             photoSelected:false,
-            caption:false
+            caption:false,
+            video:null
         })
+        this.props.navigation.navigate('Feed')
     }
     
     //Video
@@ -158,10 +161,10 @@ class PostTab extends Component{
     }
 
 
-    uploadPublish = () => {
+    uploadPublishVideo = () => {
         if(this.state.uploading == false){
             if(this.state.caption != ''){
-                this.uploadTheImage()
+                this.uploadTheVideo()
             }else{
                 alert('Please enter a Caption..')
             }
@@ -170,7 +173,7 @@ class PostTab extends Component{
         }
     }
 
-    uploadTheImage = () =>{
+    uploadTheVideo = () =>{
         var that = this
         //Getting userId, imageId and path of the image we are going to upload
         var userId = firebase.auth().currentUser.uid
@@ -204,12 +207,12 @@ class PostTab extends Component{
             });
             const ref = firebase.storage().ref('user/'+userId+'/vid').child(FilePath)
             const url = ref.getDownloadURL().then((url) => {
-                that.processUpload(url)
+                that.processUploadVideo(url)
             });
         })
     }
 
-    processUpload = (imageUrl) => {
+    processUploadVideo = (imageUrl) => {
         var imageId = this.state.imageId
         var userId = firebase.auth().currentUser.uid
         var caption = this.state.caption
@@ -229,15 +232,18 @@ class PostTab extends Component{
         this.setState({
             uploading: false,
             photoSelected:false,
-            caption:false
+            caption:false,
+            video:null
         })
+        this.props.navigation.navigate('Feed')
     }
 
     cancelButton = () => {
         this.setState({
             uploading: false,
             photoSelected:false,
-            caption:false
+            caption:false,
+            video:null
         })
     }
 
@@ -247,18 +253,9 @@ class PostTab extends Component{
                 {this.state.photoSelected == true ? (
                     <View style = {{flex: 5, width: '100%',height:'100%', alignContent:'center', alignItems:'center', position:'absolute', paddingBottom:300}}> 
                         <View style = {{width:'100%',height:'100%'}}>
-                        {this.state.video == false? (
+                        {this.state.video == false? (<View>
                             <Image resizeMode = 'contain' source ={{uri:this.state.uri}} style = {{width:'100%',height:'100%'}}></Image>
-                        ):(
-                            <Video
-                                            source={{uri:this.state.uri}}
-                                            resizeMode="cover"
-                                            repeat={true}
-                                        />
-                        )}
-                            <Image resizeMode = 'contain' source ={{uri:this.state.uri}} style = {{width:'100%',height:'100%'}}></Image>
-                        </View>
-                        <Card style = {{width:'100%',height:70}}>
+                            <Card style = {{width:'100%',height:70}}>
                             <CardItem>
                                 <TextInput
                                     underlineColorAndroid="transparent"
@@ -284,23 +281,89 @@ class PostTab extends Component{
                     <TouchableOpacity style = {{position:'absolute', alignSelf:'flex-end',padding:10}}>
                                 <Icon type='MaterialIcons' name="cancel" onPress={() => this.cancelButton()}
                                     style={{color: 'white'}}/>
-                    </TouchableOpacity>
+                    </TouchableOpacity></View>
+                    ):(
+                    <View>
+                        <Video
+                            source={{uri:this.state.uri}}
+                            resizeMode="cover"
+                            repeat={true}
+                        />
+                        <Card style = {{width:'100%',height:70}}>
+                            <CardItem>
+                                <TextInput
+                                    underlineColorAndroid="transparent"
+                                    editable={true}
+                                    placeholder={'Write a caption...'}
+                                    onChangeText={(text) => this.setState({caption: text})}
+                                    style = {{width:'90%'}}> 
+                                </TextInput>    
+                                <Right>
+                                    {this.state.uploading == true ? (
+                                        <ActivityIndicator size='small' color = 'black'></ActivityIndicator>
+                                        ):(
+                                        <View>
+                                            <TouchableOpacity>
+                                                <Icon type="MaterialCommunityIcons" name="comment" onPress={() => this.uploadPublishVideo()}
+                                                    style={{color: 'black'}}/>
+                                            </TouchableOpacity>
+                                        </View>
+                                        )}  
+                                </Right>
+                        </CardItem>
+                    </Card>
+                    <TouchableOpacity style = {{position:'absolute', alignSelf:'flex-end',padding:10}}>
+                                <Icon type='MaterialIcons' name="cancel" onPress={() => this.cancelButton()}
+                                    style={{color: 'white'}}/>
+                    </TouchableOpacity></View>
+                    )}
+                    </View>
                 </View>
                 ) : (
-                    <View style = {{flex: 5, width: 120, alignContent:'center', alignItems:'center', position:'absolute', paddingBottom:60}}> 
-                    <Text style={{fontWeight:"900", fontSize:35,textAlign: 'center', fontFamily:'Pacifico'}}>SHARE WHAT YOU LOVE</Text>
-                    <Text style={{fontWeight:"900", fontSize:11,textAlign: 'center', fontFamily:'Pacifico'}}></Text>
-                    <Button 
-                            title="Photo"
-                            onPress={() => this.handleChoosePhoto()}
-                            buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}/>
-                     <Button 
-                            title="Video"
-                            onPress={() => this.handleChooseVideo()}
-                            buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}/>
-                </View>
-                )}
+                <View style={styles.container}>
+                    <View style = {{flex: 2, width: 300}}></View>
+                    <View style = {{flex: 4, width: 190, alignContent:'center', alignItems:'center'}}>
+                        <Card style ={{borderRadius: 40}}>
+                            <CardItem style ={{width:240}}>
+                                <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}>  
+                                    <Text></Text>
+                                    <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>SHARE WHAT YOU LOVE.</Text>
+                                    <Text></Text>
+                                    <Button icon={
+                                        <Icon
+                                        name="camera"
+                                        size={15}
+                                        style ={{color:"#ffffff"}}
+                                        type ='Entypo'
+                                        />}
+                                    title="Photo"
+                                    onPress={() => this.handleChoosePhoto()}
+                                    raised = 'true'
+                                    buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#181f31'}}  
+                                    />
+                                    <Text></Text>
+                                    <Button icon={
+                                        <Icon
+                                        name="video-camera"
+                                        size={15}
+                                        style ={{color:"#ffffff"}}
+                                        type ='Entypo'
+                                    />}
+                                    title="Video"
+                                    onPress={() => this.handleChooseVideo()}
+                                    raised = 'true'
+                                    buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}  
+                                    />
+                                    <Text></Text>
+                                    <Text></Text>
+                                </View>
+                            </CardItem>
+                        </Card>
+                    </View>
+                <View style = {{flex: 1, width: 300}}></View>
             </View>
+        )}
+        </View>
         )
     }
 }
@@ -311,6 +374,7 @@ const styles = StyleSheet.create({
     container:{
     flex:1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor:'#ffffff'
     }
 });

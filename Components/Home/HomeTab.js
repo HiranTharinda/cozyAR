@@ -78,7 +78,7 @@ class HomeTab extends Component{
                         })
                     }).catch(error => console.log(error));
     }
-  
+
     loadFeed = () => {
         this.setState({
             refresh:true,
@@ -113,9 +113,10 @@ class HomeTab extends Component{
             })
         }
     }
-    // need to  add a condition to check whether a video or image. When upload a flag object when uploading a video so we can check that here
+
     render(){
         return(
+            <View style={styles.container}>
             <FlatList
                 refreshing ={this.state.refresh}
                 onRefresh = {this.loadNew}
@@ -130,7 +131,7 @@ class HomeTab extends Component{
                                     <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
                                     <Body>
                                         <TouchableOpacity onPress = {() => this.props.navigation.navigate('UserView', {userId: item.authorId})}>
-                                            <Text style = {{fontWeight:"normal"}}>
+                                            <Text style = {{fontFamily:'Roboto-Bold'}}>
                                                 {item.author}
                                             </Text>
                                         </TouchableOpacity>
@@ -138,59 +139,56 @@ class HomeTab extends Component{
                                     </Body>
                                 </Left>
                             </CardItem>
-                            
                             {item.flag == false ? (
-                            
-                                
-                                    <Image source={{uri:item.url}} style={
+                                <Image source={{uri:item.url}} style={
                                     {height:350, width:null, flex:1}}/>
-                       
                                 ) : (
-                              
-                                    <View style={{flex:1}}>
-                                        <Video
-                                            source={blu}
-                                            resizeMode="cover"
-                                            repeat={true}
-                                        />
-                                    </View>
-                                    
+                                <View style={{flex:1}}>
+                                    <Video
+                                        source={blu}
+                                        resizeMode="cover"
+                                        repeat={true}
+                                    />
+                                </View> 
                                 )}
-                                
-                            <CardItem style={{height: 45}}>
-                                <Left>
-                                    <Button transparent onPress={this.likeButton}>
-                                        <Icon type = 'SimpleLineIcons' name="heart"
-                                            style={
+                                <CardItem style={{height: 45}}>
+                                    <Left>
+                                        <Button transparent onPress={this.likeButton}>
+                                            <Icon type = 'Foundation' name="heart"
+                                                style={
                                                 this.state.liked
                                                 ? styles.likedTrue
                                                 : styles.likedFalse
                                                 }/>
-                                    </Button>
-                                    <Button transparent onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
-                                        <Icon type = 'SimpleLineIcons' name="bubble"
-                                            style={{color: 'black', fontSize: 32}}/>
                                         </Button>
-                                </Left>
-                            </CardItem>
-                            <CardItem style={{height:20}}>
-                                <Text>
-                                    {item.likes} likes
-                                </Text>
-                            </CardItem>
-                            <CardItem>
-                                <Body>
+                                        <Button transparent onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
+                                            <Icon type = 'MaterialCommunityIcons' name="comment"
+                                                style={{color: '#5a6586', fontSize: 30}}/>
+                                        </Button>
+                                    </Left>
+                                </CardItem>
+                                <CardItem style={{height:20}}>
                                     <Text>
-                                        <Text style = {{fontWeight:"900"}}>{item.author} </Text>
-                                        {item.caption}
+                                        {item.likes} likes
                                     </Text>
-                                </Body>
-                            </CardItem>
-                        </Card>
-                    </View> 
-                )}
-            >
+                                </CardItem>
+                                <CardItem>
+                                    <Body>
+                                        <Text>
+                                            <Text style = {{fontWeight:"900"}}>{item.author} </Text>
+                                            {item.caption}
+                                        </Text>
+                                    </Body>
+                                </CardItem>
+                            </Card>
+                        </View> 
+                    )}
+                >
             </FlatList>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('PickImage')} style={styles.fab}>
+                <Icon type='MaterialIcons' name = "add-box" style={{color:'#f8f8f8'}}/>
+            </TouchableOpacity>
+        </View>
         )    
     }
 }
@@ -203,11 +201,24 @@ const styles = StyleSheet.create({
         backgroundColor:'white'
     },
     likedTrue:{
-        color: 'red',
-          fontSize: 32
+        color: '#ff6b6b',
+        fontSize: 32
     },
     likedFalse: {
-        color: 'black',
+        color: '#5a6586',
         fontSize: 32
-    }
+    },
+    fab: {
+        position: 'absolute',
+        width: 60,
+        height: 60,
+        alignItems: 'center',
+        justifyContent: 'center',
+        right: 20,
+        bottom: 20,
+        backgroundColor: '#181f31',
+        borderRadius: 30,
+        elevation: 8
+      },
+     
 });

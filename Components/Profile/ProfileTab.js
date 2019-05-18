@@ -47,7 +47,7 @@ class ProfileTab extends Component{
                         </View>
                     </View>
                     <View style = {{backgroundColor:'#ffffff'}}>
-                        <Card transparent>
+                        <Card style = {{height:'100%'}}>
                             <CardItem>
                             <PhotoGrid isUser={true} userId={firebase.auth().currentUser.uid} navigation={this.props.navigation}/>
                             </CardItem>

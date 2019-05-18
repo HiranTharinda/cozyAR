@@ -9,8 +9,8 @@ class ArStack extends Component{
 
     static navigationOptions = {
         tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-search" style={{color:
-            tintColor}}/>
+            <Icon  type='Entypo' name = "camera" style={{
+            color: tintColor, fontSize:24}}/>
         ) 
     }
 

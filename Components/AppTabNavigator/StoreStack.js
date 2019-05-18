@@ -6,13 +6,14 @@ import ItemProfile from '../Products/ItemProfile'
 import SearchTab from '../Products/SearchTab'
 import SearchScreen from '../Products/SearchScreen'
 import Reviews from '../Products/Reviews'
+import CategoryRender from '../Products/CategoryRender'
 
 class StoreStack extends Component{
 
     static navigationOptions = {
         tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-search" style={{color:
-            tintColor}}/>
+            <Icon type='FontAwesome5' name = "shopping-bag" style={{color:
+            tintColor,fontSize:23}}/>
         ) 
     }
 
@@ -62,7 +63,15 @@ const Store = createStackNavigator({
                 headerTitle:'Reviews'
             }
         }
-    }
+    },
+    Category: {
+        screen:CategoryRender,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Products'
+            }
+        }
+    },
 })
 
 const AppContainer = createAppContainer(Store);

@@ -5,13 +5,14 @@ import {createAppContainer, createStackNavigator} from 'react-navigation';
 import Comments from '../Posts/Comments'
 import UserProfile from '../Home/UserProfile'
 import HomeTab from '../Home/HomeTab'
+import PostTab from '../Posts/PostTab'
 
 class HomeStack extends Component{
 
     static navigationOptions = {
         tabBarIcon: ({tintColor}) => (
-            <Icon name = "md-home" style={{color:
-            tintColor}}/>
+            <Icon type='Foundation' name = "home" style={{color:
+            tintColor, fontSize:27}}/>
         ) 
     }
     render() {
@@ -26,7 +27,15 @@ const home = createStackNavigator({
         screen:HomeTab,
         navigationOptions:({navigation}) => {
             return{
-                headerTitle:'C O Z Y'
+                headerTitle:'C O Z Y',
+                headerTitleStyle: {
+                    color:'#ffff',
+                    fontWeight: 'bold',
+                },
+            
+                headerStyle: {
+                    backgroundColor: '#181f31',
+                }
             }
         }
     },
@@ -35,6 +44,7 @@ const home = createStackNavigator({
         navigationOptions:({navigation}) => {
             return{
                 headerTitle:'Profile Overview'
+                
             }
         }
     },
@@ -46,6 +56,18 @@ const home = createStackNavigator({
             }
         }
     },
+    PickImage: {
+        screen:PostTab,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'Select a photo',
+                
+            
+                
+            }
+        }
+    },
+    
 })
 
 const AppContainer = createAppContainer(home);

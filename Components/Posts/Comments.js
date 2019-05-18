@@ -205,7 +205,7 @@ class Comments extends Component{
                             </TextInput>    
                         <Right>
                             <TouchableOpacity>
-                                <Icon type="MaterialCommunityIcons" name="comment" onPress={() => this.postComment()}
+                                <Icon type='FontAwesome5' name="comment-alt" onPress={() => this.postComment()}
                                     style={{color: 'black'}}/>
                             </TouchableOpacity>
                         </Right>

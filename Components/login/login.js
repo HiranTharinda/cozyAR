@@ -106,7 +106,7 @@ export default class Login extends React.Component {
                   buttonStyle={{height: 40, width: 80,color:'grey', borderRadius: 30, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
                   />
                   <Text></Text>
-                 </View>
+                  </View>
               </CardItem>
           </Card>
         </View>

@@ -17,17 +17,14 @@ class CamTab extends Component{
 
     render(){
         return(
-                <Provider store={store}>
-                   <App />
-               </Provider>
+          <Provider store={store}>
+            <App />
+          </Provider>
         );
     }
 }
 
 
-
-
-// Later on in your styles..
 var styles = StyleSheet.create({
   backgroundVideo: {
     width:300,

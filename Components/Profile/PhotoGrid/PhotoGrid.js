@@ -29,7 +29,7 @@ class PhotoGrid extends Component{
     addToFlatlist = (photo_feed, data, photo) => {
         var that = this
         var photoObj = data[photo];
-                    firebase.database().ref('users').child(photoObj.author).on('value',function(snapshot){
+                firebase.database().ref('users').child(photoObj.author).on('value',function(snapshot){
                         const exists = (snapshot.val() !== null)
                         if(exists) data = snapshot.val();
                         photo_feed.push({
