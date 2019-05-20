@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Dimensions,View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
+import {Icon} from 'native-base'
 import firebase from 'react-native-firebase'
 const itemWidth = Dimensions.get('window').width
 
@@ -70,8 +71,7 @@ class PhotoGrid extends Component{
     }
 
     deletePhoto = (photoId) => {
-        console.log(photoId)
-        console.log(userId)
+        alert('Are')
         firebase.database().ref('/photos/'+photoId).remove()
         firebase.database().ref('/users/'+userId+'/photos/'+photoId).remove()
         firebase.database().ref('/comments/'+photoId).remove()
@@ -93,9 +93,11 @@ class PhotoGrid extends Component{
                 style = {{flex:1,backgroundColor:'#ffffff'}}
                 renderItem = {({item, index}) => (
                     <View key ={index} itemWidth={itemWidth/3} style={{borderWidth:1, borderColor:'#ffffff'}}>
-                        <TouchableOpacity onPress={() => this.deletePhoto(item.id)}>
-                                <Image source={{uri:item.url}} style={
-                                    {height:itemWidth/3-13, width:itemWidth/3-13, flex:1}}/>
+                            <Image source={{uri:item.url}} style={
+                                {height:itemWidth/3-13, width:itemWidth/3-13, flex:1}}/>
+                            <TouchableOpacity style = {{position:'absolute', alignSelf:'flex-end',padding:5,}}>
+                                <Icon type='MaterialIcons' name="cancel" onPress={() => this.deletePhoto(item.id)}
+                                style={{color: 'white'}}/>
                         </TouchableOpacity>            
                     </View> 
                 )}

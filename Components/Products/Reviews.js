@@ -54,7 +54,7 @@ class Reviews extends Component{
 
     fetchReview = (reviewId) => {
         var that = this
-        firebase.database().ref('reviews').child(reviewId).orderByChild('posted').on('value',function(snapshot) {
+        firebase.database().ref('reviews').child(reviewId).orderByChild('posted').once('value').then(function(snapshot) {
             const exists = (snapshot.val() !== null)
             if (exists){
                 data = snapshot.val()
@@ -83,7 +83,6 @@ class Reviews extends Component{
             uploading:true
         })
         var review = this.state.comment
-        console.log(this.state.comment)
         if(review != ''){
             var params = this.props.navigation.state.params;
             var itemId = params.itemId
@@ -171,6 +170,18 @@ class Reviews extends Component{
         }
         
     }
+
+    deleteReview = (reviewId) => {
+        var params = this.props.navigation.state.params;
+        var itemId = params.itemId
+        firebase.database().ref('/reviews/'+itemId+'/'+reviewId).remove()
+        this.setState({
+            refresh:true,
+        })
+        this.reloadReviewList()
+        
+    }
+
     
     render(){
         return(
@@ -187,6 +198,7 @@ class Reviews extends Component{
                         style = {{flex:1,backgroundColor:'#ffffff'}}
                         renderItem = {({item, index}) => (
                         <View key ={index}>
+                         <TouchableOpacity onLongPress = {() => this.deleteReview(item.id)}>
                             <Card  style = {{borderRadius: 30}}>
                                 <CardItem bordered style={{ borderRadius: 30 }}>
                                     <Left>
@@ -200,6 +212,7 @@ class Reviews extends Component{
                                     </Left>
                                 </CardItem>
                             </Card>
+                            </TouchableOpacity>
                         </View>
                         )}
                     >

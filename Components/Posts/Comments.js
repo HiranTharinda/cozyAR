@@ -106,7 +106,7 @@ class Comments extends Component{
             //reload the comment
             this.reloadCommentList();
         }else{
-            
+            alert('Please enter a Comment...')
         }
     }
 
@@ -165,6 +165,17 @@ class Comments extends Component{
         }
         
     }
+
+    deleteComment = (commentId) => {
+        var photoId = this.state.photoId
+        firebase.database().ref('/comments/'+photoId+'/'+commentId).remove()
+        this.setState({
+            refresh:true,
+        })
+        this.reloadCommentList()
+        
+    }
+
     
     render(){
         return(
@@ -181,6 +192,7 @@ class Comments extends Component{
                         style = {{flex:1,backgroundColor:'#ffffff'}}
                         renderItem = {({item, index}) => (
                         <View key ={index}>
+                        <TouchableOpacity onLongPress = {() => this.deleteComment(item.id)}>
                             <Card  style = {{borderRadius: 30}}>
                                 <CardItem bordered style={{ borderRadius: 30, height:70 }}>
                                     <Left>
@@ -194,6 +206,7 @@ class Comments extends Component{
                                     </Left>
                                 </CardItem>
                             </Card>
+                            </TouchableOpacity>    
                         </View>
                         )}
                     >
