@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity, TextInput, KeyboardAvoidingView } from "react-native";
+import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity, TextInput, KeyboardAvoidingView, ActivityIndicator } from "react-native";
 import {Icon, Card, CardItem, Thumbnail, Body, Left, Right} from 'native-base'
+import {Rating} from 'react-native-elements'
 import firebase from 'react-native-firebase'
 
 class Reviews extends Component{
@@ -11,7 +12,8 @@ class Reviews extends Component{
             refresh: false,
             loading: true,
             liked: false,
-            rating:4
+            rating:4,
+            uploading: false,
         }
     }
     componentDidMount = () => {
@@ -52,7 +54,7 @@ class Reviews extends Component{
 
     fetchReview = (reviewId) => {
         var that = this
-        firebase.database().ref('reviews').child(reviewId).orderByChild('posted').once('value').then(function(snapshot) {
+        firebase.database().ref('reviews').child(reviewId).orderByChild('posted').on('value',function(snapshot) {
             const exists = (snapshot.val() !== null)
             if (exists){
                 data = snapshot.val()
@@ -65,7 +67,7 @@ class Reviews extends Component{
                     review_list:[]
                 })
             }
-        }).catch(error => console.log(error))
+        })
     }
 
     pluralCheck = (s) => {
@@ -77,7 +79,11 @@ class Reviews extends Component{
     }
 
     postReview = () => {
-        var review = this.state.review
+        this.setState({
+            uploading:true
+        })
+        var review = this.state.comment
+        console.log(this.state.comment)
         if(review != ''){
             var params = this.props.navigation.state.params;
             var itemId = params.itemId
@@ -88,17 +94,21 @@ class Reviews extends Component{
             var rating = this.state.rating
 
             this.setState({
-                review: ''
+                comment: ''
             })
 
             var reviewObj = {
                 posted: timestamp,
                 author: userId,
                 comment: review,
-                rating: rating
+                rating: rating,
+        
             }
 
             firebase.database().ref('/reviews/'+itemId+'/'+reviewId).set(reviewObj)
+            this.setState({
+                uploading:false
+            })
             //reload the comment
             this.reloadReviewList();
         }else{
@@ -133,9 +143,9 @@ class Reviews extends Component{
             return interval + ' hour' +this.pluralCheck(interval)
         }
         interval = Math.floor(seconds / 60);
-        if(interval > 1){
+        if(interval >= 1){
             return interval + ' minute' +this.pluralCheck(interval)
-        } return Math.floor(seconds) + 'second' +this.pluralCheck(interval)
+        } return Math.floor(seconds) + ' second' +this.pluralCheck(interval)
     }
 
     s4 = () => {
@@ -203,13 +213,22 @@ class Reviews extends Component{
                             editable={true}
                             placeholder={'Enter a comment here...'}
                             onChangeText={(text) => this.setState({comment: text})}
-                            style = {{width:'90%'}}> 
+                            style = {{width:'60%'}}> 
                             </TextInput>    
                         <Right>
-                            <TouchableOpacity>
-                                <Icon type="MaterialCommunityIcons" name="comment" onPress={() => this.postReview()}
-                                    style={{color: 'black'}}/>
-                            </TouchableOpacity>
+                        <Rating imageSize={20}
+                                    startingValue={0}
+                                    style={{position:'absolute', alignItems:'center',paddingLeft:10}}/>
+                        {this.state.uploading == true ? (
+                                        <ActivityIndicator size='small' color = 'black'></ActivityIndicator>
+                                        ):(
+                                        <View>
+                                            <TouchableOpacity>
+                                                <Icon type="MaterialCommunityIcons" name="comment" onPress={() => this.postReview()}
+                                                    style={{color: 'black'}}/>
+                                            </TouchableOpacity>
+                                        </View>
+                                        )}  
                         </Right>
                         </CardItem>
                     </Card>

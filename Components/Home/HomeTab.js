@@ -13,7 +13,7 @@ class HomeTab extends Component{
             photo_feed: [],
             refresh: false,
             loading: true,
-            liked: false
+            liked: []
         }
     }
 
@@ -51,7 +51,7 @@ class HomeTab extends Component{
         interval = Math.ceil(seconds / 60);
         if(interval > 1){
             return interval + ' minute' +this.pluralCheck(interval)
-        } return Math.floor(seconds) + 'second' +this.pluralCheck(interval)
+        } return Math.floor(seconds) + ' second' +this.pluralCheck(interval)
     }
 
     addToFlatlist = (photo_feed, data, photo) => {
@@ -60,6 +60,7 @@ class HomeTab extends Component{
                     firebase.database().ref('users').child(photoObj.author).once('value').then(function(snapshot){
                         const exists = (snapshot.val() !== null)
                         if(exists) data = snapshot.val();
+                        
                         photo_feed.push({
                             id: photo,
                             url: photoObj.url,
@@ -76,7 +77,7 @@ class HomeTab extends Component{
                             refresh: false,
                             loading: false
                         })
-                    }).catch(error => console.log(error));
+                    })
     }
 
     loadFeed = () => {
@@ -95,102 +96,160 @@ class HomeTab extends Component{
                 for(var photo in data){
                     that.addToFlatlist(photo_feed, data, photo)
                 }
-        }).catch(error => console.log(error));
+        })
     }
 
     loadNew = () => {
         this. loadFeed()
     }
 
-    likeButton = () => {
-        if (this.state.liked){
-            this.setState({
-                liked: false
-            })
-        }else{
-            this.setState({
-                liked: true
-            })
-        }
-    }
 
-    render(){
-        return(
-            <View style={styles.container}>
-            <FlatList
-                refreshing ={this.state.refresh}
-                onRefresh = {this.loadNew}
-                data ={this.state.photo_feed}
-                keyExtractor={(item, index)=>index.toString}
-                style = {{flex:1,backgroundColor:'#ffffff'}}
-                renderItem = {({item, index}) => (
-                    <View key ={index}>
-                        <Card transparent>
-                            <CardItem>
+    // removeLike = (photoId) => {
+    //     var that = this
+    //     var userId = firebase.auth().currentUser.uid;
+    //     loadRef = firebase.database().ref('photos').child(photoId)
+    //     loadRef.on('value', function(snapshot){
+    //         const exists = (snapshot.val() !== null)
+    //         if(exists) data = snapshot.val();
+    //         that.setState({
+    //             likes : data.likes
+    //         })
+    //     })
+    //     if(this.state.likes == 0){
+    //         var userObj = {
+    //             likes: this.state.likes
+    //         }
+    //     }else{
+    //         var sum = this.state.likes - 1
+    //         var userObj = {
+    //             likes: sum
+    //         }
+    //     }
+    
+    //     firebase.database().ref('/photos/'+photoId).update(userObj)
+    // }
+
+    // addLike = (photoId) => {
+    //     var that = this
+    //     var userId = firebase.auth().currentUser.uid;
+    //     loadRef = firebase.database().ref('photos').child(photoId)
+    //     loadRef.on('value', function(snapshot){
+    //         const exists = (snapshot.val() !== null)
+    //         that.setState({
+    //             likes : data.likes
+    //         })
+    //     })
+    //     var sum = this.state.likes + 1
+    //     var userObj = {
+    //         likes: sum
+    //     }
+    //     firebase.database().ref('/photos/'+photoId).update(userObj)
+    // }
+
+    // likeChecker = (photoId) => {
+    //     console.log(photoId)
+    //     var userId = firebase.auth().currentUser.uid;
+    //     firebase.database().ref('users').child(userId).child('liked').on('value',function(snapshot){
+    //         const exists = (snapshot.val() !== null)
+    //         if(exists) data = snapshot.val();
+            
+            
+                
+    //     })
+        
+    // }
+
+    // likeButton = (photoId) => {
+    //     console.log(photoId)
+    //     if (this.state.liked){
+    //         this.setState({
+    //             liked: false
+    //         })
+    //         this.removeLike(photoId)
+            
+        
+    //     }else{
+    //         this.setState({
+    //             liked: true
+    //         })
+    //         this. addLike(photoId)
+    //     }
+    // }
+
+    render() {
+    return(
+    <View style={styles.container}>
+        <FlatList
+            refreshing ={this.state.refresh}
+            onRefresh = {this.loadNew}
+            data ={this.state.photo_feed}
+            keyExtractor={(item, index)=>index.toString}
+            style = {{flex:1,backgroundColor:'#ffffff'}}
+            renderItem = {({item, index}) => (
+                <View key ={index}>
+                    <Card transparent>
+                        <CardItem>
+                            <Left>
+                                <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
+                                <Body>
+                                    <TouchableOpacity onPress = {() => this.props.navigation.navigate('UserView', {userId: item.authorId})}>
+                                        <Text style = {{fontFamily:'Roboto-Bold'}}>
+                                            {item.author}
+                                        </Text>
+                                    </TouchableOpacity>
+                                    <Text style={{fontSize:11}}>{item.posted}</Text>
+                                </Body>
+                            </Left>
+                        </CardItem>
+                        {item.flag == false ? (
+                            <Image source={{uri:item.url}} style={
+                                {height:350, width:null, flex:1}}/>
+                            ) : (
+                            <View style={{flex:1}}>
+                                <Video
+                                    source={blu}
+                                    resizeMode="cover"
+                                    repeat={true}
+                                />
+                            </View> 
+                            )}
+                            <CardItem style={{height: 45}}>
                                 <Left>
-                                    <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
-                                    <Body>
-                                        <TouchableOpacity onPress = {() => this.props.navigation.navigate('UserView', {userId: item.authorId})}>
-                                            <Text style = {{fontFamily:'Roboto-Bold'}}>
-                                                {item.author}
-                                            </Text>
-                                        </TouchableOpacity>
-                                        <Text style={{fontSize:11}}>{item.posted}</Text>
-                                    </Body>
+                                    <Button transparent>
+                                        <Icon type = 'Foundation' name="heart"
+                                            style={styles.likedTrue}/>
+                                    </Button>
+                                    <Button transparent onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
+                                        <Icon type = 'MaterialCommunityIcons' name="comment"
+                                            style={{color: '#5a6586', fontSize: 30}}/>
+                                    </Button>
                                 </Left>
                             </CardItem>
-                            {item.flag == false ? (
-                                <Image source={{uri:item.url}} style={
-                                    {height:350, width:null, flex:1}}/>
-                                ) : (
-                                <View style={{flex:1}}>
-                                    <Video
-                                        source={blu}
-                                        resizeMode="cover"
-                                        repeat={true}
-                                    />
-                                </View> 
-                                )}
-                                <CardItem style={{height: 45}}>
-                                    <Left>
-                                        <Button transparent onPress={this.likeButton}>
-                                            <Icon type = 'Foundation' name="heart"
-                                                style={
-                                                this.state.liked
-                                                ? styles.likedTrue
-                                                : styles.likedFalse
-                                                }/>
-                                        </Button>
-                                        <Button transparent onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
-                                            <Icon type = 'MaterialCommunityIcons' name="comment"
-                                                style={{color: '#5a6586', fontSize: 30}}/>
-                                        </Button>
-                                    </Left>
-                                </CardItem>
-                                <CardItem style={{height:20}}>
+                            <CardItem style={{height:20}}>
+                                <Text>
+                                    {item.likes} likes
+                                </Text>
+                            </CardItem>
+                            <CardItem>
+                                <Body>
                                     <Text>
-                                        {item.likes} likes
+                                        <Text style = {{fontWeight:"900"}}>{item.author} </Text>
+                                        {item.caption}
                                     </Text>
-                                </CardItem>
-                                <CardItem>
-                                    <Body>
-                                        <Text>
-                                            <Text style = {{fontWeight:"900"}}>{item.author} </Text>
-                                            {item.caption}
-                                        </Text>
-                                    </Body>
-                                </CardItem>
-                            </Card>
-                        </View> 
-                    )}
-                >
-            </FlatList>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('PickImage')} style={styles.fab}>
-                <Icon type='MaterialIcons' name = "add-box" style={{color:'#f8f8f8'}}/>
-            </TouchableOpacity>
-        </View>
+                                </Body>
+                            </CardItem>
+                        </Card>
+                    </View> 
+                )}
+            >
+        </FlatList>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('PickImage')} style={styles.fab}>
+            <Icon type='MaterialIcons' name = "add-box" style={{color:'#f8f8f8'}}/>
+        </TouchableOpacity>
+    </View>
         )    
     }
+
 }
 
 export default HomeTab;

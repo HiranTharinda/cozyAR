@@ -16,11 +16,8 @@ class PhotoGridForPreview extends Component{
 
     componentDidMount = () => {
         const {isUser, userId} = this.props
-        console.log(isUser)
-        console.log(userId)
         if(isUser == true){
             this.loadFeed(userId)
-            console.log(isUser)
         }else{
             this.loadFeed('')
         }
@@ -71,8 +68,6 @@ class PhotoGridForPreview extends Component{
     }
 
     viewPhoto = (photoId) => {
-        console.log(photoId)
-        console.log(userId)
  
     }
 

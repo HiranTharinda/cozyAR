@@ -22,7 +22,7 @@ class MainScreen extends Component{
         return(<View style={{flex:1}}>
                 <StatusBar
                 backgroundColor="#181f31"
-                barStyle="lite-content"
+                barStyle="light-content"
                 />
                 <AppTabNavigator/>
             </View>

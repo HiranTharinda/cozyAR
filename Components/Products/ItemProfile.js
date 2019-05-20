@@ -35,25 +35,25 @@ class ItemProfile extends Component{
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
                 that.setState({itemName:data});
-        }).catch(error => console.log(error));
+        })
 
         firebase.database().ref('products').child(itemId).child('price').once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
                 that.setState({itemPrice:data});
-        }).catch(error => console.log(error));
+        })
         
         firebase.database().ref('products').child(itemId).child('image').once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
                 that.setState({itemImage:data});
-        }).catch(error => console.log(error));
+        })
         
         firebase.database().ref('products').child(itemId).child('description').once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
                 that.setState({itemDescription:data});
-        }).catch(error => console.log(error));
+        })
     }
 
     componentDidMount =() => {

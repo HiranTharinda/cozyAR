@@ -4,6 +4,7 @@ ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xm
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-67:12
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-67:12
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-67:12
+MERGED from [:react-native-view-shot] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-view-shot\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-svg] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-svg\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-28:12
 MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
@@ -50,7 +51,7 @@ MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Hiran\.
 MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-17.0.1.aar\ed41ee93d039a6355955f41803480e76\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-16.0.0.aar\956862234c3382c0585ad58090d9250f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-basement:16.2.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.2.0.aar\39e96c8083c17ae79187bd3f0ddc89a8\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\ca21be4b0919a26da40e71fd521e809e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\09d822071e5969c7cb780e3e9e3eff86\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\0e9f998750c83b4dc2daf51759673a25\AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\b96eee6fb92dfb17f572b4f9b365d27b\AndroidManifest.xml:21:1-31:12
 MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\a3bf6087239b7de07651d503c37d9f15\AndroidManifest.xml:21:1-31:12
@@ -61,7 +62,7 @@ MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Hiran
 MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\2d9c2db428130249707ab6531b096050\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\c3cc43815b6cb5ffe10315bec71434d2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\79af164b65751d5cb4c4e81adf46b690\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\4438a4f940a8992b29751043f69d6bab\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\b27745252a9dde71ef6e3ab077d7d903\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:loader:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\90ead6b97440896afb18d5708e1c5d55\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:customtabs:27.0.2] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\customtabs-27.0.2.aar\a6a512508cb6991a6f66a79e7ef4d0ee\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\6e737780ec5965e148c7842e17619a7a\AndroidManifest.xml:17:1-22:12
@@ -314,7 +315,7 @@ ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xm
 	android:label
 		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:42:9-46
 	android:windowSoftInputMode
-		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:44:9-51
+		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:44:9-48
 	android:configChanges
 		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:43:9-79
 	android:name
@@ -367,6 +368,8 @@ uses-sdk
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-view-shot] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-view-shot\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-view-shot] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-view-shot\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-svg] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-svg\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-svg] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-svg\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-8:41
@@ -459,8 +462,8 @@ MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\User
 MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-ads-identifier-16.0.0.aar\956862234c3382c0585ad58090d9250f\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:16.2.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.2.0.aar\39e96c8083c17ae79187bd3f0ddc89a8\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:16.2.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\play-services-basement-16.2.0.aar\39e96c8083c17ae79187bd3f0ddc89a8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\ca21be4b0919a26da40e71fd521e809e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.0.2] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\ca21be4b0919a26da40e71fd521e809e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\09d822071e5969c7cb780e3e9e3eff86\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\09d822071e5969c7cb780e3e9e3eff86\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\0e9f998750c83b4dc2daf51759673a25\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\0e9f998750c83b4dc2daf51759673a25\AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\b96eee6fb92dfb17f572b4f9b365d27b\AndroidManifest.xml:24:5-26:41
@@ -481,8 +484,8 @@ MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Hiran\.grad
 MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\c3cc43815b6cb5ffe10315bec71434d2\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\79af164b65751d5cb4c4e81adf46b690\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\79af164b65751d5cb4c4e81adf46b690\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\4438a4f940a8992b29751043f69d6bab\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\4438a4f940a8992b29751043f69d6bab\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\b27745252a9dde71ef6e3ab077d7d903\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\b27745252a9dde71ef6e3ab077d7d903\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\90ead6b97440896afb18d5708e1c5d55\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:loader:28.0.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\90ead6b97440896afb18d5708e1c5d55\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:customtabs:27.0.2] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\customtabs-27.0.2.aar\a6a512508cb6991a6f66a79e7ef4d0ee\AndroidManifest.xml:20:5-44

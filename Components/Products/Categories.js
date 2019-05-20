@@ -54,7 +54,7 @@ class  Category extends Component{
                 for(var category in data){
                     that.addToFlatlist(category_list, data, category)
                 }
-        }).catch(error => console.log(error));
+        })
     }
 
     loadNew = () => {

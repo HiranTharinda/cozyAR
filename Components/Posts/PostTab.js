@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ActivityIndicator ,View, Text, StyleSheet, Image, TextInput, TouchableOpacity} from "react-native";
+import { ActivityIndicator ,View, Text, StyleSheet, Image, TextInput, TouchableOpacity, KeyboardAvoidingView} from "react-native";
 import {Button} from 'react-native-elements'
 import {Icon, Picker, Card, CardItem, Thumbnail, Body, Left, Right,} from 'native-base'
 import ImagePicker from 'react-native-image-crop-picker';
@@ -253,9 +253,14 @@ class PostTab extends Component{
                 {this.state.photoSelected == true ? (
                     <View style = {{flex: 5, width: '100%',height:'100%', alignContent:'center', alignItems:'center', position:'absolute', paddingBottom:300}}> 
                         <View style = {{width:'100%',height:'100%'}}>
-                        {this.state.video == false? (<View>
-                            <Image resizeMode = 'contain' source ={{uri:this.state.uri}} style = {{width:'100%',height:'100%'}}></Image>
-                            <Card style = {{width:'100%',height:70}}>
+                        {this.state.video == false? (<View style = {{width:'100%',height:'100%'}}>
+                            <Image resizeMode = 'contain' source ={{uri:this.state.uri}} style = {{width:'100%',height:'100%', minHeight:'100%'}}></Image>
+                            <TouchableOpacity style = {{position:'absolute', alignSelf:'flex-end',padding:10,}}>
+                                <Icon type='MaterialIcons' name="cancel" onPress={() => this.cancelButton()}
+                                    style={{color: 'black'}}/>
+                            </TouchableOpacity>
+                            <KeyboardAvoidingView>
+                            <Card style = {{width:'100%',height:70, alignContent:'center',alignItems:'baseline', alignSelf:'baseline'}}>
                             <CardItem>
                                 <TextInput
                                     underlineColorAndroid="transparent"
@@ -278,10 +283,8 @@ class PostTab extends Component{
                                 </Right>
                         </CardItem>
                     </Card>
-                    <TouchableOpacity style = {{position:'absolute', alignSelf:'flex-end',padding:10}}>
-                                <Icon type='MaterialIcons' name="cancel" onPress={() => this.cancelButton()}
-                                    style={{color: 'white'}}/>
-                    </TouchableOpacity></View>
+                    </KeyboardAvoidingView>
+                   </View>
                     ):(
                     <View>
                         <Video

@@ -18,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-svg/android/react-native-svg.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-svg/android/react-native-svg.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-view-shot/android/react-native-view-shot.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-view-shot/android/react-native-view-shot.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-viro/android/react_viro/react_viro.iml" filepath="$PROJECT_DIR$/../node_modules/react-viro/android/react_viro/react_viro.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-viro/android/viro_renderer/viro_renderer.iml" filepath="$PROJECT_DIR$/../node_modules/react-viro/android/viro_renderer/viro_renderer.iml" />
     </modules>

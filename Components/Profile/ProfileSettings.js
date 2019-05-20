@@ -40,7 +40,7 @@ class ProfileSettings extends Component{
                     avatar: data.avatar,
                     email:data.email
             })
-            console.log(data)
+          
         })
     }
 

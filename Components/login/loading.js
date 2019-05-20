@@ -17,7 +17,7 @@ export default class Loading extends React.Component {
         return (
         <View style={styles.container}>
             <StatusBar
-                barStyle = "lite-content"
+                barStyle = "light-content"
                 hidden = {false}
                 backgroundColor = "#181f31"
                 translucent = {false}

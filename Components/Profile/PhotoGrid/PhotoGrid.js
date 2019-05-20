@@ -59,7 +59,6 @@ class PhotoGrid extends Component{
             
             if(exists) data = snapshot.val();
                 var photo_feed = that.state.photo_feed;
-                console.log(data)
                 for(var photo in data){
                     that.addToFlatlist(photo_feed, data, photo)
                 }

@@ -52,7 +52,7 @@ class ShowReviews extends Component{
 
     fetchReview = (reviewId) => {
         var that = this
-        firebase.database().ref('reviews').child(reviewId).orderByChild('posted').once('value').then(function(snapshot) {
+        firebase.database().ref('reviews').child(reviewId).orderByChild('posted').on('value',function(snapshot) {
             const exists = (snapshot.val() !== null)
             if (exists){
                 data = snapshot.val()
@@ -65,7 +65,7 @@ class ShowReviews extends Component{
                     review_list:[]
                 })
             }
-        }).catch(error => console.log(error))
+        })
     }
 
     pluralCheck = (s) => {
@@ -105,7 +105,7 @@ class ShowReviews extends Component{
         interval = Math.floor(seconds / 60);
         if(interval > 1){
             return interval + ' minute' +this.pluralCheck(interval)
-        } return Math.floor(seconds) + 'second' +this.pluralCheck(interval)
+        } return Math.floor(seconds) + ' second' +this.pluralCheck(interval)
     }
 
     render(){

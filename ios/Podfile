@@ -19,6 +19,8 @@ target 'figment' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'RNViewShot', :path => '../node_modules/react-native-view-shot'
+
 end
 
 # Needed to fix linker error between GVRSDK and React

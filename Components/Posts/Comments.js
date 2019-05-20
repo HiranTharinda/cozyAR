@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity, TextInput, KeyboardAvoidingView } from "react-native";
+import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity, TextInput, KeyboardAvoidingView,ActivityIndicator } from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 
@@ -10,7 +10,8 @@ class Comments extends Component{
             comment_list: [],
             refresh: false,
             loading: true,
-            liked: false
+            liked: false,
+            uploading: false
         }
     }
     componentDidMount = () => {
@@ -30,7 +31,6 @@ class Comments extends Component{
     }
 
     addCommentToList = (comment_list, data, comment) => {
-        console.log(comment_list, data, comment)
         var that = this
         var commentObj = data [comment]
         firebase.database().ref('users').child(commentObj.author).once('value').then(function(snapshot){
@@ -66,7 +66,7 @@ class Comments extends Component{
                     comment_list:[]
                 })
             }
-        }).catch(error => console.log(error))
+        })
     }
 
     pluralCheck = (s) => {
@@ -78,6 +78,9 @@ class Comments extends Component{
     }
 
     postComment = () => {
+        this.setState({
+            uploading:true
+        })
         var comment = this.state.comment
         if(comment != ''){
             var imageId = this.state.photoId
@@ -97,6 +100,9 @@ class Comments extends Component{
             }
 
             firebase.database().ref('/comments/'+imageId+'/'+commentId).set(commentObj)
+            this.setState({
+                uploading:false
+            })
             //reload the comment
             this.reloadCommentList();
         }else{
@@ -131,9 +137,9 @@ class Comments extends Component{
             return interval + ' hour' +this.pluralCheck(interval)
         }
         interval = Math.floor(seconds / 60);
-        if(interval > 1){
+        if(interval >= 1){
             return interval + ' minute' +this.pluralCheck(interval)
-        } return Math.floor(seconds) + 'second' +this.pluralCheck(interval)
+        } return Math.floor(seconds) + ' second' +this.pluralCheck(interval)
     }
 
     s4 = () => {
@@ -176,7 +182,7 @@ class Comments extends Component{
                         renderItem = {({item, index}) => (
                         <View key ={index}>
                             <Card  style = {{borderRadius: 30}}>
-                                <CardItem bordered style={{ borderRadius: 30 }}>
+                                <CardItem bordered style={{ borderRadius: 30, height:70 }}>
                                     <Left>
                                         <Thumbnail source={{uri:item.avatar}} style={{height:35,width:35}}/>
                                         <Body>
@@ -204,10 +210,16 @@ class Comments extends Component{
                             style = {{width:'90%'}}> 
                             </TextInput>    
                         <Right>
-                            <TouchableOpacity>
-                                <Icon type='FontAwesome5' name="comment-alt" onPress={() => this.postComment()}
-                                    style={{color: 'black'}}/>
-                            </TouchableOpacity>
+                        {this.state.uploading == true ? (
+                                        <ActivityIndicator size='small' color = 'black'></ActivityIndicator>
+                                        ):(
+                                        <View>
+                                            <TouchableOpacity>
+                                                <Icon type="MaterialCommunityIcons" name="comment" onPress={() => this.postComment()}
+                                                    style={{color: 'black'}}/>
+                                            </TouchableOpacity>
+                                        </View>
+                                        )}  
                         </Right>
                         </CardItem>
                     </Card>

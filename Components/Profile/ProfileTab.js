@@ -20,7 +20,7 @@ class ProfileTab extends Component{
                     name: data.name,
                     avatar: data.avatar
             })
-            console.log(data)
+          
         })
     }
 

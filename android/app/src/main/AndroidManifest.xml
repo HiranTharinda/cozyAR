@@ -41,7 +41,7 @@
         android:name=".MainActivity"
         android:label="@string/app_name_cozy"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-        android:windowSoftInputMode="adjustResize"
+        android:windowSoftInputMode="adjustPan"
         android:screenOrientation="portrait">
         
         <intent-filter>

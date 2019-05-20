@@ -103,7 +103,7 @@ class CategoryRender extends Component{
                 for(var item in data){
                     that.addToFlatlist(item_list, data, item)
                 }
-        }).catch(error => console.log(error));
+        })
     }
 
     loadNew = () => {
