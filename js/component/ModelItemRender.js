@@ -56,7 +56,7 @@ var ModelItemRender = createReactClass({
         scale : ModelData.getModelArray()[this.props.modelIDProps.index].scale,
         rotation : [0, 0, 0],
         nodeIsVisible : false,
-        position: [0, 10, 1], // make it appear initially high in the sky
+        position: [0, 0, -1], // make it appear initially high in the sky
         shouldBillboard : true,
         runAnimation: true,
         showParticles: true,
@@ -124,7 +124,7 @@ var ModelItemRender = createReactClass({
                 onClick={()=>{}}
                 onError={this._onError(this.props.modelIDProps.uuid)}
                 onRotate={this._onRotate}
-                onPinch={this._onPinch}
+                // onPinch={this._onPinch}
                 onLoadStart={this._onObjectLoadStart(this.props.modelIDProps.uuid)}
                 onLoadEnd={this._onObjectLoadEnd(this.props.modelIDProps.uuid)}/>
               

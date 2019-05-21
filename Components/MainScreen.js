@@ -58,7 +58,7 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
         headerMode: 'screen',
         tabBarPosition:'bottom',
         animationEnabled: true,
-        swipeEnabled: true,
+        swipeEnabled: false,
         tabBarOptions: {
             showLabel: false,
             activeTintColor: '#f8f8f8',

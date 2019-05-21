@@ -71,7 +71,6 @@ class PhotoGrid extends Component{
     }
 
     deletePhoto = (photoId) => {
-        alert('Are')
         firebase.database().ref('/photos/'+photoId).remove()
         firebase.database().ref('/users/'+userId+'/photos/'+photoId).remove()
         firebase.database().ref('/comments/'+photoId).remove()

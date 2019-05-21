@@ -68,8 +68,6 @@ function arobjects(state = initialState, action) {
         modelItems: {...removeModelItem(state.modelItems, action)},
       }
     case 'REMOVE_ALL':
-      //clear efffects
-      var updatedEffects = modifyEffectSelection(action);
       return {
         ...state,
         modelItems:{},
