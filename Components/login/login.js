@@ -57,11 +57,11 @@ export default class Login extends React.Component {
         <View style = {{flex: 4, width: 190, alignContent:'center', alignItems:'center'}}>
         <Card style ={{borderRadius: 40}}>
           <CardItem style ={{width:240}}>
-        <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}>  
-        <Text></Text>
-          <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>HEY! WELCOME BACK.</Text>
-          <Text></Text>
-          <Button icon={
+            <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}>  
+              <Text></Text>
+              <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>HEY! WELCOME BACK.</Text>
+              <Text></Text>
+              <Button icon={
                       <Icon
                           name="facebook"
                           size={15}
@@ -73,41 +73,41 @@ export default class Login extends React.Component {
                   raised = 'true'
                   buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#4267b2'}}  
                   />
-          <Text></Text>
-          <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>   
-          {this.state.errorMessage &&
-          <Text style={{ color: 'red' }}>
-            {this.state.errorMessage}
-          </Text>}
-          <TextInput
-            underlineColorAndroid="transparent"
-            style={styles.textInput}
-            autoCapitalize="none"
-            placeholder="   Email"
-            onChangeText={email => this.setState({ email })}
-            value={this.state.email}/>
-          <TextInput
-            underlineColorAndroid="transparent"
-            secureTextEntry
-            style={styles.textInput}
-            autoCapitalize="none"
-            placeholder="   Password"
-            onChangeText={password => this.setState({ password })}
-            value={this.state.password}/>
-          <Text> </Text>
-          <Button  title="Login" onPress={this.handleLogin} buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#54a0ff'}} />
-          <Text></Text>
-          <Text style={{fontWeight:"normal",textAlign: 'center'}}>Don't have an account?</Text>   
-          <Text></Text>
-          <Button 
+              <Text></Text>
+              <Text style={{fontWeight:"900",textAlign: 'center'}}>or</Text>   
+              {this.state.errorMessage &&
+              <Text style={{ color: 'red' }}>
+              {this.state.errorMessage}
+              </Text>}
+              <TextInput
+                underlineColorAndroid="transparent"
+                style={styles.textInput}
+                autoCapitalize="none"
+                placeholder="   Email"
+                onChangeText={email => this.setState({ email })}
+                value={this.state.email}/>
+              <TextInput
+                underlineColorAndroid="transparent"
+                secureTextEntry
+                style={styles.textInput}
+                autoCapitalize="none"
+                placeholder="   Password"
+                onChangeText={password => this.setState({ password })}
+                value={this.state.password}/>
+              <Text> </Text>
+              <Button  title="Login" onPress={this.handleLogin} buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#54a0ff'}} />
+              <Text></Text>
+              <Text style={{fontWeight:"normal",textAlign: 'center'}}>Don't have an account?</Text>   
+              <Text></Text>
+              <Button 
                   title="Sign Up"
                   titleStyle={{ color: 'grey' }}
                   onPress={() => this.props.navigation.navigate('signUp')}
                   buttonStyle={{height: 40, width: 80,color:'grey', borderRadius: 30, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
                   />
-                  <Text></Text>
-                  </View>
-              </CardItem>
+              <Text></Text>
+              </View>
+            </CardItem>
           </Card>
         </View>
       </View>
