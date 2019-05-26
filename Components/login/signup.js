@@ -61,12 +61,14 @@ render() {
                 />
         <View style = {{flex: 1, width: 300}}></View>
         <View style = {{flex: 5, width: 230, alignContent:'center', alignItems:'center'}}> 
-        <Card style ={{borderRadius: 40}}>
-          <CardItem style ={{width:240}}>
+        <Card style ={{borderRadius: 40,width:270, height:'80%'}}>
+          <CardItem style ={{width:270, height:'100%',borderRadius: 40}}>
         <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}> 
+        <Text></Text>
         <Text></Text>
           <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>CREATE A NEW ACCOUNT.</Text>
           <Text></Text>
+          <Text> </Text>
           <Button icon={
                       <Icon
                           name="facebook"
@@ -118,7 +120,7 @@ render() {
                   onPress={() => this.props.navigation.navigate('login')}
                   buttonStyle={{height: 40, width: 80,color:'grey', borderRadius: 30, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
                   />
-                  <Text></Text>
+                  <Text> </Text>
               </View>
               </CardItem>
           </Card>

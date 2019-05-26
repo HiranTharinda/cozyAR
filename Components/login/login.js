@@ -53,14 +53,16 @@ export default class Login extends React.Component {
                 backgroundColor="white"
                 barStyle="dark-content"
                 />
-        <View style = {{flex: 1, width: 300}}></View>
-        <View style = {{flex: 4, width: 190, alignContent:'center', alignItems:'center'}}>
-        <Card style ={{borderRadius: 40}}>
-          <CardItem style ={{width:240}}>
+        <View style = {{flex: 1, width: 300,}}></View>
+        <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}>
+        <Card style ={{borderRadius: 40,width:270, height:'80%'}}>
+          <CardItem style ={{width:270, height:'90%',borderRadius: 40}}>
             <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}>  
+              <Text></Text>
               <Text></Text>
               <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>HEY! WELCOME BACK.</Text>
               <Text></Text>
+              <Text> </Text>
               <Button icon={
                       <Icon
                           name="facebook"
