@@ -40,7 +40,8 @@ class ProfileSettings extends Component{
                 that.setState({
                     name: data.name,
                     avatar: data.avatar,
-                    email:data.email
+                    email:data.email,
+                    status: data.status
             })
           
         })
@@ -210,7 +211,7 @@ class ProfileSettings extends Component{
                                 <TextInput
                                     secureTextEntry
                                     underlineColorAndroid="transparent"
-                                    editable={false}
+                                    editable={true}
                                     placeholder={'*******'}
                                     style = {{width:'90%',fontSize:20, textAlign:'right', paddingRight:45}}> 
                                 </TextInput>    
