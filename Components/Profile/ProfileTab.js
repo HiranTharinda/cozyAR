@@ -18,7 +18,8 @@ class ProfileTab extends Component{
             if(exists) data = snapshot.val();
                 that.setState({
                     name: data.name,
-                    avatar: data.avatar
+                    avatar: data.avatar,
+                    status: data.status
             })
           
         })
@@ -41,6 +42,7 @@ class ProfileTab extends Component{
                             <View style = {{ flex: 2, flexDirection: "column", paddingBottom: 30, paddingTop: 15}}>
                                 <View style ={{flex:2, paddingHorizontal:10,alignItems: 'center'}}>
                                     <Text style = {{ fontWeight: 'bold', fontSize:30}}>{this.state.name}</Text>
+                                    <Text style = {{ fontWeight: 'normal', fontSize:20}}>{this.state.status}</Text>
                                     <Text></Text>
                                 </View>
                             </View> 

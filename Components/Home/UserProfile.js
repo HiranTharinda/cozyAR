@@ -36,6 +36,12 @@ class UserProfile extends Component{
             if(exists) data = snapshot.val()
                 that.setState({avatar:data,loaded:true});
         })
+
+        firebase.database().ref('users').child(userId).child('status').on('value',function(snapshot){
+            const exists = (snapshot.val() !== null)
+            if(exists) data = snapshot.val()
+                that.setState({status:data,loaded:true});
+        })
     }
 
     componentDidMount =() => {
@@ -59,6 +65,7 @@ class UserProfile extends Component{
                             <View style = {{ flex: 2, flexDirection: "column", paddingBottom: 30, paddingTop: 15}}>
                                 <View style ={{flex:2, paddingHorizontal:10,alignItems: 'center'}}>
                                     <Text style = {{ fontWeight: 'bold', fontSize:30}}> {this.state.name} </Text>
+                                    <Text style = {{ fontWeight: 'normal', fontSize:20}}> {this.state.status} </Text>
                                 </View>
                             </View> 
                         </View>

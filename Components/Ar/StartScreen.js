@@ -13,11 +13,11 @@ class StartScreen extends React.Component{
             <View style={styles.container}>
             <View style = {{flex: 2, width: 300}}></View>
             <View style = {{flex: 4, width: 190, alignContent:'center', alignItems:'center'}}>
-              <Card style ={{borderRadius: 40}}>
-                <CardItem style ={{width:240}}>
+              <Card style ={{borderRadius: 40,width:240, height:'70%'}}>
+                <CardItem style ={{borderRadius: 40,width:240, height:'90%'}}>
                   <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}>  
                     <Text></Text>
-                    <Text style={{fontWeight:"900", fontSize:40,textAlign: 'center'}}>EXPERIENCE AUGMENTED REALITY!</Text>
+                    <Text style={{fontWeight:"900", fontSize:37,textAlign: 'center'}}>EXPERIENCE AUGMENTED REALITY!</Text>
                     <Text></Text>
                     <Button icon={
                       <Icon
@@ -26,7 +26,7 @@ class StartScreen extends React.Component{
                         style ={{color:"#ffffff"}}
                         type ='Entypo'
                       />}
-                      title="Video"
+                      title="Now!"
                       onPress={() => this.props.navigation.navigate('ArScreen')}
                       raised = 'true'
                       buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}  

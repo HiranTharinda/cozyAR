@@ -74,7 +74,7 @@ class ItemProfile extends Component{
                     </CardItem>
                         <CardItem cardBody style={{height:'30%'}}>
                             <Image source={{uri:this.state.itemImage}} style={
-                                {height:650, width:null, flex:1}}/>
+                                {height:650, width:null, flex:1, resizeMode:'contain'}}/>
                         </CardItem>
                         <CardItem style={{height:20,paddingTop:20}}>
                                 <Text style = {{fontWeight:"bold",fontSize:30}}>

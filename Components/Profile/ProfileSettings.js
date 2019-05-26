@@ -21,10 +21,12 @@ class ProfileSettings extends Component{
 
     updateProfiledata = () => {
         var name = this.state.name
+        var status = this.state.status
         console.log(name)
         var userId = firebase.auth().currentUser.uid;
         var userObj = {
-            name: name
+            name: name,
+            status: status
         }
         firebase.database().ref('/users/'+userId).update(userObj)
     }
@@ -181,6 +183,16 @@ class ProfileSettings extends Component{
                                     editable={true}
                                     value={this.state.name}
                                     onChangeText={(text) => this.setState({name: text})}
+                                    style = {{width:'90%',fontSize:20,textAlign:'right', paddingRight:10}}> 
+                                </TextInput>    
+                            </CardItem>
+                            <CardItem >
+                                <Text style={{fontSize:20, fontWeight:'bold'}}>Status</Text>
+                                <TextInput
+                                    underlineColorAndroid="transparent"
+                                    editable={true}
+                                    value={this.state.status}
+                                    onChangeText={(text) => this.setState({status: text})}
                                     style = {{width:'90%',fontSize:20,textAlign:'right', paddingRight:10}}> 
                                 </TextInput>    
                             </CardItem>
