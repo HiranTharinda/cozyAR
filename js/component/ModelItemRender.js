@@ -124,7 +124,7 @@ var ModelItemRender = createReactClass({
                 onClick={()=>{}}
                 onError={this._onError(this.props.modelIDProps.uuid)}
                 onRotate={this._onRotate}
-                // onPinch={this._onPinch}
+                onPinch={this._onPinch}
                 onLoadStart={this._onObjectLoadStart(this.props.modelIDProps.uuid)}
                 onLoadEnd={this._onObjectLoadEnd(this.props.modelIDProps.uuid)}/>
               
