@@ -56,13 +56,13 @@ class UserProfile extends Component{
                 ):(
                     <Container style={{ flex: 1, backgroundColor: 'white'}}>
                 <Content>
-                <View style ={{paddingTop: 100, paddingBottom:10, paddingRight:20, paddingLeft:20}}>
+                <View style ={{paddingTop: 30, paddingBottom:10, paddingRight:20, paddingLeft:20}}>
                         <View style={{ flexDirection: 'column'}}>
                             <View style = {{flex: 1, alignItems: 'center'}}>
                             <Image source = {{uri:this.state.avatar}}
                                     style={{ width:110, height:110, borderRadius: 55,}}/>
                             </View>
-                            <View style = {{ flex: 2, flexDirection: "column", paddingBottom: 30, paddingTop: 15}}>
+                            <View style = {{ flex: 2, flexDirection: "column", paddingBottom: 20, paddingTop: 15}}>
                                 <View style ={{flex:2, paddingHorizontal:10,alignItems: 'center'}}>
                                     <Text style = {{ fontWeight: 'bold', fontSize:30}}> {this.state.name} </Text>
                                     <Text style = {{ fontWeight: 'normal', fontSize:20}}> {this.state.status} </Text>
@@ -71,7 +71,7 @@ class UserProfile extends Component{
                         </View>
                     </View>
                     <View style = {{backgroundColor:'#ffffff'}}>
-                        <Card>
+                        <Card style = {{height:'100%'}}>
                             <CardItem>
                                 <PhotoGridForPreview isUser={true} userId={this.state.userId} navigation={this.props.navigation}/>
                             </CardItem>

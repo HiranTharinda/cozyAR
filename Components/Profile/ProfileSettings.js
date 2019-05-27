@@ -164,13 +164,15 @@ class ProfileSettings extends Component{
         return(
             <Container style={{ flex: 1, backgroundColor: 'white'}}>
                 <Content>
-                    <View style ={{paddingTop: 100, paddingBottom:100, paddingRight:20, paddingLeft:20}}>
+                    <View style ={{paddingTop: 50, paddingBottom:50, paddingRight:20, paddingLeft:20}}>
                         <View style={{ flexDirection: 'column'}}>
                             <View style = {{flex: 1, alignItems: 'center'}}>
-                                <TouchableOpacity onPress={() => this.handleChoosePhoto()}>
-                                    <Image source = {{uri:this.state.avatar}}
-                                                style={{ width:160, height:160, borderRadius: 80}}/>
-                                </TouchableOpacity>
+                                <Image source = {{uri:this.state.avatar}}
+                                    style={{ width:200, height:200, borderRadius: 100}}/>
+                                <TouchableOpacity style = {{position:'absolute', alignSelf:'center',paddingTop:200}}>
+                                    <Icon type='Entypo' name="circle-with-plus" onPress={() => this.handleChoosePhoto()}
+                                        style={{color: '#54a0ff', fontSize:35,}}/>
+                                </TouchableOpacity>            
                                 <View style = {{flex:1}}></View>
                             </View>
                         </View>
