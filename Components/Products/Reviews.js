@@ -221,6 +221,9 @@ class Reviews extends Component{
                 <KeyboardAvoidingView>
                         <Card style = {{borderRadius: 30}}>
                             <CardItem  bordered style={{ borderRadius: 30, }}>
+                            <Rating imageSize={20}
+                                    startingValue={0}
+                                    style={{position:'absolute', alignItems:'center',paddingLeft:10}}/>
                             <TextInput
                             underlineColorAndroid="transparent"
                             editable={true}
@@ -229,9 +232,7 @@ class Reviews extends Component{
                             style = {{width:'60%'}}> 
                             </TextInput>    
                         <Right>
-                        <Rating imageSize={20}
-                                    startingValue={0}
-                                    style={{position:'absolute', alignItems:'center',paddingLeft:10}}/>
+                        
                         {this.state.uploading == true ? (
                                         <ActivityIndicator size='small' color = 'black'></ActivityIndicator>
                                         ):(

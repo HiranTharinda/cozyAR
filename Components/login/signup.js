@@ -60,7 +60,7 @@ render() {
                 barStyle="dark-content"
                 />
         <View style = {{flex: 1, width: 300}}></View>
-        <View style = {{flex: 5, width: 230, alignContent:'center', alignItems:'center'}}> 
+        <View style = {{flex: 6, width: 230, alignContent:'center', alignItems:'center'}}> 
         <Card style ={{borderRadius: 40,width:270, height:'80%'}}>
           <CardItem style ={{width:270, height:'100%',borderRadius: 40}}>
         <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}> 
