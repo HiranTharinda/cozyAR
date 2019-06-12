@@ -31,7 +31,7 @@ var ModelItems = [
   "obj": {uri:"https://firebasestorage.googleapis.com/v0/b/cozy-67b69.appspot.com/o/models%2FSofa_01.obj?alt=media&token=c9cea19d-ef67-4cb9-a72b-e5fd9517d182"},
   "materials": null,
   "animation":{name:"01", delay:0, loop:true, run:true},
-  "scale": [1, 1, 1],
+  "scale": [0.2, 0.2, 0.2],
   "position" : [0, 5*POSITION_OFFSET, 10],
   "type" : "OBJ",
   "physics": undefined,
