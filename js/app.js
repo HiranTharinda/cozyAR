@@ -25,7 +25,7 @@ import ShareScreenButton from './component/ShareScreenButtonComponent';
 import FigmentListView from './component/FigmentListView';
 import ARInitializationUI from './component/ARInitializationUI.js';
 import * as ModelData from  './model/ModelItems';
-
+import CameraRoll from "@react-native-community/cameraroll";
 
 const kObjSelectMode = 1;
 
@@ -45,7 +45,6 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   ActionSheetIOS,
-  CameraRoll,
   Alert,
   Button,
   StatusBar,
@@ -414,8 +413,8 @@ _takeScreenshot() {
   if (!this.state.writeAccessPermission) {
     this.requestWriteAccessPermission();
   }
-
   this._arNavigator._takeScreenshot("figment_still_" + this.state.screenshot_count, false).then((retDict)=>{
+
     if (!retDict.success) {
       if (retDict.errorCode == ViroConstants.RECORD_ERROR_NO_PERMISSION) {
         this._displayVideoRecordAlert("Screenshot Error", "Please allow camera permissions!" + errorCode);

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
-import Video from 'react-native-video';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
