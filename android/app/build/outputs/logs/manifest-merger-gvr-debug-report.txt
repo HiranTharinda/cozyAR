@@ -4,20 +4,18 @@ ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xm
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-67:12
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-67:12
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:1:1-67:12
-MERGED from [:react-native-view-shot] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-view-shot\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-video] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-video\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-svg] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-svg\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-23:12
-MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-28:12
-MERGED from [:react-native-gesture-handler] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
-MERGED from [:react-native-fetch-blob] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
-MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:1-30:12
-MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [:lottie-react-native] C:\Users\Hiran\Desktop\cozyAR\node_modules\lottie-react-native\src\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:@react-native-community/cameraroll] C:\Users\Hiran\Desktop\cozyAR\node_modules\@react-native-community\cameraroll\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-view-shot] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-view-shot\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-svg] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-svg\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-28:12
+MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:1-30:12
+MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:react-native-video] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-video\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-13:12
+MERGED from [:lottie-react-native] C:\Users\Hiran\Desktop\cozyAR\node_modules\lottie-react-native\src\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-gesture-handler] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\ff6cd5d1178cef05df07007f8ae81d7c\AndroidManifest.xml:2:1-15:12
 MERGED from [com.github.yalantis:ucrop:2.2.2-native] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\ucrop-2.2.2-native.aar\93afce6ad4ffa741272ec87f00f024ab\AndroidManifest.xml:2:1-11:12
 MERGED from [com.airbnb.android:lottie:2.5.6] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\lottie-2.5.6.aar\448fced20cd1afb4c62a455553e359c6\AndroidManifest.xml:2:1-13:12
@@ -170,10 +168,10 @@ MERGED from [:viro_renderer] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.
 		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:14:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:15:5-80
-MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
-MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-81
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-81
+MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
+MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-81
 	android:name
 		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:15:22-78
 uses-feature#android.hardware.camera.ar
@@ -188,12 +186,8 @@ ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xm
 		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:18:19-66
 application
 ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:22:5-66:19
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-21:19
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-21:19
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-26:19
 MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-26:19
-MERGED from [:react-native-fetch-blob] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-12:19
-MERGED from [:react-native-fetch-blob] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-12:19
 MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-20
 MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:5-20
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\ff6cd5d1178cef05df07007f8ae81d7c\AndroidManifest.xml:13:5-20
@@ -280,7 +274,6 @@ MERGED from [org.webkit:android-jsc:r174650] C:\Users\Hiran\.gradle\caches\trans
 		ADDED from [com.facebook.android:facebook-android-sdk:4.34.0] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.34.0.aar\fc9155e36f391692a062452d9d15340e\AndroidManifest.xml:28:18-44
 	android:label
 		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:25:7-44
-		REJECTED from [:react-native-fetch-blob] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:18-50
 		REJECTED from [:react_viro] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\react_viro-release.aar\00fdfea6925cbd37840278a12fd908d3\AndroidManifest.xml:12:9-41
 	android:icon
 		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml:26:7-40
@@ -376,34 +369,30 @@ uses-sdk
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
-MERGED from [:react-native-view-shot] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-view-shot\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-view-shot] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-view-shot\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-video] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-video\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-video] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-video\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-svg] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-svg\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-svg] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-svg\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-8:41
-MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-8:41
-MERGED from [:react-native-gesture-handler] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-gesture-handler] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-fetch-blob] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-fetch-blob] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fetch-blob\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-26:41
-MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-26:41
-MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:lottie-react-native] C:\Users\Hiran\Desktop\cozyAR\node_modules\lottie-react-native\src\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:lottie-react-native] C:\Users\Hiran\Desktop\cozyAR\node_modules\lottie-react-native\src\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:@react-native-community/cameraroll] C:\Users\Hiran\Desktop\cozyAR\node_modules\@react-native-community\cameraroll\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:@react-native-community/cameraroll] C:\Users\Hiran\Desktop\cozyAR\node_modules\@react-native-community\cameraroll\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-view-shot] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-view-shot\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-view-shot] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-view-shot\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-svg] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-svg\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-svg\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-8:41
+MERGED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:6:5-8:41
+MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-vector-icons\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-facebook-login] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-facebook-login\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-26:41
+MERGED from [:react-native-fbsdk] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-fbsdk\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:5-26:41
+MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-firebase] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-firebase\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-video] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-video\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-video] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-video\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-share] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-share\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:lottie-react-native] C:\Users\Hiran\Desktop\cozyAR\node_modules\lottie-react-native\src\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:lottie-react-native] C:\Users\Hiran\Desktop\cozyAR\node_modules\lottie-react-native\src\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-gesture-handler] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\ff6cd5d1178cef05df07007f8ae81d7c\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.55.4] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\react-native-0.55.4.aar\ff6cd5d1178cef05df07007f8ae81d7c\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.yalantis:ucrop:2.2.2-native] C:\Users\Hiran\.gradle\caches\transforms-1\files-1.1\ucrop-2.2.2-native.aar\93afce6ad4ffa741272ec87f00f024ab\AndroidManifest.xml:7:5-9:41
@@ -590,16 +579,6 @@ INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest
 		INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Hiran\Desktop\cozyAR\android\app\src\main\AndroidManifest.xml
-provider#com.imagepicker.FileProvider
-ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-20:20
-	android:grantUriPermissions
-		ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-47
-	android:authorities
-		ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-60
-	android:exported
-		ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-37
-	android:name
-		ADDED from [:react-native-image-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-56
 activity#com.yalantis.ucrop.UCropActivity
 ADDED from [:react-native-image-crop-picker] C:\Users\Hiran\Desktop\cozyAR\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:9-25:72
 	android:theme

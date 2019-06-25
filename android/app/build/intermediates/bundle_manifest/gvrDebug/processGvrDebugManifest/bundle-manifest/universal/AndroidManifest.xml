@@ -93,15 +93,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
-        <provider
-            android:name="com.imagepicker.FileProvider"
-            android:authorities="com.cozy.provider"
-            android:exported="false"
-            android:grantUriPermissions="true" >
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
-        </provider>
 
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
