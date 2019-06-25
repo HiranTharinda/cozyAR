@@ -651,6 +651,11 @@
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.19.tgz#991df31d892a51414e0e544b5cff4216cfb04915"
   integrity sha512-U9e2dCB38mD2AvV/zAjghauwa0UX15Wt98iBgm8IOw8spluDxysx8UZFUhj38fu0iFXORVRBqseyK2wCxZIl5w==
 
+"@react-native-community/cameraroll@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/cameraroll/-/cameraroll-1.1.1.tgz#656b831c331b29c0f1f32137485310b38d2aa098"
+  integrity sha512-cvJewReV2l65exdsccveqnqXHGFuTgwdbjr+0MASxq6zQ+eeHLx9g/wYk8YrXHWXJqf5B/jZnNDpcg/y23atmw==
+
 "@react-navigation/core@~3.3.0":
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.3.0.tgz#a8fa76e1c2a0da588da3d94ec9ea0956b7df753e"

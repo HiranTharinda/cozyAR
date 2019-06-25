@@ -126,14 +126,14 @@ public final class R {
     public static final class style {
         private style() {}
 
-        public static final int ExoMediaButton = 0x7f0d00ac;
-        public static final int ExoMediaButton_FastForward = 0x7f0d00ad;
-        public static final int ExoMediaButton_Next = 0x7f0d00ae;
-        public static final int ExoMediaButton_Pause = 0x7f0d00af;
-        public static final int ExoMediaButton_Play = 0x7f0d00b0;
-        public static final int ExoMediaButton_Previous = 0x7f0d00b1;
-        public static final int ExoMediaButton_Rewind = 0x7f0d00b2;
-        public static final int ExoMediaButton_Shuffle = 0x7f0d00b3;
+        public static final int ExoMediaButton = 0x7f0d00ad;
+        public static final int ExoMediaButton_FastForward = 0x7f0d00ae;
+        public static final int ExoMediaButton_Next = 0x7f0d00af;
+        public static final int ExoMediaButton_Pause = 0x7f0d00b0;
+        public static final int ExoMediaButton_Play = 0x7f0d00b1;
+        public static final int ExoMediaButton_Previous = 0x7f0d00b2;
+        public static final int ExoMediaButton_Rewind = 0x7f0d00b3;
+        public static final int ExoMediaButton_Shuffle = 0x7f0d00b4;
     }
     public static final class styleable {
         private styleable() {}

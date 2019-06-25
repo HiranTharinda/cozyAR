@@ -2,6 +2,7 @@ package com.cozy;
 
 import android.app.Application;
 import com.facebook.react.ReactApplication;
+import com.reactnativecommunity.cameraroll.CameraRollPackage;
 import fr.greweb.reactnativeviewshot.RNViewShotPackage;
 import com.horcrux.svg.SvgPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
@@ -47,8 +48,8 @@ public class MainApplication extends Application implements ShareApplication, Re
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-            new RNViewShotPackage(),
-
+        new CameraRollPackage(),
+        new RNViewShotPackage(),
         new SvgPackage(),
         new PickerPackage(),
         new VectorIconsPackage(),

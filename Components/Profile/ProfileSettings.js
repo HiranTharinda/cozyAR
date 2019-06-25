@@ -4,6 +4,8 @@ import {Icon, Content, Container,Card, CardItem} from 'native-base'
 import {Button} from 'react-native-elements'
 import ImagePicker from 'react-native-image-crop-picker';
 import firebase from 'react-native-firebase'
+import ViewShot from "react-native-view-shot";
+import CameraRoll from "@react-native-community/cameraroll";
 class ProfileSettings extends Component{
 
     state = {name:''}
@@ -49,6 +51,10 @@ class ProfileSettings extends Component{
 
     componentDidMount = () => {
         this.fetchProfileData()
+        this.refs.viewShot.capture().then(uri => {
+            console.log("do something with ", uri);
+            CameraRoll.saveToCameraRoll(uri)
+        })
     }
 
 
@@ -165,6 +171,7 @@ class ProfileSettings extends Component{
             <Container style={{ flex: 1, backgroundColor: 'white'}}>
                 <Content>
                     <View style ={{paddingTop: 50, paddingBottom:50, paddingRight:20, paddingLeft:20}}>
+                    <ViewShot ref="viewShot" options={{ format: "jpg", quality: 0.9 }}>
                         <View style={{ flexDirection: 'column'}}>
                             <View style = {{flex: 1, alignItems: 'center'}}>
                                 <Image source = {{uri:this.state.avatar}}
@@ -176,6 +183,7 @@ class ProfileSettings extends Component{
                                 <View style = {{flex:1}}></View>
                             </View>
                         </View>
+                        </ViewShot>
                     </View>
                     <View style = {{backgroundColor:'#ffffff'}}>
                         <Card style={{height:'100%'}}>

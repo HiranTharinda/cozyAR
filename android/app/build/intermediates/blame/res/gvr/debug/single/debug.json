@@ -873,7 +873,7 @@
     },
     {
         "merged": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\res\\merged\\gvr\\debug\\xml_provider_paths.xml.flat",
-        "source": "C:\\Users\\Hiran\\Desktop\\cozyAR\\node_modules\\react-native-image-crop-picker\\android\\build\\intermediates\\packaged_res\\debug\\xml\\provider_paths.xml"
+        "source": "C:\\Users\\Hiran\\Desktop\\cozyAR\\node_modules\\react-native-image-picker\\android\\build\\intermediates\\packaged_res\\debug\\xml\\provider_paths.xml"
     },
     {
         "merged": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\res\\merged\\gvr\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -2386,6 +2386,10 @@
     {
         "merged": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\res\\merged\\gvr\\debug\\drawable-mdpi-v4_exo_controls_repeat_one.png.flat",
         "source": "C:\\Users\\Hiran\\.gradle\\caches\\transforms-1\\files-1.1\\exoplayer-ui-2.7.1.aar\\c19712fc1e9cbd19651287e29eba7dd6\\res\\drawable-mdpi-v4\\exo_controls_repeat_one.png"
+    },
+    {
+        "merged": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\res\\merged\\gvr\\debug\\layout_list_item.xml.flat",
+        "source": "C:\\Users\\Hiran\\Desktop\\cozyAR\\node_modules\\react-native-image-picker\\android\\build\\intermediates\\packaged_res\\debug\\layout\\list_item.xml"
     },
     {
         "merged": "C:\\Users\\Hiran\\Desktop\\cozyAR\\android\\app\\build\\intermediates\\res\\merged\\gvr\\debug\\drawable-xhdpi-v4_exo_controls_repeat_one.png.flat",

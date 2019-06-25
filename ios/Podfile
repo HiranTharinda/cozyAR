@@ -21,6 +21,8 @@ target 'figment' do
 
   pod 'RNViewShot', :path => '../node_modules/react-native-view-shot'
 
+  pod 'react-native-cameraroll', :path => '../node_modules/@react-native-community/cameraroll'
+
 end
 
 # Needed to fix linker error between GVRSDK and React

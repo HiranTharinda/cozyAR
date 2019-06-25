@@ -1206,6 +1206,7 @@ layout exo_player_control_view
 layout exo_player_view
 layout exo_simple_player_view
 layout fps_view
+layout list_item
 layout messenger_button_send_blue_large
 layout messenger_button_send_blue_round
 layout messenger_button_send_blue_small
@@ -1553,6 +1554,7 @@ style CardView_Dark
 style CardView_Light
 style ClockTimePickerDialog
 style ClockTimePickerStyle
+style DefaultExplainingPermissionsTheme
 style DialogAnimationFade
 style DialogAnimationSlide
 style ExoMediaButton

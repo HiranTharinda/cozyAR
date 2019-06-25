@@ -123,18 +123,18 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int messenger_button_send_blue_large = 0x7f090029;
-        public static final int messenger_button_send_blue_round = 0x7f09002a;
-        public static final int messenger_button_send_blue_small = 0x7f09002b;
-        public static final int messenger_button_send_white_large = 0x7f09002c;
-        public static final int messenger_button_send_white_round = 0x7f09002d;
-        public static final int messenger_button_send_white_small = 0x7f09002e;
-        public static final int notification_action = 0x7f09002f;
-        public static final int notification_action_tombstone = 0x7f090030;
-        public static final int notification_template_custom_big = 0x7f090037;
-        public static final int notification_template_icon_group = 0x7f090038;
-        public static final int notification_template_part_chronometer = 0x7f09003c;
-        public static final int notification_template_part_time = 0x7f09003d;
+        public static final int messenger_button_send_blue_large = 0x7f09002a;
+        public static final int messenger_button_send_blue_round = 0x7f09002b;
+        public static final int messenger_button_send_blue_small = 0x7f09002c;
+        public static final int messenger_button_send_white_large = 0x7f09002d;
+        public static final int messenger_button_send_white_round = 0x7f09002e;
+        public static final int messenger_button_send_white_small = 0x7f09002f;
+        public static final int notification_action = 0x7f090030;
+        public static final int notification_action_tombstone = 0x7f090031;
+        public static final int notification_template_custom_big = 0x7f090038;
+        public static final int notification_template_icon_group = 0x7f090039;
+        public static final int notification_template_part_chronometer = 0x7f09003d;
+        public static final int notification_template_part_time = 0x7f09003e;
     }
     public static final class string {
         private string() {}
@@ -145,27 +145,27 @@ public final class R {
     public static final class style {
         private style() {}
 
-        public static final int MessengerButton = 0x7f0d00b4;
-        public static final int MessengerButtonText = 0x7f0d00bb;
-        public static final int MessengerButtonText_Blue = 0x7f0d00bc;
-        public static final int MessengerButtonText_Blue_Large = 0x7f0d00bd;
-        public static final int MessengerButtonText_Blue_Small = 0x7f0d00be;
-        public static final int MessengerButtonText_White = 0x7f0d00bf;
-        public static final int MessengerButtonText_White_Large = 0x7f0d00c0;
-        public static final int MessengerButtonText_White_Small = 0x7f0d00c1;
-        public static final int MessengerButton_Blue = 0x7f0d00b5;
-        public static final int MessengerButton_Blue_Large = 0x7f0d00b6;
-        public static final int MessengerButton_Blue_Small = 0x7f0d00b7;
-        public static final int MessengerButton_White = 0x7f0d00b8;
-        public static final int MessengerButton_White_Large = 0x7f0d00b9;
-        public static final int MessengerButton_White_Small = 0x7f0d00ba;
-        public static final int TextAppearance_Compat_Notification = 0x7f0d0111;
-        public static final int TextAppearance_Compat_Notification_Info = 0x7f0d0112;
-        public static final int TextAppearance_Compat_Notification_Line2 = 0x7f0d0114;
-        public static final int TextAppearance_Compat_Notification_Time = 0x7f0d0117;
-        public static final int TextAppearance_Compat_Notification_Title = 0x7f0d0119;
-        public static final int Widget_Compat_NotificationActionContainer = 0x7f0d018a;
-        public static final int Widget_Compat_NotificationActionText = 0x7f0d018b;
+        public static final int MessengerButton = 0x7f0d00b5;
+        public static final int MessengerButtonText = 0x7f0d00bc;
+        public static final int MessengerButtonText_Blue = 0x7f0d00bd;
+        public static final int MessengerButtonText_Blue_Large = 0x7f0d00be;
+        public static final int MessengerButtonText_Blue_Small = 0x7f0d00bf;
+        public static final int MessengerButtonText_White = 0x7f0d00c0;
+        public static final int MessengerButtonText_White_Large = 0x7f0d00c1;
+        public static final int MessengerButtonText_White_Small = 0x7f0d00c2;
+        public static final int MessengerButton_Blue = 0x7f0d00b6;
+        public static final int MessengerButton_Blue_Large = 0x7f0d00b7;
+        public static final int MessengerButton_Blue_Small = 0x7f0d00b8;
+        public static final int MessengerButton_White = 0x7f0d00b9;
+        public static final int MessengerButton_White_Large = 0x7f0d00ba;
+        public static final int MessengerButton_White_Small = 0x7f0d00bb;
+        public static final int TextAppearance_Compat_Notification = 0x7f0d0112;
+        public static final int TextAppearance_Compat_Notification_Info = 0x7f0d0113;
+        public static final int TextAppearance_Compat_Notification_Line2 = 0x7f0d0115;
+        public static final int TextAppearance_Compat_Notification_Time = 0x7f0d0118;
+        public static final int TextAppearance_Compat_Notification_Title = 0x7f0d011a;
+        public static final int Widget_Compat_NotificationActionContainer = 0x7f0d018b;
+        public static final int Widget_Compat_NotificationActionText = 0x7f0d018c;
     }
     public static final class styleable {
         private styleable() {}

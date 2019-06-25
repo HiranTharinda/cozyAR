@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/cameraroll": "^1.1.1",
     "babel": "^6.23.0",
     "firebase": "^5.11.0",
     "image-picker": "^0.3.1",
