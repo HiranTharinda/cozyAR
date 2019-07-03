@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import Video from 'react-native-video';
-import firebase from 'react-native-firebase'
+import firebase, { Firebase } from 'react-native-firebase'
 import blu from '../../assets/VID-20190303-WA0029.mp4'
 
 class HomeTab extends Component{
@@ -158,23 +158,17 @@ class HomeTab extends Component{
     //     })
         
     // }
-
-    // likeButton = (photoId) => {
-    //     console.log(photoId)
-    //     if (this.state.liked){
-    //         this.setState({
-    //             liked: false
-    //         })
-    //         this.removeLike(photoId)
-            
-        
-    //     }else{
-    //         this.setState({
-    //             liked: true
-    //         })
-    //         this. addLike(photoId)
-    //     }
-    // }
+    
+    likebutton = () => {
+        console.log(firebase.auth().currentUser.uid)
+        firebase.database().ref('likes').once('value', snapshot => {
+                if(snapshot.hasChild(firebase.auth().currentUser.uid)) {
+                    console.log('yei')
+                } else {
+                    console.log('Nope')
+                }
+        });
+    }
 
     render() {
     return(
@@ -215,7 +209,7 @@ class HomeTab extends Component{
                             )}
                             <CardItem style={{height: 45}}>
                                 <Left>
-                                    <Button transparent>
+                                    <Button transparent onPress = {() => this.likebutton()}>
                                         <Icon type = 'Foundation' name="heart"
                                             style={styles.likedTrue}/>
                                     </Button>
