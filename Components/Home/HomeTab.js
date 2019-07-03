@@ -103,69 +103,16 @@ class HomeTab extends Component{
         this. loadFeed()
     }
 
-
-    // removeLike = (photoId) => {
-    //     var that = this
-    //     var userId = firebase.auth().currentUser.uid;
-    //     loadRef = firebase.database().ref('photos').child(photoId)
-    //     loadRef.on('value', function(snapshot){
-    //         const exists = (snapshot.val() !== null)
-    //         if(exists) data = snapshot.val();
-    //         that.setState({
-    //             likes : data.likes
-    //         })
-    //     })
-    //     if(this.state.likes == 0){
-    //         var userObj = {
-    //             likes: this.state.likes
-    //         }
-    //     }else{
-    //         var sum = this.state.likes - 1
-    //         var userObj = {
-    //             likes: sum
-    //         }
-    //     }
-    
-    //     firebase.database().ref('/photos/'+photoId).update(userObj)
-    // }
-
-    // addLike = (photoId) => {
-    //     var that = this
-    //     var userId = firebase.auth().currentUser.uid;
-    //     loadRef = firebase.database().ref('photos').child(photoId)
-    //     loadRef.on('value', function(snapshot){
-    //         const exists = (snapshot.val() !== null)
-    //         that.setState({
-    //             likes : data.likes
-    //         })
-    //     })
-    //     var sum = this.state.likes + 1
-    //     var userObj = {
-    //         likes: sum
-    //     }
-    //     firebase.database().ref('/photos/'+photoId).update(userObj)
-    // }
-
-    // likeChecker = (photoId) => {
-    //     console.log(photoId)
-    //     var userId = firebase.auth().currentUser.uid;
-    //     firebase.database().ref('users').child(userId).child('liked').on('value',function(snapshot){
-    //         const exists = (snapshot.val() !== null)
-    //         if(exists) data = snapshot.val();
-            
-            
-                
-    //     })
-        
-    // }
     
     likebutton = () => {
         console.log(firebase.auth().currentUser.uid)
         firebase.database().ref('likes').once('value', snapshot => {
                 if(snapshot.hasChild(firebase.auth().currentUser.uid)) {
                     console.log('yei')
+                    firebase.database().ref('likes').child(firebase.auth().currentUser.uid).remove();
                 } else {
                     console.log('Nope')
+                    firebase.database().ref('likes').child(firebase.auth().currentUser.uid).set('liked')
                 }
         });
     }
