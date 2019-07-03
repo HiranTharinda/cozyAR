@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { ActivityIndicator ,View, Text, StyleSheet, Image, TextInput, TouchableOpacity, KeyboardAvoidingView} from "react-native";
+import { ActivityIndicator ,View, Text, StyleSheet, Image,Dimensions, TextInput, TouchableOpacity, KeyboardAvoidingView} from "react-native";
 import {Button} from 'react-native-elements'
 import {Icon, Picker, Card, CardItem, Thumbnail, Body, Left, Right,} from 'native-base'
 import ImagePicker from 'react-native-image-crop-picker';
 import Video from 'react-native-video';
 import firebase from 'react-native-firebase'
 
-
+const screenWidth = Math.round(Dimensions.get('window').width);
+const screenHeight = Math.round(Dimensions.get('window').height);
 
 
 class PostTab extends Component{
@@ -287,11 +288,17 @@ class PostTab extends Component{
                    </View>
                     ):(
                     <View>
+                        <View style = {{height:400}}>
                         <Video
                             source={{uri:this.state.uri}}
                             resizeMode="cover"
                             repeat={true}
-                        />
+                            style={{
+                                position: 'absolute',
+                                height: 400,
+                                width: screenWidth,
+                                }}
+                        /></View>
                         <Card style = {{width:'100%',height:70}}>
                             <CardItem>
                                 <TextInput
@@ -316,8 +323,8 @@ class PostTab extends Component{
                         </CardItem>
                     </Card>
                     <TouchableOpacity style = {{position:'absolute', alignSelf:'flex-end',padding:10}}>
-                                <Icon type='MaterialIcons' name="cancel" onPress={() => this.cancelButton()}
-                                    style={{color: 'white'}}/>
+                        <Icon type='MaterialIcons' name="cancel" onPress={() => this.cancelButton()}
+                            style={{color: 'white'}}/>
                     </TouchableOpacity></View>
                     )}
                     </View>

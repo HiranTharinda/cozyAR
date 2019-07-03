@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
+import { View, Text, StyleSheet, Image, FlatList,Dimensions, StatusBar, TouchableOpacity} from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import Video from 'react-native-video';
 import firebase, { Firebase } from 'react-native-firebase'
 import blu from '../../assets/VID-20190303-WA0029.mp4'
 
+const screenWidth = Math.round(Dimensions.get('window').width);
+const screenHeight = Math.round(Dimensions.get('window').height);
 class HomeTab extends Component{
 
     constructor(props){
@@ -167,13 +169,18 @@ class HomeTab extends Component{
                             <Image source={{uri:item.url}} style={
                                 {height:350, width:null, flex:1}}/>
                             ) : (
-                            <View style={{flex:1}}>
+                                <View style = {{height:400}}>
                                 <Video
-                                    source={blu}
+                                    source={{uri:item.url}}
                                     resizeMode="cover"
                                     repeat={true}
-                                />
-                            </View> 
+                                    controls ={true}
+                                    style={{
+                                        position: 'absolute',
+                                        height: 400,
+                                        width: screenWidth,
+                                        }}
+                                /></View>
                             )}
                             <CardItem style={{height: 45}}>
                                 <Left>
