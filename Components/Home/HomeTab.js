@@ -19,6 +19,11 @@ class HomeTab extends Component{
 
     componentDidMount = () => {
         this.loadFeed();
+        firebase.database().ref('likes').child('photoId').once('value', snapshot => {
+            const likesValue = snapshot.numChildren() 
+            console.log(likesValue)
+        })
+      
     }
 
     pluralCheck = (s) => {
@@ -58,25 +63,39 @@ class HomeTab extends Component{
         var that = this
         var photoObj = data[photo];
                     firebase.database().ref('users').child(photoObj.author).once('value').then(function(snapshot){
-                        const exists = (snapshot.val() !== null)
+                        var exists = (snapshot.val() !== null)
                         if(exists) data = snapshot.val();
-                        
-                        photo_feed.push({
-                            id: photo,
-                            url: photoObj.url,
-                            caption: photoObj.caption,
-                            posted: that.timeConverter(photoObj.posted),
-                            author: data.name,
-                            avatar: data.avatar,
-                            likes:photoObj.likes,
-                            authorId:photoObj.author,
-                            flag:photoObj.flag
+                        firebase.database().ref('likes').child(photo).on('value', snapshot => {
+                            if(snapshot.hasChild(firebase.auth().currentUser.uid)) {
+                                var flag = true
+                            } else {
+                                var flag = false
+                            }
+                            const likesValue = snapshot.numChildren()
+                            console.log(likesValue)
                             
-                        });
-                        that.setState({
-                            refresh: false,
-                            loading: false
+
+                            photo_feed.push({
+                                id: photo,
+                                url: photoObj.url,
+                                caption: photoObj.caption,
+                                posted: that.timeConverter(photoObj.posted),
+                                author: data.name,
+                                avatar: data.avatar,
+                                likes: likesValue,
+                                authorId:photoObj.author,
+                                flag:photoObj.flag,
+                                liked:flag
+                                
+                            });
+                            that.setState({
+                                refresh: false,
+                                loading: false
+                            })
+
                         })
+                        
+                     
                     })
     }
 
@@ -86,7 +105,8 @@ class HomeTab extends Component{
             photo_feed: []
         })
         var that = this;
-    
+        
+        
         firebase.database().ref('photos').orderByChild('posted').once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
             
@@ -102,17 +122,18 @@ class HomeTab extends Component{
     loadNew = () => {
         this. loadFeed()
     }
-
     
-    likebutton = () => {
+    
+    
+    likebutton = (photoId) => {
         console.log(firebase.auth().currentUser.uid)
-        firebase.database().ref('likes').once('value', snapshot => {
+        firebase.database().ref('likes').child(photoId).once('value', snapshot => {
                 if(snapshot.hasChild(firebase.auth().currentUser.uid)) {
                     console.log('yei')
-                    firebase.database().ref('likes').child(firebase.auth().currentUser.uid).remove();
+                    firebase.database().ref('likes').child(photoId).child(firebase.auth().currentUser.uid).remove();
                 } else {
                     console.log('Nope')
-                    firebase.database().ref('likes').child(firebase.auth().currentUser.uid).set('liked')
+                    firebase.database().ref('likes').child(photoId).child(firebase.auth().currentUser.uid).set('liked')
                 }
         });
     }
@@ -156,9 +177,11 @@ class HomeTab extends Component{
                             )}
                             <CardItem style={{height: 45}}>
                                 <Left>
-                                    <Button transparent onPress = {() => this.likebutton()}>
-                                        <Icon type = 'Foundation' name="heart"
-                                            style={styles.likedTrue}/>
+                                    <Button transparent onPress = {() => this.likebutton(item.id)}>
+                                    {item.liked == true ? (<Icon type = 'Foundation' name="heart"
+                                    style={styles.likedTrue}/>):(<Icon type = 'Foundation' name="heart"
+                                    style={styles.likedFalse}/>)}
+                                        
                                     </Button>
                                     <Button transparent onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
                                         <Icon type = 'MaterialCommunityIcons' name="comment"
