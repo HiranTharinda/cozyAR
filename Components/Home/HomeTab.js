@@ -161,7 +161,7 @@ class HomeTab extends Component{
                                     source={{uri:item.url}}
                                     resizeMode="cover"
                                     repeat={true}
-                                    controls ={true}
+                                    controls ={false}
                                     style={{
                                         position: 'absolute',
                                         height: 400,

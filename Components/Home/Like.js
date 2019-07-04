@@ -10,7 +10,7 @@ class Like extends Component{
         this.state = {
             liked:null,
             likes:null,
-            newLikes:null
+            newlikes:null
         }
 
     }
@@ -20,7 +20,7 @@ class Like extends Component{
         this.setState({
             liked:this.props.liked,
             likes:this.props.likes,
-            newLikes: this.props.likes
+            newlikes: this.props.likes
         })
         console.log(itemId)
         console.log(likes)
@@ -35,15 +35,16 @@ class Like extends Component{
                     firebase.database().ref('likes').child(photoId).child(firebase.auth().currentUser.uid).remove();
                     this.setState({
                         liked: false,
-                        newLikes:this.state.likes-1
+                        newlikes:likes-1
                     })
 
                 } else {
                     console.log('Nope')
                     firebase.database().ref('likes').child(photoId).child(firebase.auth().currentUser.uid).set('liked')
+                    
                     this.setState({
                         liked: true,
-                        newLikes:this.state.likes+1
+                        newlikes:likes
                     })
                 }
         });
@@ -52,7 +53,7 @@ class Like extends Component{
     render(){
         return(
             <View style = {{flexDirection:'row'}}>
-            <Text style = {{paddingTop:12, paddingRight:8}}>{this.state.newLikes}</Text>
+            <Text style = {{paddingTop:12, paddingRight:8}}>{this.state.newlikes}</Text>
             <Button transparent onPress = {() => this.likebutton(this.props.itemId, this.props.likes)}>
             {this.state.liked == true ? (<Icon type = 'Foundation' name="heart"
             style={styles.likedTrue}/>):(<Icon type = 'Foundation' name="heart"
