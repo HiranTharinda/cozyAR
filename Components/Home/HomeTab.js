@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, FlatList,Dimensions, StatusBar, TouchableOpacity} from "react-native";
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import Video from 'react-native-video';
-import firebase, { Firebase } from 'react-native-firebase'
-import blu from '../../assets/VID-20190303-WA0029.mp4'
+import firebase from 'react-native-firebase'
+import Like from './Like'
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
@@ -21,6 +21,7 @@ class HomeTab extends Component{
 
     componentDidMount = () => {
         this.loadFeed();
+        console.log(this.state.photo_feed)
         firebase.database().ref('likes').child('photoId').once('value', snapshot => {
             const likesValue = snapshot.numChildren() 
             console.log(likesValue)
@@ -75,8 +76,8 @@ class HomeTab extends Component{
                             }
                             const likesValue = snapshot.numChildren()
                             console.log(likesValue)
-                            
-
+                            firebase.database().ref('comments').child(photo).on('value', snapshot => {
+                                const CommentsValue = snapshot.numChildren()
                             photo_feed.push({
                                 id: photo,
                                 url: photoObj.url,
@@ -85,6 +86,7 @@ class HomeTab extends Component{
                                 author: data.name,
                                 avatar: data.avatar,
                                 likes: likesValue,
+                                comments: CommentsValue,
                                 authorId:photoObj.author,
                                 flag:photoObj.flag,
                                 liked:flag
@@ -94,7 +96,7 @@ class HomeTab extends Component{
                                 refresh: false,
                                 loading: false
                             })
-
+                        })
                         })
                         
                      
@@ -125,21 +127,6 @@ class HomeTab extends Component{
         this. loadFeed()
     }
     
-    
-    
-    likebutton = (photoId) => {
-        console.log(firebase.auth().currentUser.uid)
-        firebase.database().ref('likes').child(photoId).once('value', snapshot => {
-                if(snapshot.hasChild(firebase.auth().currentUser.uid)) {
-                    console.log('yei')
-                    firebase.database().ref('likes').child(photoId).child(firebase.auth().currentUser.uid).remove();
-                } else {
-                    console.log('Nope')
-                    firebase.database().ref('likes').child(photoId).child(firebase.auth().currentUser.uid).set('liked')
-                }
-        });
-    }
-
     render() {
     return(
     <View style={styles.container}>
@@ -184,22 +171,14 @@ class HomeTab extends Component{
                             )}
                             <CardItem style={{height: 45}}>
                                 <Left>
-                                    <Button transparent onPress = {() => this.likebutton(item.id)}>
-                                    {item.liked == true ? (<Icon type = 'Foundation' name="heart"
-                                    style={styles.likedTrue}/>):(<Icon type = 'Foundation' name="heart"
-                                    style={styles.likedFalse}/>)}
-                                        
-                                    </Button>
+                                    
+                                    <Like itemId={item.id} likes={item.likes} liked = {item.liked}/>
+                                    <Text style = {{paddingRight:8}}>{item.comments}</Text>
                                     <Button transparent onPress = {()=> this.props.navigation.navigate('Comments',{photoId:item.id})}>
                                         <Icon type = 'MaterialCommunityIcons' name="comment"
                                             style={{color: '#5a6586', fontSize: 30}}/>
                                     </Button>
                                 </Left>
-                            </CardItem>
-                            <CardItem style={{height:20}}>
-                                <Text>
-                                    {item.likes} likes
-                                </Text>
                             </CardItem>
                             <CardItem>
                                 <Body>
