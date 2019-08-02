@@ -41,12 +41,19 @@ class Like extends Component{
                 } else {
                     console.log('Nope')
                     firebase.database().ref('likes').child(photoId).child(firebase.auth().currentUser.uid).set('liked')
+                    if (likes == 0){
+                        this.setState({
+                            liked: true,
+                            newlikes:likes + 1
+                        })
+                    }else{
+                        this.setState({
+                            liked: true,
+                            newlikes:likes
+                        })
+                    }
                     
-                    this.setState({
-                        liked: true,
-                        newlikes:likes
-                    })
-                }
+                }//0likes problem needs be fixed
         });
     }
 

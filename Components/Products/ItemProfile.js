@@ -10,8 +10,7 @@ class ItemProfile extends Component{
         super(props)
         this.state ={
             loading:false,
-            rating:3,
-            itemId:''
+            itemId:'',
         }
     }
     checkParams = () => {
@@ -55,9 +54,37 @@ class ItemProfile extends Component{
                 that.setState({itemDescription:data});
         })
     }
+  
+    ratingCompleted = (rating) => {
+        this.setState ({ RnRating : rating  })
+        console.log("Rating is: " + rating)
+        firebase.database().ref('reviewsRating').child(this.state.itemId).child(firebase.auth().currentUser.uid).child('value').set(rating);
+      }
+      
+    getRating = () => {
+        var that = this;
+        const uid = firebase.auth().currentUser.uid
+
+        firebase.database().ref('reviewsRating').child(this.state.itemId).child(uid).once('value').then(function(snapshot){
+            const exists = (snapshot.val() !== null)
+            data = snapshot.val()
+                console.log(data)
+            if(exists){
+                data = snapshot.val()
+                console.log(data.value)
+                
+            }else{
+                that.setState({rate:0});
+                console.log('fd')
+            }
+            
+        })
+    }
 
     componentDidMount =() => {
         this.checkParams()
+        console.log('k')
+        this.getRating()
     }
 
     render(){
@@ -69,8 +96,9 @@ class ItemProfile extends Component{
                     <Card style = {{height:'100%'}}>
                     <CardItem cardBody style={{height:'5%'}}>
                     <Rating imageSize={20}
-                                    startingValue={3}
-                                    style={{position:'absolute', alignItems:'center',paddingLeft:10}}/>
+                            startingValue={this.state.rate}
+                            onFinishRating={this.ratingCompleted}
+                            style={{position:'absolute', alignItems:'center',paddingLeft:10}}/>
                     </CardItem>
                         <CardItem cardBody style={{height:'30%'}}>
                             <Image source={{uri:this.state.itemImage}} style={

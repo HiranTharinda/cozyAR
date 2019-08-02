@@ -57,7 +57,10 @@ class PhotoGrid extends Component{
         }    
         loadRef.orderByChild('posted').on('value', function(snapshot){
             const exists = (snapshot.val() !== null)
-            
+            that.setState({
+                refresh:true,
+                photo_feed: []
+            })
             if(exists) data = snapshot.val();
                 var photo_feed = that.state.photo_feed;
                 for(var photo in data){

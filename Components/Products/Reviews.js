@@ -221,9 +221,6 @@ class Reviews extends Component{
                 <KeyboardAvoidingView>
                         <Card style = {{borderRadius: 30}}>
                             <CardItem  bordered style={{ borderRadius: 30, }}>
-                            <Rating imageSize={20}
-                                    startingValue={0}
-                                    style={{position:'absolute', alignItems:'center',paddingLeft:10}}/>
                             <TextInput
                             underlineColorAndroid="transparent"
                             editable={true}
