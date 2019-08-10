@@ -29,7 +29,11 @@ class SearchScreen extends Component{
     }
 
 
+  
+
+
     addToFlatlist = (item_list, data, item) => {
+
         var that = this
         var itemObj = data[item];
                         item_list.push({

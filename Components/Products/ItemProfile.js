@@ -8,24 +8,39 @@ import firebase from 'react-native-firebase'
 class ItemProfile extends Component{
     constructor(props){
         super(props)
-        this.state ={
+        this.state ={ 
+            sum: null,
+            rating: null,
             loading:false,
             itemId:'',
+            arArray:[],
+            objId: this.uniqueId(),
+            
         }
     }
     checkParams = () => {
         var params = this.props.navigation.state.params;
-        console.log(params)
         if(params){
             if(params.itemId){
                 this.setState({
                     itemId: params.itemId
                 
                 })
-                console.log(params.itemId)
                 this.fetchItemInfo(params.itemId)
+                this.getRating(params.itemId)
             }
         }
+    }
+
+    s4 = () => {
+        return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1)
+    }
+
+    uniqueId = () => {
+        return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + 
+        this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-'
     }
 
     fetchItemInfo = (itemId) => {
@@ -41,7 +56,7 @@ class ItemProfile extends Component{
             if(exists) data = snapshot.val()
                 that.setState({itemPrice:data});
         })
-        
+        //import obj url
         firebase.database().ref('products').child(itemId).child('image').once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
@@ -56,37 +71,86 @@ class ItemProfile extends Component{
     }
   
     ratingCompleted = (rating) => {
-        this.setState ({ RnRating : rating  })
-        console.log("Rating is: " + rating)
         firebase.database().ref('reviewsRating').child(this.state.itemId).child(firebase.auth().currentUser.uid).child('value').set(rating);
+        this.averageReview(this.state.itemId)
       }
-      
-    getRating = () => {
-        var that = this;
-        const uid = firebase.auth().currentUser.uid
 
-        firebase.database().ref('reviewsRating').child(this.state.itemId).child(uid).once('value').then(function(snapshot){
+
+      averageReview(itemId){
+    
+        firebase.database().ref('reviewsRating').child(itemId).once('value').then(function(snapshot){
+            var ratingsNo = snapshot.numChildren()
+            var sum = 0
+            if (ratingsNo > 0){
+                firebase.database().ref('reviewsRating').child(itemId).once('value').then(function(snapshot){
+                    const exists = (snapshot.val() !== null)
+                    data = snapshot.val()
+                    for(var user in data){
+                        var userObj = data[user];
+                        sum = sum + userObj.value 
+                        console.log(sum)
+                    }
+               
+                    var Average = sum/ratingsNo
+                    console.log(Average)
+                    firebase.database().ref('products').child(itemId).child('rating').set(Average);
+                })
+            }
+        })
+    }
+
+      
+    getRating = (itemId) => {
+        var that = this;
+     
+        console.log(itemId)
+        firebase.database().ref('reviewsRating').child(itemId).child(firebase.auth().currentUser.uid).once('value').then(function(snapshot){
             const exists = (snapshot.val() !== null)
             data = snapshot.val()
-                console.log(data)
-            if(exists){
-                data = snapshot.val()
-                console.log(data.value)
-                
-            }else{
-                that.setState({rate:0});
-                console.log('fd')
-            }
+            console.log(data)
+            that.setState({
+                rate: data.value
+            })
             
+        
+        })
+    
+    }
+
+  
+
+    placeIt = () => {
+        var name = this.state.itemName
+        var image = this.state.itemImage
+        var url = "https://firebasestorage.googleapis.com/v0/b/cozy-67b69.appspot.com/o/models%2FSofa.obj?alt=media&token=4ca9e40d-8c54-4b53-b610-314de89c13be"
+        var userId = firebase.auth().currentUser.uid;
+        var Obj = {
+            name: name,
+            icon_img: image,
+            obj: url,
+
+        }
+        firebase.database().ref('/ArArray/'+userId+'/'+this.state.itemId).update(Obj)
+
+        var that = this;
+        firebase.database().ref('ArArray').child(userId).once('value').then(function(snapshot){
+            const exists = (snapshot.val() !== null)
+            
+            if(exists) data = snapshot.val();
+                var arArray= that.state.arArray;
+ 
+                for(var obj in data){
+                    that.addToFlatlist(arArray, data, obj)
+                }
         })
     }
 
     componentDidMount =() => {
         this.checkParams()
-        console.log('k')
-        this.getRating()
+        
     }
 
+ 
     render(){
         return(
             <View style = {{flex: 1}}>
@@ -96,6 +160,7 @@ class ItemProfile extends Component{
                     <Card style = {{height:'100%'}}>
                     <CardItem cardBody style={{height:'5%'}}>
                     <Rating imageSize={20}
+                            type="heart"
                             startingValue={this.state.rate}
                             onFinishRating={this.ratingCompleted}
                             style={{position:'absolute', alignItems:'center',paddingLeft:10}}/>
@@ -131,7 +196,7 @@ class ItemProfile extends Component{
                                     buttonStyle={{height: 60, width: 180,color:'grey', borderRadius: 35,color:'grey', backgroundColor:'white', borderColor:'grey',borderWidth:1}} 
                                     />
                             <Text> </Text>
-                            <Button onPress={() => this.props.navigation.navigate('signUp')}
+                            <Button onPress={() => this.placeIt()}
                                     title="Place it!"
                                     buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#ff6b6b'}}  
                                     />
@@ -142,6 +207,9 @@ class ItemProfile extends Component{
         );
     }
 }
+
+
+  
 
 export default ItemProfile;
 

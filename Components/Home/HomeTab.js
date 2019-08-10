@@ -92,6 +92,7 @@ class HomeTab extends Component{
                                 liked:flag
                                 
                             });
+                            console.log(photo_feed)
                             that.setState({
                                 refresh: false,
                                 loading: false

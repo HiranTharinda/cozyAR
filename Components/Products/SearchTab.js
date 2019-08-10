@@ -143,7 +143,8 @@ class SearchTab extends Component{
                                     </Text>
                                     <Rating
                                         imageSize={20}
-                                        readonly                          
+                                        readonly
+                                        type="heart"                          
                                         startingValue={item.itemRating}
                                         style={{position:'absolute',paddingLeft:60,paddingRight:10, paddingBottom:125}}
                                     />
