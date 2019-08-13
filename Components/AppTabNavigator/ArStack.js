@@ -4,7 +4,7 @@ import {Icon, Title} from 'native-base'
 import {createAppContainer,createStackNavigator} from 'react-navigation';
 import StartScreen from '../Ar/StartScreen'
 import CamTab from "../Ar/CamTab";
-
+import LoadingAR from "../Ar/LoadingAR";
 class ArStack extends Component{
 
     static navigationOptions = {
@@ -33,6 +33,14 @@ const Store = createStackNavigator({
     },
     ArScreen: {
         screen:CamTab,
+        navigationOptions:({navigation}) => {
+            return{
+                
+            }
+        }
+    },
+    LoadingAR: {
+        screen:LoadingAR,
         navigationOptions:({navigation}) => {
             return{
                 

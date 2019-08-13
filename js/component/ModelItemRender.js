@@ -17,6 +17,7 @@ import * as ModelData from  '../model/ModelItems';
 import TimerMixin from 'react-timer-mixin';
 import ParticleEmitter from '../model/emitters/ParticleEmitter';
 import renderIf from '../helpers/renderIf';
+import firebase from 'react-native-firebase'
 import {
   ViroMaterials,
   ViroNode,

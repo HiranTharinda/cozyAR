@@ -4,7 +4,7 @@ import {Card, CardItem, Body, Right} from 'native-base'
 import {Button,Rating} from 'react-native-elements'
 import ShowReviews from './showReviews'
 import firebase from 'react-native-firebase'
-
+import * as LoadingConstants from '../../js/redux/LoadingStateConstants';
 class ItemProfile extends Component{
     constructor(props){
         super(props)
@@ -126,23 +126,29 @@ class ItemProfile extends Component{
         var userId = firebase.auth().currentUser.uid;
         var Obj = {
             name: name,
-            icon_img: image,
+            selected: "false",
+            loading: "LoadingConstants.NONE",
+            icon_img: "image",
             obj: url,
-
+            materials: "null",
+            animation:'{name:"01", delay:0, loop:true, run:true}',
+            scale: "[0.2, 0.2, 0.2]",
+            position : "[0, 5*0.05, 10]",
+            type : "OBJ",
+            physics: "undefined",
+            ref_pointer: "undefined",
+            shadow_width: "60.5",
+            shadow_height: "60.5",
+            spotlight_position_y: "100",
+            lighting_mode: "IBL",
+            resources: "[require('../res/sofa/materials.mtl')]",
         }
-        firebase.database().ref('/ArArray/'+userId+'/'+this.state.itemId).update(Obj)
+        firebase.database().ref('/ArArray/'+userId+'/'+this.state.itemId).set(Obj)
 
-        var that = this;
-        firebase.database().ref('ArArray').child(userId).once('value').then(function(snapshot){
-            const exists = (snapshot.val() !== null)
-            
-            if(exists) data = snapshot.val();
-                var arArray= that.state.arArray;
- 
-                for(var obj in data){
-                    that.addToFlatlist(arArray, data, obj)
-                }
-        })
+    }
+
+    addToFlatlist = (arArray, data, obj) => {
+
     }
 
     componentDidMount =() => {
