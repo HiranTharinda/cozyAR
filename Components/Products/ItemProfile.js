@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, KeyboardAvoidingView,TouchableOpacity, TextInput, ScrollView} from "react-native";
+import {Alert, View, Text, StyleSheet, Image, KeyboardAvoidingView,TouchableOpacity, TextInput, ScrollView} from "react-native";
 import {Card, CardItem, Body, Right} from 'native-base'
 import {Button,Rating} from 'react-native-elements'
 import ShowReviews from './showReviews'
@@ -144,7 +144,7 @@ class ItemProfile extends Component{
             resources: "[require('../res/sofa/materials.mtl')]",
         }
         firebase.database().ref('/ArArray/'+userId+'/'+this.state.itemId).set(Obj)
-
+        Alert.alert("Successfully added to the Augmented Reality Experience")
     }
 
     addToFlatlist = (arArray, data, obj) => {
