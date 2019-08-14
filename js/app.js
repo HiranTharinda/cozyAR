@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addModelWithIndex, removeAll, removeModelWithUUID, changeModelLoadState, changeItemClickState, switchListMode, removeARObject, displayUIScreen} from './redux/actions';
 import TimerMixin from 'react-timer-mixin';
-
+import firebase from 'react-native-firebase'
 import * as LoadingConstants from './redux/LoadingStateConstants';
 import * as UIConstants from './redux/UIConstants';
 import renderIf from './helpers/renderIf';
@@ -68,6 +68,7 @@ export class App extends Component {
 
   constructor(props) {
     super(props);
+  
 
     this._renderShareScreen = this._renderShareScreen.bind(this);
     this._renderRecord = this._renderRecord.bind(this);
@@ -92,6 +93,8 @@ export class App extends Component {
     this.requestReadAccessPermission = this.requestReadAccessPermission.bind(this);
 
     this.state = {
+      ModelData : [],
+      loading : false,
       currentModeSelected:kObjSelectMode,
       videoUrl: null,
       haveSavedMedia: false,
@@ -114,41 +117,54 @@ export class App extends Component {
     };
   }
 
+  componentDidMount(){
+    var that = this
+    ModelData.getModelArray(firebase.auth().currentUser.uid).then(function(data){
+      that.setState({
+        ModelData: data,
+        loading: false
+
+      })
+    })
+    console.log(this.state.ModelData)
+  }
+
   // This render() function renders the AR Scene in <ViroARSceneNavigator> with the <ViroARScene> defined in figment.js
   // Rest of the components in <View> ... </View> render 2D UI components (React-Native)
-  render() {
-      return (
-        <View style={localStyles.flex}>
-          
-          <ViroARSceneNavigator style={localStyles.arView} 
-                                apiKey="E27B52CE-59E8-4CEA-A788-C212505E06F6"
-                                initialScene={{scene: InitialScene}}  
-                                ref={this._setARNavigatorRef} 
-                                viroAppProps={this.state.viroAppProps}/>
-
-          {/* AR Initialization animation shown to the user for moving device around to get AR Tracking working*/}
-          <ARInitializationUI style={{position: 'absolute', top: 20, left: 0, right: 0, width: '100%', height: 140, flexDirection:'column', justifyContent: 'space-between', alignItems: 'center'}}/>
-
-          {/* ListView at the bottom of the screen */}
-          {renderIf(this.props.currentScreen != UIConstants.SHOW_SHARE_SCREEN,
-            <View style={localStyles.listView}>
-              <FigmentListView items={this._getListItems()} onPress={this._onListPressed} />
-            </View>
-            )}
-
-          {/* 2D UI buttons on top right of the app, that appear when a 3D object is tapped in the AR Scene */}
-          {this._renderContextMenu()}
+ render(){
+   return(
+      <View style={localStyles.flex}>
       
+      <ViroARSceneNavigator style={localStyles.arView} 
+                            apiKey="E27B52CE-59E8-4CEA-A788-C212505E06F6"
+                            initialScene={{scene: InitialScene}}  
+                            ref={this._setARNavigatorRef} 
+                            viroAppProps={this.state.viroAppProps}/>
 
-          {/* 2D UI for sharing rendered after user finishes taking a video / screenshot */}
-          {this._renderShareScreen()}
+      {/* AR Initialization animation shown to the user for moving device around to get AR Tracking working*/}
+      <ARInitializationUI style={{position: 'absolute', top: 20, left: 0, right: 0, width: '100%', height: 140, flexDirection:'column', justifyContent: 'space-between', alignItems: 'center'}}/>
 
-
-          {/* Buttons and their behavior for recording videos and screenshots at the bottom of the screen */}
-          {this._renderRecord()}
+      {/* ListView at the bottom of the screen */}
+      {renderIf(this.props.currentScreen != UIConstants.SHOW_SHARE_SCREEN && this.state.loading == false,
+        <View style={localStyles.listView}>
+          <FigmentListView items={this._getListItems(this.state.ModelData)} onPress={this._onListPressed} />
         </View>
-      );
-  }
+        )}
+
+      {/* 2D UI buttons on top right of the app, that appear when a 3D object is tapped in the AR Scene */}
+      {this._renderContextMenu()}
+  
+
+      {/* 2D UI for sharing rendered after user finishes taking a video / screenshot */}
+      {this._renderShareScreen()}
+
+
+      {/* Buttons and their behavior for recording videos and screenshots at the bottom of the screen */}
+      {this._renderRecord()}
+    </View>
+ 
+   )
+ }
 
   async requestAudioPermission() {
     try {
@@ -548,15 +564,16 @@ _onItemClickedInScene(index, clickState, itemType) {
 }
 
 // Load data source for listview based on listview modes
-_getListItems() {
+_getListItems(data) {
+  console.log(data)
   if(this.props.listMode == UIConstants.LIST_MODE_MODEL) {
-    return this._constructListArrayModel(ModelData.getModelArray(), this.props.modelItems);
+    return this._constructListArrayModel(data, this.props.modelItems);
   }else{
 
   }
     return null
   } 
-    
+  
 
 
 // Helper to construct listview items
@@ -565,6 +582,7 @@ _constructListArrayModel(sourceArray, items) {
     for(var i =0; i<sourceArray.length; i++) {
         listArrayModel.push({icon_img:sourceArray[i].icon_img, loading:this._getLoadingforModelIndex(i, items)})
     }
+ console.log(items)
   return listArrayModel;
 }
 
@@ -596,8 +614,8 @@ _getLoadingforModelIndex(index, items) {
 
   });
 
-
-
+  console.log('loadingConstant')
+  console.log(loadingConstant)
   return loadingConstant;
 
 }
@@ -634,6 +652,13 @@ App.defaultProps =  {
 }
 
 var localStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#181f31'
+},
   flex : {
     flex : 1,
   },

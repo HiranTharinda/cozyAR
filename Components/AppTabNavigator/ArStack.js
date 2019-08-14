@@ -26,7 +26,7 @@ const Store = createStackNavigator({
         screen:StartScreen,
         navigationOptions:({navigation}) => {
             return{
-                headerTitle:'Selected Products'
+                headerTitle:'Selected Items'
                 
             }
         }

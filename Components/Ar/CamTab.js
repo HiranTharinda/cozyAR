@@ -8,7 +8,7 @@ import { createStore } from 'redux';
 import App from '../../js/app';
 
 var reducers = require('../../js/redux/reducers');
-import vid from '../../assets/VID-20190303-WA0029.mp4'
+
 let store = createStore(reducers);
 
 class CamTab extends Component{

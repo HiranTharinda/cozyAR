@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity, T
 import {Icon, Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button} from 'native-base'
 import firebase from 'react-native-firebase'
 
+
 class Comments extends Component{
     constructor(props){
         super(props);
@@ -41,6 +42,7 @@ class Comments extends Component{
                 comment:commentObj.comment,
                 posted: that.timeConverter(commentObj.posted),
                 author: data.name,
+                authorId: commentObj.author,
                 avatar: data.avatar,
                 authorId: commentObj.author
             });
@@ -166,13 +168,22 @@ class Comments extends Component{
         
     }
 
-    deleteComment = (commentId) => {
+    deleteComment = (commentId,author) => {
         var photoId = this.state.photoId
-        firebase.database().ref('/comments/'+photoId+'/'+commentId).remove()
-        this.setState({
-            refresh:true,
-        })
-        this.reloadCommentList()
+        console.log(author)
+        console.log(userId)
+        var userId = firebase.auth().currentUser.uid
+        console.log(userId)
+        if(author == userId){
+            firebase.database().ref('/comments/'+photoId+'/'+commentId).remove()
+            this.setState({
+                refresh:true,
+            })
+            this.reloadCommentList()
+        }else{
+            return null
+        }
+      
         
     }
 
@@ -192,7 +203,7 @@ class Comments extends Component{
                         style = {{flex:1,backgroundColor:'#ffffff'}}
                         renderItem = {({item, index}) => (
                         <View key ={index}>
-                        <TouchableOpacity onLongPress = {() => this.deleteComment(item.id)}>
+                        <TouchableOpacity onLongPress = {() => this.deleteComment(item.id, item.authorId)}>
                             <Card  style = {{borderRadius: 30}}>
                                 <CardItem bordered style={{ borderRadius: 30, height:70 }}>
                                     <Left>

@@ -331,9 +331,10 @@ class PostTab extends Component{
                 </View>
                 ) : (
                 <View style={styles.container}>
+                <Image source ={require('../../assets/FormatFactory90054.jpg')} style={{width:screenWidth}} resizeMode="contain"></Image>
                     <View style = {{flex: 2, width: 300}}></View>
-                    <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}>
-                        <Card style ={{borderRadius: 40,width:240, height:'70%'}}>
+                    <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center', position:'absolute'}}>
+                        <Card style ={{borderRadius: 40,width:240, height:'100%'}}>
                             <CardItem style ={{borderRadius: 40,width:240, height:'90%'}}>
                                 <View style = {{flex: 5, width: 190, alignContent:'center', alignItems:'center'}}>  
                                     <Text></Text>

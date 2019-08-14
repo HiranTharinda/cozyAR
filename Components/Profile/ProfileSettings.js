@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, Dimensions, TouchableHighlight, TextInput, TouchableOpacity } from "react-native";
+import {Alert, View, Text, StyleSheet, Image, Dimensions, TouchableHighlight, TextInput, TouchableOpacity } from "react-native";
 import {Icon, Content, Container,Card, CardItem} from 'native-base'
 import {Button} from 'react-native-elements'
 import ImagePicker from 'react-native-image-crop-picker';
@@ -31,6 +31,31 @@ class ProfileSettings extends Component{
             status: status
         }
         firebase.database().ref('/users/'+userId).update(userObj)
+        Alert.alert("Profile updated successfully")
+    }
+
+    reauthenticate = (currentPassword) => {
+        var user = firebase.auth().currentUser;
+        var cred = firebase.auth.EmailAuthProvider.credential(user.email, currentPassword)
+        return user.reauthenticateWithCredential(cred)
+    }
+
+    changePassword = () => {
+        if(this.state.npwd == this.state.cnpwd != null && this.state.cpwd != null){
+            this.reauthenticate(this.state.cpwd).then(() =>{
+                var user = firebase.auth().currentUser
+            user.updatePassword(this.state.npwd).then(() => {
+                Alert.alert("Your password has been changed successfully!")
+            }).catch((error) => {
+                Alert.alert(error.message)
+            })
+            }).catch((error) =>{
+                Alert.alert(error.message)
+            })
+        }else{
+            Alert.alert("Passwords do not match!")
+        }
+        
     }
 
     fetchProfileData = () => {
@@ -195,7 +220,7 @@ class ProfileSettings extends Component{
                                     editable={true}
                                     value={this.state.name}
                                     onChangeText={(text) => this.setState({name: text})}
-                                    style = {{width:'90%',fontSize:20,textAlign:'right', paddingRight:10}}> 
+                                    style = {{width:'90%',fontSize:20,textAlign:'right', paddingRight:30}}> 
                                 </TextInput>    
                             </CardItem>
                             <CardItem >
@@ -205,7 +230,7 @@ class ProfileSettings extends Component{
                                     editable={true}
                                     value={this.state.status}
                                     onChangeText={(text) => this.setState({status: text})}
-                                    style = {{width:'90%',fontSize:20,textAlign:'right', paddingRight:10}}> 
+                                    style = {{width:'90%',fontSize:20,textAlign:'right', paddingRight:35}}> 
                                 </TextInput>    
                             </CardItem>
                             <CardItem >
@@ -213,32 +238,62 @@ class ProfileSettings extends Component{
                                 <TextInput
                                     underlineColorAndroid="transparent"
                                     editable={false}
-                                    value = {this.state.email}
-                                    style = {{width:'90%',fontSize:20,textAlign:'right', paddingRight:10}}> 
+                                    value = {firebase.auth().currentUser.email}
+                                    style = {{width:'90%',fontSize:20,textAlign:'right', paddingRight:32}}> 
                                 </TextInput>    
                             </CardItem>
+                            <CardItem style ={{justifyContent: 'flex-end'}}>
+                            <Button 
+                                    title="Save"
+                                    onPress={() => this.updateProfiledata()}
+                                    buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#ff6b6b'}}  
+                                />
+                                </CardItem>
                             <CardItem >
-                                <Text style={{fontSize:20, fontWeight:'bold'}}>Password</Text>
+                                <Text style={{fontSize:20, fontWeight:'bold'}}>Current Password</Text>
                                 <TextInput
                                     secureTextEntry
                                     underlineColorAndroid="transparent"
                                     editable={true}
+                                    onChangeText={(text) => this.setState({cpwd: text})}
                                     placeholder={'*******'}
-                                    style = {{width:'90%',fontSize:20, textAlign:'right', paddingRight:45}}> 
+                                    style = {{width:'90%',fontSize:20, textAlign:'right', paddingRight:130}}> 
                                 </TextInput>    
                             </CardItem>
-                            <CardItem>
+                            <CardItem >
+                            <Text style={{fontSize:20, fontWeight:'bold'}}>New Password</Text>
+                            <TextInput
+                                secureTextEntry
+                                underlineColorAndroid="transparent"
+                                editable={true}
+                                onChangeText={(text) => this.setState({npwd: text})}
+                                placeholder={'*******'}
+                                style = {{width:'90%',fontSize:20, textAlign:'right', paddingRight:105}}> 
+                            </TextInput>    
+                        </CardItem>
+                        <CardItem >
+                        <Text style={{fontSize:20, fontWeight:'bold'}}>Confirm Password</Text>
+                        <TextInput
+                            secureTextEntry
+                            underlineColorAndroid="transparent"
+                            editable={true}
+                            onChangeText={(text) => this.setState({cnpwd: text})}
+                            placeholder={'*******'}
+                            style = {{width:'90%',fontSize:20, textAlign:'right', paddingRight:135}}> 
+                        </TextInput>
+                    </CardItem>
+                            <CardItem style ={{justifyContent: 'flex-end'}}>
                                 <Button onPress={() => firebase.auth().signOut()}
                                     title = "Logout"
                                     titleStyle={{ color: 'grey' }}
                                     buttonStyle={{height: 60, width: 180,color:'grey', borderRadius: 35, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
                                     />
                                     <Text> </Text>
-                                <Button 
-                                    title="Save"
-                                    onPress={() => this.updateProfiledata()}
-                                    buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#ff6b6b'}}  
-                                />
+                                    <Button onPress={() => this.changePassword()}
+                                    title = "Change Password"
+                                    titleStyle={{ color: 'grey' }}
+                                    buttonStyle={{height: 60, width: 180,color:'grey', borderRadius: 35, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
+                                    />
                             </CardItem>
                         </Card>
                     </View>

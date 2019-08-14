@@ -25,6 +25,7 @@ import {
 
 import renderIf from './helpers/renderIf';
 
+
 /**
  * AR Scene shown in the App. All 3D Viro Components handled and rendered here.
  * ViroComponents added, removed, manipulated using 2D RN UI components via redux.
@@ -76,7 +77,8 @@ export class figment extends Component {
             position={[0, -7, 0]}
             color="#ffffff"
             intensity={250}/>
-          {models}
+
+            {models}
         </ViroARScene>
     );
   }
@@ -89,6 +91,7 @@ export class figment extends Component {
   //           consistent bitMask that's used in SpotLight's "influenceBitMask",
   //           Viro3DObject's "shadowCastingBitMask" and "lightReceivingBitMask" and Shadow plane (ViroQuad)'s "lightReceivingBitMask"
   _renderModels(modelItems, startingBitMask) {
+    console.log(modelItems)
     var renderedObjects = [];
     if(modelItems) {
       var root = this;

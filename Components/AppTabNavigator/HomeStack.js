@@ -6,7 +6,7 @@ import Comments from '../Posts/Comments'
 import UserProfile from '../Home/UserProfile'
 import HomeTab from '../Home/HomeTab'
 import PostTab from '../Posts/PostTab'
-
+import PostView from '../Profile/PostView'
 class HomeStack extends Component{
 
     static navigationOptions = {
@@ -44,6 +44,15 @@ const home = createStackNavigator({
         navigationOptions:({navigation}) => {
             return{
                 headerTitle:'Profile Overview'
+                
+            }
+        }
+    },
+    PostView: {
+        screen:PostView,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'View Post'
                 
             }
         }

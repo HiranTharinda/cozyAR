@@ -124,10 +124,15 @@ class FigmentListView extends Component {
     }
 };
 
+
+
+
+
 FigmentListView.propTypes = {
   items: PropTypes.array,
   onPress: PropTypes.func,
 };
+
 
 function selectProps(store) {
   return {
@@ -135,6 +140,8 @@ function selectProps(store) {
     currentSelectedEffect: store.ui.currentEffectSelectionIndex,
   }
 }
+
+
 var styles = StyleSheet.create({
   listViewContainer: {
       height:72,

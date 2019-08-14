@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Dimensions,View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
+import {ActivityIndicator, Dimensions,View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
 import firebase from 'react-native-firebase'
+import Video from 'react-native-video';
 const itemWidth = Dimensions.get('window').width
 
 class PhotoGridForPreview extends Component{
@@ -68,12 +69,18 @@ class PhotoGridForPreview extends Component{
     }
 
     viewPhoto = (photoId) => {
- 
+        
     }
 
     render(){
         return(
-            <FlatList
+            <View>
+            {this.state.loading == true ? (
+                <View>
+                <ActivityIndicator size="large" color="#000" />
+                </View>
+            ):(
+                <FlatList
                 refreshing ={this.state.refresh}
                 onRefresh = {this.loadNew}
                 data ={this.state.photo_feed}
@@ -82,14 +89,32 @@ class PhotoGridForPreview extends Component{
                 style = {{flex:1,backgroundColor:'#ffffff'}}
                 renderItem = {({item, index}) => (
                     <View key ={index} itemWidth={itemWidth/3} style={{borderWidth:1, borderColor:'#ffffff'}}>
-                        <TouchableOpacity onPress={() => this.viewPhoto(item.id)}>
-                                <Image source={{uri:item.url}} style={
-                                    {height:itemWidth/3-13, width:itemWidth/3-13, flex:1}}/>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('PostView', {postId: item.id})}>
+                        {item.flag == false ? (
+                            <Image source={{uri:item.url}} style={
+                                {height:itemWidth/3-13, width:itemWidth/3-13, flex:1}}/>
+                            ) : (
+                                <View style = {{height:itemWidth/3-13,width:itemWidth/3-13,flex:1}}>
+                                <Video
+                                    source={{uri:item.url}}
+                                    resizeMode="cover"
+                                    repeat={true}
+                                    controls ={false}
+                                    style={{
+                                        position: 'absolute',
+                                        height:itemWidth/3-13,
+                                        width:itemWidth/3-13
+                                        }}
+                                /></View>
+                            )}
                         </TouchableOpacity>            
                     </View> 
                 )}
             >
             </FlatList>
+            )}
+   
+            </View>
         )    
     }
     

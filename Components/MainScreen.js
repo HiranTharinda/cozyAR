@@ -43,9 +43,6 @@ const BottomTabNavigator = createMaterialTopTabNavigator({
     AR:{
         screen: ArStack
     },
-    Notification:{
-        screen: Notification
-    },
     Profile:{
         screen: ProfileStack
     }

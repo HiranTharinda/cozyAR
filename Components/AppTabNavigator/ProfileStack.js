@@ -4,7 +4,7 @@ import {Icon} from 'native-base'
 import {createAppContainer, createStackNavigator} from 'react-navigation';
 import ProfileSettings from '../Profile/ProfileSettings'
 import ProfileTab from '../Profile/ProfileTab'
-
+import PostView from '../Profile/PostView'
 class ProfileStack extends Component{
 
     static navigationOptions = {
@@ -41,6 +41,15 @@ const Profile = createStackNavigator({
         navigationOptions:({navigation}) => {
             return{
                 headerTitle:'Profile Settings'
+                
+            }
+        }
+    },
+    PostView: {
+        screen:PostView,
+        navigationOptions:({navigation}) => {
+            return{
+                headerTitle:'View Post'
                 
             }
         }

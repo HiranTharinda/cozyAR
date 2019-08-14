@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Dimensions,View, Text, StyleSheet, Image, FlatList, StatusBar, TouchableOpacity} from "react-native";
 import {Icon} from 'native-base'
 import firebase from 'react-native-firebase'
+import Video from 'react-native-video';
 const itemWidth = Dimensions.get('window').width
 
 class PhotoGrid extends Component{
@@ -36,11 +37,13 @@ class PhotoGrid extends Component{
                         photo_feed.push({
                             id: photo,
                             url: photoObj.url,
+                            flag: photoObj.flag
                             
                         });
                         that.setState({
                             refresh: false,
-                            loading: false
+                            loading: false,
+                            
                         })
                     })
     }
@@ -51,10 +54,9 @@ class PhotoGrid extends Component{
             photo_feed: []
         })
         var that = this;
-        var loadRef = firebase.database().ref('photos')
-        if(userId != ''){
-            loadRef = firebase.database().ref('users').child(userId).child('photos')
-        }    
+     
+        var loadRef = firebase.database().ref('users').child(userId).child('photos')
+          
         loadRef.orderByChild('posted').on('value', function(snapshot){
             const exists = (snapshot.val() !== null)
             that.setState({
@@ -94,14 +96,32 @@ class PhotoGrid extends Component{
                 keyExtractor={(item, index)=>index.toString}
                 style = {{flex:1,backgroundColor:'#ffffff'}}
                 renderItem = {({item, index}) => (
+                    <TouchableOpacity onPress = {() => this.props.navigation.navigate('PostView', {postId: item.id})}>
                     <View key ={index} itemWidth={itemWidth/3} style={{borderWidth:1, borderColor:'#ffffff'}}>
-                            <Image source={{uri:item.url}} style={
-                                {height:itemWidth/3-13, width:itemWidth/3-13, flex:1}}/>
+                    {item.flag == false ? (
+                        <Image source={{uri:item.url}} style={
+                            {height:itemWidth/3-13, width:itemWidth/3-13, flex:1}}/>
+                        ) : (
+                            <View style = {{height:itemWidth/3-13,width:itemWidth/3-13,flex:1}}>
+                            <Video
+                                source={{uri:item.url}}
+                                resizeMode="cover"
+                                repeat={true}
+                                controls ={false}
+                                style={{
+                                    position: 'absolute',
+                                    height:itemWidth/3-13,
+                                    width:itemWidth/3-13
+                                    }}
+                            /></View>
+                        )}
+                        
                             <TouchableOpacity style = {{position:'absolute', alignSelf:'flex-end',padding:5,}}>
                                 <Icon type='MaterialIcons' name="cancel" onPress={() => this.deletePhoto(item.id)}
                                 style={{color: 'white'}}/>
                         </TouchableOpacity>            
                     </View> 
+                    </TouchableOpacity>
                 )}
             >
             </FlatList>

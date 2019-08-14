@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Image, StatusBar } from 'react-native'
+import {Alert, StyleSheet, Text, TextInput, View, Image, StatusBar } from 'react-native'
 import {Icon, Card, CardItem, } from 'native-base'
 import FBSDK, { AccessToken, LoginManager}  from 'react-native-fbsdk'
 import { Button } from 'react-native-elements'
@@ -7,18 +7,32 @@ import firebase from 'react-native-firebase'
 
 export default class SignUp extends React.Component {
 
-  state = { name:'', email: '', password: '', errorMessage: null }
+  state = { name:'', email: '', password: '', cpassword: '', errorMessage: null }
 
 handleSignUp = () => {
-  firebase
-      .auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => this.createUserNormal())
+  if(this.state.password == this.state.cpassword){
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then(() =>this.createUserNormal())
       .then(() => this.props.navigation.navigate('MainScreen'))
       .catch(error => this.setState({ errorMessage: error.message }))
+      firebase.auth().onAuthStateChanged(user => { 
+      var userId = user.uid
+      var userObj = {
+              avatar: "https://firebasestorage.googleapis.com/v0/b/cozy-67b69.appspot.com/o/dummy%2Fdummy.jpg?alt=media&token=d1959d9b-437e-491c-ad9f-8016a7827dbc",
+              email: user.email,
+              name: this.state.name,
+            }
+      firebase.database().ref('/users/'+userId).set(userObj)
+          })
+  }else{
+    Alert.alert("Passwords do not match")
+  }
   
-  console.log('handleSignUp')
 }
+
+
+
+       
+
 
 onLoginOrRegister = () => {
   LoginManager.logInWithReadPermissions(['public_profile','email']).then(function(result){
@@ -109,6 +123,14 @@ render() {
             style={styles.textInput}
             onChangeText={password => this.setState({ password })}
             value={this.state.password}/>
+            <TextInput
+            underlineColorAndroid="transparent"
+            secureTextEntry
+            placeholder="   Password"
+            autoCapitalize="none"
+            style={styles.textInput}
+            onChangeText={cpassword => this.setState({ cpassword })}
+            value={this.state.cpassword}/>
           <Text> </Text>
           <Button title="Sign Up" onPress={this.handleSignUp} buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}} />
           <Text></Text>

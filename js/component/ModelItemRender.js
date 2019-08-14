@@ -26,6 +26,7 @@ import {
   ViroQuad,
 } from 'react-viro';
 
+
 var createReactClass = require('create-react-class');
 
 
@@ -48,13 +49,20 @@ var ModelItemRender = createReactClass({
         hitTestMethod: PropTypes.func,
     },
 
-    componentDidMount() {
-      this._modelData = ModelData.getModelArray();
+    async componentDidMount() {
+      const data = await ModelData.getModelArray(firebase.auth().currentUser.uid)
+      this._modelData = data
     },
 
-    getInitialState() {
+
+   
+    async getInitialState() {
+      const data = await ModelData.getModelArray(firebase.auth().currentUser.uid)
+      console.log("data:" + data)
+      console.log(this.props.modelIDProps.index)
+      console.log(data[this.props.modelIDProps.index].scale)
       return {
-        scale : ModelData.getModelArray()[this.props.modelIDProps.index].scale,
+        scale : data[this.props.modelIDProps.index].scale,
         rotation : [0, 0, 0],
         nodeIsVisible : false,
         position: [0, 0, -1], // make it appear initially high in the sky
@@ -65,8 +73,9 @@ var ModelItemRender = createReactClass({
       }
     },
 
-    render: function() {
-        var modelItem = ModelData.getModelArray()[this.props.modelIDProps.index];
+    render: async function() {
+        const data = await ModelData.getModelArray(firebase.auth().currentUser.uid)
+        var modelItem =data[this.props.modelIDProps.index];
         let transformBehaviors = {};
         if (this.state.shouldBillboard) {
           transformBehaviors.transformBehaviors = this.state.shouldBillboard ? "billboardY" : [];

@@ -108,8 +108,10 @@ class Reviews extends Component{
             this.setState({
                 uploading:false
             })
+
             //reload the comment
             this.reloadReviewList();
+            this.props.navigation.navigate('ItemProfile')
         }else{
             
         }
@@ -171,17 +173,24 @@ class Reviews extends Component{
         
     }
 
-    deleteReview = (reviewId) => {
+    deleteReview = (reviewId,author) => {
         var params = this.props.navigation.state.params;
         var itemId = params.itemId
-        firebase.database().ref('/reviews/'+itemId+'/'+reviewId).remove()
-        this.setState({
-            refresh:true,
-        })
-        this.reloadReviewList()
+        var userId = firebase.auth().currentUser.uid
+        if(userId == author){
+            firebase.database().ref('/reviews/'+itemId+'/'+reviewId).remove()
+            this.setState({
+                refresh:true,
+            })
+            this.reloadReviewList()
+        }else{
+            return null
+        }
+     
         
     }
 
+   
     
     render(){
         return(
@@ -198,7 +207,7 @@ class Reviews extends Component{
                         style = {{flex:1,backgroundColor:'#ffffff'}}
                         renderItem = {({item, index}) => (
                         <View key ={index}>
-                         <TouchableOpacity onLongPress = {() => this.deleteReview(item.id)}>
+                         <TouchableOpacity onLongPress = {() => this.deleteReview(item.id, item.authorId)}>
                             <Card  style = {{borderRadius: 30}}>
                                 <CardItem bordered style={{ borderRadius: 30 }}>
                                     <Left>

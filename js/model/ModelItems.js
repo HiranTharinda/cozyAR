@@ -97,18 +97,19 @@ var ModelItems = [
 ]
 module.exports = {
 
-  LoadModelArray: function(uid) {
+  getModelArray: function(uid) {
     var ModelItems = []
-    firebase.database().ref('ArArray').child(uid).once('value').then(function(snapshot){
+    let p = new Promise((resolve) => firebase.database().ref('ArArray').child(uid).once('value').then(function(snapshot){
         const exists = (snapshot.val() !== null)
         data = snapshot.val()
         for(var obj in data){
+          var ArObj = data[obj]
           ModelItems.push({
-            name: "dragon_anim",
+            name: ArObj.name,
             selected: false,
             loading: LoadingConstants.NONE,
-            icon_img: {uri:"https://firebasestorage.googleapis.com/v0/b/cozy-67b69.appspot.com/o/item%2Fitem22%2Fbed-1.jpg?alt=media&token=5e28b1a9-3619-4cff-9081-a3812d736f3c"},
-            obj: {uri:"https://firebasestorage.googleapis.com/v0/b/cozy-67b69.appspot.com/o/item%2Fitem22%2Fbed-1.jpg?alt=media&token=5e28b1a9-3619-4cff-9081-a3812d736f3c"},
+            icon_img: {uri:ArObj.icon_img},
+            obj: {uri:ArObj.obj},
             materials: null,
             animation:{name:"01", delay:0, loop:true, run:true},
             scale: [0.2, 0.2, 0.2],
@@ -122,15 +123,9 @@ module.exports = {
             lighting_mode: "IBL",
         })
         }
-        console.log(ModelItems)
-        
-      //inside firebase function
-      })
-      //outside firebase function
-    },
-
-  getModelArray: function() {
-    return ModelItems;
+        resolve(ModelItems)
+      }))
+      return p
   }
 
 };

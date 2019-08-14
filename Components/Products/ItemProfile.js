@@ -128,7 +128,7 @@ class ItemProfile extends Component{
             name: name,
             selected: "false",
             loading: "LoadingConstants.NONE",
-            icon_img: "image",
+            icon_img: image,
             obj: url,
             materials: "null",
             animation:'{name:"01", delay:0, loop:true, run:true}',
