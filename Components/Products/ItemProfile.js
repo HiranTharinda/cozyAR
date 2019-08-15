@@ -8,6 +8,7 @@ import * as LoadingConstants from '../../js/redux/LoadingStateConstants';
 class ItemProfile extends Component{
     constructor(props){
         super(props)
+        
         this.state ={ 
             sum: null,
             rating: null,
@@ -49,6 +50,11 @@ class ItemProfile extends Component{
             const exists = (snapshot.val() !== null)
             if(exists) data = snapshot.val()
                 that.setState({itemName:data});
+        })
+        firebase.database().ref('products').child(itemId).child('obj').once('value').then(function(snapshot){
+            const exists = (snapshot.val() !== null)
+            if(exists) data = snapshot.val()
+                that.setState({itemObj:data});
         })
 
         firebase.database().ref('products').child(itemId).child('price').once('value').then(function(snapshot){
@@ -122,28 +128,28 @@ class ItemProfile extends Component{
     placeIt = () => {
         var name = this.state.itemName
         var image = this.state.itemImage
-        var url = "https://firebasestorage.googleapis.com/v0/b/cozy-67b69.appspot.com/o/models%2FSofa.obj?alt=media&token=4ca9e40d-8c54-4b53-b610-314de89c13be"
+        var url =  this.state.itemObj
         var userId = firebase.auth().currentUser.uid;
-        var Obj = {
+        global.ModelItems.push({
             name: name,
             selected: "false",
             loading: "LoadingConstants.NONE",
-            icon_img: image,
-            obj: url,
-            materials: "null",
-            animation:'{name:"01", delay:0, loop:true, run:true}',
-            scale: "[0.2, 0.2, 0.2]",
-            position : "[0, 5*0.05, 10]",
+            icon_img: {uri:image},
+            obj: {uri:url},
+            materials: null,
+            animation:{name:"01", delay:0, loop:true, run:true},
+            scale: [0.2, 0.2, 0.2],
+            position : [0, 5*0.05, 10],
             type : "OBJ",
-            physics: "undefined",
-            ref_pointer: "undefined",
-            shadow_width: "60.5",
-            shadow_height: "60.5",
-            spotlight_position_y: "100",
+            physics: undefined,
+            ref_pointer: undefined,
+            shadow_width: 60.5,
+            shadow_height: 60.5,
+            spotlight_position_y: 100,
             lighting_mode: "IBL",
-            resources: "[require('../res/sofa/materials.mtl')]",
-        }
-        firebase.database().ref('/ArArray/'+userId+'/'+this.state.itemId).set(Obj)
+
+        })
+        
         Alert.alert("Successfully added to the Augmented Reality Experience")
     }
 
@@ -180,7 +186,7 @@ class ItemProfile extends Component{
                                     {this.state.itemName}
                                 </Text>
                             <Right>
-                                <Text style = {{fontWeight:"normal",fontSize:30, color:'#ff6b6b',textAlign:'right'}}>
+                                <Text style = {{fontWeight:"normal",fontSize:30, color:'#4267b2',textAlign:'right'}}>
                                     {this.state.itemPrice}
                                 </Text>
                             </Right>
@@ -204,7 +210,7 @@ class ItemProfile extends Component{
                             <Text> </Text>
                             <Button onPress={() => this.placeIt()}
                                     title="Place it!"
-                                    buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#ff6b6b'}}  
+                                    buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#4267b2'}}  
                                     />
                         </CardItem>
                     </Card>

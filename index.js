@@ -18,6 +18,12 @@ import login from './Components/login/login'
 let store = createStore(reducers);
 
 export default class Root extends React.Component {
+
+  constructor(props){
+    super(props)
+    global.ModelItems = [];
+  }
+  
   render() {
     return (
         <AppContainer/>

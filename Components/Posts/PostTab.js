@@ -350,7 +350,7 @@ class PostTab extends Component{
                                     title="Photo"
                                     onPress={() => this.handleChoosePhoto()}
                                     raised = 'true'
-                                    buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#181f31'}}  
+                                    buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#4267b2'}}  
                                     />
                                     <Text></Text>
                                     <Button icon={
@@ -363,7 +363,7 @@ class PostTab extends Component{
                                     title="Video"
                                     onPress={() => this.handleChooseVideo()}
                                     raised = 'true'
-                                    buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}  
+                                    buttonStyle={{height: 40, width: 180, borderRadius: 30, backgroundColor:'#4267b2'}}  
                                     />
                                     <Text></Text>
                                     <Text></Text>

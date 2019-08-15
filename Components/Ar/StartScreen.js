@@ -81,45 +81,7 @@ goToStore(){
             <Image source ={require('../../assets/FormatFactory88591.jpg')} style={{width:screenWidth}} resizeMode="contain"></Image>
             
             <View style={{width:screenWidth, position:'absolute', alignContent:'center',alignItems:'center'}}>
-            {this.state.review_list.length == 0 ?  (
-                <View><Text>Please Add Furniture from the store.</Text></View>
-            ):(
-              <FlatList
-              refreshing ={this.state.refresh}
-              onRefresh = {this.loadNew}
-              data ={this.state.review_list}
-              keyExtractor={(item, index)=>index.toString}
-              contentContainerStyle = {{alignItems:'center',}}
-              style = {{flex:1,backgroundColor:'#ffffff', alignContent:'center',borderRadius: 30, width: screenWidth/2, height:screenHeight/3}}
-              renderItem = {({item, index}) => (
-              <View  key ={index}>
-               <TouchableOpacity onLongPress = {() => this.deleteReview(item.id)}>
-                  <Card  style = {{borderRadius: 30, width: screenWidth/2.3}}>
-                      <CardItem bordered style={{ borderRadius: 30 }}>
-                          <Left>
-                              <Thumbnail source={{uri:item.img}} style={{height:35,width:35}}/>
-                              <Body>
-                              <TouchableOpacity>
-                                  <Text style = {{fontWeight:"bold"}}>{item.name}</Text>
-                              </TouchableOpacity>
-                              </Body>
-                          </Left>
-                      </CardItem>
-                  </Card>
-                  </TouchableOpacity>
-              </View>
-              )}
-          >
-          </FlatList>
-            )}
-             
-            
-
-
-            <View style = {{flex: 4, width: 190, alignContent:'center', alignItems:'center',  paddingTop:20 }}>
-            {this.state.review_list.length == 0 ?  (
-              <View></View>
-          ):(
+ 
                     <Button icon={
                       <Icon
                         name="video-camera"
@@ -130,13 +92,13 @@ goToStore(){
                       title=" Start!"
                       onPress={() => this.props.navigation.navigate('ArScreen')}
                       raised = 'true'
-                      buttonStyle={{height:60, width: 180, borderRadius: 30, backgroundColor:'#ff6b6b'}}  
+                      buttonStyle={{height:60, width: 180, borderRadius: 30, backgroundColor:'#4267b2'}}  
                       />
-                      )}
+                      
             </View>
-            </View>
+            
           <View style = {{flex: 1, width: 300}}></View>
-        </View>
+       </View>
       )
     }
 }

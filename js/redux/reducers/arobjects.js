@@ -14,7 +14,7 @@ const initialState = {
 
 // Creates a new model item with the given index from the data model in ModelItems.js
 function newModelItem(indexToCreate) {
-  return {uuid: uuidv1(), selected: false, loading: LoadingConstants.LOADING, index: indexToCreate};
+  return {uuid: uuidv1(), selected: false, loading: LoadingConstants.NONE, index: indexToCreate};
 }
 
 // action to change state of individual ListView items between NONE, LOADING, ERROR, LOADED (path: js/redux/LoadingStateConstants.js)

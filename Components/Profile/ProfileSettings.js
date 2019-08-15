@@ -204,7 +204,7 @@ class ProfileSettings extends Component{
                                     style={{ width:200, height:200, borderRadius: 100}}/>
                                 <TouchableOpacity style = {{position:'absolute', alignSelf:'center',paddingTop:200}}>
                                     <Icon type='Entypo' name="circle-with-plus" onPress={() => this.handleChoosePhoto()}
-                                        style={{color: '#54a0ff', fontSize:35,}}/>
+                                        style={{color: '#4267b2', fontSize:35,}}/>
                                 </TouchableOpacity>            
                                 <View style = {{flex:1}}></View>
                             </View>
@@ -246,7 +246,7 @@ class ProfileSettings extends Component{
                             <Button 
                                     title="Save"
                                     onPress={() => this.updateProfiledata()}
-                                    buttonStyle={{height: 60, width: 180, borderRadius: 35, backgroundColor:'#ff6b6b'}}  
+                                    buttonStyle={{height: 40, width: 120, borderRadius: 35, backgroundColor:'#4267b2'}}  
                                 />
                                 </CardItem>
                             <CardItem >
@@ -283,18 +283,21 @@ class ProfileSettings extends Component{
                         </TextInput>
                     </CardItem>
                             <CardItem style ={{justifyContent: 'flex-end'}}>
+                            <Button onPress={() => this.changePassword()}
+                            title = "Change Password"
+                            titleStyle={{ color: 'white' }}
+                            buttonStyle={{height: 40, width: 120,color:'grey', borderRadius: 35, backgroundColor:'#4267b2'}}  
+                            />
+                            </CardItem>
+                            <CardItem style ={{justifyContent: 'flex-start'}}>
                                 <Button onPress={() => firebase.auth().signOut()}
                                     title = "Logout"
                                     titleStyle={{ color: 'grey' }}
-                                    buttonStyle={{height: 60, width: 180,color:'grey', borderRadius: 35, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
+                                    buttonStyle={{height: 40, width: 120,color:'grey', borderRadius: 35, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
                                     />
                                     <Text> </Text>
-                                    <Button onPress={() => this.changePassword()}
-                                    title = "Change Password"
-                                    titleStyle={{ color: 'grey' }}
-                                    buttonStyle={{height: 60, width: 180,color:'grey', borderRadius: 35, backgroundColor:'white', borderColor:'grey',borderWidth:1}}  
-                                    />
                             </CardItem>
+                            
                         </Card>
                     </View>
                 </Content>
